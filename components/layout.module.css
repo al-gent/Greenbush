@@ -1,0 +1,120 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 1rem;
+  }
+  
+  .logo {
+    width: 25%;
+    height: auto;
+    background-image:"/images/Untitled.png";
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .navlink {
+    margin-left: 2rem;
+    font-size: 1.3rem;
+    color: #b61c1c;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+.wideimage {
+    position: sticky;
+    display: top;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+  }
+  
+
+.imageright {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.imagemiddle {
+    width: 100%;
+    height: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.imageleft {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.textLeft {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem;
+}
+
+
+.textRight {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 3rem;
+}
+
+.imageTextContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding-left: 2rem;
+    padding-right:2rem;
+    padding-top:2rem;
+}
+
+.imageTextContainer > * {
+    flex:1;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.footerText {
+    font-size: 0.8rem;
+    color: #450202;
+    text-align: center;
+}
+
+.centerText {
+    height: 100%;
+    text-align: center;
+    align-items:center;
+}
+
+.bigforms {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+}
+
+.smallerForm {
+    width: 20px;
+    height: 20px;
+    padding: 1rem;
+}

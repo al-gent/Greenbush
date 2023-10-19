@@ -1,0 +1,103 @@
+html {
+  background-color: #c1baba83;
+  font-family: 'Roboto', sans-serif;
+  src:url(https://fonts.googleapis.com)
+  url(https://fonts.gstatic.com)
+  url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);
+  font-weight: 300;
+  font-size: 12px;
+
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-weight:400;
+  font-style:normal;
+  font-stretch:normal;
+  font-display:auto;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  line-height: 3;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+h2 {
+  font-size: 1.5rem;
+  line-height: 2.5;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+p {
+  margin: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: darkblue;
+  text-decoration: none;
+}
+
+a:hover {
+  color: darkgoldenrod;
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-size: 1.2rem;
+  background-color: #292323;
+  color: #fff;
+  border-radius: 10px;
+  padding: 16px 32px;
+  cursor: pointer;
+  align-items: center;
+}
+
+button:hover {
+  background-color: #0e5188;
+}
+
+form {
+  width: 100%;
+}
+
+input, textarea{
+  padding: 16px
+}
+
+tr {
+  border: 1px solid #080606;
+  padding: 8px;
+}
+
+th {
+  padding: 0px 8px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+td {
+  padding: 0px 8px;
+  font-size: 1.5rem;
+  text-align:center;
+}
+
+
+wsb:hover {
+  background-color: #0e5188;
+}
