@@ -4,34 +4,11 @@ import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '/components/layout.module.css'
-import { getSortedPostsData} from '../lib/posts'
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData
-    }
-  }
-}
 
-export default function Home({allPostsData}) {
+export default function Home() {
   return (
     <Layout home>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              {title}
-              <br />
-              {id}
-              <br />
-              {date}
-            </li>
-          ))}
-        </ul>
-      </section>
       <div className={styles.wideImage}>
         <Image className = {styles.wideimage}
             priority
