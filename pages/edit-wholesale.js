@@ -82,7 +82,7 @@ function ListTable({products, handleClick }) {
 
 
 
-export default function App() {
+function App() {
   const [products, setProducts] = useState(PRODUCTS)
 
   return <>
