@@ -52,7 +52,7 @@ export default function Layout({ children, home }) {
                     alt="cabagelogotransparent"
                 />
         </footer>
-    <p className={styles.footerText}> Website made with love by <Link href='URL'>Adam</Link></p>
+    <p className={styles.footerText}> Website made with love by <Link href='https://github.com/al-gent'>Adam</Link></p>
 
     </div>
 }
