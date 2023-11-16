@@ -30,6 +30,7 @@ export default function Layout({ children, home }) {
                     <Link className={styles.navlink} href="/what-is-a-co-op">What is a co-op?</Link>
                     <Link className={styles.navlink} href="/contact">Contact</Link>
                     <Link className={styles.navlink} href="/donate">Donate</Link>
+                    <Link className={styles.navlink} href="/wholesale">Wholesale</Link>
                 </div>
                 </>
         </header>
