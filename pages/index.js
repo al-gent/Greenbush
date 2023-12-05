@@ -1,9 +1,10 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
+import Layout, { siteTitle } from '../components/Layout';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '/components/layout.module.css'
+
 
 
 export default function Home() {
@@ -30,7 +31,7 @@ export default function Home() {
               <p >Sign up now for a Community Supported Agriculture (CSA) share to receive a weekly box of vegetables straight to your door.</p>
               <h2 >Invigorating Natural Medicines</h2>
               <p > Get in touch to buy quality bulk culinary or medicinal herbs for your meals, teas, tinctures or salves grown with organic practices and loving guidance.</p>
-              <button>Sign up for a CSA share</button>
+              <Link href='./CSA-fall-share'>Sign up for a CSA share</Link>
             </div>
         </div>
         <div className={styles.imageTextContainer}>

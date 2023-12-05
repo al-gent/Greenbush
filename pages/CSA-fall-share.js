@@ -1,24 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import Layout from '../components/layout';
-import { fetchProducts } from '../lib/data';
+import Layout from '../components/Layout';
 
-export default function(){
-    const [products, setProducts] = useState([]);
+export default function CSAFallShare() {
+  const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        fetchProducts().then(data => setProducts(data));
-    }, []);
+  useEffect(() => {
+    fetch('/api/data')
+      .then(response => response.json())
+      .then(data => {
+        setProducts(data);
+      })
+      .catch(error => console.error('Error:', error));
+  }, []);
 
-    return(
-        <Layout>
-            <h1>Products Available</h1>
-            {products.map((product) => ( 
-                <div key = {product.id}>
-                    <h2>{product.name}</h2>
-                    <p>{product.price}</p>
-                    <p>{product.quantity}</p>
-                </div>
-            ))}
-        </Layout>
-    );
+  return (
+    <Layout>
+      <h1>CSA Fall Share</h1>
+        {products.map((product) => (
+          <tr key={product.id}>
+            <td>{product.name}</td>
+            <td>{product.price}</td>
+          </tr>
+        ))}
+    </Layout>
+  );
 }
