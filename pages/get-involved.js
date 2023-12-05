@@ -1,4 +1,4 @@
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import styles from '/components/layout.module.css';
 import Image from 'next/image';
 

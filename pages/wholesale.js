@@ -146,7 +146,7 @@ export default function App() {
       })
       .then(response => response.json())
       .catch(error => console.error('Error:', error));
-    // window.location.href ='wholesale-confirmation'
+      window.location.href ='wholesale-confirmation'
     }
     
   
