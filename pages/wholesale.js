@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react'
 import Layout from '../components/Layout'
 import styles from '/components/layout.module.css'
 
-
-
-
 function ProductRow({product, handleClick }) {
   const [quantityDesired, setQuantityDesired] = useState('');
   const parsedQuantityDesired = parseInt(quantityDesired)
@@ -79,7 +76,8 @@ function ListTable({products, handleClick }) {
   );
 }
 
-function CartTable({ products, handleClick, onSubmit }) {
+function CartTable({ products, handleClick, onSubmit, custname, email, notes, setCustname, setEmail, setNotes }) {
+
   const rows = products
   .filter((product) => product.cart > 0)
   .map((product) => (
@@ -107,14 +105,21 @@ function CartTable({ products, handleClick, onSubmit }) {
       <h1>Checkout total: ${products.reduce((total, product) => total + (product.cart * product.price), 0)}</h1>
       <form>
         <input type="text"
+        value = {custname}
+        onChange={e => setCustname(e.target.value)}
         required
-        placeholder="Name / Organization"
-        onChange={e=> e.target.value}/>
+        placeholder="Name / Organization"/>
+        <input type="text"
+        value = {email}
+        onChange={e => setEmail(e.target.value)}
+        required
+        placeholder="Email"/>
         <input type="textarea"
+        value = {notes}
         placeholder="Notes"
-        onChange={e=> e.target.value}/>
+        onChange={e=> setNotes(e.target.value)}/>
       <button
-        onClick={e => {onSubmit(); e.preventDefault();}
+        onClick={e => {onSubmit(e);}
         }>Submit Order</button>
       </form>
     </div>
@@ -126,6 +131,9 @@ function CartTable({ products, handleClick, onSubmit }) {
 
 
 export default function App() {
+  const [custname, setCustname] = useState('');
+  const [email, setEmail] = useState('');
+  const [notes, setNotes] = useState('');
   const [products, setProducts] = useState([]);
   useEffect(() => {
     fetch('/api/data')
@@ -136,19 +144,34 @@ export default function App() {
       .catch(error => console.error('Error:', error));
   }, []);
 
-  function submitOrder() {
-    console.log('submitting order');
-    fetch('/api/update-table', {
+  function submitOrder(e) {
+    e.preventDefault();
+    let order = {
+      name: custname,
+      email: email,
+      notes: notes,
+      products: products.filter((product) => product.cart > 0)
+    }
+    console.log('submitting order', {order});
+    
+    fetch('/api/place-order', {
       method: 'POST', // or 'PUT' depending on how you've set up your server
       headers: {
         'Content-Type': 'application/json'},
-      body: JSON.stringify(products)
+      body: JSON.stringify(order)
       })
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        window.location.href =`wholesale-confirmation?data=${encodeURIComponent(JSON.stringify(order))}`;      })
       .catch(error => console.error('Error:', error));
-      window.location.href ='wholesale-confirmation'
     }
     
+
   
 
   function addToCart({product, quantityDesired}){
@@ -179,6 +202,10 @@ export default function App() {
     console.log('After:',nextProducts)
     setProducts(nextProducts)
   }
+
+  const CartLen = products.filter((product) => product.cart > 0).length
+
+
   return <>
   <Layout>
     <div className={styles.imageTextContainer}>
@@ -186,7 +213,13 @@ export default function App() {
       <ListTable className={styles.centerText} products={products} handleClick={addToCart} />
     </div>
     <div>
-      <CartTable className={styles.centerText} products={products} handleClick={removeFromCart} onSubmit={submitOrder}/>
+      {CartLen === 0 ? <h1 className={styles.centerText}>Cart is empty</h1> :
+      <CartTable className={styles.centerText} products={products} handleClick={removeFromCart} onSubmit={submitOrder} custname={custname} 
+      email={email} 
+      notes={notes} 
+      setCustname={setCustname} 
+      setEmail={setEmail} 
+      setNotes={setNotes} />}
     </div>
     </div>
   </Layout>

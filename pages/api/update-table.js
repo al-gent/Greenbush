@@ -7,7 +7,7 @@ export default async function updateProducts(req, res) {
   await sql`
     UPDATE Products
     SET Quantity = ${product.quantity}
-    WHERE Name = ${product.name};
+    WHERE id = ${product.id};
   `;
   }
   res.status(200).json( {message: 'Table updated successfully'});
