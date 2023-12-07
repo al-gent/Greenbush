@@ -1,4 +1,4 @@
-import Layout from '../components/Layout';
+import Layout from './Layout';
 import OrderSummary from '../lib/order-summary';
 import { useState, useEffect } from 'react'
  

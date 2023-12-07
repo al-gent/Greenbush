@@ -180,8 +180,6 @@ export default function App() {
         console.log('this should come after email sent ok')
         setIsLoading(false);
         setOrderPlaced(true)})
-      // .then(data => {
-        // window.location.href =`wholesale-confirmation?data=${encodeURIComponent(JSON.stringify(order))}`;      })
       .catch(error => console.error('Error:', error));
   }
     
