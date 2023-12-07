@@ -1,5 +1,5 @@
-/*import React, { useState } from 'react'
-import Layout from '../components/layout'
+import React, { useState } from 'react'
+import Layout from '../components/Layout'
 import styles from '/components/layout.module.css'
 
 const PRODUCTS = [{'id': 0, 'name': 'Rainbow Chard', 'quantity': '20', 'unit': 'lbs', 'price': '4.50', 'cart': 0} ,
@@ -60,7 +60,6 @@ function ListTable({products, handleClick }) {
   const rows = products.map((product) => (
   <ProductRow key={product.id} product={product} handleClick={handleClick} />
   ));
-  function handleEdit({})
   return (
     <table>
       <thead>
@@ -82,7 +81,7 @@ function ListTable({products, handleClick }) {
 
 
 
-function App() {
+export default function App() {
   const [products, setProducts] = useState(PRODUCTS)
 
   return <>
@@ -96,4 +95,3 @@ function App() {
   </>
 }
 
-*/

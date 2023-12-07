@@ -15,7 +15,6 @@ export default function Layout({ children, home }) {
 
         </Head>
         <header className={styles.header}>
-                <>
                 <Image className={styles.logo}
                     priority
                     src="/images/Untitled.png"
@@ -23,28 +22,10 @@ export default function Layout({ children, home }) {
                     width={1159}
                     alt="cabagelogotransparent"
                 />
-                <div className={styles.nav}>
-                    <Link className={styles.navlink} href="/">About</Link>
-                    <Link className={styles.navlink} href="/CSA-fall-share">CSA Fall Share</Link>
-                    <Link className={styles.navlink} href="/get-involved">Get Involved</Link>
-                    <Link className={styles.navlink} href="/what-is-a-co-op">What is a co-op?</Link>
-                    <Link className={styles.navlink} href="/contact">Contact</Link>
-                    <Link className={styles.navlink} href="/donate">Donate</Link>
-                    <Link className={styles.navlink} href="/wholesale">Wholesale</Link>
-                </div>
-                </>
         </header>
         <main>{children}</main>
         <footer className={styles.footer}>
-            <div className={styles.footerText}>
-                <h2>Subscribe</h2>
-                <p>Sign up with your email address to recieve news and updates</p>
-                <form>
-                    <input type="email" placeholder="Email Address"></input>
-                    <button>Sign Up</button>
-                </form>
-            </div>
-            <Image className={styles.logo}
+            <Image className={styles.loading}
                     priority
                     src="/images/cabbagelogotransparent.png"
                     height={2500}

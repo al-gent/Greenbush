@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import Layout from '../components/Layout'
 import styles from '/components/layout.module.css'
+import EmailGB from './api/mailer'
+import OrderSummary from '../lib/order-summary';
+import Image from 'next/image';
+import { set } from 'zod';
 
 function ProductRow({product, handleClick }) {
   const [quantityDesired, setQuantityDesired] = useState('');
@@ -135,25 +139,28 @@ export default function App() {
   const [email, setEmail] = useState('');
   const [notes, setNotes] = useState('');
   const [products, setProducts] = useState([]);
+  const [orderPlaced, setOrderPlaced] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     fetch('/api/data')
       .then(response => response.json())
       .then(data => {
         setProducts(data);
+
       })
       .catch(error => console.error('Error:', error));
   }, []);
 
+  let order = {
+    name: custname,
+    email: email,
+    notes: notes,
+    products: products.filter((product) => product.cart > 0)
+  }
   function submitOrder(e) {
     e.preventDefault();
-    let order = {
-      name: custname,
-      email: email,
-      notes: notes,
-      products: products.filter((product) => product.cart > 0)
-    }
     console.log('submitting order', {order});
-    
+    setIsLoading(true);
     fetch('/api/place-order', {
       method: 'POST', // or 'PUT' depending on how you've set up your server
       headers: {
@@ -166,10 +173,17 @@ export default function App() {
         }
         return response.json();
       })
-      .then(data => {
-        window.location.href =`wholesale-confirmation?data=${encodeURIComponent(JSON.stringify(order))}`;      })
+      .then(response => {
+        return EmailGB({order});
+      })
+      .then(response => {
+        console.log('this should come after email sent ok')
+        setIsLoading(false);
+        setOrderPlaced(true)})
+      // .then(data => {
+        // window.location.href =`wholesale-confirmation?data=${encodeURIComponent(JSON.stringify(order))}`;      })
       .catch(error => console.error('Error:', error));
-    }
+  }
     
 
   
@@ -208,18 +222,34 @@ export default function App() {
 
   return <>
   <Layout>
+    <h1 className={styles.centerText}>Wholesale</h1> 
+    {isLoading &&  <Image className={styles.loading}
+                    priority
+                    src="/images/cabbagelogotransparent.png"
+                    height={2500}
+                    width={2323}
+                    alt="cabagelogotransparent"
+                />}
     <div className={styles.imageTextContainer}>
     <div>
-      <ListTable className={styles.centerText} products={products} handleClick={addToCart} />
+      {orderPlaced ? ( <p></p>
+      ) : (
+        <ListTable className={styles.centerText} products={products} handleClick={addToCart} />
+      )}
     </div>
     <div>
-      {CartLen === 0 ? <h1 className={styles.centerText}>Cart is empty</h1> :
+      {orderPlaced ? (
+        <OrderSummary order = {order} />
+      ) : CartLen === 0 ? (<h1 className={styles.centerText}>Cart is empty</h1>
+      ) : (
       <CartTable className={styles.centerText} products={products} handleClick={removeFromCart} onSubmit={submitOrder} custname={custname} 
       email={email} 
       notes={notes} 
       setCustname={setCustname} 
       setEmail={setEmail} 
-      setNotes={setNotes} />}
+      setNotes={setNotes} 
+      />
+    )}
     </div>
     </div>
   </Layout>

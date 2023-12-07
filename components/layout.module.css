@@ -118,3 +118,14 @@
     height: 20px;
     padding: 1rem;
 }
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+  }
+  
+  .loading {
+    width: 25%;
+    height: auto;
+    animation: spin 8s linear infinite;
+  }
