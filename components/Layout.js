@@ -1,4 +1,4 @@
-import styles from './layout.module.css'
+import styles from '../styles/wholesale.module.css'
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,7 +9,7 @@ export const siteTitle = 'XXGreenbushXX';
 
 
 export default function Layout({ children, home }) {
-    return <div className={styles.container}>
+    return <div>
         <Head>
             <title>{siteTitle}</title>
 
@@ -20,7 +20,7 @@ export default function Layout({ children, home }) {
                     src="/images/Untitled.png"
                     height={1500}
                     width={1159}
-                    alt="cabagelogotransparent"
+                    alt="Logo"
                 />
         </header>
         <main>{children}</main>

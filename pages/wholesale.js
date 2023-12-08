@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Layout from '../components/Layout'
-import styles from '/components/layout.module.css'
+import styles from '../styles/wholesale.module.css'
 import EmailGB from './api/mailer'
 import OrderSummary from '../lib/order-summary';
 import Image from 'next/image';
@@ -19,11 +19,12 @@ function ProductRow({product, handleClick }) {
     <td> {quantity} {product.unit}</td>
     <td>{'$'+product.price+'/'+product.unit}</td>
     <td>
-    <form className={styles.smallerForm.textarea}>
+    <form>
       <input type="integer"
       value= {quantityDesired}
-      placeholder="Desired Quantity"
-      onChange={e=> setQuantityDesired(e.target.value)}/>
+      placeholder="0"
+      onChange={e=> setQuantityDesired(e.target.value)}
+      style = {{ width: '45px' }} />
     <button
       onClick={e => {
       e.preventDefault();
@@ -44,7 +45,7 @@ function ProductRow({product, handleClick }) {
 }
 
 function CartRow({ product, handleClick }) {
-  const total_price = (product.cart * product.price)
+  const total_price = (product.cart * product.price).toFixed(2)
   return(
   <tr>
     <td>{product.name}</td>
@@ -89,6 +90,7 @@ function CartTable({ products, handleClick, onSubmit, custname, email, notes, se
   ));
   return (
     <div>
+            <hr></hr>
     <table>
       <thead>
         <tr>
@@ -106,7 +108,7 @@ function CartTable({ products, handleClick, onSubmit, custname, email, notes, se
       <tbody>{rows}</tbody>
       </table>
       <hr></hr>
-      <h1>Checkout total: ${products.reduce((total, product) => total + (product.cart * product.price), 0)}</h1>
+      <h1>Checkout total: ${products.reduce((total, product) => total + (product.cart * product.price), 0).toFixed(2)}</h1>
       <form>
         <input type="text"
         value = {custname}
@@ -220,7 +222,7 @@ export default function App() {
 
   return <>
   <Layout>
-    <h1 className={styles.centerText}>Wholesale</h1> 
+    <h1 className={styles.centerText}>Wholesale Ordering Form</h1> 
     {isLoading &&  <Image className={styles.loading}
                     priority
                     src="/images/cabbagelogotransparent.png"
@@ -228,13 +230,10 @@ export default function App() {
                     width={2323}
                     alt="cabagelogotransparent"
                 />}
-    <div className={styles.imageTextContainer}>
-    <div>
       {orderPlaced ? ( <p></p>
       ) : (
         <ListTable className={styles.centerText} products={products} handleClick={addToCart} />
       )}
-    </div>
     <div>
       {orderPlaced ? (
         <OrderSummary order = {order} />
@@ -248,7 +247,6 @@ export default function App() {
       setNotes={setNotes} 
       />
     )}
-    </div>
     </div>
   </Layout>
   </>
