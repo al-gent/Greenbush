@@ -42,6 +42,7 @@ return (
     <p>Thank you for your order, {order.name}</p>
     <p>You will recieve an email at {order.email} when your order is confirmed</p>
     <OrderTable products={order.products}/>
+    <p>Checkout total : ${order.products.reduce((total, product) => total + (product.cart * product.price), 0).toFixed(2)}</p>
     <p>Notes: {order.notes}</p>
     </div>
 )}

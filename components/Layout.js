@@ -5,7 +5,7 @@ import Link from 'next/link';
 import utilStyles from '../styles/utils.module.css';
 
 const name= 'Greenbush Growing Cooperative';
-export const siteTitle = 'XXGreenbushXX';
+export const siteTitle = 'Greenbush Wholesale';
 
 
 export default function Layout({ children, home }) {

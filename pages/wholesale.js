@@ -20,11 +20,12 @@ function ProductRow({product, handleClick }) {
     <td>{'$'+product.price+'/'+product.unit}</td>
     <td>
     <form>
+      <div style={{display: 'flex'}}>
       <input type="integer"
       value= {quantityDesired}
       placeholder="0"
       onChange={e=> setQuantityDesired(e.target.value)}
-      style = {{ width: '45px' }} />
+      style = {{ width: '40px' }} />
     <button
       onClick={e => {
       e.preventDefault();
@@ -38,6 +39,7 @@ function ProductRow({product, handleClick }) {
       setQuantityDesired('');
       setQuantity(product.quantity-quantityDesired)
       }}>Add</button>
+      </div>
     </form>
     </td>
   </tr>
@@ -66,13 +68,10 @@ function ListTable({products, handleClick }) {
   ));
   return (
     <table>
-      <thead>
-        <tr>
-          <th colSpan ="5">Veggies Available</th>
-        </tr>
+      <thead style = {{ textAlign: 'left'}}>
         <tr>
           <th>Name</th>
-          <th>Quantity</th>
+          <th>Quantity Available</th>
           <th>Price</th>
         </tr>
       </thead>
@@ -108,7 +107,7 @@ function CartTable({ products, handleClick, onSubmit, custname, email, notes, se
       <tbody>{rows}</tbody>
       </table>
       <hr></hr>
-      <h1>Checkout total: ${products.reduce((total, product) => total + (product.cart * product.price), 0).toFixed(2)}</h1>
+      <p>Checkout total: ${products.reduce((total, product) => total + (product.cart * product.price), 0).toFixed(2)}</p>
       <form>
         <input type="text"
         value = {custname}
@@ -184,9 +183,6 @@ export default function App() {
         setOrderPlaced(true)})
       .catch(error => console.error('Error:', error));
   }
-    
-
-  
 
   function addToCart({product, quantityDesired}){
     console.log(typeof(Number(quantityDesired)))
