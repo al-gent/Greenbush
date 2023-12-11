@@ -1,7 +1,7 @@
 import { sql } from '@vercel/postgres';
 
 export default async function getOrders(req, res) {
-    const { rows: orders } = await sql`SELECT * FROM Orders;`;
+    const orders  = (await sql`SELECT * FROM Orders;`).rows;
     res.status(200).json(orders);
   }
 

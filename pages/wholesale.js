@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Layout from '../components/Layout'
 import styles from '../styles/wholesale.module.css'
-import EmailGB from './api/mailer'
+import EmailGB from '../components/mailer'
 import OrderSummary from '../lib/order-summary';
 import Image from 'next/image';
-import { set } from 'zod';
 
 function ProductRow({product, handleClick }) {
   const [quantityDesired, setQuantityDesired] = useState('');
@@ -230,7 +229,7 @@ export default function App() {
       ) : (
         <ListTable className={styles.centerText} products={products} handleClick={addToCart} />
       )}
-    <div>
+        <div>
       {orderPlaced ? (
         <OrderSummary order = {order} />
       ) : CartLen === 0 ? (<h1 className={styles.centerText}>Cart is empty</h1>

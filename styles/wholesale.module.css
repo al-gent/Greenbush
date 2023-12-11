@@ -3,6 +3,8 @@
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    width: 100vw;
+    max-width: 400px;
   }
   
   .logo {
@@ -99,8 +101,8 @@
 
 .centerText {
     display: flex;
+    flex-direction: column;
     height: 100%;
-    text-align: center;
     align-items:center;
     justify-content: center;
 }
@@ -125,5 +127,5 @@
   .loading {
     width: 75%;
     height: auto;
-    animation: spin 8s linear infinite;
+    animation: spin 12s linear infinite;
   }
