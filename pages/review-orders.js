@@ -1,27 +1,7 @@
 import { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
-import { set } from 'zod';
 
-function editOrder(order) {
-    fetch('/api/edit-order', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(order),
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
-}
-
-
-function EditRow({ product }) {
-    const [quantity, setQuantity] = useState(product.cart);
+function EditRow({ product, setQuantity }) {
     const total_price = (product.cart * product.price)
     return(
     <tr>
@@ -31,9 +11,10 @@ function EditRow({ product }) {
 
       <input
         type="integer"
-        value={quantity}
+        placeholder={product.cart}
+        value={product.editedCart || ''}
         onChange={e => {
-            setQuantity(e.target.value);
+            setQuantity(e.target.value, product.id);
         }}
         ></input>
         </td>
@@ -43,30 +24,26 @@ function EditRow({ product }) {
     )}
 
 function CartRow({ product }) {
-    const [quantity, setQuantity] = useState(product.cart);
     const total_price = (product.cart * product.price)
     return(
     <tr>
       <td>{product.name}</td>
-      <td>{quantity +' ' + product.unit}</td>
+      {product.editedCart ? <td><del>{product.cart}</del>{' '+product.editedCart+ ' ' + product.unit}</td> : <td>{product.cart + ' ' + product.unit} </td>}
       <td>{'$'+product.price}</td>
       <td>{'$'+total_price}</td>
     </tr>
     )}
 
 
-function OrderTable({ products }) {
-    //state for quantity of each item needs to live here and then be passed down to children
-    // so it can update when the button is clicked
-    const [order, setOrder] = useState(products);
+function OrderTable({ order, editOrder, updateOrder }) {
     const [edit, setEdit] = useState(false);
-    console.log('render')
+    let products = order.items;
     let orderTotal = 0;
-    const rows = order.map((itemString) => {
+    const rows = products.map((itemString) => {
         let item = JSON.parse(itemString);
         orderTotal = orderTotal + (item.price * item.cart)
         return (
-            edit ? <EditRow key = {item.id} product={item}/> :
+            edit ? <EditRow key = {item.id} product={item} setQuantity={(quantity, productID) => editOrder({newQuantity: quantity, order, productID})}/> :
             <CartRow key = {item.id} product={item}/>
         )})
 
@@ -79,13 +56,13 @@ function OrderTable({ products }) {
                 Items Ordered 
             </th>
             {edit ? 
-            <button onClick={() => 
-            setOrder(products.map((itemString) => {
-            }))
-            (setEdit(false))
-            }>Save Order</button> 
+            <th><button onClick={e => (
+                e.preventDefault,
+                console.log('onClick', order),
+                updateOrder({order}),
+                setEdit(false))}>Save Order</button> </th>
             :
-            <button onClick={() => (setEdit(true))}>Edit Order</button>}
+            <th> <button onClick={() => setEdit(true)}>Edit Order</button></th>}
             </tr>
             <tr>
             <th>Name</th>
@@ -99,12 +76,11 @@ function OrderTable({ products }) {
         </table>
         <hr></hr>
         <p>Checkout total: ${orderTotal} </p>
-        {/* fix order status */}
-        <p>Order Status: {order.status}</p>
         </div>
         )}
 
 export default function App() {
+    const [isLoading, setIsLoading] = useState(true);
     const [orders, setOrders] = useState([]);
     useEffect(() => {
         fetch('/api/get-orders')
@@ -114,15 +90,89 @@ export default function App() {
         })
         .catch(error => console.error('Error:', error));
     }, []);
+
+    function editOrder({order, newQuantity, productID})   {
+        const nextOrders = orders.map((o) => {
+          if (o.id === order.id) {
+            order.items = order.items.map((itemString) => {
+                let item = JSON.parse(itemString);
+                if (item.id === productID) {
+                    item.editedCart = newQuantity;
+                    return JSON.stringify(item);
+                } else {
+                    return itemString;
+                }
+            })
+            return { ...o, status: 'edited'};
+          } else{
+            return o;
+          }
+        });
+        setOrders(nextOrders)
+      }    
+
+    function updateOrder({order}) {
+        setIsLoading(true);
+        console.log('updateOrder', order);
+        fetch('/api/update-orders', {
+        method: 'POST', 
+        headers: {
+            'Content-Type': 'application/json'},
+        body: JSON.stringify(order) 
+        })
+        .then(response => {
+            if (!response.ok) {
+            throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        // .then(response => { // emails to customers sent here
+            // return EmailGB({order});
+        // })
+        .then(response => {
+            setIsLoading(false)})
+        .catch(error => console.error('Error:', error));
+    }
+
+    function updateOrderStatus({orderID, status}) {
+        setIsLoading(true);
+        console.log('updateOrderStatus', orderID, status);
+        fetch('/api/update-order-status', {
+        method: 'POST', 
+        headers: {
+            'Content-Type': 'application/json'},
+        body: JSON.stringify({orderID, status}) 
+        })
+        .then(response => {
+            if (!response.ok) {
+            throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(response => {
+            setIsLoading(false)})
+        .then(data => {
+            setOrders(orders.map(order => order.id === orderID ? { ...order, status } : order));
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
     return (
         <Layout>
         {orders.map((order) => (
             <div key={order.id}>
-            <h2>Order #{order.id}</h2>
-            <OrderTable products={order.items}/>
-            <p>Customer: {order.name}</p>
-            <p>Email: {order.email}</p>
+            <h2>{order.name} Order #{order.id}</h2>
+            <OrderTable order={order} editOrder={editOrder} updateOrder={updateOrder}/>
             <p>Notes: {order.notes}</p>
+            <p>Order status: 
+                <select value ={order.status} onChange={(e) => updateOrderStatus({orderID: order.id, status: e.target.value})}>
+                    <option value ="pending">Pending</option>
+                    <option value ="edited">Edited</option>
+                    <option value ="confirmed">Confirmed</option>
+                    <option value ="completed">Completed</option>
+                </select>
+
+                </p>
 
         </div>
         ))}

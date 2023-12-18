@@ -5,7 +5,7 @@ import EmailGB from '../components/mailer'
 import OrderSummary from '../lib/order-summary';
 import Image from 'next/image';
 
-function ProductRow({product, handleClick }) {
+function ProductRow({product, addToCart }) {
   const [quantityDesired, setQuantityDesired] = useState('');
   const parsedQuantityDesired = parseInt(quantityDesired)
 
@@ -20,24 +20,24 @@ function ProductRow({product, handleClick }) {
     <td>
     <form>
       <div style={{display: 'flex'}}>
-      <input type="integer"
-      value= {quantityDesired}
-      placeholder="0"
-      onChange={e=> setQuantityDesired(e.target.value)}
-      style = {{ width: '40px' }} />
-    <button
-      onClick={e => {
-      e.preventDefault();
-      console.log(quantityDesired, quantity)
-      if (isNaN(parsedQuantityDesired) || parsedQuantityDesired < 0 || parsedQuantityAvail  < parsedQuantityDesired) {
-        console.log('invalid quant');
-        return;
-      }
-      console.log(quantityDesired)
-      handleClick({product, quantityDesired});
-      setQuantityDesired('');
-      setQuantity(product.quantity-quantityDesired)
-      }}>Add</button>
+          <input type="integer"
+          value= {quantityDesired}
+          placeholder="0"
+          onChange={e=> setQuantityDesired(e.target.value)}
+          style = {{ width: '40px' }} />
+        <button
+          onClick={e => {
+            e.preventDefault();
+            console.log(quantityDesired, quantity)
+            if (isNaN(parsedQuantityDesired) || parsedQuantityDesired < 0 || parsedQuantityAvail  < parsedQuantityDesired) {
+              console.log('invalid quant');
+            return;
+          }
+          console.log(quantityDesired)
+          addToCart({product, quantityDesired});
+          setQuantityDesired('');
+          setQuantity(product.quantity-quantityDesired)
+        }}>Add</button>
       </div>
     </form>
     </td>
@@ -45,7 +45,7 @@ function ProductRow({product, handleClick }) {
   )
 }
 
-function CartRow({ product, handleClick }) {
+function CartRow({ product, removeFromCart }) {
   const total_price = (product.cart * product.price).toFixed(2)
   return(
   <tr>
@@ -53,7 +53,7 @@ function CartRow({ product, handleClick }) {
     <td>{product.cart +' ' + product.unit}</td>
     <td>{'$'+product.price}</td>
     <td>{'$'+total_price}</td>
-    <button onClick={() => handleClick({product})}>Remove</button>
+    <td><button onClick={() => removeFromCart({product})}>Remove</button></td>
     {/* this part was kind of confusing to me because your passing a prop
     to handleClick, which is a prop itself
     like handle click isn't ever a function, but you can still pass it a prop
@@ -61,9 +61,9 @@ function CartRow({ product, handleClick }) {
   </tr>
   )}
 
-function ListTable({products, handleClick }) {
+function ListTable({products, addToCart }) {
   const rows = products.map((product) => (
-  <ProductRow key={product.id} product={product} handleClick={handleClick} />
+  <ProductRow key={product.id} product={product} addToCart={addToCart} />
   ));
   return (
     <table>
@@ -79,12 +79,12 @@ function ListTable({products, handleClick }) {
   );
 }
 
-function CartTable({ products, handleClick, onSubmit, custname, email, notes, setCustname, setEmail, setNotes }) {
+function CartTable({ products, removeFromCart, onSubmit, custname, email, notes, setCustname, setEmail, setNotes }) {
 
   const rows = products
   .filter((product) => product.cart > 0)
   .map((product) => (
-  <CartRow key={product.id} product={product} handleClick={handleClick}/>
+  <CartRow key={product.id} product={product} removeFromCart={removeFromCart}/>
   ));
   return (
     <div>
@@ -227,14 +227,14 @@ export default function App() {
                 />}
       {orderPlaced ? ( <p></p>
       ) : (
-        <ListTable className={styles.centerText} products={products} handleClick={addToCart} />
+        <ListTable className={styles.centerText} products={products} addToCart={addToCart} />
       )}
         <div>
       {orderPlaced ? (
         <OrderSummary order = {order} />
       ) : CartLen === 0 ? (<h1 className={styles.centerText}>Cart is empty</h1>
       ) : (
-      <CartTable className={styles.centerText} products={products} handleClick={removeFromCart} onSubmit={submitOrder} custname={custname} 
+      <CartTable className={styles.centerText} products={products} removeFromCart={removeFromCart} onSubmit={submitOrder} custname={custname} 
       email={email} 
       notes={notes} 
       setCustname={setCustname} 
