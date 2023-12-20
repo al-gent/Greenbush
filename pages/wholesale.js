@@ -6,21 +6,31 @@ import OrderSummary from '../lib/order-summary';
 import Image from 'next/image';
 
 function ProductRow({product, addToCart }) {
+  const [invalidQuant, setInvalidQuant] = useState(false);
   const [quantityDesired, setQuantityDesired] = useState('');
   const parsedQuantityDesired = parseInt(quantityDesired)
 
   const [quantity, setQuantity] = useState(product.quantity);
   const parsedQuantityAvail = parseInt(quantity)
+  
+  let perUnit = product.unit;
+  if (perUnit.endsWith('es')) {
+    perUnit = perUnit.slice(0, -2);
+  } else if (perUnit.endsWith('s')) {
+    perUnit = perUnit.slice(0, -1);
+  }
 
   return(
   <tr >
     <td>{product.name}</td>
-    <td> {quantity} {product.unit}</td>
-    <td>{'$'+product.price+'/'+product.unit}</td>
+    {quantity === 1? <td>{quantity} {perUnit}</td> : <td>{quantity} {product.unit}</td>}
+    <td>{'$'+product.price+'/'+perUnit}</td>
+    {invalidQuant ? (<td>Sorry, only {quantity} {product.unit} available</td>) : (<td></td>)}
     <td>
     <form>
       <div style={{display: 'flex'}}>
           <input type="integer"
+          onSelect={e => setInvalidQuant(false)}
           value= {quantityDesired}
           placeholder="0"
           onChange={e=> setQuantityDesired(e.target.value)}
@@ -30,7 +40,7 @@ function ProductRow({product, addToCart }) {
             e.preventDefault();
             console.log(quantityDesired, quantity)
             if (isNaN(parsedQuantityDesired) || parsedQuantityDesired < 0 || parsedQuantityAvail  < parsedQuantityDesired) {
-              console.log('invalid quant');
+              setInvalidQuant(true);
             return;
           }
           console.log(quantityDesired)
@@ -157,12 +167,28 @@ export default function App() {
     notes: notes,
     products: products.filter((product) => product.cart > 0)
   }
+
+  let productsToUpdate = products.filter((product) => product.cart > 0)
+
   function submitOrder(e) {
     e.preventDefault();
     console.log('submitting order', {order});
     setIsLoading(true);
+    fetch('/api/update-table', {
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'application/json'},
+      body: JSON.stringify(productsToUpdate)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(response => {console.log('products updated', response)})
     fetch('/api/place-order', {
-      method: 'POST', // or 'PUT' depending on how you've set up your server
+      method: 'POST', 
       headers: {
         'Content-Type': 'application/json'},
       body: JSON.stringify(order)
@@ -173,9 +199,9 @@ export default function App() {
         }
         return response.json();
       })
-      .then(response => {
-        return EmailGB({order});
-      })
+      // .then(response => {
+      //   return EmailGB({order});
+      // })
       .then(response => {
         console.log('this should come after email sent ok')
         setIsLoading(false);
@@ -185,7 +211,6 @@ export default function App() {
 
   function addToCart({product, quantityDesired}){
     console.log(typeof(Number(quantityDesired)))
-    console.log('Before:', products)
     const nextProducts = products.map((p) => {
       if (p.id === product.id) {
         var newQuantity = parseInt(p.quantity)-parseInt(quantityDesired)
@@ -195,12 +220,10 @@ export default function App() {
         return p;
       }
     });
-    console.log('After:', nextProducts)
     setProducts(nextProducts)
   }
 
   function removeFromCart({product}) {
-    console.log('Before:', products)
     const nextProducts = products.map((p) => {
       if (p.id === product.id) {
         return { ...p, quantity: parseInt(p.quantity) + parseInt(p.cart), cart: parseInt(p.cart) - parseInt(p.cart)};
@@ -208,7 +231,6 @@ export default function App() {
         return p;
       }
     });
-    console.log('After:',nextProducts)
     setProducts(nextProducts)
   }
 
