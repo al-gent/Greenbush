@@ -5,27 +5,52 @@ import EmailGB from '../components/mailer'
 import OrderSummary from '../lib/order-summary';
 import Image from 'next/image';
 
+function QuantityUnit({product, unitSelected, setUnitSelected, setInvalidQuant, setQuantityDesired}) {
+  const productMultiplier = (product.price[0] / product.price[1]).toFixed(2)
+  if (product.unit.length > 1) {
+    return (
+      <td> 
+      <select onChange={(e)=> {
+        setInvalidQuant(false)
+        setUnitSelected(e.target.selectedIndex)
+        setQuantityDesired('')
+        }}>
+        {product.unit.map((unit, index) => {
+          const value = index ? Math.round(productMultiplier * product.quantity * 2)/2: (Math.round(product.quantity*2)/2);
+          return (
+          <option key = {unit+index} value={value}> {value} {unit}</option>)
+        }
+        )}
+      </select>
+      </td>
+    );
+  } else {
+    return <td>{product.quantity} {product.unit}</td>;
+  }
+}
+
 function ProductRow({product, addToCart }) {
+  const productMultiplier = (product.price[0] / product.price[1]).toFixed(2)
+  const [unitSelected, setUnitSelected] = useState(0);
   const [invalidQuant, setInvalidQuant] = useState(false);
   const [quantityDesired, setQuantityDesired] = useState('');
-  const parsedQuantityDesired = parseInt(quantityDesired)
-
+  const qAvailable = unitSelected ? Math.round(productMultiplier * product.quantity * 2)/2: (product.quantity);
   const [quantity, setQuantity] = useState(product.quantity);
-  const parsedQuantityAvail = parseInt(quantity)
-  
-  let perUnit = product.unit;
+    
+  let perUnit = product.unit[unitSelected];
   if (perUnit.endsWith('es')) {
     perUnit = perUnit.slice(0, -2);
   } else if (perUnit.endsWith('s')) {
     perUnit = perUnit.slice(0, -1);
   }
+    
 
   return(
   <tr >
     <td>{product.name}</td>
-    {quantity === 1? <td>{quantity} {perUnit}</td> : <td>{quantity} {product.unit}</td>}
-    <td>{'$'+product.price+'/'+perUnit}</td>
-    {invalidQuant ? (<td>Sorry, only {quantity} {product.unit} available</td>) : (<td></td>)}
+    <QuantityUnit product={product} unitSelected = {unitSelected} setUnitSelected={setUnitSelected} setInvalidQuant={setInvalidQuant} setQuantityDesired={setQuantityDesired} />
+    <td>{'$'+product.price[unitSelected]+'/'+perUnit}</td>
+    {invalidQuant ? (<td>Sorry, only {qAvailable} {product.unit[unitSelected]} available</td>) : (<td></td>)}
     <td>
     <form>
       <div style={{display: 'flex'}}>
@@ -38,15 +63,7 @@ function ProductRow({product, addToCart }) {
         <button
           onClick={e => {
             e.preventDefault();
-            console.log(quantityDesired, quantity)
-            if (isNaN(parsedQuantityDesired) || parsedQuantityDesired < 0 || parsedQuantityAvail  < parsedQuantityDesired) {
-              setInvalidQuant(true);
-            return;
-          }
-          console.log(quantityDesired)
-          addToCart({product, quantityDesired});
-          setQuantityDesired('');
-          setQuantity(product.quantity-quantityDesired)
+          addToCart({product, quantityDesired, unitSelected, quantity, setQuantity, setQuantityDesired, setInvalidQuant, qAvailable , productMultiplier});
         }}>Add</button>
       </div>
     </form>
@@ -56,23 +73,25 @@ function ProductRow({product, addToCart }) {
 }
 
 function CartRow({ product, removeFromCart }) {
-  const total_price = (product.cart * product.price).toFixed(2)
+  const unitSelected = product.unitSelected
+  const total_price = (product.cart * product.price[0]).toFixed(2)
+  let productMultiplier;
+  unitSelected ? (productMultiplier = (product.price[0] / product.price[1]).toFixed(2)) : (productMultiplier = 1)
+
   return(
   <tr>
     <td>{product.name}</td>
-    <td>{product.cart +' ' + product.unit}</td>
-    <td>{'$'+product.price}</td>
+    <td>{product.cart*productMultiplier +' ' + product.unit[unitSelected]}</td>
+    <td>{'$'+(Number(product.price[unitSelected])).toFixed(2)+'/'+product.unit[unitSelected]}</td>
     <td>{'$'+total_price}</td>
     <td><button onClick={() => removeFromCart({product})}>Remove</button></td>
-    {/* this part was kind of confusing to me because your passing a prop
-    to handleClick, which is a prop itself
-    like handle click isn't ever a function, but you can still pass it a prop
-    as if it was a function?*/}
   </tr>
   )}
 
 function ListTable({products, addToCart }) {
-  const rows = products.map((product) => (
+  const rows = products
+  .filter(product => product.quantity > 0)
+  .map((product) => (
   <ProductRow key={product.id} product={product} addToCart={addToCart} />
   ));
   return (
@@ -90,7 +109,6 @@ function ListTable({products, addToCart }) {
 }
 
 function CartTable({ products, removeFromCart, onSubmit, custname, email, notes, setCustname, setEmail, setNotes }) {
-
   const rows = products
   .filter((product) => product.cart > 0)
   .map((product) => (
@@ -116,7 +134,7 @@ function CartTable({ products, removeFromCart, onSubmit, custname, email, notes,
       <tbody>{rows}</tbody>
       </table>
       <hr></hr>
-      <p>Checkout total: ${products.reduce((total, product) => total + (product.cart * product.price), 0).toFixed(2)}</p>
+      <p>Checkout total: ${products.filter(product => product.cart).reduce((total, product) => total + (product.cart * product.price[0]), 0).toFixed(2)}</p>
       <form>
         <input type="text"
         value = {custname}
@@ -155,7 +173,11 @@ export default function App() {
     fetch('/api/data')
       .then(response => response.json())
       .then(data => {
-        setProducts(data);
+        const productsWithCart = data.map(product => ({
+          ...product, cart: 0
+        }));
+        setProducts(productsWithCart);
+        console.log('products', productsWithCart)
 
       })
       .catch(error => console.error('Error:', error));
@@ -209,24 +231,55 @@ export default function App() {
       .catch(error => console.error('Error:', error));
   }
 
-  function addToCart({product, quantityDesired}){
-    console.log(typeof(Number(quantityDesired)))
+  function addToCart({product, quantityDesired, setQuantityDesired, unitSelected, quantity, setQuantity, setInvalidQuant, qAvailable, productMultiplier}){
+    // q available is the quantity available in the unit selected
+
+    // everything is in the base unit
+    // if unitSeelcted, then we just display it in the unit selected
+    // all the numbers passed around are in the base unit
+    // nothing is rounded until it is displayed
+
+    // quantity desired comes in with whatever unit is selected
+    // so that needs to change to the base unit
+    unitSelected ? (productMultiplier = (product.price[0] / product.price[1]).toFixed(2)) : (productMultiplier = 1)
+
+    const baseUnitQuantityDesired = unitSelected ? parseFloat(quantityDesired/productMultiplier) : parseFloat(quantityDesired)
+    const parsedQuantityAvail = parseFloat(quantity) // in base unit
+  
+    const newQuantity = parseFloat(parsedQuantityAvail - baseUnitQuantityDesired)
+  
+
+    console.log('q available', quantity, product.unit[0])
+    console.log('q available in',product.unit[unitSelected], quantity*productMultiplier, )
+    console.log('q desired in', product.unit[unitSelected], quantityDesired)
+    console.log('new quantity = qAvail - qDes', newQuantity, product.unit[0])
+
+    const productToAdd = {...product, cart: baseUnitQuantityDesired, unitSelected: unitSelected, quantity: newQuantity}
+
+    if (isNaN(baseUnitQuantityDesired) || baseUnitQuantityDesired < 0 || parseFloat(qAvailable)  < (baseUnitQuantityDesired*productMultiplier)) {
+      setInvalidQuant(true);
+      return;
+    } else {
     const nextProducts = products.map((p) => {
       if (p.id === product.id) {
-        var newQuantity = parseInt(p.quantity)-parseInt(quantityDesired)
-        var newCart = parseInt(p.cart)+parseInt(quantityDesired)
-        return {...p, quantity: newQuantity, cart: newCart};
+        return productToAdd
       } else {
         return p;
       }
     });
-    setProducts(nextProducts)
-  }
+    setProducts(nextProducts);
+  }}
+
 
   function removeFromCart({product}) {
+    // and restore the amount back to the product list in the base unit
+    // so unitSelected ? (product.cart* or / productMultiplier) : (product.cart)
+    const productMultiplier = (product.price[0] / product.price[1])
+    const quantityToRestore = parseFloat(product.cart)
+
     const nextProducts = products.map((p) => {
       if (p.id === product.id) {
-        return { ...p, quantity: parseInt(p.quantity) + parseInt(p.cart), cart: parseInt(p.cart) - parseInt(p.cart)};
+        return { ...p, quantity: parseFloat(p.quantity) + quantityToRestore, cart: parseFloat(p.cart) - parseFloat(p.cart)};
       } else{
         return p;
       }
