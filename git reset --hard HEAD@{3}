@@ -1,0 +1,47 @@
+[33m144cb5d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{0}: commit (merge): Merge branch 'master' of https://github.com/al-gent/nextjs-blog
+[33mf456736[m HEAD@{1}: checkout: moving from master to master
+[33mf456736[m HEAD@{2}: checkout: moving from master to master
+[33mf456736[m HEAD@{3}: commit: setQ desired
+[33mf394430[m HEAD@{4}: checkout: moving from unit_dropdown to master
+[33m9563743[m[33m ([m[1;31morigin/unit_dropdown[m[33m, [m[1;32munit_dropdown[m[33m)[m HEAD@{5}: reset: moving to HEAD
+[33m9563743[m[33m ([m[1;31morigin/unit_dropdown[m[33m, [m[1;32munit_dropdown[m[33m)[m HEAD@{6}: commit: add veggies, different units options,
+[33med44f6b[m HEAD@{7}: commit: unit dropdown menu is working :
+[33mf394430[m HEAD@{8}: checkout: moving from master to unit_dropdown
+[33mf394430[m HEAD@{9}: checkout: moving from unit_dropdown to master
+[33mf394430[m HEAD@{10}: checkout: moving from master to unit_dropdown
+[33mf394430[m HEAD@{11}: commit: edit-wholesale is working
+[33m4ac9224[m HEAD@{12}: commit: populated new products, review-orders page works
+[33mbf63513[m[33m ([m[1;31morigin/update-orders[m[33m, [m[1;32mupdate-orders[m[33m)[m HEAD@{13}: merge update-orders: Fast-forward
+[33m64f2d2c[m HEAD@{14}: checkout: moving from update-orders to master
+[33mbf63513[m[33m ([m[1;31morigin/update-orders[m[33m, [m[1;32mupdate-orders[m[33m)[m HEAD@{15}: commit: review orders: edited order & updating status
+[33m64f2d2c[m HEAD@{16}: checkout: moving from update-orders to update-orders
+[33m64f2d2c[m HEAD@{17}: checkout: moving from master to update-orders
+[33m64f2d2c[m HEAD@{18}: checkout: moving from penis to master
+[33m8f486a5[m[33m ([m[1;32mpenis[m[33m)[m HEAD@{19}: commit: this is my first commit on the penis branch
+[33m64f2d2c[m HEAD@{20}: reset: moving to HEAD~
+[33m07cd2b3[m[33m ([m[1;31morigin/penis[m[33m)[m HEAD@{21}: checkout: moving from master to penis
+[33m64f2d2c[m HEAD@{22}: checkout: moving from penis to master
+[33m07cd2b3[m[33m ([m[1;31morigin/penis[m[33m)[m HEAD@{23}: commit: this is my first commit on the penis branch
+[33m64f2d2c[m HEAD@{24}: checkout: moving from master to penis
+[33m64f2d2c[m HEAD@{25}: reset: moving to HEAD
+[33m64f2d2c[m HEAD@{26}: checkout: moving from master to master
+[33m64f2d2c[m HEAD@{27}: reset: moving to HEAD
+[33m64f2d2c[m HEAD@{28}: commit: moved some stuff around -
+[33m2022258[m HEAD@{29}: commit: mobile view optomization
+[33mdf226f6[m HEAD@{30}: commit: mobile styling
+[33m90d612b[m HEAD@{31}: commit: email
+[33m2a0d6c1[m HEAD@{32}: commit: email stuff
+[33m939ab18[m HEAD@{33}: commit: review orders page
+[33m5bce56d[m HEAD@{34}: commit: order confirmation,
+[33m5e1f857[m HEAD@{35}: commit: update db
+[33m74a179a[m HEAD@{36}: commit: update db
+[33mb469cb3[m HEAD@{37}: commit: connect to db, update db
+[33me7e9eed[m HEAD@{38}: commit: setting up database
+[33m98d7f36[m HEAD@{39}: commit: trying to deploy
+[33m377e3e8[m HEAD@{40}: commit: moved edit wholesale
+[33m42c96cb[m HEAD@{41}: commit: comment out edit wholesale
+[33m45c363f[m HEAD@{42}: commit: skip edit wholesale
+[33m9a53960[m HEAD@{43}: commit: changes
+[33mbab6bf5[m HEAD@{44}: checkout: moving from master to master
+[33mbab6bf5[m HEAD@{45}: commit: dude what
+[33maac2ca1[m HEAD@{46}: commit (initial): This is everything I've done for greenbush but its called a blog because I'm following instructions from next.js

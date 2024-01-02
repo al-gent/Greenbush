@@ -9,7 +9,7 @@ import styles from '/components/layout.module.css'
 
 export default function Home() {
   return (
-    <Layout home>
+    <Layout>
       <div className={styles.wideImage}>
         <Image className = {styles.wideimage}
             priority
@@ -68,12 +68,4 @@ export default function Home() {
         </div>
     </Layout>
   );
-}
-
-function TextBox({text}) {
-    return (
-        <div className={styles.textbox}>
-            <p>{text}</p>
-        </div>
-    );
 }
