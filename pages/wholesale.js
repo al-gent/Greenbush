@@ -269,6 +269,7 @@ export default function App() {
       }
     });
     setProducts(nextProducts);
+    setQuantityDesired('');
   }}
 
 
