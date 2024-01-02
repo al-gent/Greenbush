@@ -209,8 +209,30 @@ export default function App() {
       .catch(error => console.error('Error:', error));
   }
 
-  function addToCart({product, quantityDesired}){
-    console.log(typeof(Number(quantityDesired)))
+  function addToCart({product, quantityDesired, setQuantityDesired, unitSelected, quantity, setQuantity, setInvalidQuant, qAvailable, productMultiplier}){
+    // q available is the quantity available in the unit selected
+
+    // everything is in the base unit
+    // if unitSeelcted, then we just display it in the unit selected
+    // all the numbers passed around are in the base unit
+    // nothing is rounded until it is displayed
+
+    // quantity desired comes in with whatever unit is selected
+    // so that needs to change to the base unit
+    unitSelected ? (productMultiplier = (product.price[0] / product.price[1]).toFixed(2)) : (productMultiplier = 1)
+
+    const baseUnitQuantityDesired = unitSelected ? parseFloat(quantityDesired/productMultiplier) : parseFloat(quantityDesired)
+    const parsedQuantityAvail = parseFloat(quantity) // in base unit
+  
+    const newQuantity = parseFloat(parsedQuantityAvail - baseUnitQuantityDesired)
+  
+
+    const productToAdd = {...product, cart: baseUnitQuantityDesired, unitSelected: unitSelected, quantity: newQuantity}
+
+    if (isNaN(baseUnitQuantityDesired) || baseUnitQuantityDesired < 0 || parseFloat(qAvailable)  < (baseUnitQuantityDesired*productMultiplier)) {
+      setInvalidQuant(true);
+      return;
+    } else {
     const nextProducts = products.map((p) => {
       if (p.id === product.id) {
         var newQuantity = parseInt(p.quantity)-parseInt(quantityDesired)
@@ -220,8 +242,10 @@ export default function App() {
         return p;
       }
     });
-    setProducts(nextProducts)
-  }
+    setProducts(nextProducts);
+    setQuantityDesired('');
+  }}
+
 
   function removeFromCart({product}) {
     const nextProducts = products.map((p) => {
