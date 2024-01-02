@@ -3,14 +3,12 @@ import { sql } from '@vercel/postgres';
 export default async function createTable(request, response) {
   try {
     const result = 
-    await sql`CREATE TABLE orders (
+    await sql`CREATE TABLE products2 (
       id SERIAL PRIMARY KEY,
       name VARCHAR(255),
-      email VARCHAR(255),
-      notes TEXT,
-      date TIMESTAMP,
-      status VARCHAR(255),
-      items text[]
+      quantity INTEGER,
+      unit text[],
+      price text[],
     );`;
 
   } catch (error) {

@@ -1,0 +1,734 @@
+[
+  {
+    "Description": "Arugula, bulk",
+    "Price per Unit": [
+      8
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Arugula, retail",
+    "Price per Unit": [
+      3.25
+    ],
+    "Quantity": "",
+    "Unit": [
+      "6 oz. bag"
+    ]
+  },
+  {
+    "Description": "Asian Mix 'Hotshot', retail",
+    "Price per Unit": [
+      3.25
+    ],
+    "Quantity": "",
+    "Unit": [
+      "6 oz. bag"
+    ]
+  },
+  {
+    "Description": "Basil",
+    "Price per Unit": [
+      10,
+      1.5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs",
+      "bunches"
+    ]
+  },
+  {
+    "Description": "Beans",
+    "Price per Unit": [
+      4
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Beets",
+    "Price per Unit": [
+      3,
+      3
+    ],
+    "Quantity": "",
+    "Unit": [
+      "bunches",
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Beets, Baby",
+    "Price per Unit": [
+      2
+    ],
+    "Quantity": "",
+    "Unit": [
+      "bunches"
+    ]
+  },
+  {
+    "Description": "Broccoli",
+    "Price per Unit": [
+      3
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Cabbage",
+    "Price per Unit": [
+      2
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Calendula Flower, Dried",
+    "Price per Unit": [
+      28
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Carrots",
+    "Price per Unit": [
+      3
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Cauliflower",
+    "Price per Unit": [
+      3
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Celeriac, with tops",
+    "Price per Unit": [
+      2
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Celeriac, without tops",
+    "Price per Unit": [
+      2.5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Chamomile Flower, Dried",
+    "Price per Unit": [
+      38
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Cilantro",
+    "Price per Unit": [
+      1.75,
+      8.5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "bunches",
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Collard Greens",
+    "Price per Unit": [
+      4.25,
+      2.5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs",
+      "bunches"
+    ]
+  },
+  {
+    "Description": "Cucumber, Pickling",
+    "Price per Unit": [
+      5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Cucumber, Slicing",
+    "Price per Unit": [
+      1.5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Dill, Flowering",
+    "Price per Unit": [
+      8
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Eggplant",
+    "Price per Unit": [
+      3
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Endive Mix, bulk",
+    "Price per Unit": [
+      8
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Endive Mix, retail",
+    "Price per Unit": [
+      3.25
+    ],
+    "Quantity": "",
+    "Unit": [
+      "6 oz. bag"
+    ]
+  },
+  {
+    "Description": "Endive, Frisee",
+    "Price per Unit": [
+      2
+    ],
+    "Quantity": "",
+    "Unit": [
+      "heads"
+    ]
+  },
+  {
+    "Description": "Endive, small",
+    "Price per Unit": [
+      1.25
+    ],
+    "Quantity": "",
+    "Unit": [
+      "heads"
+    ]
+  },
+  {
+    "Description": "Escarole",
+    "Price per Unit": [
+      2
+    ],
+    "Quantity": "",
+    "Unit": [
+      "heads"
+    ]
+  },
+  {
+    "Description": "Garlic Scapes",
+    "Price per Unit": [
+      5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Garlic, Cured",
+    "Price per Unit": [
+      12
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Garlic, Fresh",
+    "Price per Unit": [
+      10
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Greens, Special",
+    "Price per Unit": [
+      9
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Green Onions",
+    "Price per Unit": [
+      1.75,
+      8
+    ],
+    "Quantity": "",
+    "Unit": [
+      "bunches",
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Ground Cherries",
+    "Price per Unit": [
+      10,
+      3.25
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs",
+      "pints"
+    ]
+  },
+  {
+    "Description": "Kale, Curly",
+    "Price per Unit": [
+      4.25,
+      2.5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs",
+      "bunches"
+    ]
+  },
+  {
+    "Description": "Kale, Lacinato",
+    "Price per Unit": [
+      4.25,
+      2.5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs",
+      "bunches"
+    ]
+  },
+  {
+    "Description": "Kale, Red Russian",
+    "Price per Unit": [
+      2.5,
+      4.25
+    ],
+    "Quantity": "",
+    "Unit": [
+      "bunches",
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Kohlrabi",
+    "Price per Unit": [
+      2
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Leeks",
+    "Price per Unit": [
+      6
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Lettuce Head",
+    "Price per Unit": [
+      2
+    ],
+    "Quantity": "",
+    "Unit": [
+      "heads"
+    ]
+  },
+  {
+    "Description": "Lettuce Head, small",
+    "Price per Unit": [
+      1.25
+    ],
+    "Quantity": "",
+    "Unit": [
+      "heads"
+    ]
+  },
+  {
+    "Description": "Lettuce Mix, bulk",
+    "Price per Unit": [
+      8
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Lettuce Mix, retail",
+    "Price per Unit": [
+      3.25
+    ],
+    "Quantity": "",
+    "Unit": [
+      "6 oz. bag"
+    ]
+  },
+  {
+    "Description": "Melons",
+    "Price per Unit": [
+      1.5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Mushroom, Wine Cap",
+    "Price per Unit": [
+      6
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Onions",
+    "Price per Unit": [
+      1.75
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Oregano, dried",
+    "Price per Unit": [
+      20
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Oregano, fresh",
+    "Price per Unit": [
+      8
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Parsley",
+    "Price per Unit": [
+      1.5,
+      8.5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "bunches",
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Parsnips",
+    "Price per Unit": [
+      3
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Peas, Shelling",
+    "Price per Unit": [
+      4.5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Peas, Snap",
+    "Price per Unit": [
+      4.5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Peas, Snow",
+    "Price per Unit": [
+      4.5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Peppers, Hot",
+    "Price per Unit": [
+      4
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Peppers",
+    "Price per Unit": [
+      3.5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Radicchio, Treviso Precoce",
+    "Price per Unit": [
+      5.5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Radish, Summer",
+    "Price per Unit": [
+      2.25,
+      2.75
+    ],
+    "Quantity": "",
+    "Unit": [
+      "bunches",
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Rainbow Chard",
+    "Price per Unit": [
+      4.5,
+      2.5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs",
+      "bunches"
+    ]
+  },
+  {
+    "Description": "Rutabaga",
+    "Price per Unit": [
+      2.5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Spinach, bulk",
+    "Price per Unit": [
+      9
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Spinach, retail",
+    "Price per Unit": [
+      3.75
+    ],
+    "Quantity": "",
+    "Unit": [
+      "6 oz. bag"
+    ]
+  },
+  {
+    "Description": "Squash Blossoms",
+    "Price per Unit": [
+      1
+    ],
+    "Quantity": "",
+    "Unit": [
+      "heads"
+    ]
+  },
+  {
+    "Description": "Squash, Summer",
+    "Price per Unit": [
+      1,
+      1.5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "heads",
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Tomatillo",
+    "Price per Unit": [
+      4
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Tomato, Cherry",
+    "Price per Unit": [
+      4,
+      3.5,
+      7
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs",
+      "pints",
+      "quarts"
+    ]
+  },
+  {
+    "Description": "Tomato, Heirloom",
+    "Price per Unit": [
+      3
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Tomato, Paste",
+    "Price per Unit": [
+      3
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Tomato, Seconds",
+    "Price per Unit": [
+      1
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Tomato, Vesuvio",
+    "Price per Unit": [
+      4
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Winter Radish",
+    "Price per Unit": [
+      3
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Winter Radish, greens on",
+    "Price per Unit": [
+      2.5,
+      2.5
+    ],
+    "Quantity": "",
+    "Unit": [
+      "bunches",
+      "lbs"
+    ]
+  },
+  {
+    "Description": "Winter Squash",
+    "Price per Unit": [
+      2
+    ],
+    "Quantity": "",
+    "Unit": [
+      "lbs"
+    ]
+  }
+]
