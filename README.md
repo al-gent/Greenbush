@@ -1,10 +1,10 @@
-<h1> I am app for ordering products. </h1>
-<h2> This current iteration is for Greenbush Growing Cooperative - a small organic farm in Wisconsin</h2>
+<h1> I am app for ordering organic produce from Greenbush Growing Cooperative - a small organic farm in Wisconsin<</h1>
 <p>I can:</p>
 <ul>Keep track of inventory</ul>
-<ul>Give your customers an elegent and functional ordering experience.</ul>
-<ul>Keep track of your orders</ul>
-<ul>Send emails to you when orders come in, and send invoices to customers when they go out.</ul>
+<ul>Give customers an elegent and functional ordering experience.</ul>
+<ul>Keep track of orders</ul>
+<ul>Send emails to the farm when orders come in, and send invoices to customers when they go out.</ul>
 
 <p>I'd like to be able to: </p>
-<ul> </ul>
+<ul>Predict what veggies will be listed for sale at a given time of the season</ul>
+<ul>Create pretty graphs at the end of the season shwoing trends</ul>
