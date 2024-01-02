@@ -73,11 +73,12 @@ button:hover {
 }
 
 form {
-  width: 100%;
+  width: 50px;
 }
 
 input, textarea{
-  padding: 16px
+  padding: 16px;
+  width: 50px;
 }
 
 tr {

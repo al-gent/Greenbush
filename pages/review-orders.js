@@ -2,46 +2,56 @@ import { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
 
 function EditRow({ product, setQuantity }) {
-    const total_price = (product.cart * product.price)
+    let productMultiplier = 1;
+    const unitSelected = (product.unitSelected || 0)
+    unitSelected === 0 ? productMultiplier = 1 : productMultiplier = product.price[0]/product.price[1];
+    const cart = Math.round(product.cart * productMultiplier)
+    const total_price = Math.round(product.cart * product.price[0]).toFixed(2)
     return(
     <tr>
       <td>{product.name}</td>
-      <td>{product.cart} {product.unit} </td>
+      <td>{cart} {product.unit[unitSelected]} </td>
       <td>
 
       <input
         type="integer"
-        placeholder={product.cart}
+        placeholder={cart}
         value={product.editedCart || ''}
         onChange={e => {
             setQuantity(e.target.value, product.id);
         }}
         ></input>
         </td>
-      <td>{'$'+product.price}</td>
+      <td>{'$'+product.price[unitSelected]}</td>
       <td>{'$'+total_price}</td>
     </tr>
     )}
 
 function CartRow({ product }) {
-    const total_price = (product.cart * product.price)
+    let productMultiplier = 1;
+    const unitSelected = (product.unitSelected || 0)
+    unitSelected === 0 ? productMultiplier = 1 : productMultiplier = product.price[0]/product.price[1];
+    const cart = Math.round(product.cart * productMultiplier)
+    const total_price = Math.round(product.cart * product.price[0]).toFixed(2)
+
     return(
     <tr>
       <td>{product.name}</td>
-      {product.editedCart ? <td><del>{product.cart}</del>{' '+product.editedCart+ ' ' + product.unit}</td> : <td>{product.cart + ' ' + product.unit} </td>}
-      <td>{'$'+product.price}</td>
+      {product.editedCart ? <td><del>{cart}</del>{' '+product.editedCart+ ' ' + product.unit[unitSelected]}</td> : <td>{cart + ' ' + product.unit[unitSelected]} </td>}
+      <td>{'$'+product.price[unitSelected]}</td>
       <td>{'$'+total_price}</td>
     </tr>
     )}
 
-
+    
 function OrderTable({ order, editOrder, updateOrder }) {
     const [edit, setEdit] = useState(false);
     let products = order.items;
-    let orderTotal = 0;
+    let total = 0;
     const rows = products.map((itemString) => {
         let item = JSON.parse(itemString);
-        orderTotal = orderTotal + (item.price * item.cart)
+        const total_price = Math.round(item.cart * item.price[0]).toFixed(2)
+        total += parseFloat(total_price);
         return (
             edit ? <EditRow key = {item.id} product={item} setQuantity={(quantity, productID) => editOrder({newQuantity: quantity, order, productID})}/> :
             <CartRow key = {item.id} product={item}/>
@@ -75,7 +85,7 @@ function OrderTable({ order, editOrder, updateOrder }) {
         <tbody>{rows}</tbody>
         </table>
         <hr></hr>
-        <p>Checkout total: ${orderTotal} </p>
+        <p>Checkout total: ${total} </p>
         </div>
         )}
 
