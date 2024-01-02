@@ -1,20 +1,13 @@
 import { sql } from '@vercel/postgres';
-
 export default async function populateProducts(req, res) {
   try {
-    const product_list = require('/home/adam/react/nextjs-blog/pages/product_list.json');
+    const product_list = require('/home/adam/react/nextjs-blog/components/transformedData2.json');
     for (const product of product_list) {
-      let price = product['Price per Unit']
-      if (typeof price === 'string' && price.includes('$')) {
-        price = price.replace('$', '');
-      }
-      if (price === '') {
-        price = 0;
-      }
-      await sql`
-        INSERT into products (name, quantity, unit, price, cart)
-        VALUES( ${product.Description}, 5, ${product.Unit}, ${price}, 0)
-      `;
+
+        await sql`
+          INSERT into products2 (name, quantity, unit, price)
+          VALUES( ${product.Description}, 3, ${product.Unit}, ${product['Price per Unit']})
+        `;
     }
 
     res.status(200).json({ message: 'Status updated!' });

@@ -1,12 +1,20 @@
 import { sql } from '@vercel/postgres';
 
 export default async function updateProduct(req, res) {
-  const {product, productName, newQuantity, unit, price} = req.body;
+  const {product, productName, quantity, unit,unit2, price, price2} = req.body;
 
-  await sql`
-    UPDATE Products
-    SET name = ${productName || product.name}, unit = ${unit || product.unit}, price = ${price || product.price}, quantity = ${newQuantity || product.quantity}
+  if (unit2) {
+    await sql`
+    UPDATE Products2
+    SET name = ${productName || product.name}, unit = ARRAY[${unit}, ${unit2}], price = ARRAY[${price}, ${price2}], quantity = ${quantity || product.quantity}
+    WHERE id = ${product.id};
+  `; } 
+  else {
+    await sql`
+    UPDATE Products2
+    SET name = ${productName || product.name}, unit = ARRAY[${unit || product.unit}], price = ARRAY[${price || product.price}], quantity = ${quantity || product.quantity}
     WHERE id = ${product.id};
   `;
-  res.status(200).json( {productUpdated: true, name: productName, oldQuantity: product.quantity, newQuantity: newQuantity});
+  }
+  res.status(200).json( {productUpdated: true, product: product, unit: unit, unit2: unit2, price: price, price2: price2});
 }
