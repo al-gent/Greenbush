@@ -248,12 +248,7 @@ export default function App() {
     const parsedQuantityAvail = parseFloat(quantity) // in base unit
   
     const newQuantity = parseFloat(parsedQuantityAvail - baseUnitQuantityDesired)
-  
 
-    console.log('q available', quantity, product.unit[0])
-    console.log('q available in',product.unit[unitSelected], quantity*productMultiplier, )
-    console.log('q desired in', product.unit[unitSelected], quantityDesired)
-    console.log('new quantity = qAvail - qDes', newQuantity, product.unit[0])
 
     const productToAdd = {...product, cart: baseUnitQuantityDesired, unitSelected: unitSelected, quantity: newQuantity}
 
