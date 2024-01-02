@@ -37,6 +37,7 @@ function ProductRow({product, addToCart }) {
   const qAvailable = unitSelected ? Math.round(productMultiplier * product.quantity * 2)/2: (product.quantity);
   const [quantity, setQuantity] = useState(product.quantity);
     
+
   let perUnit = product.unit[unitSelected];
   if (perUnit.endsWith('es')) {
     perUnit = perUnit.slice(0, -2);
@@ -194,9 +195,10 @@ export default function App() {
 
   function submitOrder(e) {
     e.preventDefault();
-    console.log('submitting order', {order});
+    console.log('submitting order', order);
+    console.log('updating products', productsToUpdate);
     setIsLoading(true);
-    fetch('/api/update-table', {
+    fetch('/api/update-quantities', {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json'},
@@ -225,7 +227,6 @@ export default function App() {
       //   return EmailGB({order});
       // })
       .then(response => {
-        console.log('this should come after email sent ok')
         setIsLoading(false);
         setOrderPlaced(true)})
       .catch(error => console.error('Error:', error));
