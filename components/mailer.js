@@ -28,13 +28,3 @@ const orderTable = order.order.products.map((product) => {
     throw error;
   }
 }
-/*
-      .then((result) => {
-          console.log('Email sent', result.text);
-          return result.text;
-      }, (error) => {
-          console.log('error sending email', error.text);
-          throw error;
-      });
-  };
-;*/

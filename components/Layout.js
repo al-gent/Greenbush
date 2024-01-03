@@ -8,7 +8,7 @@ const name= 'Greenbush Growing Cooperative';
 export const siteTitle = 'Greenbush Wholesale';
 
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, isLoading }) {
     return <div className={styles.centerText}>
         <Head>
             <title>{siteTitle}</title>
@@ -25,7 +25,7 @@ export default function Layout({ children, home }) {
         </header>
         <main>{children}</main>
         <footer className={styles.header}>
-            <Image className={styles.loading}
+            <Image className={isLoading ? styles.loading : styles.logo}
                     priority
                     src="/images/cabbagelogotransparent.png"
                     height={2500}

@@ -99,8 +99,16 @@ function ListTable({products, addToCart }) {
     <table>
       <thead style = {{ textAlign: 'left'}}>
         <tr>
-          <th>Name</th>
-          <th>Quantity Available</th>
+          <th style = {{    
+            paddingRight: '150px',
+            maxWidth: '150px', 
+            whiteSpace: 'normal',
+            textAlign: 'left'}}>Name</th>
+          <th style = {{    
+            maxWidth: '100px', 
+            whiteSpace: 'normal',
+            textAlign: 'left'}}>
+      Quantity Available</th>
           <th>Price</th>
         </tr>
       </thead>
@@ -118,6 +126,8 @@ function CartTable({ products, removeFromCart, onSubmit, custname, email, notes,
   return (
     <div>
             <hr></hr>
+    <div className={styles.centerText}>
+
     <table>
       <thead>
         <tr>
@@ -126,31 +136,44 @@ function CartTable({ products, removeFromCart, onSubmit, custname, email, notes,
           </th>
         </tr>
         <tr>
-          <th>Name</th>
-          <th>Quantity Selected</th>
+        <th style = {{    
+            maxWidth: '100px', 
+            whiteSpace: 'normal',
+            textAlign: 'left'}}>Name</th>
+          <th style = {{    
+            maxWidth: '100px', 
+            whiteSpace: 'normal',
+            textAlign: 'left'}}>Quantity Selected</th>
           <th>Price</th>
           <th>Total Price</th>
         </tr>
       </thead>
       <tbody>{rows}</tbody>
       </table>
+      </div>
       <hr></hr>
       <p>Checkout total: ${products.filter(product => product.cart).reduce((total, product) => total + (product.cart * product.price[0]), 0).toFixed(2)}</p>
       <form>
+        <div>
         <input type="text"
         value = {custname}
         onChange={e => setCustname(e.target.value)}
         required
         placeholder="Name / Organization"/>
+        </div>
+        <div>
         <input type="text"
         value = {email}
         onChange={e => setEmail(e.target.value)}
         required
         placeholder="Email"/>
+        </div>
+        <div>
         <input type="textarea"
         value = {notes}
         placeholder="Notes"
         onChange={e=> setNotes(e.target.value)}/>
+        </div>
       <button
         onClick={e => {onSubmit(e);}
         }>Submit Order</button>
@@ -170,6 +193,8 @@ export default function App() {
   const [products, setProducts] = useState([]);
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [farmersNote, setFarmersNote] = useState('');
+
   useEffect(() => {
     fetch('/api/data')
       .then(response => response.json())
@@ -178,7 +203,13 @@ export default function App() {
           ...product, cart: 0
         }));
         setProducts(productsWithCart);
-        console.log('products', productsWithCart)
+        console.log('products', productsWithCart);
+    fetch('/api/farmers-notes')
+        .then(response => response.json())
+        .then(note => {
+          setFarmersNote(note.note)
+        })
+        .catch(error => console.error('Error:', error));
 
       })
       .catch(error => console.error('Error:', error));
@@ -192,6 +223,7 @@ export default function App() {
   }
 
   let productsToUpdate = products.filter((product) => product.cart > 0)
+
 
   function submitOrder(e) {
     e.preventDefault();
@@ -223,9 +255,9 @@ export default function App() {
         }
         return response.json();
       })
-      // .then(response => {
-      //   return EmailGB({order});
-      // })
+      .then(response => {
+        return EmailGB({order});
+      })
       .then(response => {
         setIsLoading(false);
         setOrderPlaced(true)})
@@ -288,24 +320,30 @@ export default function App() {
 
 
   return <>
-  <Layout>
-    <h1 className={styles.centerText}>Wholesale Ordering Form</h1> 
-    {isLoading &&  <Image className={styles.loading}
+  <Layout isLoading={isLoading}>
+    <h1 className={styles.centerText}>Wholesale Order Form</h1> 
+    {/* {isLoading &&  <Image className={styles.loading}
                     priority
                     src="/images/cabbagelogotransparent.png"
                     height={2500}
                     width={2323}
                     alt="cabagelogotransparent"
-                />}
+                />} */}
+    <div className={styles.centerText}>
+    {orderPlaced ? (<p></p>):(farmersNote ? (<p style={{width: '100%'}}><em>Farmer's Note: {farmersNote}</em></p>) : (<p></p>))}
+    </div>
       {orderPlaced ? ( <p></p>
       ) : (
-        <ListTable className={styles.centerText} products={products} addToCart={addToCart} />
+        <div className={styles.centerText}>
+        <ListTable className={styles.centerText} products={products} addToCart={addToCart} farmersNote= {farmersNote}/>
+        </div>
       )}
         <div>
       {orderPlaced ? (
         <OrderSummary order = {order} />
       ) : CartLen === 0 ? (<h1 className={styles.centerText}>Cart is empty</h1>
       ) : (
+        <div className={styles.centerText}>
       <CartTable className={styles.centerText} products={products} removeFromCart={removeFromCart} onSubmit={submitOrder} custname={custname} 
       email={email} 
       notes={notes} 
@@ -313,6 +351,7 @@ export default function App() {
       setEmail={setEmail} 
       setNotes={setNotes} 
       />
+      </div>
     )}
     </div>
   </Layout>
