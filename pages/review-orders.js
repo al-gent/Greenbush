@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
+import emailConfirmed from '../components/emailConfirmed';
 
 function EditRow({ product, setQuantity }) {
     let productMultiplier = 1;
@@ -32,7 +33,9 @@ function CartRow({ product }) {
     const unitSelected = (product.unitSelected || 0)
     unitSelected === 0 ? productMultiplier = 1 : productMultiplier = product.price[0]/product.price[1];
     const cart = Math.round(product.cart * productMultiplier)
-    const total_price = Math.round(product.cart * product.price[0]).toFixed(2)
+    const total_price = product.editedCart ? ((product.editedCart * product.price[0]).toFixed(2) 
+        ):(
+        Math.round(product.cart * product.price[0]).toFixed(2))
 
     return(
     <tr>
@@ -49,12 +52,14 @@ function OrderTable({ order, editOrder, updateOrder }) {
     let products = order.items;
     let total = 0;
     const rows = products.map((itemString) => {
-        let item = JSON.parse(itemString);
-        const total_price = Math.round(item.cart * item.price[0]).toFixed(2)
+        let product = JSON.parse(itemString);
+        const total_price = product.editedCart ? ((product.editedCart * product.price[0]).toFixed(2) 
+        ):(
+        Math.round(product.cart * product.price[0]).toFixed(2))
         total += parseFloat(total_price);
         return (
-            edit ? <EditRow key = {item.id} product={item} setQuantity={(quantity, productID) => editOrder({newQuantity: quantity, order, productID})}/> :
-            <CartRow key = {item.id} product={item}/>
+            edit ? <EditRow key = {product.id} product={product} setQuantity={(quantity, productID) => editOrder({newQuantity: quantity, order, productID})}/> :
+            <CartRow key = {product.id} product={product}/>
         )})
 
     return (
@@ -85,7 +90,7 @@ function OrderTable({ order, editOrder, updateOrder }) {
         <tbody>{rows}</tbody>
         </table>
         <hr></hr>
-        <p>Checkout total: ${total} </p>
+        <p>Order total: ${total} </p>
         </div>
         )}
 
@@ -97,6 +102,7 @@ export default function App() {
         .then(response => response.json())
         .then(data => {
             setOrders(data);
+            setIsLoading(false);
         })
         .catch(error => console.error('Error:', error));
     }, []);
@@ -144,8 +150,21 @@ export default function App() {
         .catch(error => console.error('Error:', error));
     }
 
+    function sendConfirmationEmail({orderID}) {
+        setIsLoading(true);
+        console.log('sendConfirmationEmail', orderID);
+
+        const order = orders.find(order => order.id === orderID);
+        console.log('order', order);
+        emailConfirmed(order);
+    }
+
+
     function updateOrderStatus({orderID, status}) {
         setIsLoading(true);
+        if (status === 'confirmed') {
+            sendConfirmationEmail({orderID});
+        }
         console.log('updateOrderStatus', orderID, status);
         fetch('/api/update-order-status', {
         method: 'POST', 
@@ -168,7 +187,7 @@ export default function App() {
     }
 
     return (
-        <Layout>
+        <Layout isLoading={isLoading}>
         {orders.map((order) => (
             <div key={order.id}>
             <h2>{order.name} Order #{order.id}</h2>

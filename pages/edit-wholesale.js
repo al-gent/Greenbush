@@ -151,9 +151,18 @@ function ProductTable({products, updateProduct, updateQuantity, addProduct, dele
       <thead style = {{ textAlign: 'left'}}>
         <tr>
           <th>Name</th>
-          <th>Quantity</th>
-          <th>Primary Price / Unit</th>
-          <th>Secondary Price / Unit</th>
+          <th style = {{    
+            padding: '0px 20px 0px 0px'}}>
+            Quantity</th>
+          <th style = {{
+            paddingRight: '20px',    
+            maxWidth: '100px', 
+            whiteSpace: 'normal',
+            textAlign: 'left'}}>Primary Price / Unit</th>
+          <th style = {{    
+            maxWidth: '100px', 
+            whiteSpace: 'normal',
+            textAlign: 'left'}}>Secondary Price / Unit</th>
         </tr>
       </thead>
       <tbody>{rows}
@@ -242,6 +251,7 @@ function ProductTable({products, updateProduct, updateQuantity, addProduct, dele
 }
 
 export default function App() {
+  const [farmersNote, setFarmersNote] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -250,6 +260,13 @@ export default function App() {
       .then(data => {
         setProducts(data);
 
+      })
+      .catch(error => console.error('Error:', error));
+    fetch('/api/farmers-notes')
+      .then(response => response.json())
+      .then(note => {
+        console.log('note', note)
+        setFarmersNote(note.note)
       })
       .catch(error => console.error('Error:', error));
   }, []);
@@ -277,6 +294,7 @@ export default function App() {
 
   function addProduct(productName, quantity, unit, unit2, price, price2) {
     setIsLoading(true);
+    quantity ? quantity = parseFloat(quantity) : quantity = 0;
     let unitArray = [];
     let priceArray = [];
     (unit2 ? unitArray = [unit, unit2] : unitArray = [unit]);
@@ -342,10 +360,41 @@ export default function App() {
     .catch(error => console.error('Error:', error));
  }
 
+ function addNote(farmersNote) {
+   setIsLoading(true);
+   console.log('updating note', farmersNote);
+   fetch('/api/add-note', {
+     method: 'POST', 
+     headers: {
+       'Content-Type': 'application/json'},
+     body: JSON.stringify({farmersNote})
+     })
+     .then(response => {
+       if (!response.ok) {
+         throw new Error('Network response was not ok');
+       }
+       return response.json();
+     })
+     .then(response => {console.log('note updated', response)})
+     .then(response => setIsLoading(false))
+     .catch(error => console.error('Error:', error));
+
+    }
 
   return <>
-  <Layout>
+  <Layout isLoading = {isLoading}>
     <h1 className={styles.centerText}>Wholesale Products</h1> 
+    {isLoading ? <p>Loading...</p> : null}
+    <textarea
+    style = {{ width: '100%', height: '100px' }}
+    placeholder={`Farmer's Note: ${farmersNote}`}
+    onChange={e => {
+      e.preventDefault();
+      const newNote = e.target.value;
+      setFarmersNote(newNote)
+    }}
+    ></textarea>
+    <button onClick={() => addNote(farmersNote)}>Post New Note</button>
     <ProductTable products={products} updateProduct={updateProduct} updateQuantity={updateQuantity} addProduct={addProduct} deleteProduct={deleteProduct} />
   </Layout>
   </>
