@@ -133,3 +133,10 @@
   .inputBox {
     width: 60px;
 }
+
+.wholeThing {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
