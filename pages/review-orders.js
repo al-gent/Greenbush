@@ -142,9 +142,6 @@ export default function App() {
             }
             return response.json();
         })
-        // .then(response => { // emails to customers sent here
-            // return EmailGB({order});
-        // })
         .then(response => {
             setIsLoading(false)})
         .catch(error => console.error('Error:', error));
@@ -188,6 +185,7 @@ export default function App() {
 
     return (
         <Layout isLoading={isLoading}>
+        {orders.length === 0 && <p>No orders found.</p>}
         {orders.map((order) => (
             <div key={order.id}>
             <h2>{order.name} Order #{order.id}</h2>

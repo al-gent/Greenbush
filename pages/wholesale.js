@@ -25,7 +25,7 @@ function QuantityUnit({product, unitSelected, setUnitSelected, setInvalidQuant, 
       </td>
     );
   } else {
-    return <td>{product.quantity} {product.unit}</td>;
+    return <td style={{padding:'0.3rem'}}>{product.quantity} {product.unit}</td>;
   }
 }
 
@@ -48,7 +48,7 @@ function ProductRow({product, addToCart }) {
 
   return(
   <tr >
-    <td>{product.name}</td>
+    <td style ={{padding:'0.3rem'}}>{product.name}</td>
     <QuantityUnit product={product} unitSelected = {unitSelected} setUnitSelected={setUnitSelected} setInvalidQuant={setInvalidQuant} setQuantityDesired={setQuantityDesired} />
     <td>{'$'+product.price[unitSelected]+'/'+perUnit}</td>
     {invalidQuant ? (<td>Sorry, only {qAvailable} {product.unit[unitSelected]} available</td>) : (<td></td>)}
@@ -60,7 +60,7 @@ function ProductRow({product, addToCart }) {
           value= {quantityDesired}
           placeholder="0"
           onChange={e=> setQuantityDesired(e.target.value)}
-          style = {{ width: '40px' }} />
+          style = {{ width: '30px' }} />
         <button
           onClick={e => {
             e.preventDefault();
@@ -100,8 +100,8 @@ function ListTable({products, addToCart }) {
       <thead style = {{ textAlign: 'left'}}>
         <tr>
           <th style = {{    
-            paddingRight: '150px',
-            maxWidth: '150px', 
+            paddingRight: '15px',
+            maxWidth: '20px', 
             whiteSpace: 'normal',
             textAlign: 'left'}}>Name</th>
           <th style = {{    
@@ -192,7 +192,7 @@ export default function App() {
   const [notes, setNotes] = useState('');
   const [products, setProducts] = useState([]);
   const [orderPlaced, setOrderPlaced] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [farmersNote, setFarmersNote] = useState('');
 
   useEffect(() => {
@@ -208,6 +208,7 @@ export default function App() {
         .then(response => response.json())
         .then(note => {
           setFarmersNote(note.note)
+          setIsLoading(false);
         })
         .catch(error => console.error('Error:', error));
 
@@ -321,6 +322,7 @@ export default function App() {
 
   return <>
   <Layout isLoading={isLoading}>
+    <div className={styles.wholeThing}>
     <h1 className={styles.centerText}>Wholesale Order Form</h1> 
     {/* {isLoading &&  <Image className={styles.loading}
                     priority
@@ -353,6 +355,7 @@ export default function App() {
       />
       </div>
     )}
+    </div>
     </div>
   </Layout>
   </>
