@@ -1,20 +1,18 @@
 html {
-  background-color: #E1CCBE;
+  background-color: #e1ccbe;
   font-family: 'Roboto', sans-serif;
-  src:url(https://fonts.googleapis.com)
-  url(https://fonts.gstatic.com)
-  url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);
+  src: url(https://fonts.googleapis.com) url(https://fonts.gstatic.com)
+    url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);
   font-weight: 300;
   font-size: 12px;
-
 }
 body {
   padding: 0;
   margin: 0;
-  font-weight:400;
-  font-style:normal;
-  font-stretch:normal;
-  font-display:auto;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
   line-height: 1.6;
   font-size: 14px;
 }
@@ -76,7 +74,8 @@ form {
   width: 50px;
 }
 
-input, textarea{
+input,
+textarea {
   padding: 16px;
   width: 50px;
 }
@@ -95,11 +94,9 @@ th {
 td {
   padding: 0px 8px;
   font-size: 1.5rem;
-  text-align:center;
+  text-align: center;
 }
-
 
 wsb:hover {
   background-color: #0e5188;
 }
-

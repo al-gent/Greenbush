@@ -1,7 +1,6 @@
 import { sql } from '@vercel/postgres';
 
-
-let currentDateTime= new Date();
+let currentDateTime = new Date();
 
 export default async function placeOrder(req, res) {
   const order = req.body;
@@ -9,5 +8,5 @@ export default async function placeOrder(req, res) {
     INSERT INTO orders (name, email, notes, date, status, items)
     VALUES (${order.name}, ${order.email}, ${order.notes}, ${currentDateTime},'pending', ${order.products});
   `;
-  res.status(200).json( {message: 'Order placed!'});
+  res.status(200).json({ message: 'Order placed!' });
 }

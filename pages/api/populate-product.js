@@ -3,7 +3,7 @@ import { sql } from '@vercel/postgres';
 export default async function populateProduct(req, res) {
   try {
     const name = 'poop';
-    const quantity = 5.50;
+    const quantity = 5.5;
     const unit = 'lbs';
     const price = 5;
 
