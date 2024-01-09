@@ -1,3 +1,3 @@
-import createTable from './create-table'
+import createTable from './create-table';
 
-createTable().catch(console.error)
+createTable().catch(console.error);

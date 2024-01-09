@@ -1,0 +1,16 @@
+/* Path: pages/index.js */
+
+.headshot {
+  display: block;
+  margin: auto;
+  width: 25%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

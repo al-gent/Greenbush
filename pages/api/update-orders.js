@@ -7,5 +7,5 @@ export default async function updateOrder(req, res) {
   SET status = 'edited', items = ${order.items}
   WHERE id = ${order.id};
   `;
-  res.status(200).json( {message: 'Order updated!'});
+  res.status(200).json({ message: 'Order updated!' });
 }
