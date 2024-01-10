@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import Link from 'next/link';
+
 import styles from '/styles/index.module.css';
 import OrderingForm from './demo/wholesale_demo';
 import ReviewOrders from './demo/review-orders_demo';
@@ -25,21 +27,46 @@ export default function Home() {
         <SocialLinks></SocialLinks>
         <h2>Freelance Software Developer </h2>
         <h3>Currently seeking new opportunities </h3>
+        <p>
+          As a seasoned freelance software developer, I specialize in crafting
+          dynamic and responsive web applications using cutting-edge
+          technologies. My primary stack revolves around React and Next.js,
+          ensuring robust and user-centric solutions. Currently open to engaging
+          in new and challenging projects that allow me to leverage my expertise
+          and contribute to innovative developments in the software industry.
+          View my resume{' '}
+          <Link href="/resume.pdf" target="_blank">
+            here
+          </Link>
+          .
+        </p>
       </div>
-      <h2>Project Spotlight: Wholesale Order Form</h2>
       <div className={styles.storyCard}>
-        <h3>
+        <h2>Project Spotlight: Wholesale Order Form</h2>
+        <Link href="http://www.greenbushgrowingcoop.com" target="_blank">
+          <Image
+            className={styles.headshot}
+            src="/images/Untitled.png"
+            height={1500}
+            width={1500}
+            alt="Headshot"
+          />
+        </Link>
+        <p>
           My client, an organic farmer, was having a hard time managing his
           inventory.
-        </h3>
-        <h4>
+        </p>
+        <p>
           When new orders came in, he had to update his inventory by hand. This
           was time consuming and error prone.
-        </h4>
-        <h4> So I built this tool to help him manage his inventory.</h4>
-        <h4>
+        </p>
+        <p>
+          I built him a tool that allows him to update his inventory in real
+          time.
+        </p>
+        <p>
           Go ahead and pretend to buy some produce & you can see how it works.
-        </h4>
+        </p>
       </div>
       <OrderingForm
         reload={reload}
@@ -48,22 +75,22 @@ export default function Home() {
         setUpdateOrders={setUpdateOrders}
       ></OrderingForm>
       <div className={styles.storyCard}>
-        <h4>
+        <p>
           Since I already built the ordering form, I added a way for him to
           review his orders.
-        </h4>
-        <h4>
+        </p>
+        <p>
           If you made an order, you should be able to see it in the table below.
-        </h4>
-        <h4>
+        </p>
+        <p>
           In this demo version, it would have been easier to update everything
           using state. But just so you could see how it works IRL, I set up a
           demo database.
-        </h4>
-        <h4>
+        </p>
+        <p>
           In the live version, the customer gets a confirmation email when the
           farmer confirms the order.
-        </h4>
+        </p>
       </div>
       <ReviewOrders
         reload={reload}
@@ -72,14 +99,14 @@ export default function Home() {
         setUpdateOrders={setUpdateOrders}
       ></ReviewOrders>
       <div className={styles.storyCard}>
-        <h4>
+        <p>
           Obviously, my client needed a way to update his inventory. So I built
           this tool for him to do that.
-        </h4>
+        </p>
       </div>
       <EditWholesale reload={reload} setReload={setReload}></EditWholesale>
       <div className={styles.storyCard}>
-        <h4>Can you think of any good features I missed? Let me know!</h4>
+        <p>Can you think of any good features I missed? Let me know!</p>
       </div>
       <CommentBox></CommentBox>
     </div>
