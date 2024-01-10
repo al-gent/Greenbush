@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Layout from '../components/Layout';
-import styles from '../styles/wholesale.module.css';
+import Layout from '../../components/Layout';
+import styles from '../../styles/wholesale.module.css';
 
 // unit is now a list of units & price is now a list of prices
 // the layout of this product list needs to reflect that
@@ -13,7 +13,14 @@ import styles from '../styles/wholesale.module.css';
 // I also need to add a way to add a new product
 // and a way to delete a product
 
-function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
+function ProductRow({
+  product,
+  updateProduct,
+  updateQuantity,
+  deleteProduct,
+  reload,
+  setReload,
+}) {
   const [productName, setProductName] = useState(product.name);
   const [quantity, setQuantity] = useState(product.quantity);
   const [unit, setUnit] = useState(product.unit[0]);
@@ -119,6 +126,7 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
             price2,
           );
           setEdit(false);
+          setReload((reload += 1));
         }}
       >
         Save
@@ -148,6 +156,7 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
               }
               setQuantity(newQuantity);
               updateQuantity(product, productName, newQuantity, unit, price);
+              setReload((reload += 1));
             }}
             style={{ width: '40px' }}
           />
@@ -170,6 +179,8 @@ function ProductTable({
   updateQuantity,
   addProduct,
   deleteProduct,
+  reload,
+  setReload,
 }) {
   const [productName, setProductName] = useState('');
   const [quantity, setQuantity] = useState('');
@@ -185,6 +196,8 @@ function ProductTable({
       updateProduct={updateProduct}
       updateQuantity={updateQuantity}
       deleteProduct={deleteProduct}
+      reload={reload}
+      setReload={setReload}
     />
   ));
   return (
@@ -320,18 +333,18 @@ function ProductTable({
   );
 }
 
-export default function EditWholesale() {
+export default function EditWholesale({ reload, setReload }) {
   const [farmersNote, setFarmersNote] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch('/api/data')
+    fetch('/api/data_demo')
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
       })
       .catch((error) => console.error('Error:', error));
-    fetch('/api/farmers-notes')
+    fetch('/api/farmers-notes_demo')
       .then((response) => response.json())
       .then((note) => {
         console.log('note', note);
@@ -343,7 +356,7 @@ export default function EditWholesale() {
   function deleteProduct(id) {
     setIsLoading(true);
     console.log('deleting product', id);
-    fetch('/api/delete-product', {
+    fetch('/api/delete-product_demo', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -385,7 +398,7 @@ export default function EditWholesale() {
     ]);
 
     console.log('adding product', productName, quantity, unit, price);
-    fetch('/api/add-product', {
+    fetch('/api/add-product_demo', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -422,7 +435,7 @@ export default function EditWholesale() {
     price2,
   ) {
     setIsLoading(true);
-    fetch('/api/update-product', {
+    fetch('/api/update-product_demo', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -460,7 +473,7 @@ export default function EditWholesale() {
       unit,
       price,
     );
-    fetch('/api/update-quantity', {
+    fetch('/api/update-quantity_demo', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -483,7 +496,7 @@ export default function EditWholesale() {
   function addNote(farmersNote) {
     setIsLoading(true);
     console.log('updating note', farmersNote);
-    fetch('/api/add-note', {
+    fetch('/api/add-note_demo', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -495,6 +508,11 @@ export default function EditWholesale() {
           throw new Error('Network response was not ok');
         }
         return response.json();
+      })
+      .then((response) => {
+        console.log('note updated', response);
+        setReload((reload += 1));
+        console.log('reload', reload);
       })
       .then((response) => setIsLoading(false))
       .catch((error) => console.error('Error:', error));
@@ -521,6 +539,8 @@ export default function EditWholesale() {
           updateQuantity={updateQuantity}
           addProduct={addProduct}
           deleteProduct={deleteProduct}
+          reload={reload}
+          setReload={setReload}
         />
       </div>
     </>

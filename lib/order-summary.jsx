@@ -1,10 +1,27 @@
 function CartRow({ product }) {
-  const total_price = product.cart * product.price;
+  const unitSelected = product.unitSelected;
+  const total_price = (product.cart * product.price[0]).toFixed(2);
+  let productMultiplier;
+  unitSelected
+    ? (productMultiplier = (product.price[0] / product.price[1]).toFixed(2))
+    : (productMultiplier = 1);
+
+  let perUnit = product.unit[unitSelected];
+  if (perUnit.endsWith('es')) {
+    perUnit = perUnit.slice(0, -2);
+  } else if (perUnit.endsWith('s')) {
+    perUnit = perUnit.slice(0, -1);
+  }
+
   return (
     <tr>
       <td>{product.name}</td>
-      <td>{product.cart + ' ' + product.unit}</td>
-      <td>{'$' + product.price}</td>
+      <td>
+        {product.cart * productMultiplier + ' ' + product.unit[unitSelected]}
+      </td>
+      <td>
+        {'$' + Number(product.price[unitSelected]).toFixed(2) + '/' + perUnit}
+      </td>
       <td>{'$' + total_price}</td>
     </tr>
   );
