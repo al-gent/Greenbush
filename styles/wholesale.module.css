@@ -146,3 +146,16 @@
     width: 30rem;
   }
 }
+
+.infoCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 35rem;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #a7ace5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

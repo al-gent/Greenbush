@@ -26,8 +26,7 @@ export default function Contact() {
 
   return (
     <div>
-      <h1> Contact Me </h1>
-      <form className={styles.parent} onSubmit={handleSubmit}>
+      <form className={styles.storyCard} onSubmit={handleSubmit}>
         <label>
           Name:
           <input
