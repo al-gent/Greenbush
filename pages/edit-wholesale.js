@@ -501,7 +501,7 @@ export default function EditWholesale() {
   }
 
   return (
-    <>
+    <Layout isLoading={isLoading}>
       <div className={styles.infoCard}>
         <h1 className={styles.centerText}>Wholesale Products</h1>
         {isLoading ? <p>Loading...</p> : null}
@@ -523,6 +523,6 @@ export default function EditWholesale() {
           deleteProduct={deleteProduct}
         />
       </div>
-    </>
+    </Layout>
   );
 }

@@ -15,7 +15,7 @@
   margin: auto;
 
   @media (min-width: 768px) {
-    width: 40rem;
+    width: 100%;
   }
 }
 
@@ -45,18 +45,25 @@
   position: relative;
 }
 
+.storyCard:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Larger shadow */
+}
+
 .infoCard {
-  opacity: 0.9;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 30rem;
+  width: 35rem;
   margin: auto;
   padding: 1rem;
   border-radius: 1rem;
-  background-color: #f5f5f5;
+  background-color: #a7ace5;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.infoCard:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Larger shadow */
 }
 
 .storyCard {
@@ -65,7 +72,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 30rem;
+  width: 35rem;
   margin: auto;
   padding: 1rem;
   border-radius: 1rem;

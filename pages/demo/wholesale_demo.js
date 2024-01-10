@@ -461,49 +461,49 @@ export default function OrderingForm({
   return (
     <>
       <div className={styles.infoCard}>
-        <div className={styles.wholeThing}>
+        <header>
           <h1 className={styles.centerText}>Wholesale Order Form</h1>
           {isLoading && <h2>Loading...</h2>}
-          {orderPlaced ? (
-            <OrderSummary order={order} />
-          ) : (
+        </header>
+        {orderPlaced ? (
+          <OrderSummary order={order} />
+        ) : (
+          <div className={styles.centerText}>
+            {farmersNote && (
+              <p className={styles.centerText}>
+                <em>Farmer's Note: {farmersNote}</em>
+              </p>
+            )}
             <div className={styles.centerText}>
-              {farmersNote && (
-                <p className={styles.centerText}>
-                  <em>Farmer's Note: {farmersNote}</em>
-                </p>
-              )}
+              <ListTable
+                className={styles.centerText}
+                products={products}
+                addToCart={addToCart}
+                farmersNote={farmersNote}
+              />
+            </div>
+            {CartLen === 0 ? (
+              <h1 className={styles.centerText}>Cart is empty</h1>
+            ) : (
               <div className={styles.centerText}>
-                <ListTable
+                <CartTable
                   className={styles.centerText}
                   products={products}
-                  addToCart={addToCart}
-                  farmersNote={farmersNote}
+                  removeFromCart={removeFromCart}
+                  onSubmit={submitOrder}
+                  custname={custname}
+                  email={email}
+                  notes={notes}
+                  setCustname={setCustname}
+                  setEmail={setEmail}
+                  setNotes={setNotes}
+                  updateOrders={updateOrders}
+                  setUpdateOrders={setUpdateOrders}
                 />
               </div>
-              {CartLen === 0 ? (
-                <h1 className={styles.centerText}>Cart is empty</h1>
-              ) : (
-                <div className={styles.centerText}>
-                  <CartTable
-                    className={styles.centerText}
-                    products={products}
-                    removeFromCart={removeFromCart}
-                    onSubmit={submitOrder}
-                    custname={custname}
-                    email={email}
-                    notes={notes}
-                    setCustname={setCustname}
-                    setEmail={setEmail}
-                    setNotes={setNotes}
-                    updateOrders={updateOrders}
-                    setUpdateOrders={setUpdateOrders}
-                  />
-                </div>
-              )}
-            </div>
-          )}
-        </div>
+            )}
+          </div>
+        )}
       </div>
     </>
   );

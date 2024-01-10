@@ -30,7 +30,9 @@ export default function CommentBox({ onSubmit }) {
             });
           }}
         >
-          <h3>Leave a comment</h3>
+          <h2 style={{ display: 'flex', justifyContent: 'center' }}>
+            Leave a Comment
+          </h2>
           <label>
             Your Name:
             <input
