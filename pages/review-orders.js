@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 import Layout from '../components/Layout';
 import emailConfirmed from '../components/emailConfirmed';
 
@@ -128,6 +128,9 @@ function OrderTable({ order, editOrder, updateOrder }) {
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [orders, setOrders] = useState([]);
+  const [completedOrders, setCompletedOrders] = useState([]);
+  const [viewCompleted, setViewCompleted] = useState(false);
+
   useEffect(() => {
     fetch('/api/get-orders')
       .then((response) => response.json())
@@ -136,7 +139,57 @@ export default function App() {
         setIsLoading(false);
       })
       .catch((error) => console.error('Error:', error));
+    fetch('/api/get-completed-orders')
+      .then((response) => response.json())
+      .then((data) => {
+        setCompletedOrders(data);
+        setIsLoading(false);
+      });
   }, []);
+
+  function CompletedOrders() {
+    return (
+      <div>
+        <button onClick={() => setViewCompleted(!viewCompleted)}>
+          {viewCompleted ? `Hide Completed Orders` : `View Completed Orders`}
+        </button>
+        {viewCompleted ? (
+          <div>
+            <h2>Completed Orders</h2>
+            {completedOrders.map((order) => (
+              <div key={order.id}>
+                <h2>
+                  {order.name} Order #{order.id}
+                </h2>
+                <FormattedDate date={order.date} />
+                <OrderTable order={order} />
+                <p>Notes: {order.notes}</p>
+                <p>
+                  Order status:
+                  <select
+                    value={order.status}
+                    onChange={(e) =>
+                      updateOrderStatus({
+                        orderID: order.id,
+                        status: e.target.value,
+                      })
+                    }
+                  >
+                    <option value="pending">Pending</option>
+                    <option value="edited">Edited</option>
+                    <option value="confirmed">Confirmed</option>
+                    <option value="completed">Completed</option>
+                  </select>
+                </p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div></div>
+        )}
+      </div>
+    );
+  }
 
   function editOrder({ order, newQuantity, productID }) {
     const nextOrders = orders.map((o) => {
@@ -220,15 +273,27 @@ export default function App() {
       })
       .catch((error) => console.error('Error:', error));
   }
+  function FormattedDate({ date }) {
+    let dateObject = new Date(date);
+    let formattedDate = dateObject.toLocaleDateString('en-US', {
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+    });
+    return <p>{formattedDate}</p>;
+  }
 
   return (
     <Layout isLoading={isLoading}>
-      {orders.length === 0 && <p>No orders found.</p>}
+      {orders.length === 0 && <p>All orders completed.</p>}
       {orders.map((order) => (
         <div key={order.id}>
           <h2>
             {order.name} Order #{order.id}
           </h2>
+          <FormattedDate date={order.date} />
           <OrderTable
             order={order}
             editOrder={editOrder}
@@ -251,6 +316,7 @@ export default function App() {
           </p>
         </div>
       ))}
+      <CompletedOrders />
     </Layout>
   );
 }

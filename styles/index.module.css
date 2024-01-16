@@ -6,6 +6,10 @@
   border-radius: 50%;
 }
 
+.headshot:hover {
+  opacity: 0.8;
+}
+
 .parent {
   display: flex;
   justify-content: center;
