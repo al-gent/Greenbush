@@ -19,6 +19,14 @@ export default function SocialLinks() {
       >
         <img src="/images/linkedin-mark.png" />
       </a>
+      <a
+        className={styles.logo}
+        href="https://open.spotify.com/artist/4ejuk3qLR0mQzih64AsJrj?si=AyLU9ClgQ8iFi77KmK8H4g"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="/images/spotify_logo.png" />
+      </a>
     </div>
   );
 }

@@ -25,21 +25,16 @@ export default function Home() {
           alt="Headshot"
         />
         <SocialLinks></SocialLinks>
-        <h2>Freelance Software Developer </h2>
-        <h3>Currently seeking new opportunities </h3>
-        <p>
-          As a seasoned freelance software developer, I specialize in crafting
-          dynamic and responsive web applications using cutting-edge
-          technologies. My primary stack revolves around React and Next.js,
-          ensuring robust and user-centric solutions. Currently open to engaging
-          in new and challenging projects that allow me to leverage my expertise
-          and contribute to innovative developments in the software industry.
+        <h3>Software Developer - Educator - Musician</h3>
+        <p> Learning new technologies. </p>
+        <p> Looking for interesting problems to solve. </p>
+        {/* <p>
           View my resume{' '}
           <Link href="/resume.pdf" target="_blank">
             here
           </Link>
           .
-        </p>
+        </p> */}
       </div>
       <div className={styles.storyCard}>
         <h2>Project Spotlight: Wholesale Order Form</h2>

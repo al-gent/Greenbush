@@ -155,7 +155,6 @@ export default function App() {
         </button>
         {viewCompleted ? (
           <div>
-            <h2>Completed Orders</h2>
             {completedOrders.map((order) => (
               <div key={order.id}>
                 <h2>
