@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Analytics } from '@vercel/analytics/react';
 import styles from '/styles/index.module.css';
 import OrderingForm from './demo/wholesale_demo';
 import ReviewOrders from './demo/review-orders_demo';
@@ -15,7 +14,6 @@ export default function Home() {
   const [updateOrders, setUpdateOrders] = useState(0);
   return (
     <div className={styles.parent}>
-      <Analytics />
       <div className={styles.infoCard}>
         <h1> Adam L. Gent </h1>
         <Image
