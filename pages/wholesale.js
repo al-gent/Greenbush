@@ -364,9 +364,9 @@ export default function App() {
         }
         return response.json();
       })
-      .then((response) => {
-        return EmailGB({ order });
-      })
+      // .then((response) => {
+      //   return EmailGB({ order });
+      // })
       .then((response) => {
         setIsLoading(false);
         setOrderPlaced(true);
