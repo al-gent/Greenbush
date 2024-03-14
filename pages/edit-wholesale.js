@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
 import styles from '../styles/wholesale.module.css';
+import Link from 'next/link';
 
 // unit is now a list of units & price is now a list of prices
 // the layout of this product list needs to reflect that
@@ -334,7 +335,6 @@ export default function EditWholesale() {
     fetch('/api/farmers-notes')
       .then((response) => response.json())
       .then((note) => {
-        console.log('note', note);
         setFarmersNote(note.note);
       })
       .catch((error) => console.error('Error:', error));
@@ -501,28 +501,26 @@ export default function EditWholesale() {
   }
 
   return (
-    <Layout isLoading={isLoading}>
-      <div className={styles.infoCard}>
-        <h1 className={styles.centerText}>Wholesale Products</h1>
-        {isLoading ? <p>Loading...</p> : null}
-        <textarea
-          style={{ width: '100%', height: '100px' }}
-          placeholder={`Farmer's Note: ${farmersNote}`}
-          onChange={(e) => {
-            e.preventDefault();
-            const newNote = e.target.value;
-            setFarmersNote(newNote);
-          }}
-        ></textarea>
-        <button onClick={() => addNote(farmersNote)}>Post New Note</button>
-        <ProductTable
-          products={products}
-          updateProduct={updateProduct}
-          updateQuantity={updateQuantity}
-          addProduct={addProduct}
-          deleteProduct={deleteProduct}
-        />
-      </div>
-    </Layout>
+    <div className={styles.infoCard}>
+      <h1 className={styles.centerText}>Wholesale Products</h1>
+      {isLoading ? <p>Loading...</p> : null}
+      <textarea
+        style={{ width: '100%', height: '100px' }}
+        placeholder={`Farmer's Note: ${farmersNote}`}
+        onChange={(e) => {
+          e.preventDefault();
+          const newNote = e.target.value;
+          setFarmersNote(newNote);
+        }}
+      ></textarea>
+      <button onClick={() => addNote(farmersNote)}>Post New Note</button>
+      <ProductTable
+        products={products}
+        updateProduct={updateProduct}
+        updateQuantity={updateQuantity}
+        addProduct={addProduct}
+        deleteProduct={deleteProduct}
+      />
+    </div>
   );
 }

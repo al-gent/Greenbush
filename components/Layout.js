@@ -7,13 +7,14 @@ import utilStyles from '../styles/utils.module.css';
 const name = 'Greenbush Growing Cooperative';
 export const siteTitle = 'Greenbush Wholesale';
 
-export default function Layout({ children, isLoading }) {
+export default function Layout({ children, isLoading, props }) {
   return (
     <div className={styles.centerText}>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <header className={styles.header}>
+        <div className={styles.nav}>{props}</div>
         <Image
           className={styles.logo}
           priority
