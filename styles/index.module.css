@@ -83,3 +83,9 @@
   background-color: #d1f2d2;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

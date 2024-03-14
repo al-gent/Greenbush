@@ -61,7 +61,7 @@ function CartRow({ product }) {
   );
 }
 
-function OrderTable({ order, editOrder, updateOrder }) {
+function OrderTable({ order, editOrder, updateOrder, deleteOrder }) {
   const [edit, setEdit] = useState(false);
   let products = order.items;
   let total = 0;
@@ -101,6 +101,16 @@ function OrderTable({ order, editOrder, updateOrder }) {
                   )}
                 >
                   Save Order
+                </button>{' '}
+                <button
+                  onClick={(e) => (
+                    e.preventDefault,
+                    console.log('onClick', order),
+                    deleteOrder(order.id),
+                    setEdit(false)
+                  )}
+                >
+                  Delete Order
                 </button>{' '}
               </th>
             ) : (
@@ -157,6 +167,28 @@ export default function ReviewOrders({ updateOrders }) {
       }
     });
     setOrders(nextOrders);
+  }
+
+  function deleteOrder(id) {
+    setIsLoading(true);
+    console.log('deleteOrder', id);
+    fetch('/api/delete-order_demo', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: id,
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((response) => {
+        setIsLoading(false);
+      })
+      .catch((error) => console.error('Error:', error));
   }
 
   function updateOrder({ order }) {
@@ -235,6 +267,7 @@ export default function ReviewOrders({ updateOrders }) {
             order={order}
             editOrder={editOrder}
             updateOrder={updateOrder}
+            deleteOrder={deleteOrder}
           />
           <p>Notes: {order.notes}</p>
           <p>
