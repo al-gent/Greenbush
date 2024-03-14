@@ -1,6 +1,8 @@
-import { useState, useEffect, use } from 'react';
+import { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
 import emailConfirmed from '../components/emailConfirmed';
+import styles from '/styles/index.module.css';
+import EditWholesale from './edit-wholesale';
 
 function EditRow({ product, setQuantity }) {
   let productMultiplier = 1;
@@ -60,7 +62,7 @@ function CartRow({ product }) {
   );
 }
 
-function OrderTable({ order, editOrder, updateOrder }) {
+function OrderTable({ order, editOrder, updateOrder, deleteOrder }) {
   const [edit, setEdit] = useState(false);
   let products = order.items;
   let total = 0;
@@ -101,6 +103,16 @@ function OrderTable({ order, editOrder, updateOrder }) {
                 >
                   Save Order
                 </button>{' '}
+                <button
+                  onClick={(e) => (
+                    e.preventDefault,
+                    console.log('onClick', order.id),
+                    deleteOrder(order.id),
+                    setEdit(false)
+                  )}
+                >
+                  Delete Order
+                </button>{' '}
               </th>
             ) : (
               <th>
@@ -125,11 +137,14 @@ function OrderTable({ order, editOrder, updateOrder }) {
   );
 }
 
-export default function App() {
+export default function ReviewOrders() {
   const [isLoading, setIsLoading] = useState(true);
   const [orders, setOrders] = useState([]);
   const [completedOrders, setCompletedOrders] = useState([]);
   const [viewCompleted, setViewCompleted] = useState(false);
+  const [reload, setReload] = useState(true);
+  const [viewAllItems, setViewAllItems] = useState(false);
+  const [viewEditWholesale, setViewEditWholesale] = useState(false);
 
   useEffect(() => {
     fetch('/api/get-orders')
@@ -145,23 +160,88 @@ export default function App() {
         setCompletedOrders(data);
         setIsLoading(false);
       });
-  }, []);
+  }, [reload]);
+
+  function ViewAllItems() {
+    const itemsOrdered = {};
+    orders.map((order) => {
+      let itemstring = order.items;
+      itemstring.map((item) => {
+        let product = JSON.parse(item);
+        if (product.name in itemsOrdered)
+          itemsOrdered[product.name][0] += product.cart;
+        else
+          itemsOrdered[product.name] = [
+            product.cart,
+            product.unit[product.unitSelected],
+          ];
+      });
+    });
+    const rows = Object.entries(itemsOrdered).map(([key, val]) => {
+      return (
+        <tr key={key}>
+          <td>{key}</td>
+          <td>
+            {val[0].toFixed(0)} {val[1]}
+          </td>
+        </tr>
+      );
+    });
+    return (
+      <div>
+        {viewAllItems && (
+          <div className={styles.infoCard}>
+            <table>
+              <thead>
+                <tr>
+                  <th colSpan="2">Items from All Orders</th>
+                </tr>
+                <tr>
+                  <th
+                    style={{
+                      maxWidth: '100px',
+                      whiteSpace: 'normal',
+                      textAlign: 'left',
+                    }}
+                  >
+                    Name
+                  </th>
+                  <th
+                    style={{
+                      maxWidth: '100px',
+                      whiteSpace: 'normal',
+                      textAlign: 'left',
+                    }}
+                  >
+                    Quantity
+                  </th>
+                </tr>
+              </thead>
+              <tbody>{rows}</tbody>
+            </table>
+          </div>
+        )}
+      </div>
+    );
+  }
 
   function CompletedOrders() {
     return (
       <div>
-        <button onClick={() => setViewCompleted(!viewCompleted)}>
-          {viewCompleted ? `Hide Completed Orders` : `View Completed Orders`}
-        </button>
         {viewCompleted ? (
-          <div>
+          <div className={styles.infoCard}>
             {completedOrders.map((order) => (
               <div key={order.id}>
                 <h2>
                   {order.name} Order #{order.id}
                 </h2>
                 <FormattedDate date={order.date} />
-                <OrderTable order={order} />
+                <OrderTable
+                  order={order}
+                  editOrder={editOrder}
+                  updateOrder={updateOrder}
+                  deleteOrder={deleteOrder}
+                />
                 <p>Notes: {order.notes}</p>
                 <p>
                   Order status:
@@ -232,6 +312,29 @@ export default function App() {
       .catch((error) => console.error('Error:', error));
   }
 
+  function deleteOrder(id) {
+    setIsLoading(true);
+    console.log('deleteOrder', id);
+    fetch('/api/delete-order', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: id,
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((response) => {
+        setIsLoading(false);
+        setReload(!reload);
+      })
+      .catch((error) => console.error('Error:', error));
+  }
+
   function sendConfirmationEmail({ orderID }) {
     setIsLoading(true);
     console.log('sendConfirmationEmail', orderID);
@@ -262,6 +365,7 @@ export default function App() {
       })
       .then((response) => {
         setIsLoading(false);
+        setReload(!reload);
       })
       .then((data) => {
         setOrders(
@@ -286,36 +390,55 @@ export default function App() {
 
   return (
     <Layout isLoading={isLoading}>
-      {orders.length === 0 && <p>All orders completed.</p>}
-      {orders.map((order) => (
-        <div key={order.id}>
-          <h2>
-            {order.name} Order #{order.id}
-          </h2>
-          <FormattedDate date={order.date} />
-          <OrderTable
-            order={order}
-            editOrder={editOrder}
-            updateOrder={updateOrder}
-          />
-          <p>Notes: {order.notes}</p>
-          <p>
-            Order status:
-            <select
-              value={order.status}
-              onChange={(e) =>
-                updateOrderStatus({ orderID: order.id, status: e.target.value })
-              }
-            >
-              <option value="pending">Pending</option>
-              <option value="edited">Edited</option>
-              <option value="confirmed">Confirmed</option>
-              <option value="completed">Completed</option>
-            </select>
-          </p>
-        </div>
-      ))}
+      <div className={styles.buttons}>
+        <button onClick={() => setViewAllItems(!viewAllItems)}>
+          {viewAllItems ? `Hide List of All Items` : `View List of All Items`}
+        </button>
+        <button onClick={() => setViewCompleted(!viewCompleted)}>
+          {viewCompleted ? `Hide Completed Orders` : `View Completed Orders`}
+        </button>
+        <button onClick={() => setViewEditWholesale(!viewEditWholesale)}>
+          {viewEditWholesale ? `Hide Edit Wholesale` : `View Edit Wholesale`}
+        </button>
+      </div>
+      <ViewAllItems />
       <CompletedOrders />
+      {viewEditWholesale && <EditWholesale />}
+      <div className={styles.storyCard}>
+        {orders.length === 0 ? <h1>No New Orders</h1> : <h1>New Orders</h1>}
+        {orders.map((order) => (
+          <div key={order.id}>
+            <h2>
+              {order.name} Order #{order.id}
+            </h2>
+            <FormattedDate date={order.date} />
+            <OrderTable
+              order={order}
+              editOrder={editOrder}
+              updateOrder={updateOrder}
+              deleteOrder={deleteOrder}
+            />
+            <p>Notes: {order.notes}</p>
+            <p>
+              Order status:
+              <select
+                value={order.status}
+                onChange={(e) =>
+                  updateOrderStatus({
+                    orderID: order.id,
+                    status: e.target.value,
+                  })
+                }
+              >
+                <option value="pending">Pending</option>
+                <option value="edited">Edited</option>
+                <option value="confirmed">Confirmed</option>
+                <option value="completed">Completed</option>
+              </select>
+            </p>
+          </div>
+        ))}
+      </div>
     </Layout>
   );
 }
