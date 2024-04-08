@@ -13,6 +13,7 @@ import {
   LabelList,
 } from 'recharts';
 import styles from '/styles/index.module.css';
+import Link from 'next/link';
 
 function InputRow({ data, setData }) {
   const [activity, setActivity] = useState('');
@@ -221,7 +222,7 @@ function EnterData({ data, setData }) {
       <div>
         <label>Think of an activity that makes you happy </label>
         <input
-          size="15"
+          size="10"
           value={activity}
           onChange={(e) => {
             e.preventDefault();
@@ -303,6 +304,7 @@ export default function App() {
       {data.length === 0 && <EnterData data={data} setData={setData} />}
       {data.length > 0 && (
         <ResponsiveContainer width="100%" height="80%">
+          <h3 className={styles.parent}>Happiness vs Meaning</h3>
           <ScatterChart
             margin={{
               top: 20,
@@ -345,6 +347,13 @@ export default function App() {
           <DataTable data={data} setData={setData} />
         </ResponsiveContainer>
       )}
+      <footer>
+        <p className={styles.footerText}>
+          {' '}
+          Website made with love by{' '}
+          <Link href="https://github.com/al-gent">Adam</Link>
+        </p>
+      </footer>
     </div>
   );
 }
