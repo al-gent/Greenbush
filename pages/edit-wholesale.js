@@ -133,6 +133,7 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
       <td>
         <form>
           <input
+            size={4}
             type="integer"
             value={quantity}
             placeholder={quantity}
@@ -150,7 +151,6 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
               setQuantity(newQuantity);
               updateQuantity(product, productName, newQuantity, unit, price);
             }}
-            style={{ width: '40px' }}
           />
         </form>
       </td>
@@ -189,8 +189,8 @@ function ProductTable({
     />
   ));
   return (
-    <table>
-      <thead style={{ textAlign: 'left' }}>
+    <table style={{ width: '75%' }}>
+      <thead>
         <tr>
           <th>Name</th>
           <th
@@ -200,25 +200,8 @@ function ProductTable({
           >
             Quantity
           </th>
-          <th
-            style={{
-              paddingRight: '20px',
-              maxWidth: '100px',
-              whiteSpace: 'normal',
-              textAlign: 'left',
-            }}
-          >
-            Primary Price / Unit
-          </th>
-          <th
-            style={{
-              maxWidth: '100px',
-              whiteSpace: 'normal',
-              textAlign: 'left',
-            }}
-          >
-            Secondary Price / Unit
-          </th>
+          <th>Primary Price / Unit</th>
+          <th>Secondary Price / Unit</th>
         </tr>
       </thead>
       <tbody>
@@ -239,7 +222,7 @@ function ProductTable({
           </td>
           <td>
             <input
-              className={styles.inputBox}
+              size={3}
               placeholder="Quantity"
               type="integer"
               value={quantity}
@@ -252,9 +235,9 @@ function ProductTable({
           </td>
           <td>
             <input
-              className={styles.inputBox}
+              size={3}
               placeholder="Price"
-              type="number"
+              type="integer"
               step="any"
               value={price}
               onChange={(e) => {
@@ -279,7 +262,7 @@ function ProductTable({
             <input
               className={styles.inputBox}
               placeholder="Price"
-              type="number"
+              type="integer"
               step="any"
               value={price2}
               onChange={(e) => {
@@ -501,7 +484,7 @@ export default function EditWholesale() {
   }
 
   return (
-    <div className={styles.infoCard}>
+    <div className={styles.parent}>
       <h1 className={styles.centerText}>Wholesale Products</h1>
       {isLoading ? <p>Loading...</p> : null}
       <textarea
@@ -514,13 +497,15 @@ export default function EditWholesale() {
         }}
       ></textarea>
       <button onClick={() => addNote(farmersNote)}>Post New Note</button>
-      <ProductTable
-        products={products}
-        updateProduct={updateProduct}
-        updateQuantity={updateQuantity}
-        addProduct={addProduct}
-        deleteProduct={deleteProduct}
-      />
+      <div className={styles.centerText}>
+        <ProductTable
+          products={products}
+          updateProduct={updateProduct}
+          updateQuantity={updateQuantity}
+          addProduct={addProduct}
+          deleteProduct={deleteProduct}
+        />
+      </div>
     </div>
   );
 }
