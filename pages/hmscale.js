@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   ScatterChart,
   Scatter,
@@ -20,19 +20,31 @@ function InputRow({ data, setData }) {
   const [hap, setHap] = useState('');
   const [mean, setMean] = useState('');
   const [time, setTime] = useState('');
+
+  const actRef = useRef(null);
+  const hapRef = useRef(null);
+  const meanRef = useRef(null);
+  const timeRef = useRef(null);
+  const refList = [actRef, hapRef, meanRef, timeRef];
+
+  useEffect(() => {
+    actRef.current.focus();
+  }, []);
+
   const addData = (e) => {
     e.preventDefault();
     setData([...data, { activity, hap, mean, time }]);
-    console.log(data);
     setActivity('');
     setHap('');
     setMean('');
     setTime('');
+    actRef.current.focus();
   };
   return (
     <tr>
       <td>
         <input
+          ref={actRef}
           size="10"
           type="text"
           value={activity}
@@ -45,8 +57,9 @@ function InputRow({ data, setData }) {
       </td>
       <td>
         <input
+          ref={hapRef}
           size="2"
-          type="integer"
+          type="tel"
           value={hap}
           onChange={(e) => {
             e.preventDefault();
@@ -57,8 +70,9 @@ function InputRow({ data, setData }) {
       </td>
       <td>
         <input
+          ref={meanRef}
           size="2"
-          type="integer"
+          type="tel"
           value={mean}
           onChange={(e) => {
             e.preventDefault();
@@ -69,8 +83,9 @@ function InputRow({ data, setData }) {
       </td>
       <td>
         <input
+          ref={timeRef}
           size="2"
-          type="integer"
+          type="tel"
           value={time}
           onChange={(e) => {
             e.preventDefault();
@@ -117,7 +132,7 @@ function EditRow({ item, index, data, setData }) {
       <td>
         <input
           size="2"
-          type="integer"
+          type="tel"
           value={hap}
           onChange={(e) => {
             e.preventDefault();
@@ -136,7 +151,7 @@ function EditRow({ item, index, data, setData }) {
       <td>
         <input
           size="2"
-          type="integer"
+          type="tel"
           value={mean}
           onChange={(e) => {
             e.preventDefault();
@@ -155,7 +170,7 @@ function EditRow({ item, index, data, setData }) {
       <td>
         <input
           size="2"
-          type="integer"
+          type="tel"
           value={time}
           onChange={(e) => {
             e.preventDefault();
@@ -206,23 +221,33 @@ function EnterData({ data, setData }) {
   const [mean, setMean] = useState('');
   const [time, setTime] = useState('');
   const [lineCount, setLineCount] = useState(0);
+  const actRef = useRef(null);
+  const hapRef = useRef(null);
+  const meanRef = useRef(null);
+  const timeRef = useRef(null);
 
-  const addData = (e) => {
-    e.preventDefault();
-    setData([...data, { activity, hap, mean, time }]);
-    console.log(data);
-    setActivity('');
-    setHap('');
-    setMean('');
-    setTime('');
-  };
+  useEffect(() => {
+    refList[lineCount] && refList[lineCount].current.focus();
+    lineCount > 3 && setData([...data, { activity, hap, mean, time }]);
+  }, [lineCount]);
+
+  const refList = [actRef, hapRef, meanRef, timeRef];
 
   return (
-    <form className={styles.infoCard}>
-      <div>
+    <div
+      className={styles.centerCard}
+      onKeyDown={(e) => {
+        console.log(lineCount);
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          setLineCount(lineCount + 1);
+        }
+      }}
+    >
+      <div className={styles.parent}>
         <label>Think of an activity that makes you happy </label>
         <input
-          size="10"
+          ref={actRef}
           value={activity}
           onChange={(e) => {
             e.preventDefault();
@@ -232,9 +257,11 @@ function EnterData({ data, setData }) {
         ></input>
       </div>
       {lineCount > 0 && (
-        <div>
-          <label>On a scale from 1-100 - how happy does this make you? </label>
+        <div className={styles.parent}>
+          <p> Answer the following on a scale from 1-100</p>
+          <label>How happy does this activity make you? </label>
           <input
+            ref={hapRef}
             size="2"
             value={hap}
             onChange={(e) => {
@@ -246,13 +273,11 @@ function EnterData({ data, setData }) {
         </div>
       )}
       {lineCount > 1 && (
-        <div>
-          <label>
-            On a scale from 1-100 - how meaningful is this activity to you?
-          </label>
+        <div className={styles.parent}>
+          <label>How meaningful is it to you?</label>
           <input
+            ref={meanRef}
             size="2"
-            placeholder={'3'}
             value={mean}
             onChange={(e) => {
               e.preventDefault();
@@ -263,9 +288,10 @@ function EnterData({ data, setData }) {
         </div>
       )}
       {lineCount > 2 && (
-        <div>
-          <label>{`Estimate how much time you spend at this activity in hours per week`}</label>
+        <div className={styles.parent}>
+          <label>How often do you do it?</label>
           <input
+            ref={timeRef}
             size="2"
             value={time}
             onChange={(e) => {
@@ -277,28 +303,24 @@ function EnterData({ data, setData }) {
         </div>
       )}
       <div>
-        {lineCount < 3 && (
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              setLineCount(lineCount + 1);
-            }}
-          >
-            Continue
-          </button>
-        )}
-        {lineCount > 2 && <button onClick={addData}>Continue </button>}
+        <button
+          onClick={(e) => {
+            {
+              lineCount < 3
+                ? setLineCount(lineCount + 1)
+                : setData([...data, { activity, hap, mean, time }]);
+            }
+          }}
+        >
+          Continue
+        </button>
       </div>
-    </form>
+    </div>
   );
 }
 
-export default function App() {
+export default function HMScale() {
   const [data, setData] = useState([]);
-  const [height, setHeight] = useState(
-    typeof window !== 'undefined' ? window.innerHeight : 0,
-  );
-  console.log(data);
   return (
     <div className={styles.fullHeightMobile}>
       {data.length === 0 && <EnterData data={data} setData={setData} />}

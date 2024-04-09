@@ -11,6 +11,10 @@ button {
   font-size: 16px;
 }
 
+input {
+  text-align: center;
+}
+
 table {
   width: 50%;
 }
