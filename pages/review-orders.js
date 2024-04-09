@@ -86,54 +86,49 @@ function OrderTable({ order, editOrder, updateOrder, deleteOrder }) {
   });
 
   return (
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th colSpan="5">Items Ordered</th>
-            {edit ? (
-              <th>
-                <button
-                  onClick={(e) => (
-                    e.preventDefault,
-                    console.log('onClick', order),
-                    updateOrder({ order }),
-                    setEdit(false)
-                  )}
-                >
-                  Save Order
-                </button>{' '}
-                <button
-                  onClick={(e) => (
-                    e.preventDefault,
-                    console.log('onClick', order.id),
-                    deleteOrder(order.id),
-                    setEdit(false)
-                  )}
-                >
-                  Delete Order
-                </button>{' '}
-              </th>
-            ) : (
-              <th>
-                {' '}
-                <button onClick={() => setEdit(true)}>Edit Order</button>
-              </th>
-            )}
-          </tr>
-          <tr>
-            <th>Name</th>
-            <th>Quantity Desired</th>
-            {edit && <th>New Quantity </th>}
-            <th>Price</th>
-            <th>Total Price</th>
-          </tr>
-        </thead>
-        <tbody>{rows}</tbody>
-      </table>
+    <table style={{ width: '100%' }}>
+      <thead>
+        {edit ? (
+          <th>
+            <button
+              onClick={(e) => (
+                e.preventDefault,
+                console.log('onClick', order),
+                updateOrder({ order }),
+                setEdit(false)
+              )}
+            >
+              Save Order
+            </button>{' '}
+            <button
+              onClick={(e) => (
+                e.preventDefault,
+                console.log('onClick', order.id),
+                deleteOrder(order.id),
+                setEdit(false)
+              )}
+            >
+              Delete Order
+            </button>{' '}
+          </th>
+        ) : (
+          <th>
+            <button onClick={() => setEdit(true)}>Edit Order</button>
+          </th>
+        )}
+        <tr>
+          <th>Name</th>
+          <th>Quantity Desired</th>
+          {edit && <th>New Quantity </th>}
+          <th>Price</th>
+          <th>Total Price</th>
+        </tr>
+      </thead>
+      <tbody>{rows}</tbody>
       <hr></hr>
-      <p>Order total: ${total} </p>
-    </div>
+      <p style={{ fontWeight: 'bold' }}>Order total: ${total} </p>
+      <p>Notes: {order.notes}</p>
+    </table>
   );
 }
 
@@ -229,9 +224,9 @@ export default function ReviewOrders() {
     return (
       <div>
         {viewCompleted ? (
-          <div className={styles.infoCard}>
+          <div>
             {completedOrders.map((order) => (
-              <div key={order.id}>
+              <div className={styles.infoCard} key={order.id}>
                 <h2>
                   {order.name} Order #{order.id}
                 </h2>
@@ -242,7 +237,6 @@ export default function ReviewOrders() {
                   updateOrder={updateOrder}
                   deleteOrder={deleteOrder}
                 />
-                <p>Notes: {order.notes}</p>
                 <p>
                   Order status:
                   <select
@@ -404,10 +398,10 @@ export default function ReviewOrders() {
       <ViewAllItems />
       <CompletedOrders />
       {viewEditWholesale && <EditWholesale />}
-      <div className={styles.storyCard}>
+      <div className={styles.parent}>
         {orders.length === 0 ? <h1>No New Orders</h1> : <h1>New Orders</h1>}
         {orders.map((order) => (
-          <div key={order.id}>
+          <div className={styles.infoCard} key={order.id}>
             <h2>
               {order.name} Order #{order.id}
             </h2>
@@ -418,7 +412,7 @@ export default function ReviewOrders() {
               updateOrder={updateOrder}
               deleteOrder={deleteOrder}
             />
-            <p>Notes: {order.notes}</p>
+            {/* <p>Notes: {order.notes}</p> */}
             <p>
               Order status:
               <select

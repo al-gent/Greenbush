@@ -176,27 +176,27 @@ function EditRow({ item, index, data, setData }) {
 }
 
 function DataTable({ data, setData }) {
-  const [edit, setEdit] = useState(false);
-
   const rows = data.map((item, index) => (
     <EditRow item={item} index={index} data={data} setData={setData} />
   ));
 
   return (
-    <table className={styles.mobileCard}>
-      <thead>
-        <tr>
-          <th>Activity</th>
-          <th>Hapiness</th>
-          <th>Meaning</th>
-          <th>Time</th>
-        </tr>
-      </thead>
-      <tbody>
-        <InputRow data={data} setData={setData} />
-        {rows}
-      </tbody>
-    </table>
+    <div className={styles.parent}>
+      <table>
+        <thead>
+          <tr>
+            <th>Activity</th>
+            <th>Hapiness</th>
+            <th>Meaning</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <InputRow data={data} setData={setData} />
+          {rows}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
@@ -347,13 +347,6 @@ export default function App() {
           <DataTable data={data} setData={setData} />
         </ResponsiveContainer>
       )}
-      <footer>
-        <p className={styles.footerText}>
-          {' '}
-          Website made with love by{' '}
-          <Link href="https://github.com/al-gent">Adam</Link>
-        </p>
-      </footer>
     </div>
   );
 }
