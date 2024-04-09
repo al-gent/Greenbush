@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from '../../styles/wholesale.module.css';
+import styles from '../../styles/index.module.css';
 import OrderSummary from '../../lib/order-summary';
 
 function QuantityUnit({
@@ -62,7 +62,7 @@ function ProductRow({ product, addToCart }) {
 
   return (
     <tr>
-      <td style={{ padding: '0.3rem' }}>{product.name}</td>
+      <td>{product.name}</td>
       <QuantityUnit
         product={product}
         unitSelected={unitSelected}
@@ -79,36 +79,34 @@ function ProductRow({ product, addToCart }) {
         <td></td>
       )}
       <td>
-        <form>
-          <div style={{ display: 'flex' }}>
-            <input
-              type="integer"
-              onSelect={(e) => setInvalidQuant(false)}
-              value={quantityDesired}
-              placeholder="0"
-              onChange={(e) => setQuantityDesired(e.target.value)}
-              style={{ width: '30px' }}
-            />
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                addToCart({
-                  product,
-                  quantityDesired,
-                  unitSelected,
-                  quantity,
-                  setQuantity,
-                  setQuantityDesired,
-                  setInvalidQuant,
-                  qAvailable,
-                  productMultiplier,
-                });
-              }}
-            >
-              Add
-            </button>
-          </div>
-        </form>
+        <input
+          type="tel"
+          onSelect={(e) => setInvalidQuant(false)}
+          value={quantityDesired}
+          placeholder="0"
+          onChange={(e) => setQuantityDesired(e.target.value)}
+          size={3}
+        />
+      </td>
+      <td>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            addToCart({
+              product,
+              quantityDesired,
+              unitSelected,
+              quantity,
+              setQuantity,
+              setQuantityDesired,
+              setInvalidQuant,
+              qAvailable,
+              productMultiplier,
+            });
+          }}
+        >
+          Add
+        </button>
       </td>
     </tr>
   );
@@ -154,27 +152,10 @@ function ListTable({ products, addToCart }) {
     ));
   return (
     <table>
-      <thead style={{ textAlign: 'left' }}>
+      <thead>
         <tr>
-          <th
-            style={{
-              paddingRight: '15px',
-              maxWidth: '20px',
-              whiteSpace: 'normal',
-              textAlign: 'left',
-            }}
-          >
-            Name
-          </th>
-          <th
-            style={{
-              maxWidth: '100px',
-              whiteSpace: 'normal',
-              textAlign: 'left',
-            }}
-          >
-            Quantity Available
-          </th>
+          <th>Name</th>
+          <th>Quantity Available</th>
           <th>Price</th>
         </tr>
       </thead>
@@ -208,37 +189,17 @@ function CartTable({
   return (
     <div>
       <hr></hr>
-      <div className={styles.centerText}>
-        <table>
-          <thead>
-            <tr>
-              <th colSpan="5">CART</th>
-            </tr>
-            <tr>
-              <th
-                style={{
-                  maxWidth: '100px',
-                  whiteSpace: 'normal',
-                  textAlign: 'left',
-                }}
-              >
-                Name
-              </th>
-              <th
-                style={{
-                  maxWidth: '100px',
-                  whiteSpace: 'normal',
-                  textAlign: 'left',
-                }}
-              >
-                Quantity Selected
-              </th>
-              <th>Price</th>
-              <th>Total Price</th>
-            </tr>
-          </thead>
-          <tbody>{rows}</tbody>
-        </table>
+      <div>
+        <h3 style={{ textAlign: 'center' }}>CART</h3>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Quantity Selected</th>
+            <th>Price</th>
+            <th>Total Price</th>
+          </tr>
+        </thead>
+        <tbody>{rows}</tbody>
       </div>
       <hr></hr>
       <p>
@@ -291,11 +252,7 @@ function CartTable({
   );
 }
 
-export default function OrderingForm({
-  reload,
-  updateOrders,
-  setUpdateOrders,
-}) {
+export default function OrderForm({ reload, updateOrders, setUpdateOrders }) {
   const [custname, setCustname] = useState('');
   const [email, setEmail] = useState('');
   const [notes, setNotes] = useState('');
@@ -459,35 +416,31 @@ export default function OrderingForm({
   const CartLen = products.filter((product) => product.cart > 0).length;
 
   return (
-    <>
-      <div className={styles.infoCard}>
-        <header>
-          <h1 className={styles.centerText}>Wholesale Order Form</h1>
-          {isLoading && <h2>Loading...</h2>}
-        </header>
+    <div className={styles.infoCard}>
+      <div className={styles.parent}>
+        <h1>Wholesale Order Form</h1>
+        {isLoading && <h2>Loading...</h2>}
         {orderPlaced ? (
           <OrderSummary order={order} />
         ) : (
-          <div className={styles.centerText}>
+          <div>
             {farmersNote && (
-              <p className={styles.centerText}>
+              <p>
                 <em>Farmer's Note: {farmersNote}</em>
               </p>
             )}
-            <div className={styles.centerText}>
+            <div className={styles.parent}>
               <ListTable
-                className={styles.centerText}
                 products={products}
                 addToCart={addToCart}
                 farmersNote={farmersNote}
               />
             </div>
             {CartLen === 0 ? (
-              <h1 className={styles.centerText}>Cart is empty</h1>
+              <h1 className={styles.parent}>Cart is empty</h1>
             ) : (
-              <div className={styles.centerText}>
+              <div className={styles.parent}>
                 <CartTable
-                  className={styles.centerText}
                   products={products}
                   removeFromCart={removeFromCart}
                   onSubmit={submitOrder}
@@ -505,6 +458,6 @@ export default function OrderingForm({
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }
