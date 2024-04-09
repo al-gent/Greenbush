@@ -65,7 +65,7 @@ function ProductRow({ product, addToCart }) {
 
   return (
     <tr>
-      <td style={{ padding: '0.3rem' }}>{product.name}</td>
+      <td>{product.name}</td>
       <QuantityUnit
         product={product}
         unitSelected={unitSelected}
@@ -82,36 +82,34 @@ function ProductRow({ product, addToCart }) {
         <td></td>
       )}
       <td>
-        <form>
-          <div style={{ display: 'flex' }}>
-            <input
-              type="integer"
-              onSelect={(e) => setInvalidQuant(false)}
-              value={quantityDesired}
-              placeholder="0"
-              onChange={(e) => setQuantityDesired(e.target.value)}
-              style={{ width: '30px' }}
-            />
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                addToCart({
-                  product,
-                  quantityDesired,
-                  unitSelected,
-                  quantity,
-                  setQuantity,
-                  setQuantityDesired,
-                  setInvalidQuant,
-                  qAvailable,
-                  productMultiplier,
-                });
-              }}
-            >
-              Add
-            </button>
-          </div>
-        </form>
+        <div style={{ display: 'flex' }}>
+          <input
+            type="integer"
+            onSelect={(e) => setInvalidQuant(false)}
+            value={quantityDesired}
+            placeholder="0"
+            onChange={(e) => setQuantityDesired(e.target.value)}
+            style={{ width: '30px' }}
+          />
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              addToCart({
+                product,
+                quantityDesired,
+                unitSelected,
+                quantity,
+                setQuantity,
+                setQuantityDesired,
+                setInvalidQuant,
+                qAvailable,
+                productMultiplier,
+              });
+            }}
+          >
+            Add
+          </button>
+        </div>
       </td>
     </tr>
   );
@@ -156,28 +154,11 @@ function ListTable({ products, addToCart }) {
       <ProductRow key={product.id} product={product} addToCart={addToCart} />
     ));
   return (
-    <table>
-      <thead style={{ textAlign: 'left' }}>
+    <table style={{ width: '100%' }}>
+      <thead>
         <tr>
-          <th
-            style={{
-              paddingRight: '15px',
-              maxWidth: '20px',
-              whiteSpace: 'normal',
-              textAlign: 'left',
-            }}
-          >
-            Name
-          </th>
-          <th
-            style={{
-              maxWidth: '100px',
-              whiteSpace: 'normal',
-              textAlign: 'left',
-            }}
-          >
-            Quantity Available
-          </th>
+          <th>Name</th>
+          <th>Quantity Available</th>
           <th>Price</th>
         </tr>
       </thead>
@@ -209,37 +190,17 @@ function CartTable({
   return (
     <div>
       <hr></hr>
-      <div className={styles.centerText}>
-        <table>
-          <thead>
-            <tr>
-              <th colSpan="5">CART</th>
-            </tr>
-            <tr>
-              <th
-                style={{
-                  maxWidth: '100px',
-                  whiteSpace: 'normal',
-                  textAlign: 'left',
-                }}
-              >
-                Name
-              </th>
-              <th
-                style={{
-                  maxWidth: '100px',
-                  whiteSpace: 'normal',
-                  textAlign: 'left',
-                }}
-              >
-                Quantity Selected
-              </th>
-              <th>Price</th>
-              <th>Total Price</th>
-            </tr>
-          </thead>
-          <tbody>{rows}</tbody>
-        </table>
+      <div>
+        <h3 style={{ textAlign: 'center' }}>CART</h3>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Quantity Selected</th>
+            <th>Price</th>
+            <th>Total Price</th>
+          </tr>
+        </thead>
+        <tbody>{rows}</tbody>
       </div>
       <hr></hr>
       <p>
@@ -483,7 +444,7 @@ export default function App() {
               ) : (
                 <div className={styles.centerText}>
                   <CartTable
-                    className={styles.centerText}
+                    // className={styles.centerText}
                     products={products}
                     removeFromCart={removeFromCart}
                     onSubmit={submitOrder}

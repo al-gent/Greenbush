@@ -18,15 +18,15 @@ export default function Home() {
         <h1> Adam L. Gent </h1>
         <Image
           className={styles.headshot}
-          src="/images/adam_knight.jpg"
-          height={1500}
-          width={1500}
+          src="/images/IMG_5495.jpg"
+          height={1800}
+          width={1800}
           alt="Headshot"
         />
         <SocialLinks></SocialLinks>
-        <h3>Software Developer - Educator - Musician</h3>
-        <p> Learning new technologies. </p>
-        <p> Looking for interesting problems to solve. </p>
+        <h3>Developer - Educator - Creative</h3>
+        <p> Learning new technologies & looking for interesting problems.</p>
+        <p> </p>
         {/* <p>
           View my resume{' '}
           <Link href="/resume.pdf" target="_blank">
