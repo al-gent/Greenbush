@@ -5,12 +5,12 @@ import styles from '/styles/index.module.css';
 import editOrder from './edit-order';
 import updateOrder from './update-order';
 import deleteOrder from './delete-order';
+import updateOrderStatus from './update-order-status';
 
 export default function CompletedOrders({
   getCompletedOrdersAPI,
-  deleteOrdersAPI,
-  isLoading,
   setIsLoading,
+  updateOrderStatusAPI,
 }) {
   const [completedOrders, setCompletedOrders] = useState([]);
   const [reload, setReload] = useState(false);
@@ -44,8 +44,14 @@ export default function CompletedOrders({
               value={order.status}
               onChange={(e) =>
                 updateOrderStatus({
+                  orders: completedOrders,
+                  setOrders: setCompletedOrders,
                   orderID: order.id,
                   status: e.target.value,
+                  updateOrderStatusAPI: updateOrderStatusAPI,
+                  setIsLoading: setIsLoading,
+                  setReload: setReload,
+                  reload: reload,
                 })
               }
             >
