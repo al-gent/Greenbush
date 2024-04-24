@@ -38,9 +38,10 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
   }
 
   return edit ? (
-    <tr>
+    <tr className={styles.productRow}>
       <td>
         <input
+          size={productName.length}
           type="text"
           value={productName}
           onChange={(e) => {
@@ -52,8 +53,8 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
       </td>
       <td>
         <input
-          className={styles.inputBox}
-          type="integer"
+          size="4"
+          type="tel"
           value={quantity}
           onChange={(e) => {
             e.preventDefault();
@@ -64,8 +65,8 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
       </td>
       <td>
         <input
-          className={styles.inputBox}
-          type="number"
+          size="4"
+          type="tel"
           step="any"
           value={price}
           onChange={(e) => {
@@ -75,7 +76,7 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
           }}
         />
         <input
-          className={styles.inputBox}
+          size="4"
           type="text"
           value={unit}
           onChange={(e) => {
@@ -87,8 +88,8 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
       </td>
       <td>
         <input
-          className={styles.inputBox}
-          type="number"
+          size="4"
+          type="tel"
           step="any"
           value={price2}
           onChange={(e) => {
@@ -98,7 +99,7 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
           }}
         ></input>
         <input
-          className={styles.inputBox}
+          size="4"
           type="text"
           value={unit2}
           onChange={(e) => {
@@ -128,13 +129,21 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
       <button onClick={() => setEdit(false)}>Cancel</button>
     </tr>
   ) : (
-    <tr>
-      <td>{productName}</td>
+    <tr className={styles.productRow}>
+      <td
+        style={{
+          maxWidth: '4rem',
+          whiteSpace: 'pre-wrap',
+          wordWrap: 'break-word',
+        }}
+      >
+        {productName}
+      </td>
       <td>
         <form>
           <input
             size={4}
-            type="integer"
+            type="tel"
             value={quantity}
             placeholder={quantity}
             onChange={(e) => {
@@ -189,27 +198,19 @@ function ProductTable({
     />
   ));
   return (
-    <table style={{ width: '75%' }}>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th
-            style={{
-              padding: '0px 20px 0px 0px',
-            }}
-          >
-            Quantity
-          </th>
-          <th>Primary Price / Unit</th>
-          <th>Secondary Price / Unit</th>
-        </tr>
-      </thead>
+    <table>
+      <tr>
+        <th style={{ wordWrap: 'break-word', maxWidth: '5rem' }}>Name</th>
+        <th>Quantity</th>
+        <th style={{ width: '4rem' }}>1st Price / Unit</th>
+        <th style={{ width: '4rem' }}>2nd Price / Unit</th>
+      </tr>
       <tbody>
         {rows}
-
         <tr>
           <td>
             <input
+              size={10}
               type="text"
               placeholder="Product Name"
               value={productName}
@@ -224,7 +225,7 @@ function ProductTable({
             <input
               size={3}
               placeholder="Quantity"
-              type="integer"
+              type="tel"
               value={quantity}
               onChange={(e) => {
                 e.preventDefault();
@@ -237,7 +238,7 @@ function ProductTable({
             <input
               size={3}
               placeholder="Price"
-              type="integer"
+              type="tel"
               step="any"
               value={price}
               onChange={(e) => {
@@ -247,7 +248,7 @@ function ProductTable({
               }}
             />
             <input
-              className={styles.inputBox}
+              size={3}
               placeholder="Unit"
               type="text"
               value={unit}
@@ -260,9 +261,9 @@ function ProductTable({
           </td>
           <td>
             <input
-              className={styles.inputBox}
+              size={3}
               placeholder="Price"
-              type="integer"
+              type="tel"
               step="any"
               value={price2}
               onChange={(e) => {
@@ -272,7 +273,7 @@ function ProductTable({
               }}
             ></input>
             <input
-              className={styles.inputBox}
+              size={3}
               placeholder="Unit"
               type="text"
               value={unit2}
@@ -304,29 +305,41 @@ function ProductTable({
   );
 }
 
-export default function EditWholesale() {
+export default function EditWholesale({
+  dataAPI,
+  farmersNotesAPI,
+  deleteProductAPI,
+  addProductAPI,
+  updateProductAPI,
+  updateQuantityAPI,
+  addNoteAPI,
+  isLoading,
+  setIsLoading,
+}) {
   const [farmersNote, setFarmersNote] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch('/api/data')
+    setIsLoading(true);
+    console.log('dataAPI', dataAPI);
+    fetch(dataAPI)
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
       })
       .catch((error) => console.error('Error:', error));
-    fetch('/api/farmers-notes')
+
+    fetch(farmersNotesAPI)
       .then((response) => response.json())
       .then((note) => {
         setFarmersNote(note.note);
       })
       .catch((error) => console.error('Error:', error));
+    setIsLoading(false);
   }, []);
 
   function deleteProduct(id) {
     setIsLoading(true);
-    console.log('deleting product', id);
-    fetch('/api/delete-product', {
+    fetch(deleteProductAPI, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -368,7 +381,7 @@ export default function EditWholesale() {
     ]);
 
     console.log('adding product', productName, quantity, unit, price);
-    fetch('/api/add-product', {
+    fetch(addProductAPI, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -405,7 +418,7 @@ export default function EditWholesale() {
     price2,
   ) {
     setIsLoading(true);
-    fetch('/api/update-product', {
+    fetch(updateProductAPI, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -443,7 +456,7 @@ export default function EditWholesale() {
       unit,
       price,
     );
-    fetch('/api/update-quantity', {
+    fetch(updateQuantityAPI, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -466,7 +479,7 @@ export default function EditWholesale() {
   function addNote(farmersNote) {
     setIsLoading(true);
     console.log('updating note', farmersNote);
-    fetch('/api/add-note', {
+    fetch(addNoteAPI, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -484,11 +497,11 @@ export default function EditWholesale() {
   }
 
   return (
-    <div className={styles.parent}>
-      <h1 className={styles.centerText}>Wholesale Products</h1>
+    <div className={styles.editWholesale}>
+      <h1>Wholesale Products</h1>
       {isLoading ? <p>Loading...</p> : null}
       <textarea
-        style={{ width: '100%', height: '100px' }}
+        style={{ width: '100%', maxWidth: '30rem', height: '5rem' }}
         placeholder={`Farmer's Note: ${farmersNote}`}
         onChange={(e) => {
           e.preventDefault();
@@ -496,8 +509,10 @@ export default function EditWholesale() {
           setFarmersNote(newNote);
         }}
       ></textarea>
-      <button onClick={() => addNote(farmersNote)}>Post New Note</button>
-      <div className={styles.centerText}>
+      <div>
+        <button onClick={() => addNote(farmersNote)}>Post New Note</button>
+      </div>
+      <div>
         <ProductTable
           products={products}
           updateProduct={updateProduct}

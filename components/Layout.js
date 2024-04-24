@@ -4,10 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import utilStyles from '../styles/utils.module.css';
 
-const name = 'Greenbush Growing Cooperative';
-export const siteTitle = 'Greenbush Wholesale';
-
-export default function Layout({ children, isLoading, props }) {
+export default function Layout({ children, isLoading, props, siteTitle }) {
   return (
     <div className={styles.centerText}>
       <Head>
