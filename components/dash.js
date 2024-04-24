@@ -63,6 +63,7 @@ export default function Dash({
         <CompletedOrders
           getCompletedOrdersAPI={getCompletedOrdersAPI}
           setIsLoading={setIsLoading}
+          updateOrderStatusAPI={updateOrderStatusAPI}
         />
       )}
       {viewEditWholesale && (

@@ -1,0 +1,70 @@
+.spreadCards {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 40rem, 80rem, 80rem;
+  padding: 1rem;
+  @media (max-width: 1400px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.spreadPoints {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.customerInterface {
+  grid-column: 2/4;
+  grid-row: 2;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #d8e5a7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dashComments {
+  grid-column: 2/4;
+}
+
+.orderFormComments {
+  grid-column: 4/6;
+}
+
+.orderFormComments h2 {
+  text-align: center;
+}
+
+.farmersDash {
+  grid-column: 4/6;
+  grid-row: 3;
+  padding: 1rem;
+
+  @media (min-width: 768px) {
+    border-radius: 1rem;
+    background-color: #e5a7a7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.imAnApp {
+  grid-column: 3/5;
+  grid-row: 1;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #e1a7e5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.imAnApp h2 {
+  text-align: center;
+}
+
+.imAnApp:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Larger shadow */
+}
