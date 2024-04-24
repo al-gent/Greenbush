@@ -352,7 +352,8 @@ export default function ReviewOrders({ updateOrders }) {
   }
 
   return (
-    <div>
+    <div className={styles.storyCard}>
+      <h1>Farmer's Dashboard</h1>
       <div className={styles.dash}>
         <button
           className={styles.dash}

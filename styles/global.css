@@ -7,16 +7,16 @@ html {
   font-size: 16px;
 }
 
+h1 {
+  text-align: center;
+}
+
 button {
   font-size: 16px;
 }
 
 input {
   text-align: center;
-}
-
-table {
-  width: 50%;
 }
 
 th {
@@ -31,4 +31,10 @@ input {
 
 wsb:hover {
   background-color: #0e5188;
+}
+
+td {
+  word-wrap: break-word;
+  max-width: 8rem; /* Adjust as needed */
+  padding-top: 0.5rem;
 }
