@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Layout from '../components/Layout';
 import styles from '../styles/wholesale.module.css';
 import Link from 'next/link';
 
