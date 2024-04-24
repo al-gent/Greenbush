@@ -1,9 +1,9 @@
 import emailjs from '@emailjs/browser';
 
-export default async function EmailGB(order) {
-  console.log('start of EMAIL function', order);
+export default async function EmailGB(order, farmer_email) {
+  console.log('start of EMAIL function', order, farmer_email);
 
-  const orderTable = order.order.products
+  const orderTable = order.products
     .map((product) => {
       return `
     ${product.cart} ${product.unit} - ${product.name} - $${
@@ -13,11 +13,12 @@ export default async function EmailGB(order) {
     .join();
 
   const templateParams = {
-    name: order.order.name,
-    reply_to: order.order.email,
-    notes: order.order.notes,
+    farmer_email: farmer_email,
+    name: order.name,
+    reply_to: order.email,
+    notes: order.notes,
     orderTable: orderTable,
-    total: order.order.products.reduce((acc, product) => {
+    total: order.products.reduce((acc, product) => {
       return acc + product.cart * product.price;
     }, 0),
   };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../../components/Layout';
-import styles from '../../styles/wholesale.module.css';
+import styles from '../../styles/index.module.css';
 
 // unit is now a list of units & price is now a list of prices
 // the layout of this product list needs to reflect that
@@ -58,7 +58,7 @@ function ProductRow({
       </td>
       <td>
         <input
-          className={styles.inputBox}
+          size={3}
           type="integer"
           value={quantity}
           onChange={(e) => {
@@ -70,7 +70,7 @@ function ProductRow({
       </td>
       <td>
         <input
-          className={styles.inputBox}
+          size={3}
           type="number"
           step="any"
           value={price}
@@ -81,7 +81,7 @@ function ProductRow({
           }}
         />
         <input
-          className={styles.inputBox}
+          size={3}
           type="text"
           value={unit}
           onChange={(e) => {
@@ -93,7 +93,7 @@ function ProductRow({
       </td>
       <td>
         <input
-          className={styles.inputBox}
+          size={3}
           type="number"
           step="any"
           value={price2}
@@ -104,7 +104,7 @@ function ProductRow({
           }}
         ></input>
         <input
-          className={styles.inputBox}
+          size={3}
           type="text"
           value={unit2}
           onChange={(e) => {
@@ -138,29 +138,27 @@ function ProductRow({
     <tr>
       <td>{productName}</td>
       <td>
-        <form>
-          <input
-            type="integer"
-            value={quantity}
-            placeholder={quantity}
-            onChange={(e) => {
-              e.preventDefault();
-              const newQuantity = parseInt(e.target.value);
-              if (
-                isNaN(newQuantity) ||
-                newQuantity < 0 ||
-                newQuantity === quantity
-              ) {
-                setQuantity(quantity);
-                return;
-              }
-              setQuantity(newQuantity);
-              updateQuantity(product, productName, newQuantity, unit, price);
-              setReload((reload += 1));
-            }}
-            style={{ width: '40px' }}
-          />
-        </form>
+        <input
+          type="integer"
+          value={quantity}
+          placeholder={quantity}
+          onChange={(e) => {
+            e.preventDefault();
+            const newQuantity = parseInt(e.target.value);
+            if (
+              isNaN(newQuantity) ||
+              newQuantity < 0 ||
+              newQuantity === quantity
+            ) {
+              setQuantity(quantity);
+              return;
+            }
+            setQuantity(newQuantity);
+            updateQuantity(product, productName, newQuantity, unit, price);
+            setReload((reload += 1));
+          }}
+          size={2}
+        />
       </td>
       <td>
         ${price} / {perUnit(unit)}
@@ -202,35 +200,12 @@ function ProductTable({
   ));
   return (
     <table>
-      <thead style={{ textAlign: 'left' }}>
+      <thead>
         <tr>
           <th>Name</th>
-          <th
-            style={{
-              padding: '0px 20px 0px 0px',
-            }}
-          >
-            Quantity
-          </th>
-          <th
-            style={{
-              paddingRight: '20px',
-              maxWidth: '100px',
-              whiteSpace: 'normal',
-              textAlign: 'left',
-            }}
-          >
-            Primary Price / Unit
-          </th>
-          <th
-            style={{
-              maxWidth: '100px',
-              whiteSpace: 'normal',
-              textAlign: 'left',
-            }}
-          >
-            Secondary Price / Unit
-          </th>
+          <th>Quantity</th>
+          <th>Primary Price / Unit</th>
+          <th>Secondary Price / Unit</th>
         </tr>
       </thead>
       <tbody>
@@ -251,9 +226,9 @@ function ProductTable({
           </td>
           <td>
             <input
-              className={styles.inputBox}
+              size={3}
               placeholder="Quantity"
-              type="integer"
+              type="tel"
               value={quantity}
               onChange={(e) => {
                 e.preventDefault();
@@ -264,9 +239,9 @@ function ProductTable({
           </td>
           <td>
             <input
-              className={styles.inputBox}
+              size={3}
               placeholder="Price"
-              type="number"
+              type="tel"
               step="any"
               value={price}
               onChange={(e) => {
@@ -276,7 +251,7 @@ function ProductTable({
               }}
             />
             <input
-              className={styles.inputBox}
+              size={3}
               placeholder="Unit"
               type="text"
               value={unit}
@@ -289,9 +264,9 @@ function ProductTable({
           </td>
           <td>
             <input
-              className={styles.inputBox}
+              size={3}
               placeholder="Price"
-              type="number"
+              type="tel"
               step="any"
               value={price2}
               onChange={(e) => {
@@ -301,7 +276,7 @@ function ProductTable({
               }}
             ></input>
             <input
-              className={styles.inputBox}
+              size={3}
               placeholder="Unit"
               type="text"
               value={unit2}
@@ -519,30 +494,28 @@ export default function EditWholesale({ reload, setReload }) {
   }
 
   return (
-    <>
-      <div className={styles.infoCard}>
-        <h1 className={styles.centerText}>Wholesale Products</h1>
-        {isLoading ? <p>Loading...</p> : null}
-        <textarea
-          style={{ width: '100%', height: '100px' }}
-          placeholder={`Farmer's Note: ${farmersNote}`}
-          onChange={(e) => {
-            e.preventDefault();
-            const newNote = e.target.value;
-            setFarmersNote(newNote);
-          }}
-        ></textarea>
-        <button onClick={() => addNote(farmersNote)}>Post New Note</button>
-        <ProductTable
-          products={products}
-          updateProduct={updateProduct}
-          updateQuantity={updateQuantity}
-          addProduct={addProduct}
-          deleteProduct={deleteProduct}
-          reload={reload}
-          setReload={setReload}
-        />
-      </div>
-    </>
+    <div>
+      <h1 className={styles.centerText}>Wholesale Products</h1>
+      {isLoading ? <p>Loading...</p> : null}
+      <textarea
+        style={{ width: '100%' }}
+        placeholder={`Farmer's Note: ${farmersNote}`}
+        onChange={(e) => {
+          e.preventDefault();
+          const newNote = e.target.value;
+          setFarmersNote(newNote);
+        }}
+      ></textarea>
+      <button onClick={() => addNote(farmersNote)}>Post New Note</button>
+      <ProductTable
+        products={products}
+        updateProduct={updateProduct}
+        updateQuantity={updateQuantity}
+        addProduct={addProduct}
+        deleteProduct={deleteProduct}
+        reload={reload}
+        setReload={setReload}
+      />
+    </div>
   );
 }

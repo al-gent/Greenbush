@@ -64,7 +64,7 @@ function InputRow({ data, setData }) {
           onChange={(e) => {
             e.preventDefault();
             const newQuantity = e.target.value;
-            setHap(parseFloat(newQuantity));
+            setHap(newQuantity);
           }}
         />
       </td>
@@ -77,7 +77,7 @@ function InputRow({ data, setData }) {
           onChange={(e) => {
             e.preventDefault();
             const newQuantity = e.target.value;
-            setMean(parseFloat(newQuantity));
+            setMean(newQuantity);
           }}
         />
       </td>
@@ -90,7 +90,7 @@ function InputRow({ data, setData }) {
           onChange={(e) => {
             e.preventDefault();
             const newQuantity = e.target.value;
-            setTime(parseFloat(newQuantity));
+            setTime(newQuantity);
           }}
         />
       </td>
@@ -261,6 +261,7 @@ function EnterData({ data, setData }) {
           <p> Answer the following on a scale from 1-100</p>
           <label>How happy does this activity make you? </label>
           <input
+            type="tel"
             ref={hapRef}
             size="2"
             value={hap}
@@ -276,6 +277,7 @@ function EnterData({ data, setData }) {
         <div className={styles.parent}>
           <label>How meaningful is it to you?</label>
           <input
+            type="tel"
             ref={meanRef}
             size="2"
             value={mean}
@@ -291,6 +293,7 @@ function EnterData({ data, setData }) {
         <div className={styles.parent}>
           <label>How often do you do it?</label>
           <input
+            type="tel"
             ref={timeRef}
             size="2"
             value={time}
