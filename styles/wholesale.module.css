@@ -2,14 +2,44 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-  width: 100vw;
-  max-width: 400px;
+  max-width: 450px;
 }
 
+.dash {
+  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #7e53b6;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dash button {
+  font-weight: bold;
+  width: 8rem; /* adjust as needed */
+  height: 8rem; /* adjust as needed */
+  background-color: #077fff7e; /* adjust as needed */
+  color: white; /* adjust as needed */
+  border: none; /* adjust as needed */
+  border-radius: 5px; /* adjust as needed */
+  font-size: 16px; /* adjust as needed */
+}
+
+.dash:hover {
+  opacity: 0.5;
+}
 .logo {
-  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 450px;
+  width: 80%;
   height: auto;
+  padding: 1rem;
 }
 
 .nav {
@@ -161,5 +191,27 @@
 }
 
 .infoCard:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Larger shadow */
+}
+
+.editWholesale {
+}
+
+@media (min-width: 768px) {
+  .editWholesale {
+    flex-direction: column;
+    max-width: 35rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background-color: #a7ace5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.editWholesale:hover {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Larger shadow */
 }

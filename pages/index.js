@@ -31,11 +31,11 @@ export default function Home() {
         <p> Learning new technologies.</p>
         <p>Working on interesting problems.</p>
       </div>{' '}
-      <div className={styles.storyCard}>
-        <Link href="http://www.adamlgent.com/hmscale">
+      <Link href="http://www.adamlgent.com/hmscale">
+        <div className={styles.storyCard}>
           <h2>Happiness Vs Meaning Scale</h2>
-        </Link>
-      </div>
+        </div>
+      </Link>
       <div onClick={() => setViewPS(!viewPS)} className={styles.storyCard}>
         <h2>Project Spotlight</h2>
         {viewPS && (
@@ -50,12 +50,13 @@ export default function Home() {
               />
             </Link>
             <p>
-              My client, an organic farmer, was updating his inventory by hand
-              and getting frustrated. It was time consuming and error prone.
+              My client & brother, an organic farmer, was updating his inventory
+              by hand and getting frustrated. It was time consuming and error
+              prone.
             </p>
             <p>
               I built him a tool that allows him to update his inventory in real
-              time.
+              time & allows his customers to order directly from the website.
             </p>
             <p>
               Feel free to play around with it - everything works in this demo
@@ -74,14 +75,15 @@ export default function Home() {
       )}
       {viewPS ? (
         viewOF ? null : (
-          <button onClick={() => setViewOF(!viewOF)}>
-            <h2>View Order Form </h2>
-          </button>
+          <div className={styles.parentFlex}>
+            <button onClick={() => setViewOF(!viewOF)}>
+              <h2>View Order Form </h2>
+            </button>
+          </div>
         )
       ) : null}
       {viewPS && viewOF && (
-        <div className={styles.storyCard}>
-          <h1>Farmer's Dashboard</h1>
+        <div>
           <ReviewOrders
             reload={reload}
             setReload={setReload}
