@@ -32,18 +32,18 @@ export default function Dash({
       <h1>Farmer's Dashboard</h1>
       <div className={styles.dash}>
         <button onClick={() => setViewNewOrders(!viewNewOrders)}>
-          {viewNewOrders ? `Hide New Orders` : `View New Orders`}
+          {viewNewOrders ? `Hide New Orders` : `New Orders`}
         </button>
         <button onClick={() => setViewEditWholesale(!viewEditWholesale)}>
-          {viewEditWholesale ? `Hide Edit Wholesale` : `View Edit Wholesale`}
+          {viewEditWholesale ? `Hide Edit Wholesale` : `Edit Wholesale`}
         </button>
       </div>
       <div className={styles.dash}>
         <button onClick={() => setViewCompleted(!viewCompleted)}>
-          {viewCompleted ? `Hide Completed Orders` : `View Completed Orders`}
+          {viewCompleted ? `Hide Completed Orders` : `Completed Orders`}
         </button>
         <button onClick={() => setViewAllItems(!viewAllItems)}>
-          {viewAllItems ? `Hide List of All Items` : `View List of All Items`}
+          {viewAllItems ? `Hide List of All Items` : `List of All Items`}
         </button>
       </div>
       {viewNewOrders && (
