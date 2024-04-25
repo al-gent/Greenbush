@@ -13,7 +13,7 @@ export default function Demo() {
       <div className={styles.imAnApp}>
         <h1> Hi! I'm an app. </h1>
         <h2>I help small farms* sell wholesale produce.</h2>
-        <div className={styles.spreadPoints}>
+        <div>
           <div>
             <h3>I can:</h3>
             <ul>Keep track of inventory.</ul>
@@ -39,12 +39,15 @@ export default function Demo() {
               the season.
             </ul>
             <ul>Create pretty graphs that buying show trends.</ul>
-            <ul>Accept payment</ul>
-            <ul>Have the option for buyers to sign in</ul>
+            <ul>Accept payments securely through the platform.</ul>
+            <ul>
+              Offer the option for buyers to create accounts and track their
+              orders.
+            </ul>
             <ul style={{ fontWeight: 'bold' }}>
               Work for your farm too!{' '}
-              <Link href="">
-                <button>Email Adam</button>
+              <Link href="mailto:94gent@gmail.com?subject=Hook me up with that sweet sweet app">
+                <button style={{ margin: '1rem' }}>Email Adam</button>
               </Link>
             </ul>
           </div>
@@ -80,41 +83,45 @@ export default function Demo() {
       </div>
       <div className={styles.dashComments}>
         <h2>Farmer's Dashboard Features</h2>
-        <div className={styles.spreadPoints}>
+        {/* <div className={styles.spreadPoints}> */}
+        <div>
+          <h3>New Orders</h3>
+          <ul>View all pending orders awaiting completion.</ul>
+          <ul>Delete an order.</ul>
+          <ul>
+            Mark orders as confirmed, automatically sending a confirmation email
+            to clients.
+          </ul>
+          <ul>Mark orders as completed.</ul>
+          <ul>Edit the quantity for delivery.</ul>
+        </div>
+        <div>
+          <h3>Edit Wholesale</h3>
+          <ul>Update available quantitites.</ul>
+          <ul>Add new products, delete products, or adjust prices.</ul>
+          <ul>Update farmer's note displayed on the order form.</ul>
+          <ul>
+            Maybe you sell cilantro or green onions by the pound and by the
+            bunch?
+          </ul>
+          <ul>
+            Each item has a primary price/unit, with an option to add a
+            secondary price/unit.{' '}
+          </ul>
+        </div>
+        <div>
           <div>
-            <h3>View New Orders</h3>
-            <ul>View all the orders that haven't been completed yet</ul>
-            <ul>Delete an order</ul>
+            <h3>Completed Orders</h3>
+            <ul>View all completed orders</ul>
+            <ul>Change order status if necessary</ul>
+            <h3>List of All Items</h3>
             <ul>
-              Mark order as confirmed - confirmation email will be sent to
-              client automatically.
+              Items from all new orders are aggregated here for easy planning of
+              harvesting.
             </ul>
-            <ul>Mark order as completed</ul>
-            <ul>Edit the quantity that will be delivered</ul>
-          </div>
-          <div>
-            <h3>Edit Wholesale</h3>
-            <ul>Update the quantities available</ul>
-            <ul>Add new products, delete products, or adjust prices</ul>
-            <ul>Add a farmer's note that is displayed on your order form</ul>
-            <ul>
-              Each item has a primary price/unit, with the option to add a
-              secondary price/unit{' '}
-            </ul>
-          </div>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <div>
-              <h3>View Completed Orders</h3>
-              <ul>See all completed orders</ul>
-              <ul>Change order status if necessary</ul>
-              <h3>List of All Items</h3>
-              <ul>
-                Items from all new orders are aggregated here - making it easy
-                to know what to harvest that day.
-              </ul>
-            </div>
           </div>
         </div>
+        {/* </div> */}
       </div>
 
       <div className={styles.farmersDash}>

@@ -194,9 +194,6 @@
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Larger shadow */
 }
 
-.editWholesale {
-}
-
 @media (min-width: 768px) {
   .editWholesale {
     flex-direction: column;
@@ -213,5 +210,5 @@
 }
 
 .editWholesale:hover {
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Larger shadow */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
 }

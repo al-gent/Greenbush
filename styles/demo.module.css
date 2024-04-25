@@ -1,22 +1,29 @@
 .spreadCards {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 40rem, 80rem, 80rem;
-  padding: 1rem;
-  @media (max-width: 1400px) {
-    display: flex;
-    flex-direction: column;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* @media (min-width: 1400px) {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 40rem, 80rem, 80rem;
+    padding: 1rem;
+  } */
 }
+.spreadCards > * {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .spreadPoints {
   display: flex;
   justify-content: space-between;
-
-  @media (max-width: 768px) {
+  /* @media (min-width: 768px) {
     display: flex;
     align-items: center;
     flex-direction: column;
-  }
+  } */
 }
 
 .customerInterface {
@@ -45,11 +52,11 @@
   grid-row: 3;
   padding: 1rem;
 
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     border-radius: 1rem;
     background-color: #e5a7a7;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
+  } */
 }
 
 .imAnApp {
@@ -59,6 +66,7 @@
   border-radius: 1rem;
   background-color: #e1a7e5;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
 }
 
 .imAnApp h2 {
@@ -67,4 +75,19 @@
 
 .imAnApp:hover {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Larger shadow */
+}
+
+.dash button {
+  font-weight: bold;
+  width: 8rem; /* adjust as needed */
+  height: 8rem; /* adjust as needed */
+  background-color: #077fff7e; /* adjust as needed */
+  color: white; /* adjust as needed */
+  border: none; /* adjust as needed */
+  border-radius: 5px; /* adjust as needed */
+  font-size: 16px; /* adjust as needed */
+}
+
+.dash:hover {
+  opacity: 0.5;
 }

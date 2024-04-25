@@ -283,6 +283,8 @@ function ProductTable({
               }}
             ></input>
           </td>
+        </tr>
+        <tr>
           <td>
             <button
               onClick={() => {
@@ -500,7 +502,7 @@ export default function EditWholesale({
       <h1>Wholesale Products</h1>
       {isLoading ? <p>Loading...</p> : null}
       <textarea
-        style={{ width: '100%', maxWidth: '30rem', height: '5rem' }}
+        style={{ width: '90%', maxWidth: '30rem', height: '5rem' }}
         placeholder={`Farmer's Note: ${farmersNote}`}
         onChange={(e) => {
           e.preventDefault();
