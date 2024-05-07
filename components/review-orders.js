@@ -6,9 +6,7 @@ import OrderTable from '../components/order-table';
 import updateOrderStatus from './update-order-status';
 
 export default function ReviewOrders({
-  getOrdersAPI,
-  updateOrdersAPI,
-  deleteOrdersAPI,
+  client,
   updateOrderStatusAPI,
   isLoading,
   setIsLoading,
@@ -18,7 +16,8 @@ export default function ReviewOrders({
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(getOrdersAPI)
+    const url = `/api/get-orders?client=${encodeURIComponent(client)}`;
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
         setOrders(data);
@@ -42,14 +41,13 @@ export default function ReviewOrders({
             </h2>
             <FormattedDate date={order.date} />
             <OrderTable
+              client={client}
               orders={orders}
               setOrders={setOrders}
               order={order}
               reload={reload}
               setReload={setReload}
-              deleteOrdersAPI={deleteOrdersAPI}
               setIsLoading={setIsLoading}
-              updateOrdersAPI={updateOrdersAPI}
             />
             <p>
               Order status:
@@ -61,7 +59,7 @@ export default function ReviewOrders({
                     setOrders: setOrders,
                     orderID: order.id,
                     status: e.target.value,
-                    updateOrderStatusAPI: updateOrderStatusAPI,
+                    client: client,
                     setIsLoading: setIsLoading,
                     setReload: setReload,
                     reload: reload,

@@ -5,7 +5,7 @@ export default function updateOrderStatus({
   setOrders,
   orderID,
   status,
-  updateOrderStatusAPI,
+  client,
   setIsLoading,
   setReload,
   reload,
@@ -15,7 +15,8 @@ export default function updateOrderStatus({
     sendConfirmationEmail({ orders, orderID });
   }
   console.log('updateOrderStatus', orderID, status);
-  fetch(updateOrderStatusAPI, {
+  const url = `/api/update-order-status?client=${encodeURIComponent(client)}`;
+  fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
