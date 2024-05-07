@@ -1,5 +1,6 @@
-export default function deleteOrder(id, deleteOrdersAPI, reload, setReload) {
-  fetch(deleteOrdersAPI, {
+export default function deleteOrder(id, client, reload, setReload) {
+  const url = `/api/delete-order?client=${encodeURIComponent(client)}`;
+  fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

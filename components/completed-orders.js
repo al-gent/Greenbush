@@ -7,17 +7,16 @@ import updateOrder from './update-order';
 import deleteOrder from './delete-order';
 import updateOrderStatus from './update-order-status';
 
-export default function CompletedOrders({
-  getCompletedOrdersAPI,
-  setIsLoading,
-  updateOrderStatusAPI,
-}) {
+export default function CompletedOrders({ client, setIsLoading }) {
   const [completedOrders, setCompletedOrders] = useState([]);
   const [reload, setReload] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(getCompletedOrdersAPI)
+    const url = `/api/get-completed-orders?client=${encodeURIComponent(
+      client,
+    )}`;
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
         setCompletedOrders(data);
@@ -48,7 +47,7 @@ export default function CompletedOrders({
                   setOrders: setCompletedOrders,
                   orderID: order.id,
                   status: e.target.value,
-                  updateOrderStatusAPI: updateOrderStatusAPI,
+                  client: client,
                   setIsLoading: setIsLoading,
                   setReload: setReload,
                   reload: reload,

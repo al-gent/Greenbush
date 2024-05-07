@@ -1,7 +1,8 @@
-export default function updateOrder({ order, updateOrdersAPI, setIsLoading }) {
+export default function updateOrder({ order, client, setIsLoading }) {
   setIsLoading(true);
-  console.log('updateOrder', order);
-  fetch(updateOrdersAPI, {
+  console.log('updateOrder', order, client);
+  const url = `/api/update-orders?client=${encodeURIComponent(client)}`;
+  fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import styles from '/styles/index.module.css';
-export default function AllNewItems({ getOrdersAPI, setIsLoading }) {
+export default function AllNewItems({ client, setIsLoading }) {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(getOrdersAPI)
+    const url = `/api/get-orders?client=${encodeURIComponent(client)}`;
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
         setOrders(data);
@@ -13,12 +14,14 @@ export default function AllNewItems({ getOrdersAPI, setIsLoading }) {
       })
       .catch((error) => console.error('Error:', error));
   }, []);
-
+  console.log('orders', orders);
   const itemsOrdered = {};
   orders.map((order) => {
     let itemstring = order.items;
     itemstring.map((item) => {
       let product = JSON.parse(item);
+      console.log('product', product);
+      if (product.editedCart) product.cart = parseInt(product.editedCart);
       if (product.name in itemsOrdered)
         itemsOrdered[product.name][0] += product.cart;
       else
@@ -28,6 +31,7 @@ export default function AllNewItems({ getOrdersAPI, setIsLoading }) {
         ];
     });
   });
+  console.log('items ordered', itemsOrdered);
   const rows = Object.entries(itemsOrdered).map(([key, val]) => {
     return (
       <tr key={key}>
