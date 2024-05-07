@@ -6,7 +6,7 @@ export default async function updateProduct(req, res) {
 
   if (unit2) {
     await sql`
-    UPDATE Products2
+    UPDATE Products
     SET name = ${
       productName || product.name
     }, unit = ARRAY[${unit}, ${unit2}], price = ARRAY[${price}, ${price2}], quantity = ${
@@ -16,7 +16,7 @@ export default async function updateProduct(req, res) {
   `;
   } else {
     await sql`
-    UPDATE Products2
+    UPDATE Products
     SET name = ${productName || product.name}, unit = ARRAY[${
       unit || product.unit
     }], price = ARRAY[${price || product.price}], quantity = ${
@@ -25,14 +25,12 @@ export default async function updateProduct(req, res) {
     WHERE id = ${product.id};
   `;
   }
-  res
-    .status(200)
-    .json({
-      productUpdated: true,
-      product: product,
-      unit: unit,
-      unit2: unit2,
-      price: price,
-      price2: price2,
-    });
+  res.status(200).json({
+    productUpdated: true,
+    product: product,
+    unit: unit,
+    unit2: unit2,
+    price: price,
+    price2: price2,
+  });
 }

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Head from 'next/head';
 import Link from 'next/link';
 import styles from '/styles/demo.module.css';
 import OrderForm from '../components/orderForm';
@@ -10,6 +11,9 @@ export default function Demo() {
 
   return (
     <div className={styles.spreadCards}>
+      <Head>
+        <title>Farmhand Demo</title>
+      </Head>
       <div className={styles.imAnApp}>
         <h1> Hi! I'm an app. </h1>
         <h2>I help small farms* sell wholesale produce.</h2>
@@ -71,10 +75,7 @@ export default function Demo() {
       <div className={styles.customerInterface}>
         <div>
           <OrderForm
-            dataAPI="/api/data_demo"
-            farmersNotesAPI="/api/farmers-notes_demo"
-            updateQuantitiesAPI="/api/update-quantities_demo"
-            placeOrderAPI="/api/place-order_demo"
+            client="demo"
             isLoading={isLoading}
             setIsLoading={setIsLoading}
             farmer_email="94gent@gmail.com"
@@ -125,22 +126,7 @@ export default function Demo() {
       </div>
 
       <div className={styles.farmersDash}>
-        <Dash
-          getOrdersAPI="/api/get-orders_demo"
-          getCompletedOrdersAPI="/api/get-completed-orders_demo"
-          updateOrdersAPI="/api/update-orders_demo"
-          deleteOrdersAPI="/api/delete-order_demo"
-          updateOrderStatusAPI="/api/update-order-status_demo"
-          dataAPI="/api/data_demo"
-          farmersNotesAPI="/api/farmers-notes_demo"
-          deleteProductAPI="/api/delete-product_demo"
-          addProductAPI="/api/add-product_demo"
-          updateProductAPI="/api/update-product_demo"
-          updateQuantityAPI="/api/update-quantity_demo"
-          addNoteAPI="/api/add-note_demo"
-          isLoading={isLoading}
-          setIsLoading={setIsLoading}
-        />
+        <Dash client="demo" isLoading={isLoading} setIsLoading={setIsLoading} />
       </div>
     </div>
   );

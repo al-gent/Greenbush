@@ -11,9 +11,8 @@ export default function OrderTable({
   order,
   reload,
   setReload,
-  deleteOrdersAPI,
+  client,
   setIsLoading,
-  updateOrdersAPI,
 }) {
   const [edit, setEdit] = useState(false);
   let products = order.items;
@@ -52,7 +51,7 @@ export default function OrderTable({
               onClick={(e) => (
                 e.preventDefault,
                 console.log('onClick', order),
-                updateOrder({ order, orders, setIsLoading, updateOrdersAPI }),
+                updateOrder({ order, orders, setIsLoading, client }),
                 setEdit(false)
               )}
             >
@@ -62,7 +61,7 @@ export default function OrderTable({
               onClick={(e) => (
                 e.preventDefault,
                 console.log('onClick', order.id),
-                deleteOrder(order.id, deleteOrdersAPI, reload, setReload),
+                deleteOrder(order.id, client, reload, setReload),
                 setEdit(false),
                 setReload(true)
               )}

@@ -8,6 +8,7 @@ export default async function createTable(request, response) {
       quantity INTEGER,
       unit text[],
       price text[],
+      client VARCHAR(255)
     );`;
   } catch (error) {
     return response.status(500).json({ error });

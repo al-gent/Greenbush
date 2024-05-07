@@ -6,7 +6,7 @@ export default async function updateProduct(req, res) {
     const roundedQuantity = Math.round(product.quantity);
 
     await sql`
-    UPDATE Products2
+    UPDATE Products
     SET quantity = ${roundedQuantity}
     WHERE id = ${product.id};
   `;
