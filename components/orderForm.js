@@ -252,8 +252,7 @@ function CartTable({
 }
 
 export default function OrderForm({
-  dataAPI,
-  farmersNotesAPI,
+  client,
   updateQuantitiesAPI,
   placeOrderAPI,
   isLoading,
@@ -268,7 +267,8 @@ export default function OrderForm({
   const [farmersNote, setFarmersNote] = useState('');
 
   useEffect(() => {
-    fetch(dataAPI)
+    const url = `/api/data?client=${encodeURIComponent(client)}`;
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
         const productsWithCart = data.map((product) => ({
@@ -277,7 +277,7 @@ export default function OrderForm({
         }));
         setProducts(productsWithCart);
         console.log('products', productsWithCart);
-        fetch(farmersNotesAPI)
+        fetch(`/api/farmers-notes?client=${encodeURIComponent(client)}`)
           .then((response) => response.json())
           .then((note) => {
             setFarmersNote(note.note);
@@ -302,7 +302,7 @@ export default function OrderForm({
     console.log('submitting order', order);
     console.log('updating products', productsToUpdate);
     setIsLoading(true);
-    fetch(updateQuantitiesAPI, {
+    fetch(`/api/update-quantities`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -318,7 +318,7 @@ export default function OrderForm({
       .then((response) => {
         console.log('products updated', response);
       });
-    fetch(placeOrderAPI, {
+    fetch(`/api/place-order?client=${encodeURIComponent(client)}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

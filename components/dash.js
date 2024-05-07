@@ -6,22 +6,7 @@ import ReviewOrders from '../components/review-orders';
 import CompletedOrders from './completed-orders';
 import AllNewItems from './all-new-items';
 
-export default function Dash({
-  dataAPI,
-  farmersNotesAPI,
-  deleteProductAPI,
-  addProductAPI,
-  updateProductAPI,
-  updateQuantityAPI,
-  addNoteAPI,
-  getOrdersAPI,
-  getCompletedOrdersAPI,
-  updateOrdersAPI,
-  deleteOrdersAPI,
-  updateOrderStatusAPI,
-  isLoading,
-  setIsLoading,
-}) {
+export default function Dash({ client, isLoading, setIsLoading }) {
   const [viewEditWholesale, setViewEditWholesale] = useState(false);
   const [viewNewOrders, setViewNewOrders] = useState(false);
   const [viewAllItems, setViewAllItems] = useState(false);
@@ -48,33 +33,20 @@ export default function Dash({
       </div>
       {viewNewOrders && (
         <ReviewOrders
-          getOrdersAPI={getOrdersAPI}
-          updateOrdersAPI={updateOrdersAPI}
-          deleteOrdersAPI={deleteOrdersAPI}
-          updateOrderStatusAPI={updateOrderStatusAPI}
+          client={client}
           isLoading={isLoading}
           setIsLoading={setIsLoading}
         />
       )}
       {viewAllItems && (
-        <AllNewItems getOrdersAPI={getOrdersAPI} setIsLoading={setIsLoading} />
+        <AllNewItems client={client} setIsLoading={setIsLoading} />
       )}
       {viewCompleted && (
-        <CompletedOrders
-          getCompletedOrdersAPI={getCompletedOrdersAPI}
-          setIsLoading={setIsLoading}
-          updateOrderStatusAPI={updateOrderStatusAPI}
-        />
+        <CompletedOrders client={client} setIsLoading={setIsLoading} />
       )}
       {viewEditWholesale && (
         <EditWholesale
-          dataAPI={dataAPI}
-          farmersNotesAPI={farmersNotesAPI}
-          deleteProductAPI={deleteProductAPI}
-          addProductAPI={addProductAPI}
-          updateProductAPI={updateProductAPI}
-          updateQuantityAPI={updateQuantityAPI}
-          addNoteAPI={addNoteAPI}
+          client={client}
           isLoading={isLoading}
           setIsLoading={setIsLoading}
         />

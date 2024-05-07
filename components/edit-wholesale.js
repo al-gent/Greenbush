@@ -306,30 +306,19 @@ function ProductTable({
   );
 }
 
-export default function EditWholesale({
-  dataAPI,
-  farmersNotesAPI,
-  deleteProductAPI,
-  addProductAPI,
-  updateProductAPI,
-  updateQuantityAPI,
-  addNoteAPI,
-  isLoading,
-  setIsLoading,
-}) {
+export default function EditWholesale({ client, isLoading, setIsLoading }) {
   const [farmersNote, setFarmersNote] = useState('');
   const [products, setProducts] = useState([]);
   useEffect(() => {
     setIsLoading(true);
-    console.log('dataAPI', dataAPI);
-    fetch(dataAPI)
+    fetch(`/api/data?client=${encodeURIComponent(client)}`)
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
       })
       .catch((error) => console.error('Error:', error));
 
-    fetch(farmersNotesAPI)
+    fetch(`/api/farmers-notes?client=${encodeURIComponent(client)}`)
       .then((response) => response.json())
       .then((note) => {
         setFarmersNote(note.note);
@@ -340,7 +329,7 @@ export default function EditWholesale({
 
   function deleteProduct(id) {
     setIsLoading(true);
-    fetch(deleteProductAPI, {
+    fetch(`/api/delete-product`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -381,8 +370,8 @@ export default function EditWholesale({
       },
     ]);
 
-    console.log('adding product', productName, quantity, unit, price);
-    fetch(addProductAPI, {
+    console.log('adding product', productName, quantity, unit, price, client);
+    fetch(`/api/add-product`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -394,6 +383,7 @@ export default function EditWholesale({
         unit2,
         price,
         price2,
+        client,
       }),
     })
       .then((response) => {
@@ -419,7 +409,7 @@ export default function EditWholesale({
     price2,
   ) {
     setIsLoading(true);
-    fetch(updateProductAPI, {
+    fetch(`/api/update-product`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -457,7 +447,7 @@ export default function EditWholesale({
       unit,
       price,
     );
-    fetch(updateQuantityAPI, {
+    fetch('/api/update-quantity', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -480,7 +470,7 @@ export default function EditWholesale({
   function addNote(farmersNote) {
     setIsLoading(true);
     console.log('updating note', farmersNote);
-    fetch(addNoteAPI, {
+    fetch(`/api/add-note?client=${encodeURIComponent(client)}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
