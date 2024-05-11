@@ -45,27 +45,29 @@ export default function Wholesale({ slug }) {
       });
   }, []);
 
-  if (isLoading) {
-    return <h1>loading...</h1>;
-  }
-
   if (!farm) {
     return (
       <div>
-        <h1>Sorry, I don't know have that farm in my system </h1>
+        <h1>Sorry, I don't have that farm in my system </h1>
         <h2>Are you sure '{lowerCaseSlug}' is the correct farm code?</h2>
       </div>
     );
   }
   return (
     <div>
-      <h1>{farm.farmname}</h1>
-      <OrderForm
-        client={lowerCaseSlug}
-        isLoading={isLoading}
-        setIsLoading={setIsLoading}
-        farmer_email={farm.email}
-      />
+      {isLoading ? (
+        <h1>loading...</h1>
+      ) : (
+        <div>
+          <h1>{farm.farmname}</h1>
+          <OrderForm
+            client={lowerCaseSlug}
+            isLoading={isLoading}
+            setIsLoading={setIsLoading}
+            farmer_email={farm.email}
+          />
+        </div>
+      )}
     </div>
   );
 }

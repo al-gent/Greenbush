@@ -327,9 +327,8 @@ export default function OrderForm({ client, setIsLoading, farmer_email }) {
         return response.json();
       })
       .then((response) => {
-        return EmailGB((order = order), (farmer_email = farmer_email));
-      })
-      .then((response) => {
+        console.log('sending email to ', farmer_email);
+        EmailGB((order = order), (farmer_email = farmer_email));
         setIsLoading(false);
         setOrderPlaced(true);
       })
@@ -421,11 +420,14 @@ export default function OrderForm({ client, setIsLoading, farmer_email }) {
   return (
     <>
       <div className={styles.wholeThing}>
-        <h1 className={styles.centerText}>Wholesale Order Form</h1>
         {orderPlaced ? (
-          <OrderSummary order={order} />
+          <div>
+            <h1>Order Recieved</h1>
+            <OrderSummary order={order} />
+          </div>
         ) : (
           <div className={styles.centerText}>
+            <h1 className={styles.centerText}>Wholesale Order Form</h1>
             {farmersNote && (
               <p className={styles.centerText}>
                 <em>Farmer's Note: {farmersNote}</em>
