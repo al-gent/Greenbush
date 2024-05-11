@@ -8,7 +8,7 @@ export default function Wholesale() {
   return (
     <Layout isLoading={isLoading}>
       <OrderForm
-        client="GGC"
+        client="ggc"
         isLoading={isLoading}
         setIsLoading={setIsLoading}
         farmer_email="dgent570@outlook.com"

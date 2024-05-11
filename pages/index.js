@@ -26,7 +26,7 @@ export default function Home() {
           <Link href="http://www.adamlgent.com/hmscale">
             <button>Happiness vs Meaning Scale</button>
           </Link>
-          <Link href="http://www.adamlgent.com/demo">
+          <Link href="http://www.adamlgent.com/demodemo">
             <button>Orders & Inventory Management Web App</button>
           </Link>
         </div>
