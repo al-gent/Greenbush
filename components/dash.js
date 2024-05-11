@@ -5,16 +5,16 @@ import EditWholesale from '../components/edit-wholesale';
 import ReviewOrders from '../components/review-orders';
 import CompletedOrders from './completed-orders';
 import AllNewItems from './all-new-items';
+import FarmerInfo from './farmerinfo';
 
 export default function Dash({ client, isLoading, setIsLoading }) {
   const [viewEditWholesale, setViewEditWholesale] = useState(false);
   const [viewNewOrders, setViewNewOrders] = useState(false);
   const [viewAllItems, setViewAllItems] = useState(false);
   const [viewCompleted, setViewCompleted] = useState(false);
-
   return (
     <div>
-      <h1>Farmer's Dashboard</h1>
+      <FarmerInfo client={client} setIsLoading={setIsLoading} />
       <div className={styles.dash}>
         <button onClick={() => setViewNewOrders(!viewNewOrders)}>
           {viewNewOrders ? `Hide New Orders` : `New Orders`}
@@ -28,7 +28,7 @@ export default function Dash({ client, isLoading, setIsLoading }) {
           {viewCompleted ? `Hide Completed Orders` : `Completed Orders`}
         </button>
         <button onClick={() => setViewAllItems(!viewAllItems)}>
-          {viewAllItems ? `Hide List of All Items` : `List of All Items`}
+          {viewAllItems ? `Hide Harvest List` : `Harvest List`}
         </button>
       </div>
       {viewNewOrders && (

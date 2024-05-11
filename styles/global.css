@@ -10,6 +10,9 @@ html {
 h1 {
   text-align: center;
 }
+h2 {
+  text-align: center;
+}
 
 button {
   font-size: 16px;
@@ -37,4 +40,14 @@ td {
   word-wrap: break-word;
   max-width: 8rem; /* Adjust as needed */
   padding-top: 0rem;
+}
+
+form {
+  text-align: center;
+  padding: 1rem;
+}
+
+form > * {
+  display: block;
+  padding: 0.4rem;
 }
