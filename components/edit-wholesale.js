@@ -139,28 +139,26 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
         {productName}
       </td>
       <td>
-        <form>
-          <input
-            size={4}
-            type="tel"
-            value={quantity}
-            placeholder={quantity}
-            onChange={(e) => {
-              e.preventDefault();
-              const newQuantity = parseInt(e.target.value);
-              if (
-                isNaN(newQuantity) ||
-                newQuantity < 0 ||
-                newQuantity === quantity
-              ) {
-                setQuantity(quantity);
-                return;
-              }
-              setQuantity(newQuantity);
-              updateQuantity(product, productName, newQuantity, unit, price);
-            }}
-          />
-        </form>
+        <input
+          size={4}
+          type="tel"
+          value={quantity}
+          placeholder={quantity}
+          onChange={(e) => {
+            e.preventDefault();
+            const newQuantity = parseInt(e.target.value);
+            if (
+              isNaN(newQuantity) ||
+              newQuantity < 0 ||
+              newQuantity === quantity
+            ) {
+              setQuantity(quantity);
+              return;
+            }
+            setQuantity(newQuantity);
+            updateQuantity(product, productName, newQuantity, unit, price);
+          }}
+        />
       </td>
       <td>
         ${price} / {perUnit(unit)}
@@ -319,9 +317,13 @@ export default function EditWholesale({ client, isLoading, setIsLoading }) {
       .catch((error) => console.error('Error:', error));
 
     fetch(`/api/farmers-notes?client=${encodeURIComponent(client)}`)
-      .then((response) => response.json())
+      .then((response) => response.text())
       .then((note) => {
-        setFarmersNote(note.note);
+        if (!note) {
+          setFarmersNote(null);
+        } else {
+          setFarmersNote(JSON.parse(note).note);
+        }
       })
       .catch((error) => console.error('Error:', error));
     setIsLoading(false);

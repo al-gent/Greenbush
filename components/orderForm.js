@@ -212,53 +212,44 @@ function CartTable({
           )
           .toFixed(2)}
       </p>
-      <form>
-        <div>
-          <input
-            type="text"
-            value={custname}
-            onChange={(e) => setCustname(e.target.value)}
-            required
-            placeholder="Name / Organization"
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            placeholder="Email"
-          />
-        </div>
-        <div>
-          <input
-            type="textarea"
-            value={notes}
-            placeholder="Notes"
-            onChange={(e) => setNotes(e.target.value)}
-          />
-        </div>
-        <button
-          onClick={(e) => {
-            onSubmit(e);
-          }}
-        >
-          Submit Order
-        </button>
-      </form>
+      <div>
+        <input
+          type="text"
+          value={custname}
+          onChange={(e) => setCustname(e.target.value)}
+          required
+          placeholder="Name / Organization"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          placeholder="Email"
+        />
+      </div>
+      <div>
+        <input
+          type="textarea"
+          value={notes}
+          placeholder="Notes"
+          onChange={(e) => setNotes(e.target.value)}
+        />
+      </div>
+      <button
+        onClick={(e) => {
+          onSubmit(e);
+        }}
+      >
+        Submit Order
+      </button>
     </div>
   );
 }
 
-export default function OrderForm({
-  client,
-  updateQuantitiesAPI,
-  placeOrderAPI,
-  isLoading,
-  setIsLoading,
-  farmer_email,
-}) {
+export default function OrderForm({ client, setIsLoading, farmer_email }) {
   const [custname, setCustname] = useState('');
   const [email, setEmail] = useState('');
   const [notes, setNotes] = useState('');
@@ -278,12 +269,16 @@ export default function OrderForm({
         setProducts(productsWithCart);
         console.log('products', productsWithCart);
         fetch(`/api/farmers-notes?client=${encodeURIComponent(client)}`)
-          .then((response) => response.json())
+          .then((response) => response.text())
           .then((note) => {
-            setFarmersNote(note.note);
-            setIsLoading(false);
+            if (!note) {
+              setFarmersNote(null);
+            } else {
+              setFarmersNote(JSON.parse(note).note);
+              setIsLoading(false);
+            }
           })
-          .catch((error) => console.error('Error:', error));
+          .catch((error) => console.error('Error at farmers notes:', error));
       })
       .catch((error) => console.error('Error:', error));
   }, []);
