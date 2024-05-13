@@ -1,17 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import styles from '../styles/wholesale.module.css';
+import styles from '../styles/editWholesale.module.css';
+import EditRow from './edit-wholesale-row';
 import Link from 'next/link';
-
-// unit is now a list of units & price is now a list of prices
-// the layout of this product list needs to reflect that
-//I need to talk to david to see if a good way to do it would be
-// to have a primary unit that he can use to display the product
-// and then have a dropdown menu that allows the customer to select the unit they want
-// and then the price will change accordingly
-// maybe he can select which units will be available for a given product
-
-// I also need to add a way to add a new product
-// and a way to delete a product
 
 function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
   const [productName, setProductName] = useState(product.name);
@@ -21,6 +11,7 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
   const [price, setPrice] = useState(product.price[0]);
   const [price2, setPrice2] = useState(product.price[1]);
   const [edit, setEdit] = useState(false);
+  const [invalidQuant, setInvalidQuant] = useState(false);
 
   function perUnit(unit) {
     if (unit) {
@@ -37,137 +28,108 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
   }
 
   return edit ? (
-    <tr className={styles.productRow}>
-      <td>
-        <input
-          size={productName.length}
-          type="text"
-          value={productName}
-          onChange={(e) => {
-            e.preventDefault();
-            const newProductName = e.target.value;
-            setProductName(newProductName);
-          }}
-        />
-      </td>
-      <td>
-        <input
-          size="4"
-          type="tel"
-          value={quantity}
-          onChange={(e) => {
-            e.preventDefault();
-            const newQuantity = parseFloat(e.target.value);
-            setQuantity(newQuantity);
-          }}
-        />
-      </td>
-      <td>
-        <input
-          size="4"
-          type="tel"
-          step="any"
-          value={price}
-          onChange={(e) => {
-            e.preventDefault();
-            const newPrice = parseFloat(e.target.value);
-            setPrice(newPrice);
-          }}
-        />
-        <input
-          size="4"
-          type="text"
-          value={unit}
-          onChange={(e) => {
-            e.preventDefault();
-            const newUnit = e.target.value;
-            setUnit(newUnit);
-          }}
-        ></input>
-      </td>
-      <td>
-        <input
-          size="4"
-          type="tel"
-          step="any"
-          value={price2}
-          onChange={(e) => {
-            e.preventDefault();
-            const newPrice2 = parseFloat(e.target.value);
-            setPrice2(newPrice2);
-          }}
-        ></input>
-        <input
-          size="4"
-          type="text"
-          value={unit2}
-          onChange={(e) => {
-            e.preventDefault();
-            const newUnit2 = e.target.value;
-            setUnit2(newUnit2);
-          }}
-        ></input>
-      </td>
-      <button
-        onClick={() => {
-          updateProduct(
-            product,
-            productName,
-            quantity,
-            unit,
-            unit2,
-            price,
-            price2,
-          );
-          setEdit(false);
-        }}
-      >
-        Save
-      </button>
-      <button onClick={() => deleteProduct(product.id)}>Delete</button>
-      <button onClick={() => setEdit(false)}>Cancel</button>
-    </tr>
+    <>
+      <EditRow
+        productName={productName}
+        setProductName={setProductName}
+        quantity={quantity}
+        setQuantity={setQuantity}
+        unit={unit}
+        setUnit={setUnit}
+        unit2={unit2}
+        setUnit2={setUnit2}
+        price={price}
+        setPrice={setPrice}
+        price2={price2}
+        setPrice2={setPrice2}
+        invalidQuant={invalidQuant}
+      />
+      <tr>
+        <td>
+          <button
+            onClick={() => {
+              if (isNaN(quantity) || quantity < 0 || isNaN(price) || price < 0)
+                setInvalidQuant(true);
+              else {
+                setInvalidQuant(false);
+                updateProduct(
+                  product,
+                  productName,
+                  quantity,
+                  unit,
+                  unit2,
+                  price,
+                  price2,
+                );
+                setEdit(false);
+              }
+            }}
+          >
+            Save
+          </button>
+        </td>
+        <td></td>
+        <td>
+          <button onClick={() => deleteProduct(product.id)}>Delete</button>
+        </td>
+        <td>
+          <button onClick={() => setEdit(false)}>Cancel</button>
+        </td>
+      </tr>
+    </>
   ) : (
-    <tr className={styles.productRow}>
-      <td
-        style={{
-          maxWidth: '4rem',
-          whiteSpace: 'pre-wrap',
-          wordWrap: 'break-word',
-        }}
-      >
-        {productName}
-      </td>
-      <td>
-        <input
-          size={4}
-          type="tel"
-          value={quantity}
-          placeholder={quantity}
-          onChange={(e) => {
-            e.preventDefault();
-            const newQuantity = parseInt(e.target.value);
-            if (
-              isNaN(newQuantity) ||
-              newQuantity < 0 ||
-              newQuantity === quantity
-            ) {
-              setQuantity(quantity);
-              return;
-            }
-            setQuantity(newQuantity);
-            updateQuantity(product, productName, newQuantity, unit, price);
-          }}
-        />
-      </td>
-      <td>
-        ${price} / {perUnit(unit)}
-      </td>
-      <td>
-        {product.price.length > 1 ? '$' + price2 + '/' + perUnit(unit2) : ''}
-      </td>
-      <button onClick={() => setEdit(true)}>Edit</button>
-    </tr>
+    <>
+      <tr>
+        <td>
+          <div
+            onClick={() => setEdit(true)}
+            style={{
+              cursor: 'pointer',
+              color: 'blue',
+              textDecoration: 'underline',
+              ':hover': {
+                color: '#0366d6',
+                textDecoration: 'none',
+              },
+            }}
+          >
+            {productName}
+          </div>
+        </td>
+        <td>
+          <input
+            size={4}
+            type="tel"
+            value={quantity == 0 ? '' : quantity}
+            placeholder={quantity}
+            onChange={(e) => {
+              setInvalidQuant(false);
+              setQuantity(e.target.value);
+            }}
+            onBlur={(e) => {
+              if (quantity == '') return;
+              if (isNaN(quantity) || quantity < 0) setInvalidQuant(true);
+              else {
+                updateQuantity(product, productName, quantity, unit, price);
+              }
+            }}
+          />
+        </td>
+        <td>
+          ${price} / {perUnit(unit)}
+        </td>
+        <td>
+          {product.price.length > 1 ? '$' + price2 + '/' + perUnit(unit2) : ''}
+        </td>
+      </tr>
+      <>
+        {invalidQuant && (
+          <td colSpan="4" style={{ textAlign: 'center' }}>
+            This isn't a valid quantity
+          </td>
+        )}
+      </>
+    </>
   );
 }
 
@@ -184,115 +146,96 @@ function ProductTable({
   const [unit2, setUnit2] = useState('');
   const [price, setPrice] = useState('');
   const [price2, setPrice2] = useState('');
+  const [invalidQuant, setInvalidQuant] = useState(false);
 
-  const rows = products.map((product) => (
-    <ProductRow
-      key={product.id}
-      product={product}
-      updateProduct={updateProduct}
-      updateQuantity={updateQuantity}
-      deleteProduct={deleteProduct}
-    />
-  ));
+  const currentListings = products.map(
+    (product) =>
+      product.quantity > 0 && (
+        <ProductRow
+          key={product.id}
+          product={product}
+          updateProduct={updateProduct}
+          updateQuantity={updateQuantity}
+          deleteProduct={deleteProduct}
+        />
+      ),
+  );
+
+  const inactiveListings = products.map(
+    (product) =>
+      product.quantity == 0 && (
+        <ProductRow
+          key={product.id}
+          product={product}
+          updateProduct={updateProduct}
+          updateQuantity={updateQuantity}
+          deleteProduct={deleteProduct}
+        />
+      ),
+  );
   return (
     <table>
-      <tr>
-        <th style={{ wordWrap: 'break-word', maxWidth: '5rem' }}>Name</th>
-        <th>Quantity</th>
-        <th style={{ width: '4rem' }}>1st Price / Unit</th>
-        <th style={{ width: '4rem' }}>2nd Price / Unit</th>
-      </tr>
       <tbody>
-        {rows}
         <tr>
-          <td>
-            <input
-              size={10}
-              type="text"
-              placeholder="Product Name"
-              value={productName}
-              onChange={(e) => {
-                e.preventDefault();
-                const newProductName = e.target.value;
-                setProductName(newProductName);
-              }}
-            />
-          </td>
-          <td>
-            <input
-              size={3}
-              placeholder="Quantity"
-              type="tel"
-              value={quantity}
-              onChange={(e) => {
-                e.preventDefault();
-                const newQuantity = parseFloat(e.target.value);
-                setQuantity(newQuantity);
-              }}
-            />
-          </td>
-          <td>
-            <input
-              size={3}
-              placeholder="Price"
-              type="tel"
-              step="any"
-              value={price}
-              onChange={(e) => {
-                e.preventDefault();
-                const newPrice = parseFloat(e.target.value);
-                setPrice(newPrice);
-              }}
-            />
-            <input
-              size={3}
-              placeholder="Unit"
-              type="text"
-              value={unit}
-              onChange={(e) => {
-                e.preventDefault();
-                const newUnit = e.target.value;
-                setUnit(newUnit);
-              }}
-            ></input>
-          </td>
-          <td>
-            <input
-              size={3}
-              placeholder="Price"
-              type="tel"
-              step="any"
-              value={price2}
-              onChange={(e) => {
-                e.preventDefault();
-                const newPrice2 = parseFloat(e.target.value);
-                setPrice2(newPrice2);
-              }}
-            ></input>
-            <input
-              size={3}
-              placeholder="Unit"
-              type="text"
-              value={unit2}
-              onChange={(e) => {
-                e.preventDefault();
-                const newUnit2 = e.target.value;
-                setUnit2(newUnit2);
-              }}
-            ></input>
+          <td colSpan="4" style={{ textAlign: 'center' }}>
+            <h2>Current Listings</h2>
           </td>
         </tr>
         <tr>
-          <td>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th style={{ width: '4rem' }}>Price / Unit</th>
+          <th style={{ width: '4rem' }}>2nd Price / Unit</th>
+        </tr>
+        {currentListings}
+        <tr>
+          <td colSpan="4" style={{ textAlign: 'center' }}>
+            <h3>All Listings</h3>
+          </td>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th style={{ width: '4rem' }}>Price / Unit</th>
+          <th style={{ width: '4rem' }}>2nd Price / Unit</th>
+        </tr>
+        {inactiveListings}
+        <EditRow
+          productName={productName}
+          setProductName={setProductName}
+          quantity={quantity}
+          setQuantity={setQuantity}
+          unit={unit}
+          setUnit={setUnit}
+          unit2={unit2}
+          setUnit2={setUnit2}
+          price={price}
+          setPrice={setPrice}
+          price2={price2}
+          setPrice2={setPrice2}
+          invalidQuant={invalidQuant}
+        />
+        <tr>
+          <td colSpan="4">
             <button
               onClick={() => {
-                addProduct(productName, quantity, unit, unit2, price, price2);
-                setPrice('');
-                setPrice2('');
-                setProductName('');
-                setUnit('');
-                setUnit2('');
-                setQuantity('');
+                if (
+                  isNaN(quantity) ||
+                  quantity < 0 ||
+                  isNaN(price) ||
+                  price < 0
+                )
+                  setInvalidQuant(true);
+                else {
+                  addProduct(productName, quantity, unit, unit2, price, price2);
+                  setInvalidQuant(false);
+                  setPrice('');
+                  setPrice2('');
+                  setProductName('');
+                  setUnit('');
+                  setUnit2('');
+                  setQuantity('');
+                }
               }}
             >
               Add Product
@@ -494,7 +437,6 @@ export default function EditWholesale({ client, isLoading, setIsLoading }) {
       <h1>Wholesale Products</h1>
       {isLoading ? <p>Loading...</p> : null}
       <textarea
-        style={{ width: '90%', maxWidth: '30rem', height: '5rem' }}
         placeholder={`Farmer's Note: ${farmersNote}`}
         onChange={(e) => {
           e.preventDefault();
@@ -505,15 +447,13 @@ export default function EditWholesale({ client, isLoading, setIsLoading }) {
       <div>
         <button onClick={() => addNote(farmersNote)}>Post New Note</button>
       </div>
-      <div>
-        <ProductTable
-          products={products}
-          updateProduct={updateProduct}
-          updateQuantity={updateQuantity}
-          addProduct={addProduct}
-          deleteProduct={deleteProduct}
-        />
-      </div>
+      <ProductTable
+        products={products}
+        updateProduct={updateProduct}
+        updateQuantity={updateQuantity}
+        addProduct={addProduct}
+        deleteProduct={deleteProduct}
+      />
     </div>
   );
 }

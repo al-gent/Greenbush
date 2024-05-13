@@ -1,7 +1,7 @@
 import editOrder from './edit-order';
 import updateOrder from './update-order';
 import deleteOrder from './delete-order';
-import EditRow from './edit-row';
+import EditOrderTableRow from './edit-order-table-row';
 import CartRow from './cart-row';
 import { useState, useEffect } from 'react';
 
@@ -24,7 +24,7 @@ export default function OrderTable({
       : Math.round(product.cart * product.price[0]).toFixed(2);
     total += parseFloat(total_price);
     return edit ? (
-      <EditRow
+      <EditOrderTableRow
         key={product.id}
         product={product}
         setQuantity={(quantity, productID) =>

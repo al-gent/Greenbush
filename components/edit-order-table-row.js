@@ -1,4 +1,4 @@
-export default function EditRow({ product, setQuantity }) {
+export default function EditOrderTableRow({ product, setQuantity }) {
   let productMultiplier = 1;
   const unitSelected = product.unitSelected || 0;
   unitSelected === 0
