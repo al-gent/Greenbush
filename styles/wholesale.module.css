@@ -193,22 +193,3 @@
 .infoCard:hover {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Larger shadow */
 }
-
-@media (min-width: 768px) {
-  .editWholesale {
-    flex-direction: column;
-    max-width: 35rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    padding: 0.5rem;
-    border-radius: 1rem;
-    background-color: #a7ace5;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-}
-
-.editWholesale:hover {
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-}
