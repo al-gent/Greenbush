@@ -6,12 +6,14 @@ import ReviewOrders from '../components/review-orders';
 import CompletedOrders from './completed-orders';
 import AllNewItems from './all-new-items';
 import FarmerInfo from './farmerinfo';
+// import AnalyzeSales from './analytics';
 
 export default function Dash({ client, isLoading, setIsLoading }) {
   const [viewEditWholesale, setViewEditWholesale] = useState(false);
   const [viewNewOrders, setViewNewOrders] = useState(false);
   const [viewAllItems, setViewAllItems] = useState(false);
   const [viewCompleted, setViewCompleted] = useState(false);
+  // const [viewAnalytics, setViewAnalytics] = useState(false);
   return (
     <div>
       <FarmerInfo client={client} setIsLoading={setIsLoading} />
@@ -31,6 +33,11 @@ export default function Dash({ client, isLoading, setIsLoading }) {
           {viewAllItems ? `Hide Harvest List` : `Harvest List`}
         </button>
       </div>
+      {/* <div className={styles.dash}>
+        <button onClick={() => setViewAnalytics(!viewAnalytics)}>
+          {viewAnalytics ? `Hide Analytics` : `Analytics`}
+        </button>
+      </div> */}
       {viewNewOrders && (
         <ReviewOrders
           client={client}
@@ -51,6 +58,7 @@ export default function Dash({ client, isLoading, setIsLoading }) {
           setIsLoading={setIsLoading}
         />
       )}
+      {/* {viewAnalytics && <AnalyzeSales client={client} />} */}
     </div>
   );
 }

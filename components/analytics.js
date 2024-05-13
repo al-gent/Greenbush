@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import Layout from '../components/Layout';
 import {
   BarChart,
   Bar,
@@ -20,12 +19,15 @@ function formattedDate(date) {
   return formattedDate;
 }
 
-export default function AnalyzeSales() {
+export default function AnalyzeSales(client) {
   const [isLoading, setIsLoading] = useState(true);
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch('/api/get-completed-orders')
+    const url = `/api/get-completed-orders?client=${encodeURIComponent(
+      client,
+    )}`;
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
         setOrders(data);
@@ -53,7 +55,7 @@ export default function AnalyzeSales() {
     clientTotals.push(clientTotal);
   });
   return (
-    <Layout>
+    <div>
       <h2>Last 10 Order Totals</h2>
       <BarChart
         width={800}
@@ -68,6 +70,6 @@ export default function AnalyzeSales() {
           <LabelList dataKey="client" position="top" />
         </Bar>
       </BarChart>
-    </Layout>
+    </div>
   );
 }

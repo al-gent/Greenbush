@@ -6,7 +6,7 @@ import Login from '../components/login';
 export default function Dashboard() {
   const [farmCode, setFarmCode] = useState('');
   const [pin, setPin] = useState('');
-  const [isCred, setIsCred] = useState(false);
+  const [isCred, setIsCred] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   return (
     <div>
