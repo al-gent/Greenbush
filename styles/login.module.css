@@ -2,9 +2,50 @@
   width: 300px;
   margin: 0 auto;
   padding: 20px;
+}
+
+.signupContainer {
+  padding: 1rem;
+  margin: auto;
+  border-radius: 1rem;
+  background-color: #c48fdd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin-bottom: 2rem;
+}
+
+.signupContainer form {
+  text-align: left;
+  width: 100%;
+}
+
+.signupContainer label {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.signupContainer input {
+  float: right;
+}
+
+.signupContainer button {
+  width: 100%;
+  padding: 10px;
+  border: none;
   border-radius: 4px;
-  background-color: #c96363;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #0a3e75;
+  color: #fff;
+  cursor: pointer;
+}
+
+.loginContainer input[type='submit']:hover {
+  background-color: #3a638e;
+}
+
+.signupDashContainer {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .loginContainer h2 {
@@ -26,8 +67,7 @@
   text-decoration: underline;
 }
 
-.loginContainer input[type='text'],
-.loginContainer input[type='password'] {
+.loginContainer input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -47,4 +87,13 @@
 
 .loginContainer input[type='submit']:hover {
   background-color: #3a638e;
+}
+.loginContainer button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #0a3e75;
+  color: #fff;
+  cursor: pointer;
 }
