@@ -240,6 +240,7 @@ function CartTable({
       </div>
       <button
         onClick={(e) => {
+          e.preventDefault();
           onSubmit(e);
         }}
       >
@@ -267,7 +268,6 @@ export default function OrderForm({ client, setIsLoading, farmer_email }) {
           cart: 0,
         }));
         setProducts(productsWithCart);
-        console.log('products', productsWithCart);
         fetch(`/api/farmers-notes?client=${encodeURIComponent(client)}`)
           .then((response) => response.text())
           .then((note) => {
@@ -294,8 +294,6 @@ export default function OrderForm({ client, setIsLoading, farmer_email }) {
 
   function submitOrder(e) {
     e.preventDefault();
-    console.log('submitting order', order);
-    console.log('updating products', productsToUpdate);
     setIsLoading(true);
     fetch(`/api/update-quantities`, {
       method: 'POST',
@@ -310,9 +308,7 @@ export default function OrderForm({ client, setIsLoading, farmer_email }) {
         }
         return response.json();
       })
-      .then((response) => {
-        console.log('products updated', response);
-      });
+      .then((response) => {});
     fetch(`/api/place-order?client=${encodeURIComponent(client)}`, {
       method: 'POST',
       headers: {
@@ -324,11 +320,13 @@ export default function OrderForm({ client, setIsLoading, farmer_email }) {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
+
         return response.json();
       })
-      .then((response) => {
-        console.log('sending email to ', farmer_email);
+      .then(() => {
         EmailGB((order = order), (farmer_email = farmer_email));
+      })
+      .then(() => {
         setIsLoading(false);
         setOrderPlaced(true);
       })

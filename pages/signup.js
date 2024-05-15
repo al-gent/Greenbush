@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import styles from '/styles/index.module.css';
-import EditWholesale from '../components/edit-wholesale';
+import styles from '/styles/login.module.css';
+import { useCookies } from 'react-cookie';
+import Dash from '../components/dash';
+import DashboardHelp from '../components/dashboard-help';
 
 export default function SignUp() {
   const [isLoading, setIsLoading] = useState(true);
@@ -14,6 +16,7 @@ export default function SignUp() {
   const [isCred, setIsCred] = useState(false);
   const [farmerAdded, setFarmerAdded] = useState(false);
   const [farmCodeTaken, setFarmCodeTaken] = useState(false);
+  const [cookie, setCookie] = useCookies(['user']);
 
   const isFarmCodeTaken = (e) => {
     e.preventDefault();
@@ -60,114 +63,134 @@ export default function SignUp() {
       })
       //then redirect??? then what?
       .then((data) => {
-        console.log(data);
+        console.log('data from .then', data);
         setFarmerAdded(data.farmerAdded);
+        setCookie(
+          'user',
+          JSON.stringify({
+            exists: true,
+            farmcode: data.props.farmCode,
+            pin: data.props.pin,
+          }),
+          {
+            path: '/',
+            expires: new Date(Date.now() + 31536000000), // 1 year in the future
+            sameSite: true,
+          },
+        );
       });
   };
 
   return (
-    <div className={styles.storyCard}>
+    <div>
       {farmerAdded ? (
-        <div>
-          <h1> Nice work, {firstName}.</h1>
-          <h2>Your Account has been created.</h2>
-          <p>Let's list some products you have for sale</p>
-          <EditWholesale
+        <div className={styles.signupDashContainer}>
+          <h3> Nice work, {firstName}. Your account has been created. </h3>
+          <p>
+            The first thing you should do is click 'Edit Wholesale' and add the
+            produce you have available.
+          </p>
+          <Dash
             client={farmCode}
             isLoading={isLoading}
             setIsLoading={setIsLoading}
           />
+          <DashboardHelp />
         </div>
       ) : (
-        <div>
+        <div className={styles.signupContainer}>
           <h1>Farmer Sign Up</h1>
-          <div>
-            <form onSubmit={addFarmer}>
-              <label>
-                Farm Name:
-                <input
-                  type="text"
-                  value={farmName}
-                  onChange={(e) => setFarmName(e.target.value)}
-                  required
-                />
-              </label>
-              <label>
-                Farmcode:
-                <input
-                  onBlur={isFarmCodeTaken}
-                  type="text"
-                  value={farmCode}
-                  onChange={(e) => setFarmCode(e.target.value.toLowerCase())}
-                  required
-                />
-              </label>
-              <small>
-                Your farmcode should be a short sequence of letters. Buyers will
-                access your produce list by entering the farmcode after the
-                website name. eg: adamlgent.com/yourfarmcode
-              </small>
-              <small>
-                For example, if your farm name is Greenbush Growing Cooperative,
-                your farmcode could be ggc or greenbush
-              </small>
-              {farmCodeTaken && (
-                <p>
-                  This farmcode is already taken! Please select a different one
-                </p>
-              )}
-              <label>
-                Pin:
-                <input
-                  type="password"
-                  value={pin}
-                  onChange={(e) => setPin(e.target.value)}
-                  required
-                />
-              </label>
-              <small>
-                Your pin should be a short sequence of numbers. You'll use this
-                to view your orders and update what produce is available.
-              </small>
-              <label>
-                Your first name:
-                <input
-                  type="text"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  required
-                />
-              </label>
-              <label>
-                Email:
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </label>
-              <small>You'll get notified here when you get a new order.</small>
-              <label>
-                Phone Number:
-                <input
-                  type="tel"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                />
-              </label>
-              <label>
-                Your favorite vegetable:
-                <input
-                  type="text"
-                  value={favVeg}
-                  onChange={(e) => setFavVeg(e.target.value)}
-                />
-              </label>
-              <small>I just like to know</small>
-              <input type="submit" value="Sign Up" />
-            </form>
-          </div>
+          <form onSubmit={addFarmer}>
+            <label>
+              Farm Name
+              <input
+                size="29"
+                type="text"
+                value={farmName}
+                onChange={(e) => setFarmName(e.target.value)}
+                required
+              />
+            </label>
+            <label>
+              Farmcode
+              <input
+                size="10"
+                onBlur={isFarmCodeTaken}
+                type="text"
+                value={farmCode}
+                onChange={(e) => setFarmCode(e.target.value.toLowerCase())}
+                required
+              />
+            </label>
+            <small>
+              Your farmcode should be a short sequence of letters. Buyers will
+              access your produce list by entering the farmcode after the
+              website name. eg: adamlgent.com/yourfarmcode
+            </small>
+            <small>
+              For example, if your farm name is Greenbush Growing Cooperative,
+              your farmcode could be ggc or greenbush
+            </small>
+            {farmCodeTaken && (
+              <p>
+                This farmcode is already taken! Please select a different one
+              </p>
+            )}
+            <label>
+              PIN
+              <input
+                size="10"
+                type="text"
+                value={pin}
+                onChange={(e) => setPin(e.target.value)}
+                required
+              />
+            </label>
+            <small>
+              Your pin should be a short sequence of numbers. You'll use this to
+              view your orders and update what produce is available.
+            </small>
+            <label>
+              First name
+              <input
+                size="10"
+                type="text"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                required
+              />
+            </label>
+            <label>
+              Email
+              <input
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </label>
+            <small>Notifications go here when orders are placed.</small>
+            <label>
+              Phone Number
+              <input
+                size="10"
+                type="tel"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+            </label>
+            <label>
+              Your favorite vegetable
+              <input
+                size="10"
+                type="text"
+                value={favVeg}
+                onChange={(e) => setFavVeg(e.target.value)}
+              />
+            </label>
+          </form>
+          <button onClick={addFarmer}>Sign Up</button>
+          {/* <input type="submit" value="Sign Up" /> */}
         </div>
       )}
     </div>
