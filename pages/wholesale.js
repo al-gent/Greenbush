@@ -6,7 +6,7 @@ export default function Wholesale() {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <Layout isLoading={isLoading}>
+    <Layout>
       <OrderForm
         client="ggc"
         isLoading={isLoading}

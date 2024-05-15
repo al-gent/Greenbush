@@ -55,19 +55,16 @@ export default function Wholesale({ slug }) {
   }
   return (
     <div>
-      {isLoading ? (
-        <h1>loading...</h1>
-      ) : (
-        <div>
-          <h1>{farm.farmname}</h1>
-          <OrderForm
-            client={lowerCaseSlug}
-            isLoading={isLoading}
-            setIsLoading={setIsLoading}
-            farmer_email={farm.email}
-          />
-        </div>
-      )}
+      {isLoading && <h1>loading...</h1>}
+      <div>
+        <h1>{farm.farmname}</h1>
+        <OrderForm
+          client={lowerCaseSlug}
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
+          farmer_email={farm.email}
+        />
+      </div>
     </div>
   );
 }

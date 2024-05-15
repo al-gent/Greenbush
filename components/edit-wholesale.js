@@ -148,58 +148,63 @@ function ProductTable({
   const [price2, setPrice2] = useState('');
   const [invalidQuant, setInvalidQuant] = useState(false);
 
-  const currentListings = products.map(
-    (product) =>
-      product.quantity > 0 && (
-        <ProductRow
-          key={product.id}
-          product={product}
-          updateProduct={updateProduct}
-          updateQuantity={updateQuantity}
-          deleteProduct={deleteProduct}
-        />
-      ),
-  );
-
-  const inactiveListings = products.map(
-    (product) =>
-      product.quantity == 0 && (
-        <ProductRow
-          key={product.id}
-          product={product}
-          updateProduct={updateProduct}
-          updateQuantity={updateQuantity}
-          deleteProduct={deleteProduct}
-        />
-      ),
-  );
+  const currentListings = products
+    .filter((product) => product.quantity > 0)
+    .map((product) => (
+      <ProductRow
+        key={product.id}
+        product={product}
+        updateProduct={updateProduct}
+        updateQuantity={updateQuantity}
+        deleteProduct={deleteProduct}
+      />
+    ));
+  const inactiveListings = products
+    .filter((product) => product.quantity == 0)
+    .map((product) => (
+      <ProductRow
+        key={product.id}
+        product={product}
+        updateProduct={updateProduct}
+        updateQuantity={updateQuantity}
+        deleteProduct={deleteProduct}
+      />
+    ));
   return (
     <table>
       <tbody>
-        <tr>
-          <td colSpan="4" style={{ textAlign: 'center' }}>
-            <h2>Current Listings</h2>
-          </td>
-        </tr>
-        <tr>
-          <th>Name</th>
-          <th>Quantity</th>
-          <th style={{ width: '4rem' }}>Price / Unit</th>
-          <th style={{ width: '4rem' }}>2nd Price / Unit</th>
-        </tr>
-        {currentListings}
-        <tr>
-          <td colSpan="4" style={{ textAlign: 'center' }}>
-            <h3>All Listings</h3>
-          </td>
-        </tr>
-        <tr>
-          <th>Name</th>
-          <th>Quantity</th>
-          <th style={{ width: '4rem' }}>Price / Unit</th>
-          <th style={{ width: '4rem' }}>2nd Price / Unit</th>
-        </tr>
-        {inactiveListings}
+        {currentListings.length > 0 && (
+          <>
+            <tr>
+              <td colSpan="4" style={{ textAlign: 'center' }}>
+                <h2>Current Listings</h2>
+              </td>
+            </tr>
+            <tr>
+              <th>Name</th>
+              <th>Quantity</th>
+              <th style={{ width: '4rem' }}>Price / Unit</th>
+              <th style={{ width: '4rem' }}>2nd Price / Unit</th>
+            </tr>
+            {currentListings}
+          </>
+        )}
+        {inactiveListings.length > 0 && (
+          <>
+            <tr>
+              <td colSpan="4" style={{ textAlign: 'center' }}>
+                <h3>Inactive Listings</h3>
+              </td>
+            </tr>
+            <tr>
+              <th>Name</th>
+              <th>Quantity</th>
+              <th style={{ width: '4rem' }}>Price / Unit</th>
+              <th style={{ width: '4rem' }}>2nd Price / Unit</th>
+            </tr>
+            {inactiveListings}
+          </>
+        )}
         <EditRow
           productName={productName}
           setProductName={setProductName}
@@ -437,7 +442,11 @@ export default function EditWholesale({ client, isLoading, setIsLoading }) {
       <h1>Wholesale Products</h1>
       {isLoading ? <p>Loading...</p> : null}
       <textarea
-        placeholder={`Farmer's Note: ${farmersNote}`}
+        placeholder={
+          farmersNote
+            ? `Farmer's Note: ${farmersNote}`
+            : `Farmer's Note: enter a note here. Buyers will see this note on your order form.`
+        }
         onChange={(e) => {
           e.preventDefault();
           const newNote = e.target.value;
