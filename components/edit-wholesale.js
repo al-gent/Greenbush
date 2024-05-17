@@ -99,7 +99,7 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
         <td>
           <input
             size={4}
-            type="tel"
+            type="text"
             value={quantity == 0 ? '' : quantity}
             placeholder={quantity}
             onChange={(e) => {

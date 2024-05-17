@@ -1,0 +1,37 @@
+.updateBuyers {
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: #e1a7e5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin-bottom: 2rem;
+  margin: auto;
+}
+
+.updateBuyers tr {
+  padding: 0.5rem;
+}
+
+.updateBuyers td {
+  padding: 0.5rem;
+  word-wrap: normal;
+}
+
+.updateBuyers input[type='checkbox'] {
+  margin-right: 0.5rem;
+  transform: scale(1.5);
+}
+
+.updateBuyers button[type='submit'] {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.updateBuyers button[type='submit']:hover {
+  background-color: #45a049;
+}
