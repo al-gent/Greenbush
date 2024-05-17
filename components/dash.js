@@ -6,6 +6,7 @@ import ReviewOrders from '../components/review-orders';
 import CompletedOrders from './completed-orders';
 import AllNewItems from './all-new-items';
 import FarmerInfo from './farmerinfo';
+import UpdateBuyers from './update-buyers';
 
 // import AnalyzeSales from './analytics';
 
@@ -15,6 +16,7 @@ export default function Dash({ client, isLoading, setIsLoading }) {
   const [viewAllItems, setViewAllItems] = useState(false);
   const [viewCompleted, setViewCompleted] = useState(false);
   const [newOrderCount, setNewOrderCount] = useState('');
+  const [viewUpdateBuyers, setViewUpdateBuyers] = useState(false);
 
   // const [viewAnalytics, setViewAnalytics] = useState(false);
   useEffect(() => {
@@ -67,12 +69,18 @@ export default function Dash({ client, isLoading, setIsLoading }) {
           {viewAnalytics ? `Hide Analytics` : `Analytics`}
         </button>
       </div> */}
+      <div className={styles.dash}>
+        <button onClick={() => setViewUpdateBuyers(!viewUpdateBuyers)}>
+          {viewUpdateBuyers ? `Hide Update Buyers` : `Update Buyers`}
+        </button>
+      </div>
       {viewAllItems && (
         <AllNewItems client={client} setIsLoading={setIsLoading} />
       )}
       {viewCompleted && (
         <CompletedOrders client={client} setIsLoading={setIsLoading} />
       )}
+      {viewUpdateBuyers && <UpdateBuyers client={client} />}
       {/* {viewAnalytics && <AnalyzeSales client={client} />} */}
     </div>
   );

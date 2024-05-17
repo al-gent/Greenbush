@@ -15,7 +15,7 @@ export default function EditOrderTableRow({ product, setQuantity }) {
       <td>
         <input
           size="4"
-          type="tel"
+          type="text"
           placeholder={cart}
           value={product.editedCart || ''}
           onChange={(e) => {
