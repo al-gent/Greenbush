@@ -78,15 +78,14 @@ export default function Login({
             onChange={(e) => setPin(e.target.value)}
           />
           <div>
+            <p htmlFor="staySignedIn">Stay signed in</p>
             <input
               type="checkbox"
               id="staySignedIn"
               name="staySignedIn"
               checked={staySignedIn}
               onChange={(e) => setStaySignedIn(e.target.checked)}
-              style={{ transform: 'scale(1.3)' }}
             />
-            <label htmlFor="staySignedIn">Stay signed in</label>
           </div>
           <input type="submit" value="Login" />
         </form>

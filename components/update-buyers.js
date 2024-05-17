@@ -1,0 +1,165 @@
+import { renderToString } from 'react-dom/server';
+import WholesaleTable from './wholesale-table';
+import React, { useState, useEffect } from 'react';
+import styles from '../styles/update-buyers.module.css';
+import sendEmail from './send-update-email';
+
+export default function UpdateBuyers({ client }) {
+  const [isLoading, setIsLoading] = useState(true);
+  const [products, setProducts] = useState([]);
+  const [farm, setFarm] = useState({});
+  const [emails, setEmails] = useState([]);
+  const [enterEmail, setEnterEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [emailText, setEmailText] = useState('');
+  const [emailSent, setEmailSent] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch(`/api/data?client=${encodeURIComponent(client)}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(data);
+      })
+      .catch((error) => console.error('Error:', error));
+
+    fetch(`/api/get-farmer-info?client=${encodeURIComponent(client)}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then((data) => {
+        setFarm(JSON.parse(data));
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error', error);
+        setIsLoading(false);
+      });
+
+    fetch(`/api/get-emails?client=${encodeURIComponent(client)}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then((data) => {
+        setEmails(JSON.parse(data));
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error', error);
+        setIsLoading(false);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (farm) {
+      setSubject(`New Listings from ${farm.farmname}`);
+    }
+  }, [farm]);
+
+  function emailCheckBox(email, index) {
+    if (!email) return;
+    else
+      return (
+        <div style={{ textAlign: 'left' }} key={index}>
+          <input
+            type="checkbox"
+            id={email}
+            name="email"
+            value={email}
+            defaultChecked
+          />
+          {email}
+        </div>
+      );
+  }
+
+  const emailBodyHTML = renderToString(
+    <div>
+      <p>{emailText}</p>
+      <WholesaleTable products={products} farmName={farm.farmname} />
+    </div>,
+  );
+
+  async function handleEmailSending(e) {
+    e.preventDefault();
+    const form = e.target;
+    const checkboxes = form.elements.email;
+    const checkedEmails = [];
+
+    for (let i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].checked) {
+        checkedEmails.push(checkboxes[i].value);
+      }
+    }
+
+    console.log(checkedEmails);
+    checkedEmails.forEach((email) => {
+      const templateParams = {
+        subject: subject,
+        toEmail: email,
+        fromEmail: farm.email,
+        fromName: farm.farmname,
+        emailBody: emailBodyHTML,
+      };
+
+      sendEmail(templateParams, setEmailSent);
+    });
+  }
+  return (
+    <div className={styles.updateBuyers}>
+      {emailSent ? (
+        <h1>Email successfully sent</h1>
+      ) : (
+        <div>
+          <h2>Update Buyers</h2>
+          <div style={{ textAlign: 'left' }}>
+            <h4>
+              Subject line{' '}
+              <input
+                style={{ width: '100%', textAlign: 'left' }}
+                type="text"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+              />
+            </h4>
+          </div>
+          <div style={{ textAlign: 'left' }}>
+            <h4>
+              Message{' '}
+              <textarea
+                style={{ width: '100%', height: '3rem', textAlign: 'left' }}
+                value={emailText}
+                onChange={(e) => setEmailText(e.target.value)}
+              />
+            </h4>
+          </div>
+          <WholesaleTable products={products} farmName={farm.farmname} />
+          <h3>Which buyers?</h3>
+          <form onSubmit={(e) => handleEmailSending(e)}>
+            {emails.map((email, index) => emailCheckBox(email, index))}
+            <div style={{ textAlign: 'left' }}>
+              <input
+                type="checkbox"
+                value={enterEmail}
+                name="email"
+                checked={enterEmail !== ''}
+              />
+              <input
+                type="text"
+                value={enterEmail}
+                onChange={(e) => setEnterEmail(e.target.value)}
+              />
+            </div>
+            <button type="submit">Send Update</button>
+          </form>
+        </div>
+      )}
+    </div>
+  );
+}

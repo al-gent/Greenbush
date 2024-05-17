@@ -32,7 +32,7 @@ export default function EditRow({
         <td>
           <input
             size="4"
-            type="tel"
+            type="text"
             value={quantity}
             placeholder="Quant"
             onChange={(e) => {
