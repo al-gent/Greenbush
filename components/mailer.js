@@ -1,33 +1,22 @@
 import emailjs from '@emailjs/browser';
+import CartTable from './cart-table';
+import { renderToString } from 'react-dom/server';
 
 export default async function EmailGB(order, farmer_email) {
-  console.log('start of EMAIL function', order, farmer_email);
-
-  const orderTable = order.products
-    .map((product) => {
-      return `
-    ${product.cart} ${product.unit} - ${product.name} - $${
-      product.price * product.cart
-    }`;
-    })
-    .join();
+  const orderTableHTML = renderToString(
+    <CartTable products={order.products} />,
+  );
 
   const templateParams = {
-    farmer_email: farmer_email,
-    name: order.name,
-    reply_to: order.email,
-    notes: order.notes,
-    orderTable: orderTable,
-    total: order.products.reduce((acc, product) => {
-      return acc + product.cart * product.price;
-    }, 0),
+    subject: `New Order from ${order.name}`,
+    toEmail: farmer_email,
+    emailBody: orderTableHTML,
   };
 
-  console.log('templateParams', templateParams);
   try {
     const result = await emailjs.send(
       'service_l0rokdr',
-      'wholesale',
+      'template1',
       templateParams,
       'XPX6vluS07arIqYtC',
     );

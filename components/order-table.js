@@ -15,14 +15,31 @@ export default function OrderTable({
   setIsLoading,
 }) {
   const [edit, setEdit] = useState(false);
+  function productMultiplier(product) {
+    return product.unitSelected
+      ? product.unitratio || (product.price[0] / product.price[1]).toFixed(2)
+      : 1;
+  }
+
+  //the || statement should make it so that past orders that weren't sent along with a unitRatio dont break
+
   let products = order.items;
-  let total = 0;
+
+  let total = products
+    .reduce((total, itemString) => {
+      let product = JSON.parse(itemString);
+      return (
+        total +
+        (product.editedCart
+          ? product.editedCart
+          : product.cart * productMultiplier(product)) *
+          product.price[product.unitSelected]
+      );
+    }, 0)
+    .toFixed(2);
+
   const rows = products.map((itemString) => {
     let product = JSON.parse(itemString);
-    const total_price = product.editedCart
-      ? (product.editedCart * product.price[0]).toFixed(2)
-      : Math.round(product.cart * product.price[0]).toFixed(2);
-    total += parseFloat(total_price);
     return edit ? (
       <EditOrderTableRow
         key={product.id}
@@ -50,7 +67,6 @@ export default function OrderTable({
             <button
               onClick={(e) => (
                 e.preventDefault,
-                console.log('onClick', order),
                 updateOrder({ order, orders, setIsLoading, client }),
                 setEdit(false)
               )}
@@ -60,7 +76,6 @@ export default function OrderTable({
             <button
               onClick={(e) => (
                 e.preventDefault,
-                console.log('onClick', order.id),
                 deleteOrder(order.id, client, reload, setReload),
                 setEdit(false),
                 setReload(true)

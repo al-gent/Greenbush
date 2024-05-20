@@ -1,8 +1,16 @@
 import { sql } from '@vercel/postgres';
 
 export default async function updateProduct(req, res) {
-  const { product, productName, quantity, unit, unit2, price, price2 } =
-    req.body;
+  const {
+    product,
+    productName,
+    quantity,
+    unit,
+    unit2,
+    price,
+    price2,
+    unitRatio,
+  } = req.body;
 
   if (unit2) {
     await sql`
@@ -11,7 +19,7 @@ export default async function updateProduct(req, res) {
       productName || product.name
     }, unit = ARRAY[${unit}, ${unit2}], price = ARRAY[${price}, ${price2}], quantity = ${
       quantity || product.quantity
-    }
+    }, unitratio = ${unitRatio}
     WHERE id = ${product.id};
   `;
   } else {
@@ -32,5 +40,6 @@ export default async function updateProduct(req, res) {
     unit2: unit2,
     price: price,
     price2: price2,
+    unitRatio: unitRatio,
   });
 }

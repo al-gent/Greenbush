@@ -1,52 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/wholesale.module.css';
 import EmailGB from '../components/mailer';
-import OrderSummary from '../lib/order-summary';
-import Image from 'next/image';
-
-function QuantityUnit({
-  product,
-  unitSelected,
-  setUnitSelected,
-  setInvalidQuant,
-  setQuantityDesired,
-}) {
-  const productMultiplier = (product.price[0] / product.price[1]).toFixed(2);
-  if (product.unit.length > 1) {
-    return (
-      <td>
-        <select
-          onChange={(e) => {
-            setInvalidQuant(false);
-            setUnitSelected(e.target.selectedIndex);
-            setQuantityDesired('');
-          }}
-        >
-          {product.unit.map((unit, index) => {
-            const value = index
-              ? Math.round(productMultiplier * product.quantity * 2) / 2
-              : Math.round(product.quantity * 2) / 2;
-            return (
-              <option key={unit + index} value={value}>
-                {' '}
-                {value} {unit}
-              </option>
-            );
-          })}
-        </select>
-      </td>
-    );
-  } else {
-    return (
-      <td style={{ padding: '0.3rem' }}>
-        {product.quantity} {product.unit}
-      </td>
-    );
-  }
-}
+import OrderSummary from './order-summary';
+import UnitDropdown from './unit-dropdown-menu';
+import CartTable from './cart-table';
 
 function ProductRow({ product, addToCart }) {
-  const productMultiplier = (product.price[0] / product.price[1]).toFixed(2);
+  const productMultiplier = product.unitratio
+    ? product.unitratio
+    : (product.price[0] / product.price[1]).toFixed(2);
   const [unitSelected, setUnitSelected] = useState(0);
   const [invalidQuant, setInvalidQuant] = useState(false);
   const [quantityDesired, setQuantityDesired] = useState('');
@@ -65,12 +27,13 @@ function ProductRow({ product, addToCart }) {
   return (
     <tr>
       <td>{product.name}</td>
-      <QuantityUnit
+      <UnitDropdown
         product={product}
         unitSelected={unitSelected}
         setUnitSelected={setUnitSelected}
         setInvalidQuant={setInvalidQuant}
         setQuantityDesired={setQuantityDesired}
+        productMultiplier={productMultiplier}
       />
       <td>{'$' + product.price[unitSelected] + '/' + perUnit}</td>
       {invalidQuant ? (
@@ -114,38 +77,6 @@ function ProductRow({ product, addToCart }) {
   );
 }
 
-function CartRow({ product, removeFromCart }) {
-  const unitSelected = product.unitSelected;
-  const total_price = (product.cart * product.price[0]).toFixed(2);
-  let productMultiplier;
-  unitSelected
-    ? (productMultiplier = (product.price[0] / product.price[1]).toFixed(2))
-    : (productMultiplier = 1);
-
-  let perUnit = product.unit[unitSelected];
-  if (perUnit.endsWith('es')) {
-    perUnit = perUnit.slice(0, -2);
-  } else if (perUnit.endsWith('s')) {
-    perUnit = perUnit.slice(0, -1);
-  }
-
-  return (
-    <tr>
-      <td>{product.name}</td>
-      <td>
-        {product.cart * productMultiplier + ' ' + product.unit[unitSelected]}
-      </td>
-      <td>
-        {'$' + Number(product.price[unitSelected]).toFixed(2) + '/' + perUnit}
-      </td>
-      <td>{'$' + total_price}</td>
-      <td>
-        <button onClick={() => removeFromCart({ product })}>Remove</button>
-      </td>
-    </tr>
-  );
-}
-
 function ListTable({ products, addToCart }) {
   const rows = products
     .filter((product) => product.quantity > 0)
@@ -163,90 +94,6 @@ function ListTable({ products, addToCart }) {
       </thead>
       <tbody>{rows}</tbody>
     </table>
-  );
-}
-
-function CartTable({
-  products,
-  removeFromCart,
-  onSubmit,
-  custname,
-  email,
-  notes,
-  setCustname,
-  setEmail,
-  setNotes,
-}) {
-  const rows = products
-    .filter((product) => product.cart > 0)
-    .map((product) => (
-      <CartRow
-        key={product.id}
-        product={product}
-        removeFromCart={removeFromCart}
-      />
-    ));
-  return (
-    <div>
-      <hr></hr>
-      <div>
-        <h3 style={{ textAlign: 'center' }}>CART</h3>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Quantity Selected</th>
-            <th>Price</th>
-            <th>Total Price</th>
-          </tr>
-        </thead>
-        <tbody>{rows}</tbody>
-      </div>
-      <hr></hr>
-      <p>
-        Checkout total: $
-        {products
-          .filter((product) => product.cart)
-          .reduce(
-            (total, product) => total + product.cart * product.price[0],
-            0,
-          )
-          .toFixed(2)}
-      </p>
-      <div>
-        <input
-          type="text"
-          value={custname}
-          onChange={(e) => setCustname(e.target.value)}
-          required
-          placeholder="Name / Organization"
-        />
-      </div>
-      <div>
-        <input
-          type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          placeholder="Email"
-        />
-      </div>
-      <div>
-        <input
-          type="textarea"
-          value={notes}
-          placeholder="Notes"
-          onChange={(e) => setNotes(e.target.value)}
-        />
-      </div>
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          onSubmit(e);
-        }}
-      >
-        Submit Order
-      </button>
-    </div>
   );
 }
 
@@ -354,12 +201,13 @@ export default function OrderForm({ client, setIsLoading, farmer_email }) {
     // quantity desired comes in with whatever unit is selected
     // so that needs to change to the base unit
     unitSelected
-      ? (productMultiplier = (product.price[0] / product.price[1]).toFixed(2))
+      ? (productMultiplier = productMultiplier)
       : (productMultiplier = 1);
 
     const baseUnitQuantityDesired = unitSelected
       ? parseFloat(quantityDesired / productMultiplier)
       : parseFloat(quantityDesired);
+
     const parsedQuantityAvail = parseFloat(quantity); // in base unit
 
     const newQuantity = parseFloat(
@@ -443,8 +291,8 @@ export default function OrderForm({ client, setIsLoading, farmer_email }) {
               <h1 className={styles.centerText}>Cart is empty</h1>
             ) : (
               <div className={styles.centerText}>
+                <h3 style={{ textAlign: 'center' }}>CART</h3>
                 <CartTable
-                  // className={styles.centerText}
                   products={products}
                   removeFromCart={removeFromCart}
                   onSubmit={submitOrder}
