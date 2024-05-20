@@ -4,8 +4,8 @@ export default async function getEmails(req, res) {
   const { client } = req.query;
   try {
     const emails = await sql`
-      SELECT DISTINCT LOWER(email) as email FROM orders
-      WHERE client = ${client};
+      SELECT DISTINCT LOWER(email) as email FROM buyers
+      WHERE farmcode = ${client};
     `;
     res.status(200).json(emails.rows.map((row) => row.email));
   } catch (error) {

@@ -13,6 +13,8 @@ export default function EditRow({
   setPrice,
   price2,
   setPrice2,
+  unitRatio,
+  setUnitRatio,
   invalidQuant,
 }) {
   return (
@@ -82,6 +84,22 @@ export default function EditRow({
         </td>
       </tr>
       {invalidQuant && <p>This quantity is invalid</p>}
+      {unit2 && (
+        <tr>
+          <td colSpan={2}></td>
+          <td colSpan={2}>
+            <input
+              style={{ width: '100%' }}
+              type="text"
+              placeholder="unit ratio"
+              value={unitRatio}
+              onChange={(e) => {
+                setUnitRatio(e.target.value);
+              }}
+            ></input>
+          </td>
+        </tr>
+      )}
     </>
   );
 }

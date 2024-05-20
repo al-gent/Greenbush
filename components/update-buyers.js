@@ -38,7 +38,9 @@ export default function UpdateBuyers({ client }) {
         console.error('Error', error);
         setIsLoading(false);
       });
+  }, []);
 
+  useEffect(() => {
     fetch(`/api/get-emails?client=${encodeURIComponent(client)}`)
       .then((response) => {
         if (!response.ok) {
@@ -54,13 +56,57 @@ export default function UpdateBuyers({ client }) {
         console.error('Error', error);
         setIsLoading(false);
       });
-  }, []);
+  }, [emails]);
 
   useEffect(() => {
     if (farm) {
       setSubject(`New Listings from ${farm.farmname}`);
     }
   }, [farm]);
+
+  function addEmail(e, email) {
+    e.preventDefault();
+    fetch(`/api/add-email?client=${encodeURIComponent(client)}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .then((response) => setIsLoading(false))
+      .catch((error) => console.error('Error:', error));
+  }
+
+  function deleteEmail(e, email) {
+    e.preventDefault();
+    fetch(`/api/remove-email?client=${encodeURIComponent(client)}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .then((response) => setIsLoading(false))
+      .catch((error) => console.error('Error:', error));
+  }
 
   function emailCheckBox(email, index) {
     if (!email) return;
@@ -75,6 +121,15 @@ export default function UpdateBuyers({ client }) {
             defaultChecked
           />
           {email}
+          <button
+            style={{ scale: '75%' }}
+            onClick={(e) => {
+              deleteEmail(e, email);
+              setEmails([...emails, email]);
+            }}
+          >
+            Remove
+          </button>
         </div>
       );
   }
@@ -83,6 +138,9 @@ export default function UpdateBuyers({ client }) {
     <div>
       <p>{emailText}</p>
       <WholesaleTable products={products} farmName={farm.farmname} />
+      <p>
+        <a href={`http://www.adamlgent.com/${farm.farmcode}`}>Order now </a>
+      </p>
     </div>,
   );
 
@@ -155,6 +213,15 @@ export default function UpdateBuyers({ client }) {
                 value={enterEmail}
                 onChange={(e) => setEnterEmail(e.target.value)}
               />
+              <button
+                onClick={(e) => {
+                  setEmails([...emails, enterEmail]);
+                  addEmail(e, enterEmail);
+                  setEnterEmail('');
+                }}
+              >
+                Add Email
+              </button>
             </div>
             <button type="submit">Send Update</button>
           </form>
