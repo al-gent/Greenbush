@@ -1,26 +1,40 @@
 export default function CartRow({ product }) {
-  let productMultiplier = 1;
-  const unitSelected = product.unitSelected || 0;
-  unitSelected === 0
-    ? (productMultiplier = 1)
-    : (productMultiplier = product.price[0] / product.price[1]);
-  const cart = Math.round(product.cart * productMultiplier);
-  const total_price = product.editedCart
-    ? (product.editedCart * product.price[0]).toFixed(2)
-    : Math.round(product.cart * product.price[0]).toFixed(2);
+  const unitSelected = product.unitSelected;
+  let productMultiplier;
+  unitSelected
+    ? (productMultiplier =
+        product.unitratio || product.price[0] / product.price[1])
+    : (productMultiplier = 1);
+  //the || statement should make it so that past orders that weren't sent along with a unitRatio dont break
 
+  let perUnit = product.unit[unitSelected];
+  if (perUnit.endsWith('es')) {
+    perUnit = perUnit.slice(0, -2);
+  } else if (perUnit.endsWith('s')) {
+    perUnit = perUnit.slice(0, -1);
+  }
+
+  //when the cart is edited for a product that is in it's secondary unit,
+  // that quantity is no longer in the base unit anymore so
+  //we dont need to multiply it by the product multiplier
+
+  const cart = product.editedCart
+    ? product.editedCart
+    : (product.cart * productMultiplier).toFixed(0);
+
+  const total_price = (cart * product.price[unitSelected]).toFixed(2);
   return (
     <tr>
       <td>{product.name}</td>
       {product.editedCart ? (
         <td>
-          <del>{cart}</del>
+          <del>{product.cart * productMultiplier}</del>
           {' ' + product.editedCart + ' ' + product.unit[unitSelected]}
         </td>
       ) : (
         <td>{cart + ' ' + product.unit[unitSelected]} </td>
       )}
-      <td>{'$' + product.price[unitSelected]}</td>
+      <td>{`$${product.price[unitSelected]}/${perUnit}`}</td>
       <td>{'$' + total_price}</td>
     </tr>
   );

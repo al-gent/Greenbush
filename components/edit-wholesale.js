@@ -10,8 +10,10 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
   const [unit2, setUnit2] = useState(product.unit[1]);
   const [price, setPrice] = useState(product.price[0]);
   const [price2, setPrice2] = useState(product.price[1]);
+  const [unitRatio, setUnitRatio] = useState(product.unitratio || '');
   const [edit, setEdit] = useState(false);
   const [invalidQuant, setInvalidQuant] = useState(false);
+  const [needUnitRatio, setNeedUnitRatio] = useState(false);
 
   function perUnit(unit) {
     if (unit) {
@@ -42,6 +44,8 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
         setPrice={setPrice}
         price2={price2}
         setPrice2={setPrice2}
+        unitRatio={unitRatio}
+        setUnitRatio={setUnitRatio}
         invalidQuant={invalidQuant}
       />
       <tr>
@@ -50,8 +54,10 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
             onClick={() => {
               if (isNaN(quantity) || quantity < 0 || isNaN(price) || price < 0)
                 setInvalidQuant(true);
+              if (unit2 && !unitRatio) setNeedUnitRatio(true);
               else {
                 setInvalidQuant(false);
+                setNeedUnitRatio(false);
                 updateProduct(
                   product,
                   productName,
@@ -60,6 +66,7 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
                   unit2,
                   price,
                   price2,
+                  unitRatio,
                 );
                 setEdit(false);
               }
@@ -68,7 +75,7 @@ function ProductRow({ product, updateProduct, updateQuantity, deleteProduct }) {
             Save
           </button>
         </td>
-        <td></td>
+        <td> {needUnitRatio && <>Please enter a unit ratio</>}</td>
         <td>
           <button onClick={() => deleteProduct(product.id)}>Delete</button>
         </td>
@@ -320,7 +327,6 @@ export default function EditWholesale({ client, isLoading, setIsLoading }) {
       },
     ]);
 
-    console.log('adding product', productName, quantity, unit, price, client);
     fetch(`/api/add-product`, {
       method: 'POST',
       headers: {
@@ -357,6 +363,7 @@ export default function EditWholesale({ client, isLoading, setIsLoading }) {
     unit2,
     price,
     price2,
+    unitRatio,
   ) {
     setIsLoading(true);
     fetch(`/api/update-product`, {
@@ -372,6 +379,7 @@ export default function EditWholesale({ client, isLoading, setIsLoading }) {
         unit2,
         price,
         price2,
+        unitRatio,
       }),
     })
       .then((response) => {
@@ -389,14 +397,6 @@ export default function EditWholesale({ client, isLoading, setIsLoading }) {
 
   function updateQuantity(product, productName, newQuantity, unit, price) {
     setIsLoading(true);
-    console.log(
-      'updating quantity',
-      product,
-      productName,
-      newQuantity,
-      unit,
-      price,
-    );
     fetch('/api/update-quantity', {
       method: 'POST',
       headers: {

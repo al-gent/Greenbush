@@ -1,16 +1,22 @@
 export default function EditOrderTableRow({ product, setQuantity }) {
-  let productMultiplier = 1;
-  const unitSelected = product.unitSelected || 0;
-  unitSelected === 0
-    ? (productMultiplier = 1)
-    : (productMultiplier = product.price[0] / product.price[1]);
-  const cart = Math.round(product.cart * productMultiplier);
+  const unitSelected = product.unitSelected;
+
+  let productMultiplier;
+  product.unitSelected
+    ? (productMultiplier = product.unitratio)
+    : (productMultiplier = 1);
+
+  const cart = product.editedCart
+    ? product.editedCart * productMultiplier
+    : product.cart * productMultiplier;
+  console.log(cart);
+
   const total_price = Math.round(product.cart * product.price[0]).toFixed(2);
   return (
     <tr>
       <td>{product.name}</td>
       <td>
-        {cart} {product.unit[unitSelected]}{' '}
+        {cart.toFixed(0)} {product.unit[unitSelected]}
       </td>
       <td>
         <input
