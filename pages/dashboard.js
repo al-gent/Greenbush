@@ -17,7 +17,6 @@ export default function Dashboard(cookies) {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    console.log('useEffect hook', cookies);
     if (cookies.cookies.user) {
       setFarmCode(JSON.parse(cookies.cookies.user).farmcode);
       setIsCred(true);
