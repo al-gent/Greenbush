@@ -11,6 +11,10 @@ export default function CartTable({
   setEmail,
   setNotes,
 }) {
+  if (typeof products[0] == 'string') {
+    products = products.map((product) => JSON.parse(product));
+  }
+
   function productMultiplier(product) {
     return product.unitSelected ? product.unitratio : 1;
   }
