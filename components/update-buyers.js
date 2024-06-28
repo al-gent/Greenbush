@@ -12,7 +12,8 @@ export default function UpdateBuyers({ client }) {
   const [enterEmail, setEnterEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [emailText, setEmailText] = useState('');
-  const [emailSent, setEmailSent] = useState(false);
+  const [emailsSent, setEmailsSent] = useState([]);
+  const [playByPlay, setPlayByPlay] = useState('');
 
   useEffect(() => {
     setIsLoading(true);
@@ -60,7 +61,7 @@ export default function UpdateBuyers({ client }) {
 
   useEffect(() => {
     if (farm) {
-      setSubject(`New Listings from ${farm.farmname}`);
+      setSubject(`Produce Available from ${farm.farmname}`);
     }
   }, [farm]);
 
@@ -156,8 +157,9 @@ export default function UpdateBuyers({ client }) {
       }
     }
 
-    console.log(checkedEmails);
-    checkedEmails.forEach((email) => {
+    console.log('sending emails to', checkedEmails);
+    for (const email of checkedEmails) {
+      setPlayByPlay(`sending email to ${email}`);
       const templateParams = {
         subject: subject,
         toEmail: email,
@@ -165,14 +167,33 @@ export default function UpdateBuyers({ client }) {
         fromName: farm.farmname,
         emailBody: emailBodyHTML,
       };
-
-      sendEmail(templateParams, setEmailSent);
-    });
+      try {
+        await sendEmail(templateParams);
+        setEmailsSent((currentEmailsSent) => [...currentEmailsSent, email]);
+        // I dont understand why this arrow function is needed, but it didn't work without it.
+      } catch (error) {
+        console.error('Failed to send email to', email, error);
+        setPlayByPlay(`Failed to send email to ${email}`);
+      }
+      await new Promise((resolve) => setTimeout(resolve, 500));
+    }
+    setPlayByPlay('');
   }
   return (
     <div className={styles.updateBuyers}>
-      {emailSent ? (
-        <h1>Email successfully sent</h1>
+      {emailsSent.length > 0 ? (
+        <>
+          {playByPlay ? (
+            <h3>{playByPlay}</h3>
+          ) : (
+            <h1>Emails successfully sent</h1>
+          )}
+          <ul>
+            {emailsSent.map((email) => (
+              <li>{email}</li>
+            ))}
+          </ul>
+        </>
       ) : (
         <div>
           <h2>Update Buyers</h2>

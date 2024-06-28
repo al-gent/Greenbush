@@ -4,7 +4,8 @@ import styles from '/styles/index.module.css';
 import FormattedDate from '../components/formatted-date';
 import OrderTable from '../components/order-table';
 import updateOrderStatus from './update-order-status';
-
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import InvoiceTemplate from '../pages/invoice-template/[slug]';
 export default function ReviewOrders({ client, isLoading, setIsLoading }) {
   const [orders, setOrders] = useState([]);
   const [reload, setReload] = useState(true);
@@ -38,6 +39,14 @@ export default function ReviewOrders({ client, isLoading, setIsLoading }) {
                   {order.name} Order #{order.id}
                 </h2>
                 <FormattedDate date={order.date} />
+                <a
+                  href={`/invoice-template/${order.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: 'none', color: 'inherit' }} // Add button styles here
+                >
+                  <button>Generate Invoice</button>
+                </a>
                 <OrderTable
                   client={client}
                   orders={orders}

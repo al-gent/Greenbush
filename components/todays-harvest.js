@@ -26,6 +26,7 @@ export default function TodaysHarvest({ client, setIsLoading }) {
           product.cart * product.unitratio ||
             product.price[0] / product.price[1],
         );
+      if (product.editedCart == 0) return;
       if ([product.name, product.unit[product.unitSelected]] in itemsOrdered)
         itemsOrdered[[product.name, product.unit[product.unitSelected]]][0] +=
           product.cart;
