@@ -47,6 +47,9 @@
   margin: 0 auto;
   text-align: center;
 }
+.signupDashContainer div {
+  margin: 1rem 0;
+}
 
 .loginContainer h2 {
   color: #333;

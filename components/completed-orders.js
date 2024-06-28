@@ -31,6 +31,14 @@ export default function CompletedOrders({ client, setIsLoading }) {
             {order.name} Order #{order.id}
           </h2>
           <FormattedDate date={order.date} />
+          <a
+            href={`/invoice-template/${order.id}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: 'none', color: 'inherit' }} // Add button styles here
+          >
+            <button>Generate Invoice</button>
+          </a>
           <OrderTable
             order={order}
             editOrder={editOrder}
