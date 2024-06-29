@@ -5,7 +5,6 @@ import Image from 'next/image';
 
 export async function getServerSideProps(context) {
   const { slug } = context.query;
-  console.log('getting server side props', slug);
   return {
     props: {
       slug,
@@ -15,11 +14,9 @@ export async function getServerSideProps(context) {
 
 export default function Wholesale({ slug }) {
   const lowerCaseSlug = slug.toLowerCase();
-  console.log(lowerCaseSlug);
   const [isLoading, setIsLoading] = useState(true);
   const [farm, setFarm] = useState({});
   useEffect(() => {
-    setIsLoading(true);
     const url = `/api/get-farmer-info?client=${encodeURIComponent(
       lowerCaseSlug,
     )}`;
