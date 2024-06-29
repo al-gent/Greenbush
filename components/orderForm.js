@@ -97,13 +97,19 @@ function ListTable({ products, addToCart }) {
   );
 }
 
-export default function OrderForm({ client, setIsLoading, farmer_email }) {
+export default function OrderForm({
+  client,
+  setIsLoading,
+  isLoading,
+  farmer_email,
+}) {
   const [custname, setCustname] = useState('');
   const [email, setEmail] = useState('');
   const [notes, setNotes] = useState('');
   const [products, setProducts] = useState([]);
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [farmersNote, setFarmersNote] = useState('');
+  const [pbp, setpbp] = useState('');
 
   useEffect(() => {
     const url = `/api/data?client=${encodeURIComponent(client)}`;
@@ -139,45 +145,59 @@ export default function OrderForm({ client, setIsLoading, farmer_email }) {
 
   let productsToUpdate = products.filter((product) => product.cart > 0);
 
-  function submitOrder(e) {
+  async function submitOrder(e) {
     e.preventDefault();
     setIsLoading(true);
-    fetch(`/api/update-quantities`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(productsToUpdate),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then((response) => {});
-    fetch(`/api/place-order?client=${encodeURIComponent(client)}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(order),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
+    try {
+      // First fetch call to update quantities
+      setpbp('updating quantities...');
+      const updateQResponse = await fetch(`/api/update-quantities`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(productsToUpdate),
+      });
 
-        return response.json();
-      })
-      .then(() => {
-        EmailGB((order = order), (farmer_email = farmer_email));
-      })
-      .then(() => {
-        setIsLoading(false);
-        setOrderPlaced(true);
-      })
-      .catch((error) => console.error('Error:', error));
+      if (!updateQResponse.ok) {
+        throw new Error('Network response was not ok for update quantities');
+      }
+
+      const updateQData = await updateQResponse.json();
+      console.log(updateQData);
+
+      // Second fetch call to place order, executed only after the first fetch call is complete
+      setpbp('placing order...');
+
+      const placeOrderResponse = await fetch(
+        `/api/place-order?client=${encodeURIComponent(client)}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(order),
+        },
+      );
+
+      if (!placeOrderResponse.ok) {
+        throw new Error('Network response was not ok for place order');
+      }
+
+      const placeOrderData = await placeOrderResponse.json();
+      console.log(placeOrderData);
+
+      // Assuming EmailGB is an async function. If not, you can remove await.
+      setpbp('sending email...');
+
+      await EmailGB(order, farmer_email);
+
+      setIsLoading(false);
+      setOrderPlaced(true);
+    } catch (error) {
+      console.error('Error:', error);
+      setIsLoading(false); // Ensure loading is set to false even if there's an error
+    }
   }
 
   function addToCart({
@@ -303,6 +323,7 @@ export default function OrderForm({ client, setIsLoading, farmer_email }) {
                   setEmail={setEmail}
                   setNotes={setNotes}
                 />
+                {isLoading && <p>{pbp}</p>}
               </div>
             )}
           </div>

@@ -9,5 +9,5 @@ export default async function placeOrder(req, res) {
     INSERT INTO orders (name, email, notes, date, status, items, client)
     VALUES (${order.name}, ${order.email}, ${order.notes}, ${currentDateTime},'pending', ${order.products}, ${client});
   `;
-  res.status(200).json({ message: 'Order placed!' });
+  res.status(200).json({ message: 'Order placed!', order: order });
 }
