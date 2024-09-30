@@ -16,7 +16,8 @@ export default function Home() {
           alt="Headshot"
         />
         <SocialLinks />
-        <h2>Creator - Educator</h2>
+        <h2>Data Scientist</h2>
+        <h3>Creator - Educator</h3>
         <h4> Learning new technologies.</h4>
         <h4>Working on interesting problems.</h4>
       </div>{' '}
