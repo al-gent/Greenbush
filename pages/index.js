@@ -30,6 +30,9 @@ export default function Home() {
           <Link href="http://www.adamlgent.com/demodemo">
             <button>Orders & Inventory Management Web App</button>
           </Link>
+          <Link href="https://data-doctors.streamlit.app/">
+            <button>Data Doctor: assessing problems in Linear Regression</button>
+          </Link>
         </div>
       </div>
     </div>
