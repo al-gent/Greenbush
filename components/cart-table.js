@@ -10,6 +10,11 @@ export default function CartTable({
   setCustname,
   setEmail,
   setNotes,
+  address,
+  setAddress,
+  homedel,
+  setHomedel
+
 }) {
   if (typeof products[0] == 'string') {
     products = products.map((product) => JSON.parse(product));
@@ -85,6 +90,34 @@ export default function CartTable({
               onChange={(e) => setNotes(e.target.value)}
             />
           </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <p style={{ margin: 0 }}>Would you like home delivery?</p>
+            <input
+              type="checkbox"
+              checked={homedel}
+              onChange={(e) => setHomedel(e.target.checked)}
+            />
+          </div>
+        {homedel && 
+        <div>
+          <div>
+            <input
+              type="textarea"
+              value={address.streetAddress}
+              placeholder="Street Address"
+              onChange={(e) => setAddress({streetAddress: e.target.value})}
+            />
+          </div>
+          <div>
+          <input
+            type="textarea"
+            value={address.cityStateZip}
+            placeholder="City State Zip"
+            onChange={(e) => setAddress({cityStateZip: e.target.value})}
+          />
+        </div>
+        </div>
+          }
           <button
             onClick={(e) => {
               e.preventDefault();

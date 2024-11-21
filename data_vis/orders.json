@@ -1,0 +1,1699 @@
+[
+  {
+    "id": 95,
+    "name": "Slo Food Market",
+    "email": "retail@slofoodmarket.com",
+    "notes": "",
+    "date": "2024-01-04T05:43:18.767Z",
+    "status": "completed",
+    "items": [
+      "{\"name\":\"Beets, Golden\",\"quantity\":80,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":188,\"cart\":20,\"unitSelected\":0}",
+      "{\"name\":\"Cabbage, Red\",\"quantity\":40,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":186,\"cart\":20,\"unitSelected\":0}",
+      "{\"name\":\"Celeriac, without tops\",\"quantity\":85,\"unit\":[\"lbs\"],\"price\":[\"2.5\"],\"id\":14,\"cart\":15,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 96,
+    "name": "Jason il ritrovo",
+    "email": "jschra12@gmail.com",
+    "notes": "",
+    "date": "2024-01-07T05:34:31.907Z",
+    "status": "completed",
+    "items": [
+      "{\"name\":\"Beets, Chioggia\",\"quantity\":85,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":6,\"cart\":15,\"unitSelected\":0}",
+      "{\"name\":\"Beets, Golden\",\"quantity\":65,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":188,\"cart\":15,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 97,
+    "name": "Dreamport",
+    "email": "dgent570@outlook.com",
+    "notes": "",
+    "date": "2024-01-09T01:45:30.929Z",
+    "status": "completed",
+    "items": [
+      "{\"name\":\"Beets, Chioggia\",\"quantity\":73,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":6,\"cart\":12,\"unitSelected\":0}",
+      "{\"name\":\"Cabbage, Red\",\"quantity\":9,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":186,\"cart\":51,\"unitSelected\":0}",
+      "{\"name\":\"Winter Squash, Butternut\",\"quantity\":26.2,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":70,\"cart\":13.8,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 99,
+    "name": "Dreamport",
+    "email": "contact@dreamportmarket.com",
+    "notes": "",
+    "date": "2024-01-22T09:13:04.820Z",
+    "status": "completed",
+    "items": [
+      "{\"name\":\"Beets, Chioggia\",\"quantity\":49,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":6,\"cart\":20,\"unitSelected\":0}",
+      "{\"name\":\"Beets, Golden\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":188,\"cart\":30,\"unitSelected\":0}",
+      "{\"name\":\"Cabbage, Green\",\"quantity\":30,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":185,\"cart\":20,\"unitSelected\":0}",
+      "{\"name\":\"Celeriac, without tops\",\"quantity\":90,\"unit\":[\"lbs\"],\"price\":[\"2.5\"],\"id\":14,\"cart\":10,\"unitSelected\":0}",
+      "{\"name\":\"Winter Squash, Butternut\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":70,\"cart\":20,\"unitSelected\":0,\"editedCart\":\"10\"}",
+      "{\"name\":\"Winter Squash, Spaghetti\",\"quantity\":30,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":190,\"cart\":20,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 100,
+    "name": "DreamPort",
+    "email": "contact@dreamportmarket.com",
+    "notes": "Delivery Tuesday?",
+    "date": "2024-01-30T01:47:05.793Z",
+    "status": "completed",
+    "items": [
+      "{\"name\":\"Cabbage, Green\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":185,\"cart\":15,\"unitSelected\":0,\"editedCart\":\"17.5\"}",
+      "{\"name\":\"Garlic, Cured\",\"quantity\":47,\"unit\":[\"lbs\"],\"price\":[\"12\"],\"id\":28,\"cart\":3,\"unitSelected\":0,\"editedCart\":\"4\"}",
+      "{\"name\":\"Winter Squash, Spaghetti\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":190,\"cart\":10,\"unitSelected\":0,\"editedCart\":\"13.6\"}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 102,
+    "name": "DreamPort Harvest Market",
+    "email": "contact@dreamportmarket.com",
+    "notes": "",
+    "date": "2024-02-07T00:54:55.276Z",
+    "status": "completed",
+    "items": [
+      "{\"name\":\"Garlic, Cured *Price Drop*\",\"quantity\":94,\"unit\":[\"lbs\"],\"price\":[\"10\"],\"id\":28,\"cart\":6,\"unitSelected\":0,\"editedCart\":\"10\"}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 103,
+    "name": "WI Food Hub Coop",
+    "email": "dgent570@outlook.com",
+    "notes": "",
+    "date": "2024-02-09T20:41:02.776Z",
+    "status": "completed",
+    "items": [
+      "{\"name\":\"Beets, Chioggia\",\"quantity\":29,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":6,\"cart\":20,\"unitSelected\":0}",
+      "{\"name\":\"Beets, Cylindra\",\"quantity\":40,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":187,\"cart\":60,\"unitSelected\":0}",
+      "{\"name\":\"Garlic, Cured *Price Drop*\",\"quantity\":54,\"unit\":[\"lbs\"],\"price\":[\"10\"],\"id\":28,\"cart\":40,\"unitSelected\":0}",
+      "{\"name\":\"Onions, Yellow Storage\",\"quantity\":100,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":44,\"cart\":200,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 104,
+    "name": "DreamPort ",
+    "email": "contact@dreamportmarket.com",
+    "notes": "Add to my garlic order and please remind me how many pounds I ordered. And, please tell me about the fennel seed, how packaged?",
+    "date": "2024-02-11T00:31:37.002Z",
+    "status": "completed",
+    "items": [
+      "{\"name\":\"Beets, Chioggia\",\"quantity\":14,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":6,\"cart\":15,\"unitSelected\":0}",
+      "{\"name\":\"Celeriac, without tops\",\"quantity\":90,\"unit\":[\"lbs\"],\"price\":[\"2.5\"],\"id\":14,\"cart\":10,\"unitSelected\":0}",
+      "{\"name\":\"Onions, Yellow Storage\",\"quantity\":275,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":44,\"cart\":25,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 105,
+    "name": "dreamport",
+    "email": "dgent570@outlook.com",
+    "notes": "",
+    "date": "2024-03-07T03:33:56.915Z",
+    "status": "completed",
+    "items": [
+      "{\"name\":\"Garlic, Cured *Price Drop*\",\"quantity\":50,\"unit\":[\"lbs\"],\"price\":[\"10\"],\"id\":28,\"cart\":50,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 116,
+    "name": "Sean Slofood market",
+    "email": "retail@slofoodmarket.com",
+    "notes": "",
+    "date": "2024-05-04T23:03:27.990Z",
+    "status": "completed",
+    "items": [
+      "{\"name\":\"Beets, Chioggia\",\"quantity\":16,\"unit\":[\"lbs\"],\"price\":[\"1\"],\"id\":6,\"cart\":30,\"unitSelected\":0}",
+      "{\"name\":\"Beets, Cylindra\",\"quantity\":70,\"unit\":[\"lbs\"],\"price\":[\"1\"],\"id\":187,\"cart\":30,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 117,
+    "name": "Jason ritrovo",
+    "email": "jschra12@gmail.com",
+    "notes": "We could use italian flat leaf parsley",
+    "date": "2024-05-05T05:47:52.309Z",
+    "status": "completed",
+    "items": [
+      "{\"name\":\"Onions, Yellow Storage\",\"quantity\":25,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":44,\"cart\":25,\"unitSelected\":0}",
+      "{\"name\":\"Spinach, bulk\",\"quantity\":35,\"unit\":[\"lbs\"],\"price\":[\"9\"],\"id\":58,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 118,
+    "name": "DreamPort Harvest Market",
+    "email": "contact@dreamportmarket.com",
+    "notes": "Only sellable chioggias please. Are your rutabagas sweeet? We got some from another supplier that were bitter",
+    "date": "2024-05-06T06:27:39.943Z",
+    "status": "completed",
+    "items": [
+      "{\"name\":\"Beets, Chioggia\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"1\"],\"id\":6,\"cart\":16,\"unitSelected\":0,\"editedCart\":\"0\"}",
+      "{\"name\":\"Beets, Cylindra\",\"quantity\":80,\"unit\":[\"lbs\"],\"price\":[\"1\"],\"id\":187,\"cart\":20,\"unitSelected\":0}",
+      "{\"name\":\"Celeriac, without tops\",\"quantity\":90,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":14,\"cart\":10,\"unitSelected\":0}",
+      "{\"name\":\"Cilantro\",\"quantity\":13,\"unit\":[\"lbs\"],\"price\":[\"8.5\"],\"id\":16,\"cart\":2,\"unitSelected\":0,\"editedCart\":\"0\"}",
+      "{\"name\":\"Onions, Yellow Storage\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"id\":44,\"cart\":25,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 128,
+    "name": "Grassway Organics ",
+    "email": "pizzafarm.grasswayorganics@gmail.com",
+    "notes": "Thank you!! I think Tori will be driving up tomorrow 5/13. Call or text me if that doesn’t work for pick up. Appreciate y’all!",
+    "date": "2024-05-13T21:14:28.238Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":20,\"name\":\"Spinach, bulk\",\"quantity\":5,\"unit\":[\"lbs\"],\"price\":[\"9\"],\"client\":\"ggc\",\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 142,
+    "name": "Jason ritrovo",
+    "email": "jschra12@gmail.com",
+    "notes": "",
+    "date": "2024-05-19T20:37:16.585Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":5,\"unit\":[\"lbs\",\"6 oz. bag\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":5,\"unit\":[\"lbs\",\"6 oz. bag\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 146,
+    "name": "Sean Slofood Market",
+    "email": "smcmullen@slofoodmarket .com",
+    "notes": "",
+    "date": "2024-05-19T23:58:06.852Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":2,\"unit\":[\"lbs\",\"6 oz. bag\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"cart\":3,\"unitSelected\":0}",
+      "{\"id\":11,\"name\":\"Radish, Summer Red\",\"quantity\":0,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 145,
+    "name": "Riverwest Co-op",
+    "email": "grocery@riverwestcoop.org",
+    "notes": "",
+    "date": "2024-05-19T23:58:06.852Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":1.244131455399061,\"unit\":[\"lbs\",\"6 oz. bag\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"cart\":3.755868544600939,\"unitSelected\":1}",
+      "{\"id\":158,\"name\":\"Radish, Summer Purple\",\"quantity\":5,\"unit\":[\"bunch\",\"lb\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 167,
+    "name": "Jason ritrovo",
+    "email": "jschra12@gmail.com",
+    "notes": "Thank you",
+    "date": "2024-05-26T20:48:21.768Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":46,\"name\":\"Endive Mix, bulk\",\"quantity\":7,\"unit\":[\"lbs\",\"6 oz. bag\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":3,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":15,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":158,\"name\":\"Radish, Summer Purple\",\"quantity\":11,\"unit\":[\"bunches\",\"lb\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":0.5,\"cart\":4,\"unitSelected\":0}",
+      "{\"id\":11,\"name\":\"Radish, Summer Red\",\"quantity\":11,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":4,\"unitSelected\":0}",
+      "{\"id\":20,\"name\":\"Spinach\",\"quantity\":25,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"9\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 168,
+    "name": "Sean. Slo Food",
+    "email": "smcmullen@slofoodmarket.com",
+    "notes": "",
+    "date": "2024-05-26T22:40:57.660Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":46,\"name\":\"Endive Mix, bulk\",\"quantity\":2,\"unit\":[\"lbs\",\"6 oz. bag\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":10,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":11,\"name\":\"Radish, Summer Red\",\"quantity\":0,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":11,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 169,
+    "name": "Riverwest Co-op",
+    "email": "grocery@riverwestcoop.org",
+    "notes": "",
+    "date": "2024-05-26T22:58:43.293Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":7.00374531835206,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":2.9962546816479403,\"unitSelected\":1}",
+      "{\"id\":68,\"name\":\"Mushroom, Wine Cap\",\"quantity\":3,\"unit\":[\"lbs\"],\"price\":[\"10\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":2,\"unitSelected\":0}",
+      "{\"id\":11,\"name\":\"Radish, Summer Red\",\"quantity\":7,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":4,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 170,
+    "name": "Grassway ",
+    "email": "info@grasswayorganics.com",
+    "notes": "Thank you! I think we will pick up tomorrow or Wednesday I’ll confirm with David once I know",
+    "date": "2024-05-27T18:25:40.666Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":46,\"name\":\"Endive Mix, bulk\",\"quantity\":1,\"unit\":[\"lbs\",\"6 oz. bag\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":1,\"unitSelected\":0}",
+      "{\"id\":68,\"name\":\"Mushroom, Wine Cap\",\"quantity\":1,\"unit\":[\"lbs\"],\"price\":[\"10\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":2,\"unitSelected\":0}",
+      "{\"id\":158,\"name\":\"Radish, Summer Purple\",\"quantity\":6,\"unit\":[\"bunches\",\"lb\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":0.5,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":11,\"name\":\"Radish, Summer Red\",\"quantity\":6,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":20,\"name\":\"Spinach\",\"quantity\":15,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"9\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 171,
+    "name": "Sean Slo Food Market",
+    "email": "smcmullen@slofoodmarket.com",
+    "notes": "",
+    "date": "2024-06-02T03:01:35.045Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":48,\"name\":\"Endive, Frisee\",\"quantity\":20,\"unit\":[\"heads\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":62,\"name\":\"Lettuce Head\",\"quantity\":15,\"unit\":[\"heads\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":11,\"name\":\"Radish, Summer Red\",\"quantity\":3,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":12,\"unitSelected\":0}",
+      "{\"id\":20,\"name\":\"Spinach\",\"quantity\":5,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"9\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0,\"editedCart\":\"0\"}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 172,
+    "name": "Trattoria stefano ",
+    "email": "mattelless83@gmail.com",
+    "notes": "",
+    "date": "2024-06-02T20:48:45.978Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":48,\"name\":\"Endive, Frisee\",\"quantity\":10,\"unit\":[\"heads\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":68,\"name\":\"Mushroom, Wine Cap\",\"quantity\":3,\"unit\":[\"lbs\"],\"price\":[\"10\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0,\"editedCart\":\"0\"}",
+      "{\"id\":12,\"name\":\"Rainbow Chard\",\"quantity\":0,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.5\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0,\"editedCart\":\"8\"}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 173,
+    "name": "Grassway ",
+    "email": "info@grasswayorganics.com",
+    "notes": "Thank you!! We can bring milk for you this week to!! I’ll let you know today what day we are picking up",
+    "date": "2024-06-03T17:44:11.854Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":158,\"name\":\"Radish, Summer Purple\",\"quantity\":10,\"unit\":[\"bunches\",\"lb\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":0.5,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":11,\"name\":\"Radish, Summer Red\",\"quantity\":10,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":12,\"name\":\"Rainbow Chard\",\"quantity\":0,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.5\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0,\"editedCart\":\"8\"}",
+      "{\"id\":20,\"name\":\"Spinach\",\"quantity\":5,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"9\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 174,
+    "name": "Riverwest Co-op",
+    "email": "grocery@riverwestcoop.org",
+    "notes": "",
+    "date": "2024-06-03T21:16:25.875Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":12.00374531835206,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":2.9962546816479403,\"unitSelected\":1}",
+      "{\"id\":68,\"name\":\"Mushroom, Wine Cap\",\"quantity\":4,\"unit\":[\"lbs\"],\"price\":[\"10\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":4,\"unitSelected\":0,\"editedCart\":\"3.7\"}",
+      "{\"id\":11,\"name\":\"Radish, Summer Red\",\"quantity\":10,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 175,
+    "name": "Jason ritrovo",
+    "email": "jschra12@gmail.com",
+    "notes": "Thank you",
+    "date": "2024-06-04T21:51:16.073Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":0,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 177,
+    "name": "Trattoria Stefano ",
+    "email": "mattelless83@gmail.com",
+    "notes": "",
+    "date": "2024-06-08T22:23:32.791Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":48,\"name\":\"Endive, Frisee\",\"quantity\":10,\"unit\":[\"heads\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":62,\"name\":\"Lettuce Head, Butterhead\",\"quantity\":55,\"unit\":[\"heads\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":169,\"name\":\"Lettuce Head, Red Summercrisp\",\"quantity\":55,\"unit\":[\"head\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":71,\"name\":\"Parsley\",\"quantity\":0,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.5\",\"8.5\"],\"client\":\"ggc\",\"unitratio\":0.1,\"cart\":10,\"unitSelected\":0,\"editedCart\":\"0\"}",
+      "{\"id\":12,\"name\":\"Rainbow Chard\",\"quantity\":5,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.5\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 178,
+    "name": "Sean Slofood",
+    "email": "smcmullen@slofoodmarket.com",
+    "notes": "",
+    "date": "2024-06-09T00:23:51.736Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":62,\"name\":\"Lettuce Head, Butterhead\",\"quantity\":35,\"unit\":[\"heads\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}",
+      "{\"id\":169,\"name\":\"Lettuce Head, Red Summercrisp\",\"quantity\":35,\"unit\":[\"head\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}",
+      "{\"id\":158,\"name\":\"Radish, Summer Purple\",\"quantity\":10,\"unit\":[\"bunches\",\"lb\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":0.5,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":11,\"name\":\"Radish, Summer Red\",\"quantity\":0,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":0.45,\"cart\":8,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 179,
+    "name": "Jason ritrovo",
+    "email": "jschra12@gmail.com",
+    "notes": "Thanks",
+    "date": "2024-06-09T03:49:51.501Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":10,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":46,\"name\":\"Endive Mix\",\"quantity\":7,\"unit\":[\"lbs\",\"6 oz. bag\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":3,\"unitSelected\":0}",
+      "{\"id\":62,\"name\":\"Lettuce Head, Butterhead\",\"quantity\":25,\"unit\":[\"heads\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":169,\"name\":\"Lettuce Head, Red Summercrisp\",\"quantity\":45,\"unit\":[\"head\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":5,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":20,\"name\":\"Spinach\",\"quantity\":5,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"9\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 180,
+    "name": "DreamPort",
+    "email": "contact@dreamportmarket.com",
+    "notes": "",
+    "date": "2024-06-10T02:36:03.759Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":48,\"name\":\"Endive, Frisee\",\"quantity\":0,\"unit\":[\"heads\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":158,\"name\":\"Radish, Summer Purple\",\"quantity\":0,\"unit\":[\"bunches\",\"lb\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":0.5,\"cart\":20,\"unitSelected\":0,\"editedCart\":\"3\"}",
+      "{\"id\":11,\"name\":\"Radish, Summer Red\",\"quantity\":0,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":0.45,\"cart\":8,\"unitSelected\":0,\"editedCart\":\"3\"}",
+      "{\"id\":12,\"name\":\"Rainbow Chard\",\"quantity\":0,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.5\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 181,
+    "name": "Riverwest Co-op",
+    "email": "grocery@riverwestcoop.org",
+    "notes": "",
+    "date": "2024-06-10T22:43:38.068Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":35,\"name\":\"Cilantro\",\"quantity\":9.2,\"unit\":[\"lbs\",\"bunch\"],\"price\":[\"8.5\",\"1.75\"],\"client\":\"ggc\",\"unitratio\":10,\"cart\":0.8,\"unitSelected\":1}",
+      "{\"id\":169,\"name\":\"Lettuce Head, Red Summercrisp\",\"quantity\":50,\"unit\":[\"head\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":12.00374531835206,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":2.9962546816479403,\"unitSelected\":1}",
+      "{\"id\":68,\"name\":\"Mushroom, Wine Cap\",\"quantity\":8,\"unit\":[\"lbs\"],\"price\":[\"10\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":3,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 182,
+    "name": "Trattoria Stefano, Inc.",
+    "email": "vigliettistef@gmail.com",
+    "notes": "",
+    "date": "2024-06-16T20:35:02.759Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":0,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":20,\"unitSelected\":0,\"editedCart\":\"31\"}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":15,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":68,\"name\":\"Mushroom, Wine Cap\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"10\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0,\"editedCart\":\"2.5\"}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 183,
+    "name": "Trattoria stefano ",
+    "email": "mattelless83@gmail.com",
+    "notes": "",
+    "date": "2024-06-16T20:42:34.561Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":48,\"name\":\"Endive, Frisee\",\"quantity\":5,\"unit\":[\"heads\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0,\"editedCart\":\"5\"}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":10,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 184,
+    "name": "Jason ritrovo",
+    "email": "jschra12@gmail.com",
+    "notes": "Thank you",
+    "date": "2024-06-17T04:29:52.329Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":46,\"name\":\"Endive Mix\",\"quantity\":15,\"unit\":[\"lbs\",\"6 oz. bag\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":48,\"name\":\"Endive, Frisee\",\"quantity\":0,\"unit\":[\"heads\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":5,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 185,
+    "name": "Slo Food",
+    "email": "smcmullen@slofoodmarket.com",
+    "notes": "",
+    "date": "2024-06-17T16:55:33.431Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":33,\"name\":\"Beets, Baby\",\"quantity\":10,\"unit\":[\"bunches\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0,\"editedCart\":\"9\"}",
+      "{\"id\":12,\"name\":\"Rainbow Chard\",\"quantity\":0,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.5\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":0,\"editedCart\":\"0\"}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 186,
+    "name": "Riverwest Co-op",
+    "email": "grocery@riverwestcoop.org",
+    "notes": "deiver 6/18",
+    "date": "2024-06-17T21:07:45.195Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":33,\"name\":\"Beets, Baby\",\"quantity\":5,\"unit\":[\"bunches\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":9.382022471910112,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5.617977528089888,\"unitSelected\":1}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 187,
+    "name": "Grassway organics",
+    "email": "info@grasswayorganics.com",
+    "notes": "Thank you! We will bring milk too!",
+    "date": "2024-06-18T01:43:03.703Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":12,\"name\":\"Rainbow Chard\",\"quantity\":0,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.5\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 188,
+    "name": "Sean Slofood market",
+    "email": "smcmullen@slofoodmarket.com",
+    "notes": "",
+    "date": "2024-06-23T04:34:55.779Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":20,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0,\"editedCart\":\"0\"}",
+      "{\"id\":33,\"name\":\"Beets, Baby\",\"quantity\":0,\"unit\":[\"bunches\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":158,\"name\":\"Radish, Summer Purple\",\"quantity\":5,\"unit\":[\"bunches\",\"lb\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":0.5,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":11,\"name\":\"Radish, Summer Red\",\"quantity\":5,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":0.45,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 189,
+    "name": "DreamPort Harvest Market",
+    "email": "contact@dreamportmarket.com",
+    "notes": "Arugula and endive mix to be delivered in bags, thanks",
+    "date": "2024-06-23T06:50:03.785Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":10,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0,\"editedCart\":\"0\"}",
+      "{\"id\":33,\"name\":\"Beets, Baby\",\"quantity\":0,\"unit\":[\"bunches\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":46,\"name\":\"Endive Mix\",\"quantity\":5,\"unit\":[\"lbs\",\"6 oz. bag\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":51,\"name\":\"Garlic Scapes\",\"quantity\":5,\"unit\":[\"lbs\"],\"price\":[\"5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":71,\"name\":\"Parsley\",\"quantity\":14,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.5\",\"8.5\"],\"client\":\"ggc\",\"unitratio\":0.1,\"cart\":6,\"unitSelected\":0}",
+      "{\"id\":158,\"name\":\"Radish, Summer Purple\",\"quantity\":0,\"unit\":[\"bunches\",\"lb\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":0.5,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":11,\"name\":\"Radish, Summer Red\",\"quantity\":0,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":0.45,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 190,
+    "name": "Sean Trattoria ",
+    "email": "smcmullen@slofoodmarket.com",
+    "notes": "",
+    "date": "2024-06-23T18:54:48.529Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":0,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0,\"editedCart\":\"0\"}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 191,
+    "name": "Jason Ritrovo",
+    "email": "jschra12@gmail.com",
+    "notes": "Thank you",
+    "date": "2024-06-24T00:32:07.432Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":169,\"name\":\"Lettuce Head, Red Summercrisp\",\"quantity\":25,\"unit\":[\"head\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":30,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":71,\"name\":\"Parsley\",\"quantity\":0,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.5\",\"8.5\"],\"client\":\"ggc\",\"unitratio\":0.1,\"cart\":14,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 192,
+    "name": "Riverwest Co-op",
+    "email": "grocery,riverwestcoop.org",
+    "notes": "Tuesday Delivery",
+    "date": "2024-06-24T22:31:34.990Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":169,\"name\":\"Lettuce Head, Red Summercrisp\",\"quantity\":19,\"unit\":[\"head\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":6,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":38,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":2,\"unitSelected\":0}",
+      "{\"id\":71,\"name\":\"Parsley\",\"quantity\":4,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.5\",\"8.5\"],\"client\":\"ggc\",\"unitratio\":0.1,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":73,\"name\":\"Peas, Shelling\",\"quantity\":3,\"unit\":[\"lbs\"],\"price\":[\"4.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":2,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 193,
+    "name": "Sean Slofood",
+    "email": "Smcmullen@slofoodmarket.com",
+    "notes": "",
+    "date": "2024-06-29T02:52:35.467Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":48,\"name\":\"Endive, Frisee\",\"quantity\":10,\"unit\":[\"heads\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":169,\"name\":\"Lettuce Head, Red Summercrisp\",\"quantity\":15,\"unit\":[\"head\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":74,\"name\":\"Peas, Snap\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"4.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0,\"editedCart\":\"0\"}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 200,
+    "name": "Jason ritrovo",
+    "email": "Jschra12@gmail.com",
+    "notes": "Thank you",
+    "date": "2024-07-01T06:48:04.464Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":5,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":62,\"name\":\"Lettuce Head, Butterhead\",\"quantity\":25,\"unit\":[\"heads\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":169,\"name\":\"Lettuce Head, Red Summercrisp\",\"quantity\":25,\"unit\":[\"head\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":25,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0,\"editedCart\":\"4.5\"}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 201,
+    "name": "Grassway ",
+    "email": "Info@grasswayorganics.com",
+    "notes": "Thank you!! 😊 ",
+    "date": "2024-07-01T21:15:40.635Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":170,\"name\":\"Beets, fresh\",\"quantity\":15,\"unit\":[\"bunches\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":54,\"name\":\"Green Onions\",\"quantity\":25,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.75\",\"8\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":12,\"name\":\"Rainbow Chard\",\"quantity\":5,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.5\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 202,
+    "name": "Riverwest Co-op",
+    "email": "Grocery.riverwestcoop.org",
+    "notes": "Tues, 7/2 Delivery / include packing list ",
+    "date": "2024-07-01T22:32:31.644Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":54,\"name\":\"Green Onions\",\"quantity\":15,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.75\",\"8\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":62,\"name\":\"Lettuce Head, Butterhead\",\"quantity\":22,\"unit\":[\"heads\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":3,\"unitSelected\":0}",
+      "{\"id\":169,\"name\":\"Lettuce Head, Red Summercrisp\",\"quantity\":27,\"unit\":[\"head\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":3,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":27,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":3,\"unitSelected\":0,\"editedCart\":\"0\"}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 203,
+    "name": "Trattoria stefano",
+    "email": "Mattelless83@gmail.com",
+    "notes": "",
+    "date": "2024-07-02T06:45:50.884Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":0,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":169,\"name\":\"Lettuce Head, Red Summercrisp\",\"quantity\":17,\"unit\":[\"head\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":17,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 204,
+    "name": "Trattoria stefano",
+    "email": "Mattelless83@gmail.com",
+    "notes": "",
+    "date": "2024-07-03T19:36:54.620Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":48,\"name\":\"Endive, Frisee\",\"quantity\":10,\"unit\":[\"heads\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":174,\"name\":\"Summer Squash, Romanesco\",\"quantity\":0,\"unit\":[\"Head\",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":172,\"name\":\"Summer Squash, Yellow\",\"quantity\":0,\"unit\":[\"Head \",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":0.6,\"cart\":15,\"unitSelected\":0,\"editedCart\":\"12\"}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 205,
+    "name": "Sean Slofood",
+    "email": "Smcmullen@slofoodmarket.com",
+    "notes": "",
+    "date": "2024-07-03T20:56:09.597Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":33,\"name\":\"Beets, Baby\",\"quantity\":0,\"unit\":[\"bunches\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":3,\"unitSelected\":0}",
+      "{\"id\":12,\"name\":\"Rainbow Chard\",\"quantity\":0,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.5\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":172,\"name\":\"Summer Squash, Yellow\",\"quantity\":0,\"unit\":[\"Head \",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":0.6,\"cart\":15,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 206,
+    "name": "Sean Slofood",
+    "email": "Sean@slofoodmarket.com",
+    "notes": "",
+    "date": "2024-07-07T07:13:58.703Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":8,\"name\":\"Broccoli\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":3,\"unitSelected\":0,\"editedCart\":\"0\"}",
+      "{\"id\":12,\"name\":\"Rainbow Chard\",\"quantity\":5,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.5\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 207,
+    "name": "Trattoria stefano ",
+    "email": "Mattelless83@gmail.com",
+    "notes": "",
+    "date": "2024-07-08T03:12:54.550Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":48,\"name\":\"Endive, Frisee\",\"quantity\":0,\"unit\":[\"heads\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":54,\"name\":\"Green Onions\",\"quantity\":15,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.75\",\"8\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":71,\"name\":\"Parsley\",\"quantity\":15,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.5\",\"8.5\"],\"client\":\"ggc\",\"unitratio\":0.1,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 208,
+    "name": "Grassway ",
+    "email": "Info@grasswayorganics.com",
+    "notes": "Thank you! Will most likely pick up Wednesday if not tomorrow ",
+    "date": "2024-07-08T20:42:09.318Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":170,\"name\":\"Beets, fresh\",\"quantity\":14,\"unit\":[\"bunches\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":6,\"unitSelected\":0}",
+      "{\"id\":54,\"name\":\"Green Onions\",\"quantity\":9,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.75\",\"8\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":6,\"unitSelected\":0}",
+      "{\"id\":12,\"name\":\"Rainbow Chard\",\"quantity\":0,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.5\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 209,
+    "name": "Trattoria stefano",
+    "email": "Mattelless83@gmail.com",
+    "notes": "",
+    "date": "2024-07-15T01:42:07.102Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":52,\"name\":\"Garlic, Fresh\",\"quantity\":15,\"unit\":[\"lbs\"],\"price\":[\"10\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":177,\"name\":\"Lettuce Head, Romaine\",\"quantity\":10,\"unit\":[\"head\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":171,\"name\":\"Summer Squash, asstd.\",\"quantity\":0,\"unit\":[\"Head\",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 210,
+    "name": "Sean/slofood",
+    "email": "Smcmullen@slofoodmarket.com",
+    "notes": "",
+    "date": "2024-07-15T17:34:53.585Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":33,\"name\":\"Beets, Baby\",\"quantity\":10,\"unit\":[\"bunches\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":73,\"name\":\"Peas, Shelling\",\"quantity\":5,\"unit\":[\"lbs\"],\"price\":[\"4.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":12,\"name\":\"Rainbow Chard\",\"quantity\":5,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.5\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 211,
+    "name": "Riverwest Co-op ",
+    "email": "grocery@riverwestcoop.org",
+    "notes": "add 10 Summer squash heads if available",
+    "date": "2024-07-15T19:34:52.348Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":170,\"name\":\"Beets, fresh\",\"quantity\":15,\"unit\":[\"bunches\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":52,\"name\":\"Garlic, Fresh\",\"quantity\":14,\"unit\":[\"lbs\"],\"price\":[\"10\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":1,\"unitSelected\":0}",
+      "{\"id\":169,\"name\":\"Lettuce Head, Red Summercrisp\",\"quantity\":26,\"unit\":[\"head\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":4,\"unitSelected\":0}",
+      "{\"id\":177,\"name\":\"Lettuce Head, Romaine\",\"quantity\":4,\"unit\":[\"head\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":6,\"unitSelected\":0}",
+      "{\"id\":11,\"name\":\"Radish, Summer Red\",\"quantity\":16,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":0.45,\"cart\":4,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 212,
+    "name": "DreamPort",
+    "email": "Contact@dreamportmarket.com",
+    "notes": "Sorry we missed the summer squash - if you have even a small quantity, we would take them",
+    "date": "2024-07-15T20:55:30.888Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":170,\"name\":\"Beets, fresh\",\"quantity\":0,\"unit\":[\"bunches\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":11,\"name\":\"Radish, Summer Red\",\"quantity\":0,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":0.45,\"cart\":20,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 213,
+    "name": "Grassway ",
+    "email": "Info@grasswayorganics.com",
+    "notes": "Thank you! Tori will be there tomorrow ",
+    "date": "2024-07-15T21:19:49.290Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":52,\"name\":\"Garlic, Fresh\",\"quantity\":11,\"unit\":[\"lbs\"],\"price\":[\"10\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":3,\"unitSelected\":0}",
+      "{\"id\":11,\"name\":\"Radish, Summer Red\",\"quantity\":10,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":0.45,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":12,\"name\":\"Rainbow Chard\",\"quantity\":5,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.5\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 214,
+    "name": "Sean Slofood",
+    "email": "Smcmullen@slofoodmarket.com",
+    "notes": "",
+    "date": "2024-07-21T04:56:02.942Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":33,\"name\":\"Beets, Baby\",\"quantity\":4,\"unit\":[\"bunches\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":6,\"unitSelected\":0}",
+      "{\"id\":48,\"name\":\"Endive, Frisee\",\"quantity\":12,\"unit\":[\"heads\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":8,\"unitSelected\":0}",
+      "{\"id\":54,\"name\":\"Green Onions\",\"quantity\":10,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.75\",\"8\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":58,\"name\":\"Kale, Lacinato\",\"quantity\":0,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":62,\"name\":\"Lettuce Head, Butterhead\",\"quantity\":10,\"unit\":[\"heads\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 215,
+    "name": "DreamPort Harvest Market ",
+    "email": "Contact@dreamportmarket.com",
+    "notes": "Thursday AM delivery works best, thanks",
+    "date": "2024-07-22T02:46:55.143Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":33,\"name\":\"Beets, Baby\",\"quantity\":0,\"unit\":[\"bunches\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":4,\"unitSelected\":0}",
+      "{\"id\":54,\"name\":\"Green Onions\",\"quantity\":10,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.75\",\"8\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":174,\"name\":\"Summer Squash, Romanesco\",\"quantity\":10,\"unit\":[\"Head\",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}",
+      "{\"id\":172,\"name\":\"Summer Squash, Yellow\",\"quantity\":10,\"unit\":[\"Head \",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":0.6,\"cart\":20,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 216,
+    "name": "Trattoria stefano",
+    "email": "Mattelless83@gmail.com",
+    "notes": "",
+    "date": "2024-07-22T07:56:05.371Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":48,\"name\":\"Endive, Frisee\",\"quantity\":0,\"unit\":[\"heads\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":12,\"unitSelected\":0}",
+      "{\"id\":57,\"name\":\"Kale, Curly\",\"quantity\":0,\"unit\":[\"bunch\",\"lbs\"],\"price\":[\"2.5\",\"4.25\"],\"client\":\"ggc\",\"unitratio\":0.5,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":58,\"name\":\"Kale, Lacinato\",\"quantity\":0,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":59,\"name\":\"Kale, Red Russian\",\"quantity\":0,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"2.5\",\"4.25\"],\"client\":\"ggc\",\"unitratio\":0.5,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":71,\"name\":\"Parsley\",\"quantity\":0,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.5\",\"8.5\"],\"client\":\"ggc\",\"unitratio\":0.1,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":174,\"name\":\"Summer Squash, Romanesco\",\"quantity\":15,\"unit\":[\"Head\",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":172,\"name\":\"Summer Squash, Yellow\",\"quantity\":15,\"unit\":[\"Head \",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":0.6,\"cart\":15,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 217,
+    "name": "Grassway Organics ",
+    "email": "Info@grasswayorganics.com",
+    "notes": "I (ursula) will pick up early Wednesday thank you!!",
+    "date": "2024-07-22T21:48:06.053Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":54,\"name\":\"Green Onions\",\"quantity\":5,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.75\",\"8\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":12,\"name\":\"Rainbow Chard\",\"quantity\":0,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.5\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 218,
+    "name": "Sean SloFood",
+    "email": "Smcmullen@slofoodmarket.com",
+    "notes": "",
+    "date": "2024-08-04T19:08:32.669Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":5,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":71,\"name\":\"Parsley\",\"quantity\":15,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.5\",\"8.5\"],\"client\":\"ggc\",\"unitratio\":0.15,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":176,\"name\":\"Summer Squash, Patty Pan\",\"quantity\":0,\"unit\":[\"Head\",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":0.2,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":174,\"name\":\"Summer Squash, Romanesco\",\"quantity\":0,\"unit\":[\"Head\",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":0.7,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":172,\"name\":\"Summer Squash, Yellow\",\"quantity\":0,\"unit\":[\"Head \",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":0.6,\"cart\":15,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 219,
+    "name": "Trattoria stefano",
+    "email": "Mattelless83@gmail.com",
+    "notes": "",
+    "date": "2024-08-05T22:57:04.248Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":0,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":12,\"name\":\"Rainbow Chard\",\"quantity\":0,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.5\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":175,\"name\":\"Summer Squash, Haifa’s Finest\",\"quantity\":0,\"unit\":[\"Head\",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":0.7,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":174,\"name\":\"Summer Squash, Romanesco\",\"quantity\":0,\"unit\":[\"Head\",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":0.7,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":172,\"name\":\"Summer Squash, Yellow\",\"quantity\":0,\"unit\":[\"Head \",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":0.6,\"cart\":15,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 220,
+    "name": "Sean slo Food",
+    "email": "Smcmullen@slofoodmarket.com",
+    "notes": "",
+    "date": "2024-08-11T01:09:47.440Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":54,\"name\":\"Green Onions\",\"quantity\":15,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.75\",\"8\"],\"client\":\"ggc\",\"unitratio\":0.2,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":57,\"name\":\"Kale, Curly\",\"quantity\":10,\"unit\":[\"lbs\",\"bunch\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":171,\"name\":\"Summer Squash, asstd.\",\"quantity\":25,\"unit\":[\"Head\",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":15,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 221,
+    "name": "Sean slo Food",
+    "email": "Smcmullen@slofoodmarket.com",
+    "notes": "",
+    "date": "2024-08-11T01:09:47.440Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":54,\"name\":\"Green Onions\",\"quantity\":15,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.75\",\"8\"],\"client\":\"ggc\",\"unitratio\":0.2,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":57,\"name\":\"Kale, Curly\",\"quantity\":10,\"unit\":[\"lbs\",\"bunch\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":171,\"name\":\"Summer Squash, asstd.\",\"quantity\":25,\"unit\":[\"Head\",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":15,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 222,
+    "name": "Grassway Organics ",
+    "email": "Info@grasswayorganics.com",
+    "notes": "Thank you!! Tori should be up tomorrow for pick up ",
+    "date": "2024-08-12T20:53:59.654Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":41,\"name\":\"Collard Greens\",\"quantity\":10,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":52,\"name\":\"Garlic, Fresh\",\"quantity\":45,\"unit\":[\"lbs\"],\"price\":[\"10\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":54,\"name\":\"Green Onions\",\"quantity\":11,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.75\",\"8\"],\"client\":\"ggc\",\"unitratio\":0.2,\"cart\":4,\"unitSelected\":0}",
+      "{\"id\":57,\"name\":\"Kale, Curly\",\"quantity\":5,\"unit\":[\"lbs\",\"bunch\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":12,\"name\":\"Rainbow Chard\",\"quantity\":10,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.5\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 223,
+    "name": "Trattoria stefano",
+    "email": "Mattelless83@gmail.com",
+    "notes": "",
+    "date": "2024-08-13T19:47:25.494Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":57,\"name\":\"Kale, Curly\",\"quantity\":0,\"unit\":[\"lbs\",\"bunch\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":58,\"name\":\"Kale, Lacinato\",\"quantity\":10,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":59,\"name\":\"Kale, Red Russian\",\"quantity\":10,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 224,
+    "name": "Trattoria stefano",
+    "email": "Mattelless83@gmail.com",
+    "notes": "",
+    "date": "2024-08-13T19:47:25.494Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":57,\"name\":\"Kale, Curly\",\"quantity\":0,\"unit\":[\"lbs\",\"bunch\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":58,\"name\":\"Kale, Lacinato\",\"quantity\":10,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":59,\"name\":\"Kale, Red Russian\",\"quantity\":10,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 225,
+    "name": "Goodkind ",
+    "email": "Lisa@goodkindbayview.com",
+    "notes": "Delivery after 9 door marked for delivery ",
+    "date": "2024-08-19T22:01:16.737Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":52,\"name\":\"Garlic, Fresh\",\"quantity\":45,\"unit\":[\"lbs\"],\"price\":[\"10\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":16,\"name\":\"Tomato, Cherry\",\"quantity\":10,\"unit\":[\"lbs\",\"pints\",\"quarts\"],\"price\":[\"4\",\"3.5\",\"7\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":18,\"name\":\"Tomato, Paste\",\"quantity\":15,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":28,\"name\":\"Tomato, Vesuvio\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 226,
+    "name": "Trattoria stefano ",
+    "email": "Mattelless83@gmail.com",
+    "notes": "",
+    "date": "2024-08-20T19:10:19.372Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":32,\"name\":\"Beans, Romano\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":54,\"name\":\"Green Onions\",\"quantity\":20,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.75\",\"8\"],\"client\":\"ggc\",\"unitratio\":0.2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":28,\"name\":\"Tomato, Vesuvio\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 228,
+    "name": "Stephano’s SLO Food Market",
+    "email": "serendipity_2001@icloud.com",
+    "notes": "",
+    "date": "2024-08-22T23:17:48.184Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":54,\"name\":\"Green Onions\",\"quantity\":5,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.75\",\"8\"],\"client\":\"ggc\",\"unitratio\":0.2,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":57,\"name\":\"Kale, Curly\",\"quantity\":35,\"unit\":[\"lbs\",\"bunch\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":58,\"name\":\"Kale, Lacinato\",\"quantity\":10,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 229,
+    "name": "Trattoria stefano",
+    "email": "Mattelless83@gmail.com",
+    "notes": "",
+    "date": "2024-08-24T22:36:44.542Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":32,\"name\":\"Beans, Romano\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":8,\"unitSelected\":0}",
+      "{\"id\":54,\"name\":\"Green Onions\",\"quantity\":0,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.75\",\"8\"],\"client\":\"ggc\",\"unitratio\":0.2,\"cart\":20,\"unitSelected\":0}",
+      "{\"id\":57,\"name\":\"Kale, Curly\",\"quantity\":20,\"unit\":[\"lbs\",\"bunch\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":58,\"name\":\"Kale, Lacinato\",\"quantity\":10,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":59,\"name\":\"Kale, Red Russian\",\"quantity\":10,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":71,\"name\":\"Parsley\",\"quantity\":10,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.5\",\"8.5\"],\"client\":\"ggc\",\"unitratio\":0.15,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":18,\"name\":\"Tomato, Paste\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":28,\"name\":\"Tomato, Vesuvio\",\"quantity\":5,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 230,
+    "name": "Jason ritrovo",
+    "email": "Jschra12@gmail.com",
+    "notes": "",
+    "date": "2024-08-24T22:48:13.017Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":16,\"name\":\"Tomato, Cherry\",\"quantity\":10,\"unit\":[\"lbs\",\"pints\",\"quarts\"],\"price\":[\"4\",\"3.5\",\"7\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":17,\"name\":\"Tomato, Heirloom\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":18,\"name\":\"Tomato, Paste\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 231,
+    "name": "Goodkind ",
+    "email": "Lisa@goodkindbayview.com",
+    "notes": "Delivery door after 9 please",
+    "date": "2024-08-25T01:55:08.809Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":23,\"name\":\"Garlic, Cured\",\"quantity\":45,\"unit\":[\"lbs\"],\"price\":[\"12\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":16,\"name\":\"Tomato, Cherry\",\"quantity\":0,\"unit\":[\"lbs\",\"pints\",\"quarts\"],\"price\":[\"4\",\"3.5\",\"7\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":17,\"name\":\"Tomato, Heirloom\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 232,
+    "name": "Grassway",
+    "email": "Info@grasswayorganics.com",
+    "notes": "Thank you! Paige will be picking up for the first time tomorrow! I will give her David’s contact",
+    "date": "2024-08-26T18:29:39.309Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":34,\"name\":\"Basil\",\"quantity\":2,\"unit\":[\"lbs\",\"2 oz. bag\"],\"price\":[\"12\",\"2\"],\"client\":\"ggc\",\"unitratio\":8,\"cart\":3,\"unitSelected\":0}",
+      "{\"id\":16,\"name\":\"Tomato, Cherry\",\"quantity\":3,\"unit\":[\"lbs\",\"pints\",\"quarts\"],\"price\":[\"4\",\"3.5\",\"7\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":7,\"unitSelected\":0}",
+      "{\"id\":28,\"name\":\"Tomato, Vesuvio\",\"quantity\":6,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":4,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 233,
+    "name": "Emil Flores Farley / River",
+    "email": "grocery@riverwestcoop.org",
+    "notes": "Please provide paper copy of invoice or email if possible! Thank you.",
+    "date": "2024-08-26T21:56:22.765Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":34,\"name\":\"Basil\",\"quantity\":0,\"unit\":[\"lbs\",\"2 oz. bag\"],\"price\":[\"12\",\"2\"],\"client\":\"ggc\",\"unitratio\":8,\"cart\":2,\"unitSelected\":1}",
+      "{\"id\":45,\"name\":\"Eggplant\",\"quantity\":3,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":17,\"name\":\"Tomato, Heirloom\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 235,
+    "name": "DreamPort Harvest Market ",
+    "email": "Contact@dreamportmarket.com",
+    "notes": "Thursday morning delivery please",
+    "date": "2024-09-01T08:59:34.092Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":32,\"name\":\"Beans, Romano\",\"quantity\":5,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":23,\"name\":\"Garlic, Cured\",\"quantity\":30,\"unit\":[\"lbs\"],\"price\":[\"12\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}",
+      "{\"id\":178,\"name\":\"Okra\",\"quantity\":0,\"unit\":[\"pint\",\"lb\"],\"price\":[\"3.5\",\"5\"],\"client\":\"ggc\",\"unitratio\":0.5,\"cart\":4,\"unitSelected\":0}",
+      "{\"id\":76,\"name\":\"Peppers, Jalapeño \",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":3,\"unitSelected\":0}",
+      "{\"id\":171,\"name\":\"Summer Squash, asstd.\",\"quantity\":15,\"unit\":[\"Head\",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":15,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 234,
+    "name": "DreamPort Harvest Market ",
+    "email": "Contact@dreamportmarket.com",
+    "notes": "Thursday morning delivery please",
+    "date": "2024-09-01T08:59:34.092Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":32,\"name\":\"Beans, Romano\",\"quantity\":5,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":23,\"name\":\"Garlic, Cured\",\"quantity\":30,\"unit\":[\"lbs\"],\"price\":[\"12\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}",
+      "{\"id\":178,\"name\":\"Okra\",\"quantity\":0,\"unit\":[\"pint\",\"lb\"],\"price\":[\"3.5\",\"5\"],\"client\":\"ggc\",\"unitratio\":0.5,\"cart\":4,\"unitSelected\":0}",
+      "{\"id\":76,\"name\":\"Peppers, Jalapeño \",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":3,\"unitSelected\":0}",
+      "{\"id\":171,\"name\":\"Summer Squash, asstd.\",\"quantity\":15,\"unit\":[\"Head\",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":15,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 236,
+    "name": "Trattoria stefano ",
+    "email": "Mattelless83@gmail.com",
+    "notes": "",
+    "date": "2024-09-03T19:27:39.981Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":32,\"name\":\"Beans, Romano\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":42,\"name\":\"Cucumber, Pickling\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":54,\"name\":\"Green Onions\",\"quantity\":15,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.75\",\"8\"],\"client\":\"ggc\",\"unitratio\":0.2,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":171,\"name\":\"Summer Squash, asstd.\",\"quantity\":5,\"unit\":[\"Head\",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":17,\"name\":\"Tomato, Heirloom\",\"quantity\":30,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":18,\"name\":\"Tomato, Paste\",\"quantity\":30,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 237,
+    "name": "Jason",
+    "email": "Jschra12@gmail.com",
+    "notes": "",
+    "date": "2024-09-03T21:18:58.771Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":16,\"name\":\"Tomato, Cherry\",\"quantity\":20,\"unit\":[\"lbs\",\"pints\",\"quarts\"],\"price\":[\"4\",\"3.5\",\"7\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 238,
+    "name": "Emil Flores Farley/Riverwest Co-Op",
+    "email": "grocery@riverwestcoop.org",
+    "notes": "Please provide a paper copy of invoice upon delivery. Thank you!",
+    "date": "2024-09-03T23:52:53.118Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":54,\"name\":\"Green Onions\",\"quantity\":10,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.75\",\"8\"],\"client\":\"ggc\",\"unitratio\":0.2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":171,\"name\":\"Summer Squash, asstd.\",\"quantity\":0,\"unit\":[\"Head\",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":17,\"name\":\"Tomato, Heirloom\",\"quantity\":30,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 239,
+    "name": "DreamPort Harvest Market",
+    "email": "Contact@dreamportmarket.com",
+    "notes": "Prefer smaller heads of cabbage, thanks and Thursday delivery if possible",
+    "date": "2024-09-08T23:14:05.467Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":1,\"name\":\"Cabbage, Red\",\"quantity\":30,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}",
+      "{\"id\":178,\"name\":\"Okra\",\"quantity\":0,\"unit\":[\"pint\",\"lb\"],\"price\":[\"3.5\",\"5\"],\"client\":\"ggc\",\"unitratio\":0.5,\"cart\":2,\"unitSelected\":0}",
+      "{\"id\":171,\"name\":\"Summer Squash, asstd.\",\"quantity\":0,\"unit\":[\"Head\",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":30,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 240,
+    "name": "Jason ritrovo",
+    "email": "Jschra12@gmail.com",
+    "notes": "Thank you",
+    "date": "2024-09-09T21:19:21.238Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":16,\"name\":\"Tomato, Cherry\",\"quantity\":20,\"unit\":[\"lbs\",\"pints\",\"quarts\"],\"price\":[\"4\",\"3.5\",\"7\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":17,\"name\":\"Tomato, Heirloom\",\"quantity\":50,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 241,
+    "name": "Emil Flores Farley / Riverwest Co-Op",
+    "email": "grocery@riverwestcoop.org",
+    "notes": "Apologies for missing the cutoff last week. Here is our order for this week. Please provide a paper copy of the invoice upon delivery. Thank you!",
+    "date": "2024-09-09T22:47:07.062Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":1,\"name\":\"Cabbage, Red\",\"quantity\":15,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":54,\"name\":\"Green Onions\",\"quantity\":0,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.75\",\"8\"],\"client\":\"ggc\",\"unitratio\":0.2,\"cart\":20,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 242,
+    "name": "Trattoria stefano",
+    "email": "Mattelless83@gmail.com",
+    "notes": "",
+    "date": "2024-09-09T23:07:01.044Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":71,\"name\":\"Parsley\",\"quantity\":5,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.5\",\"8.5\"],\"client\":\"ggc\",\"unitratio\":0.15,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":16,\"name\":\"Tomato, Cherry\",\"quantity\":10,\"unit\":[\"lbs\",\"pints\",\"quarts\"],\"price\":[\"4\",\"3.5\",\"7\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":18,\"name\":\"Tomato, Paste\",\"quantity\":20,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}",
+      "{\"id\":28,\"name\":\"Tomato, Vesuvio\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 243,
+    "name": "Jason ritrovo",
+    "email": "Jschra12@gmail.com",
+    "notes": "Thank you",
+    "date": "2024-09-12T03:07:57.349Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":16,\"name\":\"Tomato, Cherry\",\"quantity\":0,\"unit\":[\"lbs\",\"pints\",\"quarts\"],\"price\":[\"4\",\"3.5\",\"7\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":17,\"name\":\"Tomato, Heirloom\",\"quantity\":40,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":18,\"name\":\"Tomato, Paste\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}",
+      "{\"id\":28,\"name\":\"Tomato, Vesuvio\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 245,
+    "name": "Jason ritrovo",
+    "email": "Jschra12@gmail.com",
+    "notes": "",
+    "date": "2024-09-15T10:12:48.134Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":5,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":171,\"name\":\"Summer Squash, asstd.\",\"quantity\":0,\"unit\":[\"Head\",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}",
+      "{\"id\":16,\"name\":\"Tomato, Cherry\",\"quantity\":10,\"unit\":[\"lbs\",\"pints\",\"quarts\"],\"price\":[\"4\",\"3.5\",\"7\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 244,
+    "name": "Jason ritrovo",
+    "email": "Jschra12@gmail.com",
+    "notes": "",
+    "date": "2024-09-15T10:12:48.134Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":5,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":171,\"name\":\"Summer Squash, asstd.\",\"quantity\":0,\"unit\":[\"Head\",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}",
+      "{\"id\":16,\"name\":\"Tomato, Cherry\",\"quantity\":10,\"unit\":[\"lbs\",\"pints\",\"quarts\"],\"price\":[\"4\",\"3.5\",\"7\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 246,
+    "name": " Stephano’s SLO Food Market",
+    "email": "serendipity_2001@icloud.com",
+    "notes": "Thank you!",
+    "date": "2024-09-16T02:07:52.870Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":3,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":2,\"unitSelected\":0}",
+      "{\"id\":57,\"name\":\"Kale, Curly\",\"quantity\":25,\"unit\":[\"lbs\",\"bunch\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":58,\"name\":\"Kale, Lacinato\",\"quantity\":10,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":61,\"name\":\"Leeks\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"6\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":12,\"name\":\"Rainbow Chard\",\"quantity\":10,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.5\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 247,
+    "name": "Trattoria stefano",
+    "email": "Mattelless83@gmail.com",
+    "notes": "",
+    "date": "2024-09-16T03:12:02.179Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":0,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":3,\"unitSelected\":0}",
+      "{\"id\":58,\"name\":\"Kale, Lacinato\",\"quantity\":15,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":59,\"name\":\"Kale, Red Russian\",\"quantity\":15,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":61,\"name\":\"Leeks\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"6\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":71,\"name\":\"Parsley\",\"quantity\":15,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.5\",\"8.5\"],\"client\":\"ggc\",\"unitratio\":0.15,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":18,\"name\":\"Tomato, Paste\",\"quantity\":20,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 248,
+    "name": "Lisa/Goodkind ",
+    "email": "Lisa@goodkindbayview.com",
+    "notes": "Delivery door after 9",
+    "date": "2024-09-16T22:27:20.329Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":23,\"name\":\"Garlic, Cured\",\"quantity\":40,\"unit\":[\"lbs\"],\"price\":[\"12\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":54,\"name\":\"Green Onions\",\"quantity\":10,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.75\",\"8\"],\"client\":\"ggc\",\"unitratio\":0.2,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":178,\"name\":\"Okra\",\"quantity\":0,\"unit\":[\"pint\",\"lb\"],\"price\":[\"3.5\",\"5\"],\"client\":\"ggc\",\"unitratio\":0.5,\"cart\":4,\"unitSelected\":0}",
+      "{\"id\":71,\"name\":\"Parsley\",\"quantity\":10,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.5\",\"8.5\"],\"client\":\"ggc\",\"unitratio\":0.15,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":28,\"name\":\"Tomato, Vesuvio\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 249,
+    "name": "Trattoria stefano",
+    "email": "Mattelless83@gmail.com",
+    "notes": "",
+    "date": "2024-09-21T21:04:52.789Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":8,\"name\":\"Broccoli\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":179,\"name\":\"Pepper, Poblano\",\"quantity\":8,\"unit\":[\"Lb\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":2,\"unitSelected\":0}",
+      "{\"id\":16,\"name\":\"Tomato, Cherry\",\"quantity\":15,\"unit\":[\"lbs\",\"pints\",\"quarts\"],\"price\":[\"4\",\"3.5\",\"7\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":17,\"name\":\"Tomato, Heirloom\",\"quantity\":20,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}",
+      "{\"id\":18,\"name\":\"Tomato, Paste\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":30,\"unitSelected\":0}",
+      "{\"id\":28,\"name\":\"Tomato, Vesuvio\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 250,
+    "name": "Jason ritrovo",
+    "email": "Jschra12@gmail.com",
+    "notes": "Thank you",
+    "date": "2024-09-21T23:02:50.458Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":10,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":0,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":171,\"name\":\"Summer Squash, asstd.\",\"quantity\":0,\"unit\":[\"Head\",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}",
+      "{\"id\":16,\"name\":\"Tomato, Cherry\",\"quantity\":5,\"unit\":[\"lbs\",\"pints\",\"quarts\"],\"price\":[\"4\",\"3.5\",\"7\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":17,\"name\":\"Tomato, Heirloom\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":18,\"name\":\"Tomato, Paste\",\"quantity\":25,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":28,\"name\":\"Tomato, Vesuvio\",\"quantity\":20,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 251,
+    "name": "DreamPort",
+    "email": "Contact@dreamportmarket.com",
+    "notes": "Could we have the arugula bagged in .3 to .5 lb aliquots? We would like predominantly green (yellow OK) squash, no patty pan please. Thursday delivery please",
+    "date": "2024-09-23T09:09:48.412Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":5,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":68,\"name\":\"Mushroom, Wine Cap\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"10\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":178,\"name\":\"Okra\",\"quantity\":0,\"unit\":[\"pint\",\"lb\"],\"price\":[\"3.5\",\"5\"],\"client\":\"ggc\",\"unitratio\":0.5,\"cart\":3,\"unitSelected\":0}",
+      "{\"id\":11,\"name\":\"Radish, Summer Red\",\"quantity\":0,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"2.25\",\"3.5\"],\"client\":\"ggc\",\"unitratio\":0.45,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":171,\"name\":\"Summer Squash, asstd.\",\"quantity\":0,\"unit\":[\"Head\",\"Lbs\"],\"price\":[\"1\",\"1.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 252,
+    "name": "Sean/ Slofood",
+    "email": "Smcmullen@slofoodmarket.com",
+    "notes": "",
+    "date": "2024-09-24T21:21:12.188Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":12,\"name\":\"Rainbow Chard\",\"quantity\":5,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.5\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":17,\"name\":\"Tomato, Heirloom\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":18,\"name\":\"Tomato, Paste\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 253,
+    "name": "Stephano’s SLO Food Market",
+    "email": "serendipity_2001@icloud.com",
+    "notes": "",
+    "date": "2024-09-25T21:31:07.811Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":10,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":58,\"name\":\"Kale, Lacinato\",\"quantity\":10,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 254,
+    "name": "Riverwest Co-op",
+    "email": "grocery@riverwestcoop.org",
+    "notes": "Cherry tomatoes keep adding as 0 even after putting in a number. We want 5 pints.",
+    "date": "2024-09-30T23:33:38.153Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":41,\"name\":\"Collard Greens\",\"quantity\":18,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":2,\"unitSelected\":1}",
+      "{\"id\":178,\"name\":\"Okra\",\"quantity\":6,\"unit\":[\"pint\",\"lb\"],\"price\":[\"3.5\",\"5\"],\"client\":\"ggc\",\"unitratio\":0.5,\"cart\":2,\"unitSelected\":1}",
+      "{\"id\":179,\"name\":\"Pepper, Poblano\",\"quantity\":8,\"unit\":[\"Lb\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":4,\"unitSelected\":0}",
+      "{\"id\":16,\"name\":\"Tomato, Cherry\",\"quantity\":15.614035087719298,\"unit\":[\"lbs\",\"pints\",\"quarts\"],\"price\":[\"4\",\"3.5\",\"7\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":4.385964912280702,\"unitSelected\":1}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 255,
+    "name": "Sean/ Slo Food ",
+    "email": "Smcmullen@slofoodmarket. Com",
+    "notes": "",
+    "date": "2024-10-01T03:40:55.403Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":25,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":57,\"name\":\"Kale, Curly\",\"quantity\":15,\"unit\":[\"lbs\",\"bunch\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":58,\"name\":\"Kale, Lacinato\",\"quantity\":20,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":71,\"name\":\"Parsley\",\"quantity\":8,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.5\",\"8.5\"],\"client\":\"ggc\",\"unitratio\":0.15,\"cart\":12,\"unitSelected\":0}",
+      "{\"id\":12,\"name\":\"Rainbow Chard\",\"quantity\":5,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.5\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":18,\"name\":\"Tomato, Paste\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":28,\"name\":\"Tomato, Vesuvio\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 256,
+    "name": "Jason ritrovo",
+    "email": "Jschra12@gmail.com",
+    "notes": "",
+    "date": "2024-10-01T18:09:29.616Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":15,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":10,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":16,\"name\":\"Tomato, Cherry\",\"quantity\":10,\"unit\":[\"lbs\",\"pints\",\"quarts\"],\"price\":[\"4\",\"3.5\",\"7\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":17,\"name\":\"Tomato, Heirloom\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":18,\"name\":\"Tomato, Paste\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":28,\"name\":\"Tomato, Vesuvio\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 257,
+    "name": "Stephano’s SLO food market",
+    "email": "serendipity_2001@icloud.com",
+    "notes": "",
+    "date": "2024-10-07T01:51:41.316Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":35,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":58,\"name\":\"Kale, Lacinato\",\"quantity\":20,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":60,\"name\":\"Kohlrabi\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":178,\"name\":\"Okra\",\"quantity\":0,\"unit\":[\"pint\",\"lb\"],\"price\":[\"3.5\",\"6\"],\"client\":\"ggc\",\"unitratio\":0.5,\"cart\":8,\"unitSelected\":0}",
+      "{\"id\":9,\"name\":\"Pepper, Bell (red or yellow)\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}",
+      "{\"id\":17,\"name\":\"Tomato, Heirloom\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}",
+      "{\"id\":28,\"name\":\"Tomato, Vesuvio\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}",
+      "{\"id\":182,\"name\":\"Watermelon Radish, no greens\",\"quantity\":5,\"unit\":[\"lb\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 258,
+    "name": "Jason ritrovo",
+    "email": "Jschra12@gmail.com",
+    "notes": "",
+    "date": "2024-10-07T04:26:58.698Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":25,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":10,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":9,\"name\":\"Pepper, Bell (red or yellow)\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":16,\"name\":\"Tomato, Cherry\",\"quantity\":5,\"unit\":[\"lbs\",\"pints\",\"quarts\"],\"price\":[\"4\",\"3.5\",\"7\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":17,\"name\":\"Tomato, Heirloom\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":28,\"name\":\"Tomato, Vesuvio\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 259,
+    "name": "Jason ritrovo",
+    "email": "Jschra12@gmail.com",
+    "notes": "",
+    "date": "2024-10-07T04:26:58.698Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":25,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":10,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":9,\"name\":\"Pepper, Bell (red or yellow)\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":16,\"name\":\"Tomato, Cherry\",\"quantity\":5,\"unit\":[\"lbs\",\"pints\",\"quarts\"],\"price\":[\"4\",\"3.5\",\"7\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":17,\"name\":\"Tomato, Heirloom\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":28,\"name\":\"Tomato, Vesuvio\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 260,
+    "name": "DreamPort Harvest Market",
+    "email": "Contact@dreamportmarket.com",
+    "notes": "We would like 10 bags of arugula. Please make sure our credit from produce not delivered gets applied, thanks",
+    "date": "2024-10-08T03:35:46.638Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":11,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":4,\"unitSelected\":0}",
+      "{\"id\":60,\"name\":\"Kohlrabi\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"2\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":76,\"name\":\"Peppers, Jalapeño \",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":182,\"name\":\"Watermelon Radish, no greens\",\"quantity\":0,\"unit\":[\"lb\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":15,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 261,
+    "name": "SLO food market",
+    "email": "serendipity_2001@icloud.com",
+    "notes": "",
+    "date": "2024-10-14T00:35:44.524Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":20,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":57,\"name\":\"Kale, Curly\",\"quantity\":20,\"unit\":[\"lbs\",\"bunch\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":58,\"name\":\"Kale, Lacinato\",\"quantity\":10,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 262,
+    "name": "Jason ritrovo",
+    "email": "Jschra12@gmail.com",
+    "notes": "",
+    "date": "2024-10-14T18:09:18.091Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":10,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":45,\"name\":\"Eggplant\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":180,\"name\":\"Garlic, Cloves\",\"quantity\":15,\"unit\":[\"lb\"],\"price\":[\"8\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":10,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":9,\"name\":\"Pepper, Bell (red or yellow)\",\"quantity\":5,\"unit\":[\"lbs\"],\"price\":[\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":16,\"name\":\"Tomato, Cherry\",\"quantity\":10,\"unit\":[\"lbs\",\"pints\",\"quarts\"],\"price\":[\"4\",\"3.5\",\"7\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":17,\"name\":\"Tomato, Heirloom\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":20,\"unitSelected\":0}",
+      "{\"id\":18,\"name\":\"Tomato, Paste\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":28,\"name\":\"Tomato, Vesuvio\",\"quantity\":5,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 264,
+    "name": "Riverwest Co-op Grocery",
+    "email": "grocery@riverwestcoop.org",
+    "notes": "",
+    "date": "2024-10-14T21:47:50.897Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":180,\"name\":\"Garlic, Cloves\",\"quantity\":16,\"unit\":[\"lb\"],\"price\":[\"8\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":4,\"unitSelected\":0}",
+      "{\"id\":9,\"name\":\"Pepper, Bell (red or yellow)\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 263,
+    "name": "Trattoria stefano ",
+    "email": "Mattelless83@gmail.com",
+    "notes": "",
+    "date": "2024-10-14T21:47:50.897Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":58,\"name\":\"Kale, Lacinato\",\"quantity\":10,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":59,\"name\":\"Kale, Red Russian\",\"quantity\":10,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":0,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":16,\"name\":\"Tomato, Cherry\",\"quantity\":0,\"unit\":[\"lbs\",\"pints\",\"quarts\"],\"price\":[\"4\",\"3.5\",\"7\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":28,\"name\":\"Tomato, Vesuvio\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":183,\"name\":\"Winter Radish, Black\",\"quantity\":12,\"unit\":[\"lb\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":3,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 265,
+    "name": "DreamPort ",
+    "email": "Contact@dreamportmarket.com",
+    "notes": "Please use contact email exclusively. Arugula in bags, total 10 bags please. Peppers can be a mix of red and yellow. Please send a confirmatory email with our order and pricing so we can remember what we ordered! If there are any tomatoes left, let me know, thanks",
+    "date": "2024-10-15T00:30:44.290Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":6,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":4,\"unitSelected\":0}",
+      "{\"id\":23,\"name\":\"Garlic, Cured\",\"quantity\":30,\"unit\":[\"lbs\"],\"price\":[\"12\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":178,\"name\":\"Okra\",\"quantity\":0,\"unit\":[\"pint\",\"lb\"],\"price\":[\"3.5\",\"6\"],\"client\":\"ggc\",\"unitratio\":0.5,\"cart\":3,\"unitSelected\":0}",
+      "{\"id\":9,\"name\":\"Pepper, Bell (red or yellow)\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":183,\"name\":\"Winter Radish, Black\",\"quantity\":6,\"unit\":[\"lb\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":6,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 266,
+    "name": "Slo Food",
+    "email": "Retail@slofoodmarket.com",
+    "notes": "Please bunch Kale",
+    "date": "2024-10-19T20:54:55.424Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":57,\"name\":\"Kale, Curly\",\"quantity\":10,\"unit\":[\"lbs\",\"bunch\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":58,\"name\":\"Kale, Lacinato\",\"quantity\":5,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":71,\"name\":\"Parsley\",\"quantity\":0,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.5\",\"8.5\"],\"client\":\"ggc\",\"unitratio\":0.15,\"cart\":20,\"unitSelected\":0}",
+      "{\"id\":28,\"name\":\"Tomato, Vesuvio\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 267,
+    "name": "Trattoria stefano",
+    "email": "Mattelless83@gmail.com",
+    "notes": "",
+    "date": "2024-10-21T23:02:29.549Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":20,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":57,\"name\":\"Kale, Curly\",\"quantity\":5,\"unit\":[\"lbs\",\"bunch\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":59,\"name\":\"Kale, Red Russian\",\"quantity\":10,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":28,\"name\":\"Tomato, Vesuvio\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"4\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 268,
+    "name": "",
+    "email": "grocery@riverwestcoop.org",
+    "notes": "",
+    "date": "2024-10-21T23:30:22.102Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":58,\"name\":\"Kale, Lacinato\",\"quantity\":0,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":1}",
+      "{\"id\":59,\"name\":\"Kale, Red Russian\",\"quantity\":15,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":5,\"unitSelected\":1}",
+      "{\"id\":9,\"name\":\"Pepper, Bell (red or yellow)\",\"quantity\":15,\"unit\":[\"lbs\"],\"price\":[\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 269,
+    "name": "Jason ritrovo",
+    "email": "Jschra12@gmail.com",
+    "notes": "",
+    "date": "2024-10-22T01:55:44.722Z",
+    "status": "completed",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":10,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":180,\"name\":\"Garlic, Cloves\",\"quantity\":25,\"unit\":[\"lb\"],\"price\":[\"8\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":20,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":9,\"name\":\"Pepper, Bell (red or yellow)\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":15,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 270,
+    "name": "Sean/ Slo Food",
+    "email": "smcmullen@slofoodmarket.com",
+    "notes": "Please bunch Kale",
+    "date": "2024-10-27T02:30:37.898Z",
+    "status": "pending",
+    "items": [
+      "{\"id\":54,\"name\":\"Green Onions\",\"quantity\":8,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.75\",\"8\"],\"client\":\"ggc\",\"unitratio\":0.2,\"cart\":12,\"unitSelected\":0}",
+      "{\"id\":57,\"name\":\"Kale, Curly\",\"quantity\":15,\"unit\":[\"lbs\",\"bunch\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":58,\"name\":\"Kale, Lacinato\",\"quantity\":5,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":71,\"name\":\"Parsley\",\"quantity\":5,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.5\",\"8.5\"],\"client\":\"ggc\",\"unitratio\":0.15,\"cart\":15,\"unitSelected\":0}",
+      "{\"id\":184,\"name\":\"Pepper, Green Italian\",\"quantity\":25,\"unit\":[\"lbs\"],\"price\":[\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":15,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 271,
+    "name": "DreamPort Harvest Market",
+    "email": "Contact@dreamportmarket@gmail.com",
+    "notes": "Arugula - 12 bags please, please remember to credit us for previous items paid for and not delivered (okra), delivery Thursday AM is best",
+    "date": "2024-10-27T08:07:54.865Z",
+    "status": "pending",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":25,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":45,\"name\":\"Eggplant, Tiny\",\"quantity\":5,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":23,\"name\":\"Garlic, Cured\",\"quantity\":20,\"unit\":[\"lbs\"],\"price\":[\"12\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":54,\"name\":\"Green Onions\",\"quantity\":0,\"unit\":[\"bunches\",\"lbs\"],\"price\":[\"1.75\",\"8\"],\"client\":\"ggc\",\"unitratio\":0.2,\"cart\":8,\"unitSelected\":0}",
+      "{\"id\":9,\"name\":\"Pepper, Bell (red or yellow)\",\"quantity\":15,\"unit\":[\"lbs\"],\"price\":[\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":185,\"name\":\"Pepper, Green Bell\",\"quantity\":15,\"unit\":[\"lbs\"],\"price\":[\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":184,\"name\":\"Pepper, Green Italian\",\"quantity\":35,\"unit\":[\"lbs\"],\"price\":[\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":182,\"name\":\"Watermelon Radish, no greens\",\"quantity\":10,\"unit\":[\"lb\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":183,\"name\":\"Winter Radish, Black\",\"quantity\":10,\"unit\":[\"lb\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 272,
+    "name": "Riverwest Co-op ",
+    "email": "grocery@riverwestcoop.org",
+    "notes": "",
+    "date": "2024-10-28T21:09:20.023Z",
+    "status": "pending",
+    "items": [
+      "{\"id\":45,\"name\":\"Eggplant, Tiny\",\"quantity\":0,\"unit\":[\"lbs\"],\"price\":[\"3\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":5,\"unitSelected\":0}",
+      "{\"id\":59,\"name\":\"Kale, Red Russian\",\"quantity\":11,\"unit\":[\"lbs\",\"bunches\"],\"price\":[\"4.25\",\"2.5\"],\"client\":\"ggc\",\"unitratio\":2,\"cart\":4,\"unitSelected\":1}",
+      "{\"id\":185,\"name\":\"Pepper, Green Bell\",\"quantity\":12,\"unit\":[\"lbs\"],\"price\":[\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":8,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  },
+  {
+    "id": 273,
+    "name": "Jason ritrovo",
+    "email": "Jschra12@gmail.com",
+    "notes": "",
+    "date": "2024-10-29T21:05:37.323Z",
+    "status": "pending",
+    "items": [
+      "{\"id\":26,\"name\":\"Arugula\",\"quantity\":15,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":65,\"name\":\"Lettuce Mix\",\"quantity\":20,\"unit\":[\"lbs\",\"6 oz. bags\"],\"price\":[\"8\",\"3.75\"],\"client\":\"ggc\",\"unitratio\":2.67,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":9,\"name\":\"Pepper, Bell (red or yellow)\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}",
+      "{\"id\":185,\"name\":\"Pepper, Green Bell\",\"quantity\":10,\"unit\":[\"lbs\"],\"price\":[\"3.5\"],\"client\":\"ggc\",\"unitratio\":null,\"cart\":10,\"unitSelected\":0}"
+    ],
+    "client": "ggc"
+  }
+]

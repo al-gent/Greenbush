@@ -109,7 +109,10 @@ export default function OrderForm({
   const [products, setProducts] = useState([]);
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [farmersNote, setFarmersNote] = useState('');
+  const [address, setAddress] = useState({streetAddress: '',cityStateZip: ''})
+  const [homedel, setHomedel] = useState(false)
   const [pbp, setpbp] = useState('');
+
 
   useEffect(() => {
     const url = `/api/data?client=${encodeURIComponent(client)}`;
@@ -141,7 +144,8 @@ export default function OrderForm({
     email: email,
     notes: notes,
     products: products.filter((product) => product.cart > 0),
-  };
+    address: `${address.streetAddress}, ${address.cityStateZip}`
+    };
 
   let productsToUpdate = products.filter((product) => product.cart > 0);
 
@@ -150,6 +154,7 @@ export default function OrderForm({
     setIsLoading(true);
     try {
       // First fetch call to update quantities
+      console.log('1')
       setpbp('updating quantities...');
       const updateQResponse = await fetch(`/api/update-quantities`, {
         method: 'POST',
@@ -158,6 +163,7 @@ export default function OrderForm({
         },
         body: JSON.stringify(productsToUpdate),
       });
+      console.log('2')
 
       if (!updateQResponse.ok) {
         throw new Error('Network response was not ok for update quantities');
@@ -165,6 +171,7 @@ export default function OrderForm({
 
       const updateQData = await updateQResponse.json();
       console.log(updateQData);
+      console.log('3')
 
       // Second fetch call to place order, executed only after the first fetch call is complete
       setpbp('placing order...');
@@ -322,6 +329,10 @@ export default function OrderForm({
                   setCustname={setCustname}
                   setEmail={setEmail}
                   setNotes={setNotes}
+                  address = {address}
+                  setAddress={setAddress}
+                  homedel={homedel}
+                  setHomedel={setHomedel}
                 />
                 {isLoading && <p>{pbp}</p>}
               </div>

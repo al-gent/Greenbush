@@ -4,6 +4,8 @@ import Layout from '../components/Layout';
 import Login from '../components/login';
 import { parseCookies } from '../helpers';
 import DashboardHelp from '../components/dashboard-help';
+import { LoginOrSignupForm } from "../components/LoginOrSignupForm";
+
 
 export async function getServerSideProps(context) {
   const cookies = parseCookies(context.req);
@@ -36,14 +38,15 @@ export default function Dashboard(cookies) {
         </div>
       )}
       <div>
-        <Login
+      <LoginOrSignupForm />
+        {/* <Login
           farmCode={farmCode}
           setFarmCode={setFarmCode}
           pin={pin}
           setPin={setPin}
           isCred={isCred}
           setIsCred={setIsCred}
-        />
+        /> */}
       </div>
     </div>
   );
