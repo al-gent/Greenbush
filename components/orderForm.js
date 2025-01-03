@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import FarmerNote from './farmer-note'
 import styles from '../styles/wholesale.module.css';
 import EmailGB from '../components/mailer';
 import OrderSummary from './order-summary';
@@ -295,9 +296,7 @@ export default function OrderForm({
           <div className={styles.centerText}>
             <h1 className={styles.centerText}>Wholesale Order Form</h1>
             {farmersNote && (
-              <p className={styles.centerText}>
-                <em>Farmer's Note: {farmersNote}</em>
-              </p>
+              <FarmerNote farmersNote={farmersNote} />
             )}
             <div className={styles.centerText}>
               <ListTable
