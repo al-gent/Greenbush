@@ -48,6 +48,7 @@ export default function Home() {
     'Trivia Technologist',
     'Creator',
     'Educator',
+    'Data Engineer',
     'Curious Human',
   ];
   
@@ -70,14 +71,19 @@ export default function Home() {
       <div className={styles.centerCard}>
         <h2>Featured Projects</h2>
         <div className={styles.dash}>
+          <Link href="https://trivially-gamma.vercel.app/">
+            <button>
+              Trivialy:
+            <br />
+             AI-Powered Trivia</button>
+          </Link>
           <Link href="http://www.adamlgent.com/hmscale">
             <button>Happiness vs Meaning Scale</button>
           </Link>
           <Link href="http://www.adamlgent.com/demodemo">
-            <button>Orders & Inventory Management Web App</button>
-          </Link>
-          <Link href="https://data-doctors.streamlit.app/">
-            <button>Data Doctor: assessing problems in Linear Regression</button>
+          <button>flo.farm
+            <br />
+            Orders & Inventory Manager</button>
           </Link>
         </div>
       </div>

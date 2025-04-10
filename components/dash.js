@@ -66,16 +66,22 @@ export default function Dash({ client, isLoading, setIsLoading }) {
         <button
           onClick={() => setViewCompleted(!viewCompleted)}
           style={viewCompleted ? { backgroundColor: 'green' } : {}}
-        >
+          >
           {viewCompleted ? `Hide Completed Orders` : `Completed Orders`}
         </button>
         <button
           onClick={() => setViewTodaysHarvest(!viewTodaysHarvest)}
           style={viewTodaysHarvest ? { backgroundColor: 'red' } : {}}
-        >
+          >
           {viewTodaysHarvest ? `Hide Today's Harvest` : `Today's Harvest`}
         </button>
       </div>
+          {viewTodaysHarvest && (
+            <TodaysHarvest client={client} setIsLoading={setIsLoading} />
+          )}
+          {viewCompleted && (
+            <CompletedOrders client={client} setIsLoading={setIsLoading} />
+          )}
       {/* <div className={styles.dash}>
         <button onClick={() => setViewAnalytics(!viewAnalytics)}>
           {viewAnalytics ? `Hide Analytics` : `Analytics`}
@@ -85,17 +91,11 @@ export default function Dash({ client, isLoading, setIsLoading }) {
         <button
           onClick={() => setViewUpdateBuyers(!viewUpdateBuyers)}
           style={viewUpdateBuyers ? { backgroundColor: 'purple' } : {}}
-        >
+          >
           {viewUpdateBuyers ? `Hide Update Buyers` : `Update Buyers`}
         </button>
       </div>
-      {viewTodaysHarvest && (
-        <TodaysHarvest client={client} setIsLoading={setIsLoading} />
-      )}
-      {viewCompleted && (
-        <CompletedOrders client={client} setIsLoading={setIsLoading} />
-      )}
-      {viewUpdateBuyers && <UpdateBuyers client={client} />}
+          {viewUpdateBuyers && <UpdateBuyers client={client} />}
       {/* {viewAnalytics && <AnalyzeSales client={client} />} */}
     </div>
   );
