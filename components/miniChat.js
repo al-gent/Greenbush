@@ -2,17 +2,20 @@ import { useEffect, useState } from 'react';
 import styles from '../styles/MiniChat.module.css';
 import ReactMarkdown from 'react-markdown';
 const initialPrompts = [
-  "Adam, what is your most technically challenging project?",
-  "How have you used AI or LLMs in real-world products?",
-  "Tell me about Trivialy and how you built it.",
-  "What kind of problems does flo.farm solve?",
-  "Do you have experience working with geospatial data?",
-  "Have you built anything end-to-end, from backend to frontend?",
-  "What’s a project you led that made a real-world impact?",
-  "Can you explain a time you used machine learning in production?",
-  "What’s your approach to designing an AI product pipeline?",
+  "What is Adam's most technically challenging project?",
+  "Has Adam used AI or LLMs in real-world products?",
+  "Learn more about Trivialy and how Adam built it.",
+  "What kind of problems does flo.farm solves?",
+  "Does Adam have experience working with geospatial data?",
+  "Has Adam built anything end-to-end, from backend to frontend?",
+  "What’s a project Adam led that made a real-world impact?",
+  "Has Adam used machine learning in production?",
+  "What's Adam's favorite Grateful Dead set?",
+  "What’s Adam's approach to designing an AI product pipeline?",
   "How do you balance creativity and technical execution?",
+  // "What are your greatest weaknesses?",
   "How would you explain your work to a non-technical stakeholder?",
+  // 'Did you peak in high school?',
 ];
 
 export default function MiniChat() {
@@ -59,7 +62,7 @@ export default function MiniChat() {
   };
 
   return (
-    <div className={styles.container}>
+    <div >
       {!active && (
         <div className={styles.suggestionBlock}>
           <button className={styles.promptBtn} onClick={handleClickPrompt}>

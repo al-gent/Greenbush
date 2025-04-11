@@ -68,7 +68,7 @@
   margin: 1rem;
   width: 8rem; /* adjust as needed */
   height: 8rem; /* adjust as needed */
-  background-color: #077fff7e; /* adjust as needed */
+  background-color: #077fffd3; /* adjust as needed */
   color: white; /* adjust as needed */
   border: none; /* adjust as needed */
   border-radius: 5px; /* adjust as needed */
@@ -139,7 +139,7 @@
   margin: auto;
   padding: 1rem;
   border-radius: 1rem;
-  background-color: #62b265;
+  background-color: #b1e57a;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   @media (min-width: 768px) {
   }
@@ -154,8 +154,12 @@
   margin: auto;
   padding: 1rem;
   border-radius: 1rem;
-  background-color: #a7ace5;
+  background-color: #f4df78;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.centerCard:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Larger shadow */
 }
 
 .mobileCard {
