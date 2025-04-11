@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from '../styles/MiniChat.module.css';
 import ReactMarkdown from 'react-markdown';
 const initialPrompts = [
-  "What’s your most technically challenging project?",
+  "Adam, what is your most technically challenging project?",
   "How have you used AI or LLMs in real-world products?",
   "Tell me about Trivialy and how you built it.",
   "What kind of problems does flo.farm solve?",
@@ -62,9 +62,8 @@ export default function MiniChat() {
     <div className={styles.container}>
       {!active && (
         <div className={styles.suggestionBlock}>
-          {/* <span className={styles.label}>Try asking:</span> */}
           <button className={styles.promptBtn} onClick={handleClickPrompt}>
-            {initialPrompts[promptIndex]}
+          💬 {initialPrompts[promptIndex]}
           </button>
         </div>
       )}

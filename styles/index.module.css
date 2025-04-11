@@ -60,6 +60,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  flex-wrap: wrap; /* ✅ Add this */
 }
 
 .dash button {
@@ -72,6 +73,13 @@
   border: none; /* adjust as needed */
   border-radius: 5px; /* adjust as needed */
   font-size: 16px; /* adjust as needed */
+
+  @media (max-width: 480px) {
+    width: 6rem;
+    height: 6rem;
+    font-size: 14px;
+    margin: .5rem;
+  }
 }
 
 .dash button:hover {

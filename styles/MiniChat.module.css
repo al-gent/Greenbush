@@ -37,9 +37,10 @@
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
-/* .promptBtn:hover {
+.promptBtn:hover {
   background-color: #ddd;
-} */
+  /* box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); */
+}
 
 .chatWindow {
   padding-top: 0.5rem;
