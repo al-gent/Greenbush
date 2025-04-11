@@ -1,6 +1,6 @@
 // /pages/api/chat.js
 import { sql } from '@vercel/postgres'; 
-
+import { sendPushNotification } from '../../components/sendpush.js'
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
       return res.status(405).json({ error: 'Method not allowed' });
@@ -71,8 +71,9 @@ export default async function handler(req, res) {
         INSERT INTO chatbot_logs (question, response, user_id)
         VALUES (${message}, ${reply}, ${ip})
       `;
-  
+      
       res.status(200).json({ reply });
+      await sendPushNotification("New Chatbot Interaction", `Q: ${message}\nA: ${reply}`);
     } catch (error) {
       console.error('Error in chat handler:', error);
       res.status(500).json({ error: 'Something went wrong.' });
