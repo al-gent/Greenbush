@@ -1,0 +1,93 @@
+.container {
+  /* margin-top: 2rem; */
+  /* width: 90%; */
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #a7ace5; /* match .centerCard */
+  padding: 1rem;
+  /* border-radius: 1rem; */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+  transition: box-shadow 0.3s ease;
+}
+
+/* .container:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+} */
+
+.suggestionBlock {
+  text-align: center;
+}
+
+.label {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+  color: #444;
+}
+
+.promptBtn {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+/* .promptBtn:hover {
+  background-color: #ddd;
+} */
+
+.chatWindow {
+  padding-top: 0.5rem;
+}
+
+.userMsg {
+  text-align: right;
+  color: #1a1a1a;
+  font-weight: 500;
+  margin: 0.5rem 0;
+  font-size: 1.1rem; /* bumped from default to 1.1rem */
+}
+
+.botMsg {
+  font-weight: 300;
+  font-size: 1.1rem; /* bumped from default to 1.1rem */
+  text-align: left;
+  color: #2a2a2a;
+  margin: 0.5rem 0;
+}
+
+.inputRow {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.inputField {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #222;
+}
+
+.sendBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #222;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.sendBtn:hover {
+  opacity: 0.8;
+}
