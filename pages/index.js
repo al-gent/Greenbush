@@ -3,53 +3,25 @@ import Link from 'next/link';
 import styles from '/styles/index.module.css';
 import SocialLinks from '../components/social_links';
 import { useEffect, useState } from 'react';
-
-function useTypewriter(words, typingSpeed = 100, deletingSpeed = 50, pause = 1500) {
-  const [text, setText] = useState('');
-  const [wordIndex, setWordIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const currentWord = words[wordIndex];
-    let timeout;
-
-    if (isDeleting) {
-      timeout = setTimeout(() => {
-        setText((prev) => prev.slice(0, -1));
-        if (text === '') {
-          setIsDeleting(false);
-          setWordIndex((prev) => (prev + 1) % words.length);
-        }
-      }, deletingSpeed);
-    } else {
-      timeout = setTimeout(() => {
-        setText(currentWord.slice(0, text.length + 1));
-        if (text === currentWord) {
-          timeout = setTimeout(() => {
-            setIsDeleting(true);
-          }, pause);
-        }
-      }, typingSpeed);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [text, isDeleting, wordIndex, words, typingSpeed, deletingSpeed, pause]);
-
-  return text;
-}
+import useTypewriter from '../components/typewriter_effect'
+import MiniChat from '../components/miniChat'
 
 
 export default function Home() {
   const titles = [
     'Applied AI Engineer',
     'Data Scientist',
-    'ML Engineer',
     'Agent Architect',
+    'Snowboard Instructor',
     'Trivia Technologist',
-    'Creator',
     'Educator',
     'Data Engineer',
     'Curious Human',
+    'Tiny Home Builder',
+    'Musician',
+    'ML Engineer',
+    'Software Developer',
+    'Naturalist',
   ];
   
   
@@ -66,8 +38,9 @@ export default function Home() {
           alt="Headshot"
         />
         <SocialLinks />
-        <h2>{typedText}</h2>
+        <h2>{typedText || '\u00A0'}</h2>
         </div>{' '}
+
       <div className={styles.centerCard}>
         <h2>Featured Projects</h2>
         <div className={styles.dash}>
@@ -86,6 +59,7 @@ export default function Home() {
             Orders & Inventory Manager</button>
           </Link>
         </div>
+        <MiniChat />
       </div>
     </div>
   );
