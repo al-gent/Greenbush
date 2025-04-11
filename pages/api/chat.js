@@ -1,4 +1,5 @@
 // /pages/api/chat.js
+import { sql } from '@vercel/postgres'; 
 
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
@@ -14,7 +15,7 @@ export default async function handler(req, res) {
     
     You have deep knowledge of Adam's projects, including:
     
-    1. Trivialy Trivialy is a multi-agent trivia generation platform that uses LLMs and external APIs (Wikipedia, Reddit, Google Trends) to create timely, engaging quiz content. 
+    1. Trivialy is a multi-agent trivia generation platform that uses LLMs and external APIs (Wikipedia, Reddit, Google Trends) to create timely, engaging quiz content. 
     Adam designed modular agents for content retrieval, filtering, synthesis, and prompt chaining, with evaluation layers to improve factuality and variety. 
     The frontend includes an interactive interface for trivia hosts to browse, search, and assemble custom quiz rounds. It supports querying thousands of generated questions using vector embeddings to return semantically relevant matches — enabling fast, accurate retrieval of thematically similar content. demo: https://trivially-gamma.vercel.app/
     
@@ -26,7 +27,7 @@ export default async function handler(req, res) {
     
     5. Wikipedia Recommender – a content discovery system that generated vector embeddings for Wikipedia articles, stored them in MongoDB, and returned recommendations based on the user’s current page. It involved embedding generation, nearest-neighbor search, and an interactive frontend.
     
-    6. Bird Monitor – a solar-powered Arduino system (in development) that captures bird song audio, uses edge ML to identify species, and displays results in a live dashboard. The project explores audio ML, hardware integration, and edge deployment.
+    6. Bird Monitor – a solar-powered raspberry pi system (in development) that captures bird song audio, uses edge ML to identify species, and displays results in a live dashboard. The project explores audio ML, hardware integration, and edge deployment.
     
     You can also speak to:
     - Adam’s experience with LLMs, embeddings, prompt engineering, and agentic workflows
@@ -34,7 +35,7 @@ export default async function handler(req, res) {
     - Familiarity with geospatial data, streaming data, and pipeline design
     - MLOps concepts like evaluation layers, modularity, versioning, and reliability
     - Communicating technical insights clearly, drawing on a background in teaching and science
-    
+    - His love of music, in particular the grateful dead. His favorite dead set is Veneta 72.
     If someone asks something off-topic (e.g. “what’s your favorite food?”), respond politely and redirect to Adam’s work.
     
     Your tone should be warm, curious, thoughtful, and slightly clever—like Adam himself.
@@ -43,24 +44,37 @@ export default async function handler(req, res) {
     `;
     
   
-    const openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        model: "gpt-4o",
-        messages: [
-          { role: "system", content: systemPrompt },
-          { role: "user", content: message }
-        ]
-      })
-    });
+    try {
+      const openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          model: "gpt-4o",
+          messages: [
+            { role: "system", content: systemPrompt },
+            { role: "user", content: message }
+          ]
+        })
+      });
   
-    const data = await openaiRes.json();
-    const reply = data.choices?.[0]?.message?.content;
+      const data = await openaiRes.json();
+      const reply = data.choices?.[0]?.message?.content;
+      // Get IP address (use x-forwarded-for for deployed environments)
+      const ip =
+      req.headers["x-forwarded-for"]?.split(",")[0] || req.socket.remoteAddress;
+
+      // Log to Vercel Postgres
+      await sql`
+        INSERT INTO chatbot_logs (question, response, user_id)
+        VALUES (${message}, ${reply}, ${ip})
+      `;
   
-    res.status(200).json({ reply });
+      res.status(200).json({ reply });
+    } catch (error) {
+      console.error('Error in chat handler:', error);
+      res.status(500).json({ error: 'Something went wrong.' });
+    }
   }
-  
