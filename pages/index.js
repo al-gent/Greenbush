@@ -46,17 +46,34 @@ export default function Home() {
         <div className={styles.dash}>
           <Link href="https://trivially-gamma.vercel.app/">
             <button>
-              Trivialy:
-            <br />
-             AI-Powered Trivia</button>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexDirection: 'column' }}>
+        <Image
+          src="/trivially_icon.png"
+          alt="Trivialy icon"
+          width={32}
+          height={32}
+        />
+        <span style={{ textAlign: 'center' }}>
+          AI-Powered Trivia
+        </span>
+      </div>
+      </button>
           </Link>
           <Link href="http://www.adamlgent.com/hmscale">
             <button>Happiness vs Meaning Scale</button>
           </Link>
           <Link href="http://www.adamlgent.com/demodemo">
-          <button>flo.farm
-            <br />
-            Orders & Inventory Manager</button>
+          <button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexDirection: 'column' }}>
+          <Image
+          src="/favicon.ico"
+          alt="pixel chicken"
+          width={32}
+          height={32}
+        />
+            Orders & Inventory Manager
+            </div>
+            </button>
           </Link>
         </div>
         <MiniChat />
