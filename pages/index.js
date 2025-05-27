@@ -11,9 +11,8 @@ export default function Home() {
   const titles = [
     'Applied AI Engineer',
     'Data Scientist',
-    'Agent Architect',
     'Snowboard Instructor',
-    'Trivia Technologist',
+    'Trivial Technologist',
     'Educator',
     'Data Engineer',
     'Curious Human',
@@ -22,6 +21,7 @@ export default function Home() {
     'ML Engineer',
     'Software Developer',
     'Naturalist',
+    'Tinkerer'
   ];
   
   
@@ -44,7 +44,7 @@ export default function Home() {
       <div className={styles.centerCard}>
         <h2>Featured Projects</h2>
         <div className={styles.dash}>
-          <Link href="https://trivially-gamma.vercel.app/">
+          <Link href="https://www.inverttheparadigm.com">
             <button>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexDirection: 'column' }}>
         <Image

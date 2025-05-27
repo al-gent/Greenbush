@@ -17,22 +17,28 @@ export default async function handler(req, res) {
     
     1. Trivialy is a multi-agent trivia generation platform that uses LLMs and external APIs (Wikipedia, Reddit, Google Trends) to create timely, engaging quiz content. 
     Adam designed modular agents for content retrieval, filtering, synthesis, and prompt chaining, with evaluation layers to improve factuality and variety. 
-    The frontend includes an interactive interface for trivia hosts to browse, search, and assemble custom quiz rounds. It supports querying thousands of generated questions using vector embeddings to return semantically relevant matches — enabling fast, accurate retrieval of thematically similar content. demo: https://trivially-gamma.vercel.app/
+    The simple frontend allows users to rate questions (thumbs up or thumbs down). 
     
     2. flo.farm – a full-stack inventory and ordering app built with React and Next.js, used by a working farm to manage all wholesale produce orders. The app is in production and saves ~5 hours/week. Adam built both the backend logic and frontend UX. link to demo: https://www.adamlgent.com/demodemo
     
     3. Sweeper Beeper – a geospatial alert system that uses Trak4 GPS data and city-maintained LINESTRINGs to notify users when parked on streets with upcoming sweeping. It required real-time coordinate matching, spatial queries, and notification logic.
     
-    4. SF Vision Zero Analysis – a data science project analyzing 10+ years of traffic collision data in San Francisco to support public policy. Adam built statistical models to predict severe injuries, explored geographic patterns in fatal collisions, and delivered insights challenging assumptions about repeat crash locations.
+    4. SF Vision Zero Project – Adam has been working for the city of San Francisco DataSF team as part of the Vision Zero initiative.
+    Through EDA, he challenged the conventional notion that we can prevent severe and fatal collisions by focusing on problem intersections.
+    His analysis showed that severe and fatal collisions do not happen in the same location year after year, while collisions more broadly do occur in the same spots.
+    This motivated the team to build two seperate models: one model to predict the number of collisions an intersection will have.
+    And another model to predict how severe a collision at that intersection would be if it happened.
+    Adam surfaced these models using snowflake and streamlit, creating an interactive app where users can choose an intersection,
+    and see how many collisions our models predict for that intersection, as well a severity prediction where users can select different scenarios and the model will return the likelihood of severity.
+    A poster for this project won an award at the USF Data Science Practicum Symposium.
     
-    5. Wikipedia Recommender – a content discovery system that generated vector embeddings for Wikipedia articles, stored them in MongoDB, and returned recommendations based on the user’s current page. It involved embedding generation, nearest-neighbor search, and an interactive frontend.
+    5.  Adam built a computer vision model using images scraped from google maps to predict the number of collisions an intersection has had in the last 10 years.
     
-    6. Bird Monitor – a solar-powered raspberry pi system (in development) that captures bird song audio, uses edge ML to identify species, and displays results in a live dashboard. The project explores audio ML, hardware integration, and edge deployment.
     
     You can also speak to:
     - Adam’s experience with LLMs, embeddings, prompt engineering, and agentic workflows
     - His ability to build full-stack applications (React, Next.js, Node.js, Python)
-    - Familiarity with geospatial data, streaming data, and pipeline design
+    - Familiarity with geospatial data, and pipeline design
     - MLOps concepts like evaluation layers, modularity, versioning, and reliability
     - Communicating technical insights clearly, drawing on a background in teaching and science
     - His love of music, in particular the grateful dead. His favorite dead set is Veneta 72.
