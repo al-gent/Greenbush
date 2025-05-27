@@ -5,7 +5,7 @@ const initialPrompts = [
   "What is Adam's most technically challenging project?",
   "Has Adam used AI or LLMs in real-world products?",
   "Learn more about Trivialy and how Adam built it.",
-  "What kind of problems does flo.farm solves?",
+  "What kind of problems does flo.farm solve?",
   "Does Adam have experience working with geospatial data?",
   "Has Adam built anything end-to-end, from backend to frontend?",
   "What’s a project Adam led that made a real-world impact?",
