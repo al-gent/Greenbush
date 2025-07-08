@@ -111,6 +111,14 @@ export default function OrderForm({
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [farmersNote, setFarmersNote] = useState('');
   const [pbp, setpbp] = useState('');
+  const [stockErrors, setStockErrors] = useState([]);
+
+  useEffect(() => {
+    if (stockErrors.length > 0) {
+      alert(`Uh Oh! Someone ordered the ${stockErrors[0].name} you wanted to order! The page will reload so you can see current availability.`);
+      window.location.reload();
+    }
+  }, [stockErrors]);
 
   useEffect(() => {
     const url = `/api/data?client=${encodeURIComponent(client)}`;
@@ -152,6 +160,7 @@ export default function OrderForm({
     try {
       // First fetch call to update quantities
       setpbp('updating quantities...');
+      console.log(JSON.stringify(productsToUpdate))
       const updateQResponse = await fetch(`/api/update-quantities`, {
         method: 'POST',
         headers: {
@@ -160,12 +169,15 @@ export default function OrderForm({
         body: JSON.stringify(productsToUpdate),
       });
 
-      if (!updateQResponse.ok) {
-        throw new Error('Network response was not ok for update quantities');
-      }
-
       const updateQData = await updateQResponse.json();
-      console.log(updateQData);
+
+      if (!updateQData.success && updateQData.errors) {
+        console.log(updateQData.errors)
+        setStockErrors(updateQData.errors)
+        console.log(stockErrors)
+        return
+
+      }
 
       // Second fetch call to place order, executed only after the first fetch call is complete
       setpbp('placing order...');
@@ -188,10 +200,9 @@ export default function OrderForm({
       const placeOrderData = await placeOrderResponse.json();
       console.log(placeOrderData);
 
-      // Assuming EmailGB is an async function. If not, you can remove await.
       setpbp('sending email...');
 
-      await EmailGB(order, farmer_email);
+      // await EmailGB(order, farmer_email);
 
       setIsLoading(false);
       setOrderPlaced(true);
