@@ -202,7 +202,7 @@ export default function OrderForm({
 
       setpbp('sending email...');
 
-      // await EmailGB(order, farmer_email);
+      await EmailGB(order, farmer_email);
 
       setIsLoading(false);
       setOrderPlaced(true);
