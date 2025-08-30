@@ -3,9 +3,8 @@ import Link from 'next/link';
 import styles from '/styles/index.module.css';
 import SocialLinks from '../components/social_links';
 import { useEffect, useState } from 'react';
-import useTypewriter from '../components/typewriter_effect'
-import MiniChat from '../components/miniChat'
-
+import useTypewriter from '../components/typewriter_effect';
+import MiniChat from '../components/miniChat';
 
 export default function Home() {
   const titles = [
@@ -21,10 +20,9 @@ export default function Home() {
     'ML Engineer',
     'Software Developer',
     'Naturalist',
-    'Tinkerer'
+    'Tinkerer',
   ];
-  
-  
+
   const typedText = useTypewriter(titles);
   return (
     <div>
@@ -39,40 +37,51 @@ export default function Home() {
         />
         <SocialLinks />
         <h2>{typedText || '\u00A0'}</h2>
-        </div>{' '}
-
+      </div>{' '}
       <div className={styles.centerCard}>
         <h2>Featured Projects</h2>
         <div className={styles.dash}>
           <Link href="https://www.inverttheparadigm.com">
             <button>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexDirection: 'column' }}>
-        <Image
-          src="/trivially_icon.png"
-          alt="Trivialy icon"
-          width={32}
-          height={32}
-        />
-        <span style={{ textAlign: 'center' }}>
-          AI-Powered Trivia
-        </span>
-      </div>
-      </button>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  flexDirection: 'column',
+                }}
+              >
+                <Image
+                  src="/trivially_icon.png"
+                  alt="Trivialy icon"
+                  width={32}
+                  height={32}
+                />
+                <span style={{ textAlign: 'center' }}>AI-Powered Trivia</span>
+              </div>
+            </button>
           </Link>
-          <Link href="http://www.adamlgent.com/hmscale">
-            <button>Happiness vs Meaning Scale</button>
+          <Link href="https://medium.com/@94gent/this-intersection-is-a-nightmare-can-we-predict-how-many-collisions-occurred-here-from-this-photo-204aa7b82ad5">
+            <button>Computer Vision Intersection Analysis</button>
           </Link>
-          <Link href="http://www.adamlgent.com/demodemo">
-          <button>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexDirection: 'column' }}>
-          <Image
-          src="/favicon.ico"
-          alt="pixel chicken"
-          width={32}
-          height={32}
-        />
-            Orders & Inventory Manager
-            </div>
+          <Link href="http://www.flo.farm">
+            <button>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  flexDirection: 'column',
+                }}
+              >
+                <Image
+                  src="/favicon.ico"
+                  alt="pixel chicken"
+                  width={32}
+                  height={32}
+                />
+                Orders & Inventory Manager
+              </div>
             </button>
           </Link>
         </div>
