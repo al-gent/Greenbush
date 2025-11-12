@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from '/styles/index.module.css';
 
 export default function SocialLinks() {
@@ -9,7 +10,7 @@ export default function SocialLinks() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="/images/github-mark.png" alt="GitHub Logo" />
+        <Image src="/images/github-mark.png" alt="GitHub Logo" width={24} height={24} />
       </a>
       <a
         className={styles.logo}
@@ -17,7 +18,7 @@ export default function SocialLinks() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="/images/linkedin-mark.png" />
+        <Image src="/images/linkedin-mark.png" alt="LinkedIn Logo" width={24} height={24} />
       </a>
       <a
         className={styles.logo}
@@ -25,7 +26,7 @@ export default function SocialLinks() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="/images/spotify_logo.png" />
+        <Image src="/images/spotify_logo.png" alt="Spotify Logo" width={24} height={24} />
       </a>
     </div>
   );

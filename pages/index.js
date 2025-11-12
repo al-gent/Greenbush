@@ -1,15 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
+import Head from 'next/head';
 import styles from '/styles/index.module.css';
 import SocialLinks from '../components/social_links';
 import { useState, useEffect } from 'react';
-import CalendlyWidget from '../components/calendly-widget';
 
-// Dynamically import TwilioCall with SSR disabled to prevent hydration errors
-const TwilioCall = dynamic(() => import('../components/twilio-call'), {
-  ssr: false,
-});
+
 
 const projectsData = [
   {
@@ -64,10 +60,20 @@ const projectsData = [
 ];
 
 // Sort projects by date (newest first)
-const projects = projectsData.sort((a, b) => {
-  // Handle date strings like 'Jan 2024', '2024', or full dates
-  const dateA = new Date(a.date).getTime();
-  const dateB = new Date(b.date).getTime();
+// Use a stable sort function that handles date strings consistently
+const projects = [...projectsData].sort((a, b) => {
+  // Parse dates more reliably - handle formats like "October 2025", "May 2024", etc.
+  const parseDate = (dateStr) => {
+    try {
+      const parsed = new Date(dateStr);
+      // If parsing fails, return a default date
+      return isNaN(parsed.getTime()) ? new Date(0) : parsed;
+    } catch {
+      return new Date(0);
+    }
+  };
+  const dateA = parseDate(a.date).getTime();
+  const dateB = parseDate(b.date).getTime();
   return dateB - dateA;
 });
 
@@ -119,6 +125,12 @@ const experience = [
 // Supports both images (jpg, png) and videos (mp4, webm, mov)
 const photoStories = [
   {
+    media: '/kayak_iceberg.jpeg',
+    type: 'image',
+    title: 'data scientist',
+    alt: 'Kayak and iceberg',
+  },
+  {
     media: '/volcano.mov',
     type: 'video',
     title: 'ai engineer',
@@ -131,12 +143,7 @@ const photoStories = [
     alt: 'San Francisco',
   },
 
-  {
-    media: '/kayak_iceberg.jpeg',
-    type: 'image',
-    title: 'data scientist',
-    alt: 'Kayak and iceberg',
-  },
+
   {
     media: '/raven.jpeg',
     type: 'image',
@@ -204,7 +211,7 @@ export default function Home() {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Auto-advance photos every 8 seconds
+  // Auto-advance photos every 9 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setIsTransitioning(true);
@@ -299,48 +306,75 @@ export default function Home() {
   );
 
   return (
-    <div className={styles.pageWrapper}>
-      {/* Full-screen photo section with consistent cropping */}
-      <section className={`${styles.photoSection} ${isTransitioning ? styles.fadeOut : styles.fadeIn}`}>
-        {currentPhoto.type === 'video' ? (
-          <video
-            className={styles.photoMedia}
-            src={currentPhoto.media}
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
-        ) : (
-          <div
-            className={styles.photoMedia}
-            style={{
-              backgroundImage: `url(${currentPhoto.media})`,
-            }}
-          />
-        )}
-        <div className={styles.photoOverlay}>
-          <h1 className={styles.name}>Adam Gent</h1>
-          <SocialLinks />
-          <h2 className={styles.title}>{currentPhoto.title}</h2>
-          <div className={styles.photoIndicators}>
-            {photoStories.map((_, index) => (
-              <button
-                key={index}
-                className={`${styles.indicator} ${index === currentPhotoIndex ? styles.active : ''}`}
-                onClick={() => {
-                  setIsTransitioning(true);
-                  setTimeout(() => {
-                    setCurrentPhotoIndex(index);
-                    setIsTransitioning(false);
-                  }, 300);
-                }}
-                aria-label={`Go to photo ${index + 1}`}
-              />
-            ))}
+    <>
+      <Head>
+        <title>Adam Gent - Data Scientist & Software Developer</title>
+        <meta name="description" content="Portfolio showcasing data science and software development projects. Full stack developer specializing in Python, React, Next.js, and machine learning." />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://adamlgent.com" />
+        <meta property="og:title" content="Adam Gent - Data Scientist & Software Developer" />
+        <meta property="og:description" content="Portfolio showcasing data science and software development projects. Full stack developer specializing in Python, React, Next.js, and machine learning." />
+        <meta property="og:image" content="https://adamlgent.com/kayak_iceberg.jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Adam Gent - Data Scientist & Software Developer" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://adamlgent.com" />
+        <meta name="twitter:title" content="Adam Gent - Data Scientist & Software Developer" />
+        <meta name="twitter:description" content="Portfolio showcasing data science and software development projects. Full stack developer specializing in Python, React, Next.js, and machine learning." />
+        <meta name="twitter:image" content="https://adamlgent.com/kayak_iceberg.jpeg" />
+        <meta name="twitter:image:alt" content="Adam Gent - Data Scientist & Software Developer" />
+        
+        {/* Additional meta tags */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://adamlgent.com" />
+      </Head>
+      <div className={styles.pageWrapper}>
+        {/* Full-screen photo section with consistent cropping */}
+        <section className={`${styles.photoSection} ${isTransitioning ? styles.fadeOut : styles.fadeIn}`}>
+          {currentPhoto.type === 'video' ? (
+            <video
+              className={styles.photoMedia}
+              src={currentPhoto.media}
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          ) : (
+            <div
+              className={styles.photoMedia}
+              style={{
+                backgroundImage: `url(${currentPhoto.media})`,
+              }}
+            />
+          )}
+          <div className={styles.photoOverlay}>
+            <h1 className={styles.name}>Adam Gent</h1>
+            <SocialLinks />
+            <h2 className={styles.title}>{currentPhoto.title}</h2>
+            <div className={styles.photoIndicators}>
+              {photoStories.map((_, index) => (
+                <button
+                  key={index}
+                  className={`${styles.indicator} ${index === currentPhotoIndex ? styles.active : ''}`}
+                  onClick={() => {
+                    setIsTransitioning(true);
+                    setTimeout(() => {
+                      setCurrentPhotoIndex(index);
+                      setIsTransitioning(false);
+                    }, 300);
+                  }}
+                  aria-label={`Go to photo ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* Content sections below */}
       <section className={styles.contentSection}>
@@ -365,16 +399,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* <div>
-          <h2 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Talk to Adam</h2>
-          <TwilioCall />
-        </div> */}
-
-        <div>
-          <h2 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Schedule a meeting</h2>
-          {/* <CalendlyWidget /> */}
-        </div>
       </section>
     </div>
+    </>
   );
 }
