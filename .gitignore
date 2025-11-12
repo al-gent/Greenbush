@@ -31,3 +31,4 @@ yarn-error.log*
 .env.production.local
 .vercel
 pages/tutor.js
+pages/analytics.ipynb
