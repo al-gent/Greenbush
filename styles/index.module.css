@@ -1,10 +1,418 @@
+/* Page wrapper */
+.pageWrapper {
+  width: 100%;
+}
+
+/* Photo section - full viewport height with consistent cropping */
+.photoSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.photoMedia {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Overlay content on photo */
+.photoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Content section below photo */
+.contentSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.contentSection h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+  .contentSection {
+    padding: 3rem 1.5rem;
+    gap: 3rem;
+  }
+  
+  .contentSection h2 {
+    font-size: 2rem;
+  }
+  
+  .photoOverlay {
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+/* Experience list */
+.experienceList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .experienceList {
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/* Experience row */
+.experienceRow {
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.experienceRow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .experienceRow {
+    padding: 1.5rem;
+    gap: 0.75rem;
+  }
+}
+
+/* Experience header */
+.experienceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.experienceTitleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.experienceTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+  .experienceTitle {
+    font-size: 1.25rem;
+  }
+}
+
+.experienceCompany {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.companyName {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.companyLocation {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.experienceDate {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .experienceDate {
+    font-size: 0.85rem;
+  }
+  
+  .experienceHeader {
+    flex-direction: column;
+  }
+}
+
+/* Experience bullets */
+.experienceBullets {
+  margin: 0;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.experienceBullets li {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  list-style-type: disc;
+}
+
+@media (max-width: 768px) {
+  .experienceBullets {
+    padding-left: 1.25rem;
+    gap: 0.5rem;
+  }
+  
+  .experienceBullets li {
+    font-size: 0.95rem;
+  }
+}
+
+/* Projects list */
+.projectsList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .projectsList {
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/* Project row */
+.projectRow {
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.projectRow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .projectRow {
+    padding: 1.5rem;
+    gap: 0.75rem;
+  }
+}
+
+/* Project header */
+.projectHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.projectIcon {
+  font-size: 2.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .projectIcon {
+    font-size: 2rem;
+  }
+}
+
+.projectTitleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.projectName {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+  .projectName {
+    font-size: 1.25rem;
+  }
+}
+
+.projectDate {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 400;
+}
+
+/* Project description */
+.projectDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .projectDescription {
+    font-size: 0.95rem;
+  }
+}
+
+/* Project tags */
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.projectTag {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  background-color: rgba(7, 127, 255, 0.1);
+  color: #077fff;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(7, 127, 255, 0.2);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.projectTag:hover {
+  background-color: rgba(7, 127, 255, 0.15);
+  border-color: rgba(7, 127, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .projectTag {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.65rem;
+  }
+}
+
+/* Project links */
+.projectLinks {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  align-items: center;
+}
+
+.projectLink {
+  display: inline-flex;
+  align-items: center;
+  color: #077fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.projectLink:hover {
+  color: #0056b3;
+  transform: translateX(2px);
+}
+
+.projectLink svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .projectLinks {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .projectLink {
+    font-size: 0.9rem;
+  }
+}
+
+/* Image wrapper and headshot */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 .headshot {
   display: block;
   margin: auto;
-  width: 50%;
+  width: 100%;
+  max-width: 500px;
   height: auto;
   border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1;
+  transition: opacity 0.3s ease;
 }
+
+@media (max-width: 768px) {
+  .imageWrapper {
+    max-width: 300px;
+  }
+  
+  .headshot {
+    max-width: 300px;
+  }
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -17,6 +425,32 @@
 .headshot:hover {
   opacity: 0.8;
   animation: spin 6s infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.fadeOut {
+  animation: fadeOut 0.3s ease-out;
 }
 
 .fullHeightMobile {
@@ -66,24 +500,39 @@
 .dash button {
   font-weight: bold;
   margin: 1rem;
-  width: 8rem; /* adjust as needed */
-  height: 8rem; /* adjust as needed */
-  background-color: #077fffd3; /* adjust as needed */
-  color: white; /* adjust as needed */
-  border: none; /* adjust as needed */
-  border-radius: 5px; /* adjust as needed */
-  font-size: 16px; /* adjust as needed */
-
-  @media (max-width: 480px) {
-    width: 6rem;
-    height: 6rem;
-    font-size: 14px;
-    margin: .5rem;
-  }
+  width: 12rem;
+  height: 12rem;
+  background-color: #077fffd3;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .dash button:hover {
-  opacity: 0.8;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(7, 127, 255, 0.3);
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .dash button {
+    width: 10rem;
+    height: 10rem;
+    font-size: 16px;
+    margin: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dash button {
+    width: 8rem;
+    height: 8rem;
+    font-size: 14px;
+    margin: 0.5rem;
+  }
 }
 
 .logos {
@@ -94,27 +543,33 @@
 
 .logo {
   flex: 1 0 20%; /* adjust this value to control the size of the logos */
-  max-width: 100px; /* adjust this value to control the maximum size of the logos */
+  max-width: 150px; /* adjust this value to control the maximum size of the logos */
   height: auto;
-  margin: 0.5rem;
+  margin: 1rem;
 }
 
 .logo:hover {
-  opacity: 0.5;
+  opacity: 0.7;
+  transform: scale(1.1);
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 .logo img {
-  width: 50px; /* adjust as needed */
-  height: 50px; /* adjust as needed */
+  width: 80px; /* adjust as needed */
+  height: 80px; /* adjust as needed */
   object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 .imageContainer {
   position: relative;
 }
 
-.storyCard:hover {
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Larger shadow */
-}
 
 .infoCard {
   width: 90%;
@@ -130,37 +585,110 @@
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Larger shadow */
 }
 
-.storyCard {
+.card {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-width: 500px;
-  margin: auto;
-  padding: 1rem;
-  border-radius: 1rem;
-  background-color: #b1e57a;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  @media (min-width: 768px) {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  gap: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
   }
 }
 
-.centerCard {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  max-width: 500px;
-  margin: auto;
-  padding: 1rem;
-  border-radius: 1rem;
-  background-color: #f4df78;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+.card:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
 }
 
-.centerCard:hover {
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Larger shadow */
+.card h2 {
+  font-size: 2.25rem;
+  margin: 0;
 }
+
+@media (max-width: 768px) {
+  .card h2 {
+    font-size: 1.75rem;
+  }
+}
+
+.name {
+  font-size: 4rem;
+  margin: 0;
+  font-weight: 700;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 2.5rem;
+  }
+}
+
+.title {
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 500;
+  min-height: 2.5rem;
+  transition: opacity 0.3s ease;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+    min-height: 2rem;
+  }
+}
+
+/* Photo indicators */
+.photoIndicators {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.indicator:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.2);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.indicator.active {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
+}
+
 
 .mobileCard {
   opacity: 0.9;
