@@ -365,10 +365,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div>
+        {/* <div>
           <h2 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Talk to Adam</h2>
           <TwilioCall />
-        </div>
+        </div> */}
 
         <div>
           <h2 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Schedule a meeting</h2>
