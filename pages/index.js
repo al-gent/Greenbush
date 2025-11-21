@@ -310,19 +310,26 @@ export default function Home() {
       <Head>
         <title>Adam Gent - Data Scientist & Software Developer</title>
         <meta name="description" content="Portfolio showcasing data science and software development projects. Full stack developer specializing in Python, React, Next.js, and machine learning." />
+        <link rel="canonical" href="https://adamlgent.com" />
         
-        {/* Open Graph / Facebook */}
+        {/* Open Graph / Facebook - LinkedIn uses these */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://adamlgent.com" />
+        <meta property="og:site_name" content="Adam Gent" />
         <meta property="og:title" content="Adam Gent - Data Scientist & Software Developer" />
         <meta property="og:description" content="Portfolio showcasing data science and software development projects. Full stack developer specializing in Python, React, Next.js, and machine learning." />
         <meta property="og:image" content="https://adamlgent.com/kayak_iceberg.jpeg" />
+        <meta property="og:image:secure_url" content="https://adamlgent.com/kayak_iceberg.jpeg" />
+        <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Adam Gent - Data Scientist & Software Developer" />
+        <meta property="og:locale" content="en_US" />
         
-        {/* Twitter */}
+        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@adamlgent" />
+        <meta name="twitter:creator" content="@adamlgent" />
         <meta name="twitter:url" content="https://adamlgent.com" />
         <meta name="twitter:title" content="Adam Gent - Data Scientist & Software Developer" />
         <meta name="twitter:description" content="Portfolio showcasing data science and software development projects. Full stack developer specializing in Python, React, Next.js, and machine learning." />
@@ -331,7 +338,6 @@ export default function Home() {
         
         {/* Additional meta tags */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://adamlgent.com" />
       </Head>
       <div className={styles.pageWrapper}>
         {/* Full-screen photo section with consistent cropping */}
