@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 export default function RAG() {
-  const [question, setQuestion] = useState('')
+  const [question, setQuestion] = useState('How does this project work?')
   const [response, setResponse] = useState(null)
   const [loading, setLoading] = useState(false)
   const [uploading, setUploading] = useState(false)
@@ -274,14 +274,13 @@ export default function RAG() {
                         Relevance: {(source.score * 100).toFixed(1)}%
                       </span>
                     </div>
-                    <p style={{ 
-                      fontSize: '15px', 
-                      color: '#374151', 
-                      margin: 0,
-                      lineHeight: '1.6'
-                    }}>
-                      {source.text}
-                    </p>
+            <div style={{ 
+              color: '#374151', 
+              lineHeight: '1.8',
+              fontSize: '17px',
+            }}>
+              <ReactMarkdown>{source.text}</ReactMarkdown>
+            </div>
                   </div>
                 ))}
               </div>
