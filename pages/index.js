@@ -143,11 +143,10 @@ const photoStories = [
     alt: 'San Francisco',
   },
 
-
   {
     media: '/raven.jpeg',
     type: 'image',
-    title: 'data scientist',
+    title: 'ml engineer',
     alt: 'Raven',
   },
   {
@@ -166,7 +165,7 @@ const photoStories = [
   {
     media: '/prius.jpeg',
     type: 'image',
-    title: 'dirtbag',
+    title: 'ex-dirtbag',
     alt: 'Prius',
   },
   {
@@ -184,13 +183,13 @@ const photoStories = [
   {
     media: '/otter.jpeg',
     type: 'image',
-    title: ' ',
+    title: 'wildlife enthusiast',
     alt: 'Otter',
   },
   {
     media: '/otter2.jpeg',
     type: 'image',
-    title: '',
+    title: 'ex-kayak guide',
     alt: 'Otter 2',
   },
   {
@@ -202,7 +201,7 @@ const photoStories = [
   {
     media: '/owl.jpeg',
     type: 'image',
-    title: 'curious human',
+    title: 'night owl',
     alt: 'Owl',
   },
 ];

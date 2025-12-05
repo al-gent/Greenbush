@@ -10,7 +10,7 @@ export default function SocialLinks() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Image src="/images/github-mark.png" alt="GitHub Logo" width={24} height={24} />
+        <Image src="/images/github-mark.png" alt="GitHub Logo" width={80} height={80} />
       </a>
       <a
         className={styles.logo}
@@ -18,7 +18,7 @@ export default function SocialLinks() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Image src="/images/linkedin-mark.png" alt="LinkedIn Logo" width={24} height={24} />
+        <Image src="/images/linkedin-mark.png" alt="LinkedIn Logo" width={80} height={80} />
       </a>
       <a
         className={styles.logo}
@@ -26,7 +26,7 @@ export default function SocialLinks() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Image src="/images/spotify_logo.png" alt="Spotify Logo" width={24} height={24} />
+        <Image src="/images/spotify_logo.png" alt="Spotify Logo" width={80} height={80} />
       </a>
     </div>
   );
