@@ -25,7 +25,7 @@ const projectsData = [
     description: 'A platform for musicians to create and organize setlists around their existing Google Drive files. Solves the problem of scattered charts, recordings, and notes across multiple folders by providing a lightweight wrapper that integrates with Google Drive to keep track of songs, sets, and bands. Musicians can build setlists with everything in one place without moving or changing where their files already live.',
     tags: ['React', 'Next.js', 'Google Drive API', 'REST APIs', 'Music', 'Full Stack', 'Web App'],
     date: 'November 2025',
-    href: 'http://www.wegig.inverttheparadigm.com',
+    href: 'http://wegig.inverttheparadigm.com',
     github: 'https://github.com/al-gent/wegig',
     icon: {
       emoji: '🎤',
