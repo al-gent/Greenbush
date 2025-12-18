@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from '/styles/demo.module.css';
+import styles from '../styles/demo.module.css';
 import OrderForm from '../components/orderForm';
 import { useState } from 'react';
 import Layout from '../components/Layout';

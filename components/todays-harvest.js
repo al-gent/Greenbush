@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styles from '/styles/index.module.css';
+import styles from '../styles/index.module.css';
 export default function TodaysHarvest({ client, setIsLoading }) {
   const [orders, setOrders] = useState([]);
 

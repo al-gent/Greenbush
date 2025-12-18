@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import emailConfirmed from './emailConfirmed';
-import styles from '/styles/index.module.css';
+import styles from '../styles/index.module.css';
 import FormattedDate from '../components/formatted-date';
 import OrderTable from '../components/order-table';
 import updateOrderStatus from './update-order-status';

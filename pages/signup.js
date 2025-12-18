@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '/styles/login.module.css';
+import styles from '../styles/login.module.css';
 import { useCookies } from 'react-cookie';
 import Dash from '../components/dash';
 import DashboardHelp from '../components/dashboard-help';

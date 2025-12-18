@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '/styles/questions.module.css';
+import styles from '../styles/questions.module.css';
 
 export default function DashboardHelp() {
   const [haveQuestions, setHaveQuestions] = useState(false);

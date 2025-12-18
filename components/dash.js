@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
-import styles from '/styles/index.module.css';
+import styles from '../styles/index.module.css';
 import EditWholesale from '../components/edit-wholesale';
 import ReviewOrders from '../components/review-orders';
 import CompletedOrders from './completed-orders';

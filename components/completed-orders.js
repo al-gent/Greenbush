@@ -1,7 +1,7 @@
 import FormattedDate from './formatted-date';
 import OrderTable from './order-table';
 import { useState, useEffect } from 'react';
-import styles from '/styles/index.module.css';
+import styles from '../styles/index.module.css';
 import editOrder from './edit-order';
 import updateOrder from './update-order';
 import deleteOrder from './delete-order';

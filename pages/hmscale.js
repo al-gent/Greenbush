@@ -12,7 +12,7 @@ import {
   ResponsiveContainer,
   LabelList,
 } from 'recharts';
-import styles from '/styles/index.module.css';
+import styles from '../styles/index.module.css';
 import Link from 'next/link';
 
 function InputRow({ data, setData }) {

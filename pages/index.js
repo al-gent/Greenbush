@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
-import styles from '/styles/index.module.css';
+import styles from '../styles/index.module.css';
 import SocialLinks from '../components/social_links';
 import { useState, useEffect } from 'react';
 
@@ -11,15 +11,15 @@ const projectsData = [
   {
     name: 'Sweeper Beeper',
     description: 'An automated street sweeping reminder system for San Francisco that saves drivers from parking tickets. Users share their location via an iOS Shortcut, and the app calculates the exact street and block side using geospatial analysis of SF Open Data. A cron job checks the database twice daily and sends push notifications before upcoming sweeps. Self-hosted FastAPI backend with Docker and PostgreSQL running on a $12/month Digital Ocean droplet.',
-    tags: ['Python', 'FastAPI', 'PostgreSQL', 'Docker', 'GeoPandas', 'Geospatial Analysis', 'iOS Shortcuts', 'Cron Jobs', 'API Design', 'Self-Hosting', 'SQLAlchemy', 'SF Open Data'],
-    date: 'December 2024',
+    tags: ['Python', 'FastAPI', 'PostgreSQL', 'Docker', 'GeoPandas', 'Geospatial Analysis', 'iOS Shortcuts', 'API Design', 'SF Open Data'],
+    date: 'December 2025',
     href: 'https://www.icloud.com/shortcuts/90835df64d3946f48231738ef2f1ace9',
     github: 'https://github.com/al-gent/street_sweeping_API',
     icon: {
       emoji: '🅿️⏰',
       alt: 'Street sweeping alert icon',
     },
-  }
+  },
   {
     name: 'Live and Local',
     description: 'A production app that automates concert discovery by scraping your favorite local venue lineups and building auto-updating Spotify playlists. Connect your Spotify account, pick your favorite venues, and get playlists with tracks from upcoming artists. Built with a scalable architecture separating the data pipeline (venue scraping) from playlist generation (SQL + Spotify API) using Python and PostgreSQL.',
