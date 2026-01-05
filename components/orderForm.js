@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import FarmerNote from './farmer-note'
 import styles from '../styles/wholesale.module.css';
-import EmailGB from '../components/mailer';
+import EmailGB from './components/mailer';
 import OrderSummary from './order-summary';
 import UnitDropdown from './unit-dropdown-menu';
 import CartTable from './cart-table';
