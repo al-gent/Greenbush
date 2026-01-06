@@ -13,6 +13,9 @@
   align-items: center;
   justify-content: center;
   transition: opacity 0.3s ease;
+  /* Enable hardware acceleration for smoother transitions */
+  transform: translateZ(0);
+  will-change: opacity;
 }
 
 .photoMedia {
@@ -25,6 +28,12 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  /* Optimize image rendering performance with hardware acceleration */
+  transform: translateZ(0);
+  will-change: background-image;
+  backface-visibility: hidden;
+  /* Smooth image rendering for photos */
+  image-rendering: auto;
 }
 
 /* Overlay content on photo */

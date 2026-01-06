@@ -222,9 +222,43 @@ const photoStories = [
 export default function Home() {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  // Set mounted flag after component mounts (client-side only)
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Preload images for faster transitions
+  useEffect(() => {
+    if (!mounted) return;
+    // Preload the first 3 images on initial load
+    photoStories.slice(0, 3).forEach((photo) => {
+      if (photo.type === 'image') {
+        const img = new window.Image();
+        img.src = photo.media;
+      }
+    });
+  }, [mounted]);
+
+  // Preload next images when current index changes
+  useEffect(() => {
+    if (!mounted) return;
+    const nextIndex = (currentPhotoIndex + 1) % photoStories.length;
+    const nextNextIndex = (currentPhotoIndex + 2) % photoStories.length;
+    
+    [nextIndex, nextNextIndex].forEach((index) => {
+      const photo = photoStories[index];
+      if (photo.type === 'image') {
+        const img = new window.Image();
+        img.src = photo.media;
+      }
+    });
+  }, [currentPhotoIndex, mounted]);
 
   // Auto-advance photos every 9 seconds
   useEffect(() => {
+    if (!mounted) return;
     const interval = setInterval(() => {
       setIsTransitioning(true);
       setTimeout(() => {
@@ -234,9 +268,12 @@ export default function Home() {
     }, 9000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [mounted]);
 
   const currentPhoto = photoStories[currentPhotoIndex];
+  
+  // Compute className consistently to avoid hydration issues
+  const photoSectionClassName = `${styles.photoSection} ${isTransitioning ? styles.fadeOut : styles.fadeIn}`;
 
   const renderExperience = (exp) => (
     <div className={styles.experienceRow}>
@@ -324,6 +361,20 @@ export default function Home() {
         <meta name="description" content="Portfolio showcasing data science and software development projects. Full stack developer specializing in Python, React, Next.js, and machine learning." />
         <link rel="canonical" href="https://adamlgent.com" />
         
+        {/* Preload critical images for faster loading */}
+        {photoStories
+          .slice(0, 3)
+          .filter((photo) => photo.type === 'image')
+          .map((photo, index) => (
+            <link
+              key={photo.media}
+              rel="preload"
+              as="image"
+              href={photo.media}
+              fetchPriority={index === 0 ? 'high' : 'low'}
+            />
+          ))}
+        
         {/* Open Graph / Facebook - LinkedIn uses these */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://adamlgent.com" />
@@ -353,7 +404,7 @@ export default function Home() {
       </Head>
       <div className={styles.pageWrapper}>
         {/* Full-screen photo section with consistent cropping */}
-        <section className={`${styles.photoSection} ${isTransitioning ? styles.fadeOut : styles.fadeIn}`}>
+        <section className={photoSectionClassName}>
           {currentPhoto.type === 'video' ? (
             <video
               className={styles.photoMedia}
@@ -362,6 +413,7 @@ export default function Home() {
               loop
               muted
               playsInline
+              suppressHydrationWarning
             />
           ) : (
             <div
