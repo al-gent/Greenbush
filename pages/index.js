@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import styles from '../styles/index.module.css';
 import SocialLinks from '../components/social_links';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 
 
@@ -223,15 +223,27 @@ export default function Home() {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const videoRef = useRef(null);
 
   // Set mounted flag after component mounts (client-side only)
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Preload images for faster transitions
+  // Preload images and videos for faster transitions
   useEffect(() => {
     if (!mounted) return;
+    // Preload all videos immediately (they're large, so start early)
+    photoStories.forEach((photo) => {
+      if (photo.type === 'video') {
+        const video = document.createElement('video');
+        video.src = photo.media;
+        video.preload = 'auto';
+        video.muted = true;
+        // Force video to start loading immediately
+        video.load();
+      }
+    });
     // Preload the first 3 images on initial load
     photoStories.slice(0, 3).forEach((photo) => {
       if (photo.type === 'image') {
@@ -241,7 +253,7 @@ export default function Home() {
     });
   }, [mounted]);
 
-  // Preload next images when current index changes
+  // Preload next images and videos when current index changes
   useEffect(() => {
     if (!mounted) return;
     const nextIndex = (currentPhotoIndex + 1) % photoStories.length;
@@ -252,9 +264,29 @@ export default function Home() {
       if (photo.type === 'image') {
         const img = new window.Image();
         img.src = photo.media;
+      } else if (photo.type === 'video') {
+        const video = document.createElement('video');
+        video.src = photo.media;
+        video.preload = 'auto';
+        video.muted = true;
+        // Force video to start loading
+        video.load();
       }
     });
   }, [currentPhotoIndex, mounted]);
+
+  // Ensure video autoplays on iOS (programmatic play as fallback)
+  useEffect(() => {
+    if (!mounted || currentPhoto.type !== 'video' || !videoRef.current) return;
+    
+    // Try to play the video programmatically (required for iOS)
+    const playPromise = videoRef.current.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Autoplay was prevented, which is fine - user interaction will be needed
+      });
+    }
+  }, [mounted, currentPhotoIndex, currentPhoto.type]);
 
   // Auto-advance photos every 9 seconds
   useEffect(() => {
@@ -361,19 +393,31 @@ export default function Home() {
         <meta name="description" content="Portfolio showcasing data science and software development projects. Full stack developer specializing in Python, React, Next.js, and machine learning." />
         <link rel="canonical" href="https://adamlgent.com" />
         
-        {/* Preload critical images for faster loading */}
-        {photoStories
-          .slice(0, 3)
-          .filter((photo) => photo.type === 'image')
-          .map((photo, index) => (
-            <link
-              key={photo.media}
-              rel="preload"
-              as="image"
-              href={photo.media}
-              fetchPriority={index === 0 ? 'high' : 'low'}
-            />
-          ))}
+        {/* Preload critical images and videos for faster loading */}
+        {photoStories.slice(0, 3).map((photo, index) => {
+          if (photo.type === 'image') {
+            return (
+              <link
+                key={photo.media}
+                rel="preload"
+                as="image"
+                href={photo.media}
+                fetchPriority={index === 0 ? 'high' : 'low'}
+              />
+            );
+          } else if (photo.type === 'video') {
+            return (
+              <link
+                key={photo.media}
+                rel="preload"
+                as="video"
+                href={photo.media}
+                fetchPriority={index === 0 ? 'high' : 'low'}
+              />
+            );
+          }
+          return null;
+        })}
         
         {/* Open Graph / Facebook - LinkedIn uses these */}
         <meta property="og:type" content="website" />
@@ -407,12 +451,15 @@ export default function Home() {
         <section className={photoSectionClassName}>
           {currentPhoto.type === 'video' ? (
             <video
+              ref={videoRef}
               className={styles.photoMedia}
               src={currentPhoto.media}
               autoPlay
               loop
               muted
               playsInline
+              preload="auto"
+              crossOrigin="anonymous"
               suppressHydrationWarning
             />
           ) : (
