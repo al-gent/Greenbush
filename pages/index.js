@@ -224,6 +224,9 @@ export default function Home() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [mounted, setMounted] = useState(false);
   const videoRef = useRef(null);
+  
+  // Get current photo - must be defined before useEffect hooks that use it
+  const currentPhoto = photoStories[currentPhotoIndex];
 
   // Set mounted flag after component mounts (client-side only)
   useEffect(() => {
@@ -301,8 +304,6 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, [mounted]);
-
-  const currentPhoto = photoStories[currentPhotoIndex];
   
   // Compute className consistently to avoid hydration issues
   const photoSectionClassName = `${styles.photoSection} ${isTransitioning ? styles.fadeOut : styles.fadeIn}`;
