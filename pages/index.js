@@ -3,9 +3,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import styles from '../styles/index.module.css';
 import SocialLinks from '../components/social_links';
-import { useState, useEffect, useRef } from 'react';
-
-
+import { useState, useEffect, useRef, useMemo } from 'react';
 
 const projectsData = [
   {
@@ -71,24 +69,6 @@ const projectsData = [
 
 ];
 
-// Sort projects by date (newest first)
-// Use a stable sort function that handles date strings consistently
-const projects = [...projectsData].sort((a, b) => {
-  // Parse dates more reliably - handle formats like "October 2025", "May 2024", etc.
-  const parseDate = (dateStr) => {
-    try {
-      const parsed = new Date(dateStr);
-      // If parsing fails, return a default date
-      return isNaN(parsed.getTime()) ? new Date(0) : parsed;
-    } catch {
-      return new Date(0);
-    }
-  };
-  const dateA = parseDate(a.date).getTime();
-  const dateB = parseDate(b.date).getTime();
-  return dateB - dateA;
-});
-
 // Professional experience
 const experience = [
   
@@ -144,7 +124,7 @@ const photoStories = [
     alt: 'Kayak and iceberg',
   },
   {
-    media: '/volcano.mov',
+    media: '/volcano_compressed.mp4',
     type: 'video',
     title: 'ai engineer',
     alt: 'Volcano video',
@@ -169,12 +149,11 @@ const photoStories = [
     alt: 'Volcano clouds',
   },
   {
-    media: '/grand_canyon.mov',
+    media: '/grand_canyon_compressed.mp4',
     type: 'video',
     title: 'curious human',
     alt: 'Grand Canyon video',
   },
-  // Other roles
   {
     media: '/prius.jpeg',
     type: 'image',
@@ -228,68 +207,62 @@ export default function Home() {
   // Get current photo - must be defined before useEffect hooks that use it
   const currentPhoto = photoStories[currentPhotoIndex];
 
+  // Sort projects by date (newest first) - done in useMemo to ensure consistency
+  const projects = useMemo(() => {
+    return [...projectsData].sort((a, b) => {
+      const parseDate = (dateStr) => {
+        const months = {
+          'january': 0, 'february': 1, 'march': 2, 'april': 3, 'may': 4, 'june': 5,
+          'july': 6, 'august': 7, 'september': 8, 'october': 9, 'november': 10, 'december': 11,
+          'jan': 0, 'feb': 1, 'mar': 2, 'apr': 3, 'jun': 5, 'jul': 6, 'aug': 7, 'sep': 8, 'sept': 8, 'oct': 9, 'nov': 10, 'dec': 11
+        };
+        const parts = dateStr.toLowerCase().split(' ');
+        const monthStr = parts[0];
+        const year = parseInt(parts[1], 10);
+        const month = months[monthStr] ?? 0;
+        return new Date(year, month, 1).getTime();
+      };
+      const dateA = parseDate(a.date);
+      const dateB = parseDate(b.date);
+      return dateB - dateA;
+    });
+  }, []);
+
   // Set mounted flag after component mounts (client-side only)
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Preload images and videos for faster transitions
+  // Only preload next 2-3 items (not all videos)
   useEffect(() => {
     if (!mounted) return;
-    // Preload all videos immediately (they're large, so start early)
-    photoStories.forEach((photo) => {
-      if (photo.type === 'video') {
-        const video = document.createElement('video');
-        video.src = photo.media;
-        video.preload = 'auto';
-        video.muted = true;
-        // Force video to start loading immediately
-        video.load();
-      }
-    });
-    // Preload the first 3 images on initial load
-    photoStories.slice(0, 3).forEach((photo) => {
-      if (photo.type === 'image') {
-        const img = new window.Image();
-        img.src = photo.media;
-      }
-    });
-  }, [mounted]);
-
-  // Preload next images and videos when current index changes
-  useEffect(() => {
-    if (!mounted) return;
+    
     const nextIndex = (currentPhotoIndex + 1) % photoStories.length;
     const nextNextIndex = (currentPhotoIndex + 2) % photoStories.length;
     
     [nextIndex, nextNextIndex].forEach((index) => {
       const photo = photoStories[index];
-      if (photo.type === 'image') {
-        const img = new window.Image();
-        img.src = photo.media;
-      } else if (photo.type === 'video') {
+      if (photo.type === 'video') {
         const video = document.createElement('video');
         video.src = photo.media;
         video.preload = 'auto';
-        video.muted = true;
-        // Force video to start loading
         video.load();
+      } else {
+        const img = new window.Image();
+        img.src = photo.media;
       }
     });
   }, [currentPhotoIndex, mounted]);
 
-  // Ensure video autoplays on iOS (programmatic play as fallback)
+  // Fix the autoplay - only run when we switch TO a video
   useEffect(() => {
     if (!mounted || currentPhoto.type !== 'video' || !videoRef.current) return;
     
-    // Try to play the video programmatically (required for iOS)
     const playPromise = videoRef.current.play();
     if (playPromise !== undefined) {
-      playPromise.catch(() => {
-        // Autoplay was prevented, which is fine - user interaction will be needed
-      });
+      playPromise.catch(() => {});
     }
-  }, [mounted, currentPhotoIndex, currentPhoto.type]);
+  }, [currentPhotoIndex, mounted]); 
 
   // Auto-advance photos every 9 seconds
   useEffect(() => {
@@ -448,28 +421,30 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className={styles.pageWrapper}>
-        {/* Full-screen photo section with consistent cropping */}
         <section className={photoSectionClassName}>
-          {currentPhoto.type === 'video' ? (
-            <video
-              ref={videoRef}
-              className={styles.photoMedia}
-              src={currentPhoto.media}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              crossOrigin="anonymous"
-              suppressHydrationWarning
-            />
-          ) : (
-            <div
-              className={styles.photoMedia}
-              style={{
-                backgroundImage: `url(${currentPhoto.media})`,
-              }}
-            />
+          {mounted && (
+            <>
+              {currentPhoto.type === 'video' ? (
+                <video
+                  ref={videoRef}
+                  className={styles.photoMedia}
+                  src={currentPhoto.media}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  crossOrigin="anonymous"
+                />
+              ) : (
+                <div
+                  className={styles.photoMedia}
+                  style={{
+                    backgroundImage: `url(${currentPhoto.media})`,
+                  }}
+                />
+              )}
+            </>
           )}
           <div className={styles.photoOverlay}>
             <h1 className={styles.name}>Adam Gent</h1>
@@ -479,7 +454,7 @@ export default function Home() {
               {photoStories.map((_, index) => (
                 <button
                   key={index}
-                  className={`${styles.indicator} ${index === currentPhotoIndex ? styles.active : ''}`}
+                  className={index === currentPhotoIndex ? `${styles.indicator} ${styles.active}` : styles.indicator}
                   onClick={() => {
                     setIsTransitioning(true);
                     setTimeout(() => {
