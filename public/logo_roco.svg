@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="164" height="163.192" viewBox="0 0 164 163.192">
+  <g id="Roco_Logo" data-name="Roco Logo" transform="translate(-0.014 0.008)">
+    <g id="Group_12" data-name="Group 12" transform="translate(0.014 -0.008)">
+      <path id="Path_18137" data-name="Path 18137" d="M0,0H164V163.19H0Z" fill="#db0091"/>
+      <rect id="Rectangle_27" data-name="Rectangle 27" width="81.999" height="81.596" fill="#db0091"/>
+      <rect id="Rectangle_28" data-name="Rectangle 28" width="81.999" height="81.596" transform="translate(82.001)" fill="#ff003a"/>
+      <rect id="Rectangle_29" data-name="Rectangle 29" width="81.999" height="81.596" transform="translate(0 81.596)" fill="#ff6e00"/>
+      <rect id="Rectangle_30" data-name="Rectangle 30" width="81.999" height="81.596" transform="translate(82.001 81.594)" fill="#db0091"/>
+    </g>
+    <g id="Group_13" data-name="Group 13" transform="translate(19.611 14.307)">
+      <path id="Path_39" data-name="Path 39" d="M24.032,17.537H44.588c13.7,0,20.556,8.523,20.556,18.893a18.3,18.3,0,0,1-7.851,15.483l8.993,17.471H49.513L43.161,55.819H38.95V69.384H24.032Zm14.917,13.5V42.466h4.925c3.283,0,6-1.847,6-5.753,0-3.764-2.713-5.682-6-5.682Z" transform="translate(-24.032 -17.537)" fill="#fff"/>
+    </g>
+    <g id="Group_14" data-name="Group 14" transform="translate(14.428 95.341)">
+      <path id="Path_40" data-name="Path 40" d="M17.68,143.486A26.451,26.451,0,0,1,44.3,116.852a26.35,26.35,0,0,1,25.981,20.171H53.795a10.1,10.1,0,0,0-9.493-5.54c-6.781,0-11.419,5.469-11.419,12s4.425,12,11.419,12a10.415,10.415,0,0,0,9.35-5.043h16.63A27,27,0,0,1,44.3,170.12,26.408,26.408,0,0,1,17.68,143.486Z" transform="translate(-17.68 -116.852)" fill="#fff"/>
+    </g>
+    <g id="Group_15" data-name="Group 15" transform="translate(95.965 95.067)">
+      <path id="Path_41" data-name="Path 41" d="M117.612,143.415a26.923,26.923,0,1,1,26.887,26.9A26.715,26.715,0,0,1,117.612,143.415Zm38.492,0c0-6.6-4.758-12.123-11.605-12.123s-11.533,5.523-11.533,12.123,4.469,12.122,11.533,12.122S156.1,150.013,156.1,143.415Z" transform="translate(-117.612 -116.516)" fill="#fff"/>
+    </g>
+    <g id="Group_16" data-name="Group 16" transform="translate(96.075 13.538)">
+      <path id="Path_42" data-name="Path 42" d="M117.747,43.492a26.923,26.923,0,1,1,26.888,26.9A26.715,26.715,0,0,1,117.747,43.492Zm38.493,0c0-6.6-4.758-12.122-11.605-12.122S133.1,36.893,133.1,43.492s4.469,12.123,11.533,12.123S156.24,50.092,156.24,43.492Z" transform="translate(-117.747 -16.594)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
