@@ -39,17 +39,17 @@ const projectsData = [
 ];
 
 const experience = [
-  {
-    title: 'Web Developer & Data Engineer',
-    company: 'The Plastics & Climate Project',
-    location: 'Remote',
-    date: 'Apr 2026 – Present',
-    logo: '/logo_plastics.png',
-    bullets: [
-      'Rebuilding plasticsandclimate.com — built as a static site for fast load times and strong SEO, hosted for free on Cloudflare Pages, with custom tooling for easy content editing',
-      'Writing custom Python scripts to organize and clean a contact database of 1,000+ entries for outreach campaigns',
-    ],
-  },
+  // {
+  //   title: 'Web Developer & Data Engineer',
+  //   company: 'The Plastics & Climate Project',
+  //   location: 'Remote',
+  //   date: 'Apr 2026 – Present',
+  //   logo: '/logo_plastics.png',
+  //   bullets: [
+  //     'Rebuilding plasticsandclimate.com — built as a static site for fast load times and strong SEO, hosted for free on Cloudflare Pages, with custom tooling for easy content editing',
+  //     'Writing custom Python scripts to organize and clean a contact database of 1,000+ entries for outreach campaigns',
+  //   ],
+  // },
   {
     title: 'Software Developer',
     company: 'Greenwater Foundation',
